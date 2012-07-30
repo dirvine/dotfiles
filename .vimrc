@@ -234,7 +234,7 @@ noremap <silent> ,mh <C-W>H
 
 " Move the current window to the bottom of the main Vim window
 noremap <silent> ,mj <C-W>J
-nnoremap <silent> <Leader>t :CommandT ../src/<CR>
+nnoremap <silent> <Leader>s :CommandT ../src/<CR>
 nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -c % <cr>
 
 " cd to the directory containing the file in the buffer
