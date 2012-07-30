@@ -84,7 +84,9 @@ map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
 imap <F11> <nop>
 set pastetoggle=<F11>
-
+"c-support stuff
+let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -Wall -g -o0'
+let g:C_CplusCompiler = 'clang++'
 
 highlight LongLine ctermbg=DarkYellow guibg=DarkYellow
 highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow

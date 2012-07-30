@@ -36,7 +36,7 @@ $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //        Version:  1.0
 //        Created:  |DATE| |TIME|
 //       Revision:  none
-//       Compiler:  g++
+//       Compiler:  clang++
 // 
 //         Author:  |AUTHOR| (|AUTHORREF|), |EMAIL|
 //        Company:  |ORGANIZATION|
@@ -53,7 +53,7 @@ $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //        Version:  1.0
 //        Created:  |DATE| |TIME|
 //       Revision:  none
-//       Compiler:  g++
+//       Compiler:  clang++
 // 
 //         Author:  |AUTHOR| (|AUTHORREF|), |EMAIL|
 //        Company:  |ORGANIZATION|
