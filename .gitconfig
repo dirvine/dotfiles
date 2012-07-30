@@ -1,0 +1,20 @@
+[user]
+	name = David Irvine
+	email = david.irvine@maidsafe.net
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1191x672+1923+111
+	main-window-view = FileView
+[core]
+	editor = vim
+[push]
+	default = tracking
+[color]
+	ui = auto
+  Diff = auto
+[merge]
+  tool = vimdiff
+
+
+[web]
+	browser = google-chrome
