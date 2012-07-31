@@ -85,7 +85,7 @@ imap <F10> <C-O>:set paste<CR>
 imap <F11> <nop>
 set pastetoggle=<F11>
 "c-support stuff
-let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -Wall -g -o0'
+let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -fPIC -ldl -g -o0'
 let g:C_CplusCompiler = 'clang++'
 
 highlight LongLine ctermbg=DarkYellow guibg=DarkYellow
@@ -148,7 +148,7 @@ let g:SuperTabDefaultCompletionType = ""
 let g:clang_complete_auto=1
 " Show clang errors in the quickfix window
 let g:clang_complete_copen=1
-let g:clang_user_options = '-std=c++11 -stdlib=libc++'
+let g:clang_user_options = '-std=c++11 -stdlib=libc++ -Wall -ldl'
 let g:clang_use_library=0
 let g:clang_complete_copen=1
 let g:clang_library_path="/usr/lib/"
@@ -235,7 +235,7 @@ noremap <silent> ,mh <C-W>H
 " Move the current window to the bottom of the main Vim window
 noremap <silent> ,mj <C-W>J
 nnoremap <silent> <Leader>s :CommandT ../src/<CR>
-nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -c % <cr>
+nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -ldl -c % <cr>
 
 " cd to the directory containing the file in the buffer
 nmap  ,cd :lcd %:h
