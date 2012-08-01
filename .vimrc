@@ -143,7 +143,7 @@ set t_Co=16
 " Limit popup menu height
 set pumheight=15
  " SuperTab option for context aware completion
-let g:SuperTabDefaultCompletionType = ""
+let g:SuperTabDefaultCompletionType = "context"
 " Disable auto popup, use <Tab> to autocomplete
 let g:clang_complete_auto=1
 " Show clang errors in the quickfix window

@@ -1,5 +1,6 @@
 [global_config]
   geometry_hinting = False
+  enabled_plugins = InactivityWatch, ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
   title_transmit_bg_color = "#d30102"
   dbus = True
   focus = system
