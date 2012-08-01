@@ -21,7 +21,11 @@
 ":Gread is a variant of git checkout -- filename that operates on the buffer rather than the filename. This means you can use u to undo it and you never get any warnings about the file changing outside Vim. :Gwrite writes to both the work tree and index versions of a file, making it like git add when called from a work tree file and like git checkout when called from the index or a blob in history.
 
 "Use :Gbrowse to open the current file on GitHub, with optional line range (try it in visual mode!). If your current repository isn't on GitHub, git instaweb will be spun up instead.
-
+filetype off
+" Use pathogen to easily modify the runtime path to include all
+" " plugins under the ~/.vim/bundle directory
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
 filetype plugin indent on
 
@@ -160,14 +164,6 @@ set conceallevel=2 concealcursor=inv
 "let g:clang_auto_user_options="/home/dirvine/.clang_complete"
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                       \ exe "normal g'\"" | endif 
-
-function OpenNERDTree()
-    execute ":NERDTree"
-endfunction
-command -nargs=0 OpenNERDTree :call OpenNERDTree()
-nmap <ESC>t :OpenNERDTree<CR>
-
-
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " " location list window, or close it when is has become empty.
 " "
@@ -244,15 +240,26 @@ nmap <F2> :cnext <cr>
 nmap <S-F2> :cprev <cr> 
 " chdir to current file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
-hi User1 guifg=#ffdad8  guibg=#880c0e
-hi User2 guifg=#000000  guibg=#F4905C
-hi User3 guifg=#292b00  guibg=#f4f597
-hi User4 guifg=#112605  guibg=#aefe7B
-hi User5 guifg=#051d00  guibg=#7dcc7d
-hi User7 guifg=#ffffff  guibg=#880c0e gui=bold
-hi User8 guifg=#ffffff  guibg=#5b7fbb
-hi User9 guifg=#ffffff  guibg=#810085
-hi User0 guifg=#ffffff  guibg=#094afe
+"no cursor keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+"save on lost focus
+au FocusLost * :wa
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+"forgot to sudo before editing a file that requires root privileges 
+cmap w!! w !sudo tee % >/dev/null
 set statusline=
 set statusline+=%{fugitive#statusline()}
 set statusline+=[%n]                                  "buffernr
