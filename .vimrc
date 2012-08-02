@@ -152,7 +152,8 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:clang_complete_auto=1
 " Show clang errors in the quickfix window
 let g:clang_complete_copen=1
-let g:clang_user_options = '-std=c++11 -stdlib=libc++ -Wall -ldl'
+"let g:clang_user_options = '|| exit 0'
+let g:clang_user_options = '-std=c++11 -stdlib=libc++'
 let g:clang_use_library=0
 let g:clang_complete_copen=1
 let g:clang_library_path="/usr/lib/"
@@ -240,17 +241,17 @@ nmap <F2> :cnext <cr>
 nmap <S-F2> :cprev <cr> 
 " chdir to current file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
-"no cursor keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+" "no cursor keys
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
+" nnoremap j gj
+" nnoremap k gk
 "save on lost focus
 au FocusLost * :wa
 " Easy window navigation
