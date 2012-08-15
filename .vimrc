@@ -82,7 +82,9 @@ if &t_Co > 2 || has("gui_running")
     set hlsearch       " highlight search (very useful!)
    set incsearch       "search incremently (search while typing)
 endif
-
+set tags=./tags;/
+map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 map <F10> :set paste<CR>
 map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
@@ -92,8 +94,8 @@ set pastetoggle=<F11>
 let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -fPIC -ldl -g -o0'
 let g:C_CplusCompiler = 'clang++'
 
-highlight LongLine ctermbg=DarkYellow guibg=DarkYellow
-highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow
+highlight LongLine ctermbg=Yellow guibg=DarkYellow
+highlight WhitespaceEOL ctermbg=Yellow guibg=DarkYellow
 if v:version >= 702
   " Lines longer than 100 columns.
   au BufWinEnter * let w:m0=matchadd('LongLine', '\%>100v.\+', -1)
@@ -193,45 +195,11 @@ map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
 set errorformat^=%-GIn\ file\ included\ %.%# 
 set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,../src/,/usr/include/c++/v1,/usr/include/
-" Move the cursor to the window left of the current one
-noremap <silent> ,h :wincmd h<cr>
 
-" Move the cursor to the window below the current one
-noremap <silent> ,j :wincmd j<cr>
-
-" Move the cursor to the window above the current one
-noremap <silent> ,k :wincmd k<cr>
-
-" Move the cursor to the window right of the current one
-noremap <silent> ,l :wincmd l<cr>
-
-" Close the window below this one
-noremap <silent> ,cj :wincmd j<cr>:close<cr>
-
-" Close the window above this one
-noremap <silent> ,ck :wincmd k<cr>:close<cr>
-
-" Close the window to the left of this one
-noremap <silent> ,ch :wincmd h<cr>:close<cr>
-
-" Close the window to the right of this one
-noremap <silent> ,cl :wincmd l<cr>:close<cr>
-
-" Close the current window
-noremap <silent> ,cc :close<cr>
-
-" Move the current window to the right of the main Vim window
-noremap <silent> ,ml <C-W>L
-
-" Move the current window to the top of the main Vim window
-noremap <silent> ,mk <C-W>K
-
-" Move the current window to the left of the main Vim window
-noremap <silent> ,mh <C-W>H
-
-" Move the current window to the bottom of the main Vim window
-noremap <silent> ,mj <C-W>J
-nnoremap <silent> <Leader>s :CommandT ../src/<CR>
+noremap <silent> <F8> :TlistToggle<CR>
+"I keep pressing Q when I mean q
+cmap Q q
+nnoremap <silent> <Leader>s :CtrlP ../src/<CR>
 nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -ldl -c % <cr>
 
 " cd to the directory containing the file in the buffer

@@ -8,7 +8,6 @@
 [profiles]
   [[default]]
     use_system_font = False
-    cursor_shape = underline
     scrollbar_position = hidden
     scroll_on_output = False
     show_titlebar = False
