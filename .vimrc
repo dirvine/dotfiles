@@ -36,7 +36,7 @@ endif
 
 " display settings
 set background=dark     " enable for dark terminals
-set spell               " set nowrap              " don't wrap lines
+set nospell               " set nowrap              " don't wrap lines
 set scrolloff=2         " 2 lines above/below cursor when scrolling
 set number              " show line numbers
 set showmatch           " show matching bracket (briefly jump)
@@ -85,6 +85,7 @@ endif
 set tags=./tags;/
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+map <F7> mzgg=G`z<CR>
 map <F10> :set paste<CR>
 map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
@@ -240,3 +241,39 @@ set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
 set statusline+=\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=\ col:%03c\                            "Colnr
 set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+" Fix up indent issues - I can't stand wasting an indent because
+" I'm in a namespace.  If you don't like this then just comment
+" this line out.
+setlocal indentexpr=GetCppIndentNoNamespace(v:lnum)
+
+"
+" GetCppIndentNoNamespace()
+"
+" This little function calculates the indent level for C++ and
+" treats the namespace differently than usual - we ignore it.  The
+" indent level is the for a given line is the same as it would
+" be were the namespace not event there.
+"
+" This function is rather crude but it works.
+"
+function! GetCppIndentNoNamespace(lnum)
+    let nsLineNum = search('^\s*\\s\+\S\+', 'bnW')
+    if nsLineNum == 0
+        return cindent(a:lnum)
+    else
+        let incomment = 0
+        for n in range(nsLineNum + 1, a:lnum - 1)
+            let cline = getline(n)
+            if cline =~ '^\s*/\*'
+                let incomment = 1
+            elseif cline =~ '^.*\*/'
+                let incomment = 0
+            elseif incomment == 0
+                if cline =~ '^\s*\S\+'
+                    return cindent(a:lnum)
+                endif
+            endif
+        endfor
+        return cindent(nsLineNum)
+    endif
+endfunction
