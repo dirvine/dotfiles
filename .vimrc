@@ -128,6 +128,7 @@ augroup csrc
   au!
   autocmd FileType *      set nocindent smartindent
   autocmd FileType c,cpp,cc  set cindent
+  au BufNewFile,BufRead *.cpp,*.cc.*.h set syntax=cpp11
 augroup END
 " open quickfix after a grep
 autocmd QuickFixCmdPost *grep* cwindow
