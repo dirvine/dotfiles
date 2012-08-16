@@ -143,8 +143,9 @@ command! DeleteTrailingWs :%s/\s\+$//
 " Convert all tab characters to two spaces
 command! Untab :%s/\t/  /g
 set t_Co=16
-"let g:solarized_termcolor=16
-"colorscheme solarized
+"let g:solarized_termcolor=256
+set background=dark
+colorscheme solarized
 " Complete options (disable preview scratch window)
 "set completeopt=menu,menuone,longest
 " Limit popup menu height
