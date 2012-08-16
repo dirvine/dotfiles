@@ -148,7 +148,7 @@ set t_Co=16
 set background=dark
 colorscheme solarized
 " Complete options (disable preview scratch window)
-"set completeopt=menu,menuone,longest
+set completeopt=menu,menuone,longest
 " Limit popup menu height
 set pumheight=15
  " SuperTab option for context aware completion
@@ -203,8 +203,11 @@ noremap <silent> <F8> :TlistToggle<CR>
 "I keep pressing Q when I mean q
 cmap Q q
 nnoremap <silent> <Leader>s :CtrlP ../src/<CR>
-nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -ldl -c % <cr>
-
+"nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -ldl -c % <cr>
+noremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
 " cd to the directory containing the file in the buffer
 nmap  ,cd :lcd %:h
 
