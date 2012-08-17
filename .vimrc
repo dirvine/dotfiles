@@ -36,7 +36,7 @@ endif
 
 " display settings
 set background=dark     " enable for dark terminals
-set spell               " set nowrap              " don't wrap lines
+set nospell               " set nowrap              " don't wrap lines
 set scrolloff=2         " 2 lines above/below cursor when scrolling
 set number              " show line numbers
 set showmatch           " show matching bracket (briefly jump)
@@ -82,7 +82,10 @@ if &t_Co > 2 || has("gui_running")
     set hlsearch       " highlight search (very useful!)
    set incsearch       "search incremently (search while typing)
 endif
-
+set tags=./tags;/
+map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+map <F7> mzgg=G`z<CR>
 map <F10> :set paste<CR>
 map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
@@ -92,8 +95,8 @@ set pastetoggle=<F11>
 let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -fPIC -ldl -g -o0'
 let g:C_CplusCompiler = 'clang++'
 
-highlight LongLine ctermbg=DarkYellow guibg=DarkYellow
-highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow
+highlight LongLine ctermbg=Yellow guibg=DarkYellow
+highlight WhitespaceEOL ctermbg=Yellow guibg=DarkYellow
 if v:version >= 702
   " Lines longer than 100 columns.
   au BufWinEnter * let w:m0=matchadd('LongLine', '\%>100v.\+', -1)
@@ -125,6 +128,7 @@ augroup csrc
   au!
   autocmd FileType *      set nocindent smartindent
   autocmd FileType c,cpp,cc  set cindent
+  au BufNewFile,BufRead *.cpp,*.cc.*.h set syntax=cpp11
 augroup END
 " open quickfix after a grep
 autocmd QuickFixCmdPost *grep* cwindow
@@ -140,10 +144,11 @@ command! DeleteTrailingWs :%s/\s\+$//
 " Convert all tab characters to two spaces
 command! Untab :%s/\t/  /g
 set t_Co=16
-"let g:solarized_termcolor=16
-"colorscheme solarized
+"let g:solarized_termcolor=256
+set background=dark
+colorscheme solarized
 " Complete options (disable preview scratch window)
-"set completeopt=menu,menuone,longest
+set completeopt=menu,menuone,longest
 " Limit popup menu height
 set pumheight=15
  " SuperTab option for context aware completion
@@ -193,47 +198,16 @@ map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
 set errorformat^=%-GIn\ file\ included\ %.%# 
 set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,../src/,/usr/include/c++/v1,/usr/include/
-" Move the cursor to the window left of the current one
-noremap <silent> ,h :wincmd h<cr>
 
-" Move the cursor to the window below the current one
-noremap <silent> ,j :wincmd j<cr>
-
-" Move the cursor to the window above the current one
-noremap <silent> ,k :wincmd k<cr>
-
-" Move the cursor to the window right of the current one
-noremap <silent> ,l :wincmd l<cr>
-
-" Close the window below this one
-noremap <silent> ,cj :wincmd j<cr>:close<cr>
-
-" Close the window above this one
-noremap <silent> ,ck :wincmd k<cr>:close<cr>
-
-" Close the window to the left of this one
-noremap <silent> ,ch :wincmd h<cr>:close<cr>
-
-" Close the window to the right of this one
-noremap <silent> ,cl :wincmd l<cr>:close<cr>
-
-" Close the current window
-noremap <silent> ,cc :close<cr>
-
-" Move the current window to the right of the main Vim window
-noremap <silent> ,ml <C-W>L
-
-" Move the current window to the top of the main Vim window
-noremap <silent> ,mk <C-W>K
-
-" Move the current window to the left of the main Vim window
-noremap <silent> ,mh <C-W>H
-
-" Move the current window to the bottom of the main Vim window
-noremap <silent> ,mj <C-W>J
-nnoremap <silent> <Leader>s :CommandT ../src/<CR>
-nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -ldl -c % <cr>
-
+noremap <silent> <F8> :TlistToggle<CR>
+"I keep pressing Q when I mean q
+cmap Q q
+nnoremap <silent> <Leader>s :CtrlP ../src/<CR>
+"nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -ldl -c % <cr>
+noremap <F6> <C-O>za
+nnoremap <F6> za
+onoremap <F6> <C-C>za
+vnoremap <F6> zf
 " cd to the directory containing the file in the buffer
 nmap  ,cd :lcd %:h
 
@@ -272,3 +246,39 @@ set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
 set statusline+=\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=\ col:%03c\                            "Colnr
 set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+" Fix up indent issues - I can't stand wasting an indent because
+" I'm in a namespace.  If you don't like this then just comment
+" this line out.
+setlocal indentexpr=GetCppIndentNoNamespace(v:lnum)
+
+"
+" GetCppIndentNoNamespace()
+"
+" This little function calculates the indent level for C++ and
+" treats the namespace differently than usual - we ignore it.  The
+" indent level is the for a given line is the same as it would
+" be were the namespace not event there.
+"
+" This function is rather crude but it works.
+"
+function! GetCppIndentNoNamespace(lnum)
+    let nsLineNum = search('^\s*\\s\+\S\+', 'bnW')
+    if nsLineNum == 0
+        return cindent(a:lnum)
+    else
+        let incomment = 0
+        for n in range(nsLineNum + 1, a:lnum - 1)
+            let cline = getline(n)
+            if cline =~ '^\s*/\*'
+                let incomment = 1
+            elseif cline =~ '^.*\*/'
+                let incomment = 0
+            elseif incomment == 0
+                if cline =~ '^\s*\S\+'
+                    return cindent(a:lnum)
+                endif
+            endif
+        endfor
+        return cindent(nsLineNum)
+    endif
+endfunction
