@@ -204,10 +204,10 @@ noremap <silent> <F8> :TlistToggle<CR>
 cmap Q q
 nnoremap <silent> <Leader>s :CtrlP ../src/<CR>
 "nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -ldl -c % <cr>
-noremap <F9> <C-O>za
-nnoremap <F9> za
-onoremap <F9> <C-C>za
-vnoremap <F9> zf
+noremap <F6> <C-O>za
+nnoremap <F6> za
+onoremap <F6> <C-C>za
+vnoremap <F6> zf
 " cd to the directory containing the file in the buffer
 nmap  ,cd :lcd %:h
 
