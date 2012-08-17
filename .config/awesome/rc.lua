@@ -365,12 +365,6 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-{ rule = { name = "MaidSafe-Routing – KDevelop" },  properties = {tag = tags[1][1]}},
-{ rule = { name = "maidsafe_common_lib – KDevelop" },  properties = {tag = tags[3][1]}},
-{ rule = { name = "MaidSafe-RUDP – KDevelop" },  properties = {tag = tags[3][2]}},
-{ rule = { name = "MaidSafe-Private – KDevelop" },  properties = {tag = tags[3][3]}},
-{ rule = { class = "gmpc" },  properties = {tag = tags[1][2]}},
-{ rule = { class = "google-chrome" },  properties = {tag = tags[2][1]}},
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
