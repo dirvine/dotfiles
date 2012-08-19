@@ -166,7 +166,8 @@ let g:clang_snippets=1
 let g:clang_snippets_engine='clang_complete'
 let g:clang_conceal_snippets=1
 let g:clang_trailing_placeholder=1
-set conceallevel=2 concealcursor=inv
+set conceallevel=2 
+set concealcursor=inv
 "let g:clang_auto_user_options="/home/dirvine/.clang_complete"
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                       \ exe "normal g'\"" | endif 
@@ -228,6 +229,8 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 " nnoremap k gk
 "save on lost focus
 au FocusLost * :wa
+" save on lost fucus/make etc.
+set autoread autowrite 
 " Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
