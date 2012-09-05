@@ -28,7 +28,7 @@ call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
 filetype plugin indent on
-
+runtime solarized.vimrc
 " reset to vim-defaults
 if &compatible          " only if not set before:
     set nocompatible      " use vim-defaults instead of vi-defaults (easier, more user friendly)
@@ -143,10 +143,10 @@ command! DeleteTrailingWs :%s/\s\+$//
 
 " Convert all tab characters to two spaces
 command! Untab :%s/\t/  /g
-set t_Co=16
+"set t_Co=16
 "let g:solarized_termcolor=256
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 " Complete options (disable preview scratch window)
 set completeopt=menu,menuone,longest
 " Limit popup menu height

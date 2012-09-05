@@ -7,10 +7,10 @@
 [keybindings]
 [profiles]
   [[default]]
-    use_system_font = False
     scrollbar_position = hidden
+    use_system_font = False
     scroll_on_output = False
-    show_titlebar = False
+    icon_bell = False
     font = Inconsolata Medium 11
     allow_bold = False
     scrollback_infinite = True

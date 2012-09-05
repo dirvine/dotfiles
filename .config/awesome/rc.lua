@@ -49,8 +49,6 @@ run_once("gnome-sound-applet", nil, nil, nil);
 run_once("nm-applet", nil, nil, nil);
 run_once("gnome-keyring-daemon", nil, nil, nil);
 run_once("gnome-settings-daemon", nil, nil, nil);
-run_once("mpd", nil, nil, nil);
-run_once("gmpc", nil, nil, nil);
 run_once("google-chrome", nil, nil, 1);
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -365,8 +363,6 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-{ rule = { class = "gmpc" },  properties = {tag = tags[1][2]}},
-{ rule = { class = "google-chrome" },  properties = {tag = tags[2][1]}},
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
