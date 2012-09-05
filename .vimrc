@@ -82,6 +82,10 @@ if &t_Co > 2 || has("gui_running")
     set hlsearch       " highlight search (very useful!)
    set incsearch       "search incremently (search while typing)
 endif
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
+map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags=./tags;/
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
@@ -95,8 +99,8 @@ set pastetoggle=<F11>
 let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -fPIC -ldl -g -o0'
 let g:C_CplusCompiler = 'clang++'
 
-highlight LongLine ctermbg=Yellow guibg=DarkYellow
-highlight WhitespaceEOL ctermbg=Yellow guibg=DarkYellow
+highlight LongLine ctermbg=Grey guibg=DarkYellow
+highlight WhitespaceEOL ctermbg=Grey guibg=DarkYellow
 if v:version >= 702
   " Lines longer than 100 columns.
   au BufWinEnter * let w:m0=matchadd('LongLine', '\%>100v.\+', -1)
@@ -200,7 +204,6 @@ map <C-t><right> :tabn<cr>
 set errorformat^=%-GIn\ file\ included\ %.%# 
 set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,../src/,/usr/include/c++/v1,/usr/include/
 
-noremap <silent> <F8> :TlistToggle<CR>
 "I keep pressing Q when I mean q
 cmap Q q
 nnoremap <silent> <Leader>s :CtrlP ../src/<CR>
