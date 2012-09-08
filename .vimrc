@@ -74,7 +74,10 @@ set viminfo='20,\"500   " remember copy registers after quitting in the .viminfo
 set hidden              " remember undo after quitting
 set history=50          " keep 50 lines of command history
 set mouse=a             " use mouse in visual, normal,insert,command,help mode (shift key disables)
-
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=10000 "maximum number of changes that can be undone
+set undoreload=100000 "maximum number lines to save for undo on a buffer reload
 set incsearch
 " color settings (if terminal/gui supports it)
 if &t_Co > 2 || has("gui_running")
