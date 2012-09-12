@@ -1,6 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/dirvine/d'
-let g:netrw_dirhist_2='/home/dirvine/Devel/MaidSafe-Encrypt/build/Linux/Release'
-let g:netrw_dirhist_3='/home/dirvine'
-let g:netrw_dirhist_4='/home/dirvine/.vim'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/dirvine/Devel/MaidSafe/src/pd'
