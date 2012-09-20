@@ -210,6 +210,7 @@ set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,.
 "I keep pressing Q when I mean q
 cmap Q q
 nnoremap <silent> <Leader>s :CtrlP ../src/<CR>
+let g:ctrlp_max_files = 100000
 "nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -ldl -c % <cr>
 noremap <F6> <C-O>za
 nnoremap <F6> za
