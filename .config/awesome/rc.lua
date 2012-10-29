@@ -8,7 +8,7 @@ require("beautiful")
 require("naughty")
 -- Load Debian menu entries
 require("debian.menu")
-
+require("revelation")
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init( awful.util.getdir("config") .. "/themes/awesome-solarized/dark/theme.lua")
@@ -207,6 +207,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
+    awful.key({ modkey             }, "e", revelation),
     awful.key({ modkey,           }, "j",
     awful.key({ modkey,  "Shift"  }, "m", function() awful.util.spawn(mailview) end),
         function ()
@@ -265,6 +266,14 @@ globalkeys = awful.util.table.join(
 )
 
 clientkeys = awful.util.table.join(
+    awful.key({modkey,            }, "F1",     function () awful.screen.focus(4) end),
+    awful.key({modkey,            }, "F2",     function () awful.screen.focus(1) end),
+    awful.key({modkey,            }, "F3",     function () awful.screen.focus(2) end),
+    awful.key({modkey,            }, "F4",     function () awful.screen.focus(3) end),
+    awful.key({ modkey, "Shift"   }, "F1", function (c) awful.client.movetoscreen(c, 4) end),
+    awful.key({ modkey, "Shift"   }, "F2", function (c) awful.client.movetoscreen(c, 1) end),
+    awful.key({ modkey, "Shift"   }, "F3", function (c) awful.client.movetoscreen(c, 2) end),
+    awful.key({ modkey, "Shift"   }, "F4", function (c) awful.client.movetoscreen(c, 3) end),
     awful.key({ modkey , "Control" }, "Next",  function () awful.client.moveresize( 20,  20, -40, -40) end),
     awful.key({ modkey , "Control" }, "Prior", function () awful.client.moveresize(-20, -20,  40,  40) end),
     awful.key({ modkey , "Shift"   }, "Left",  function () awful.client.moveresize(  0,   0, -20,   0) end),

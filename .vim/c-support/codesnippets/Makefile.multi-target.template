@@ -16,9 +16,9 @@
 
 TARGETS	= target1 target2
 
-CC              = clang
-CCP             = clang++
-CFLAGS          = -std=c++11 -stdlib=libc++ -c -g -Wall
+CC              = gcc
+CCP             = g++
+CFLAGS          = -c -g -Wall
 LFLAGS          = -g
 SYS_LIBS        = -lm
 TARBALL_INCLUDE = *.{c,h,cc,hh} Makefile

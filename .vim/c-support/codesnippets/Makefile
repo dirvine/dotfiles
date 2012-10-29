@@ -38,12 +38,12 @@ EXECUTABLE      := main
 SOURCES         := main.c 
 
 # ------------  compiler  ------------------------------------------------------
-CC              := clang
-CXX             := clang++
+CC              := gcc
+CXX             := g++
 
 # ------------  compiler flags  ------------------------------------------------
-DEBUG_CFLAGS    := -std=c++11 -stdlib=libc++ -Wall -ansi -pedantic -O0 -g
-RELEASE_CFLAGS  := -std=c++11 -stdlib=libc++ --Wall -ansi -pedantic -O3
+DEBUG_CFLAGS    := -Wall -ansi -pedantic -O0 -g
+RELEASE_CFLAGS  := -Wall -ansi -pedantic -O3
 
 # ------------  linker flags  --------------------------------------------------
 DEBUG_LDFLAGS    := -g
