@@ -292,3 +292,5 @@ function! GetCppIndentNoNamespace(lnum)
         return cindent(nsLineNum)
     endif
 endfunction
+set cino=N-s
+

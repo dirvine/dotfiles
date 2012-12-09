@@ -18,3 +18,5 @@
 
 [web]
 	browser = google-chrome
+[gui]
+	warndetachedcommit = true
