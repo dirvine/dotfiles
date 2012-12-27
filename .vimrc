@@ -116,7 +116,7 @@ set fileformat=unix     " file mode is unix
 set lazyredraw          " no redraws in macros
 set confirm             " get a dialog when :q, :w, or :wq fails
 set nobackup            " no backup~ files.
-set viminfo='20,\"500   " remember copy registers after quitting in the .viminfo file -- 20 jump links, regs up to 500 lines'
+set viminfo='20,\"500   " remember copy registers after quitting in the .viminfo file'
 set hidden              " remember undo after quitting
 set history=50          " keep 50 lines of command history
 set mouse=a             " use mouse in visual, normal,insert,command,help mode (shift key disables)
@@ -277,40 +277,3 @@ set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
 set statusline+=\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=\ col:%03c\                            "Colnr
 set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
-" Fix up indent issues - I can't stand wasting an indent because
-" I'm in a namespace.  If you don't like this then just comment
-" this line out.
-setlocal indentexpr=GetCppIndentNoNamespace(v:lnum)
-
-"
-" GetCppIndentNoNamespace()
-"
-" This little function calculates the indent level for C++ and
-" treats the namespace differently than usual - we ignore it.  The
-" indent level is the for a given line is the same as it would
-" be were the namespace not event there.
-"
-" This function is rather crude but it works.
-"
-function! GetCppIndentNoNamespace(lnum)
-    let nsLineNum = search('^\s*\\s\+\S\+', 'bnW')
-    if nsLineNum == 0
-        return cindent(a:lnum)
-    else
-        let incomment = 0
-        for n in range(nsLineNum + 1, a:lnum - 1)
-            let cline = getline(n)
-            if cline =~ '^\s*/\*'
-                let incomment = 1
-            elseif cline =~ '^.*\*/'
-                let incomment = 0
-            elseif incomment == 0
-                if cline =~ '^\s*\S\+'
-                    return cindent(a:lnum)
-                endif
-            endif
-        endfor
-        return cindent(nsLineNum)
-    endif
-endfunction
-set cino=N-s
