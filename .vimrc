@@ -28,23 +28,60 @@ call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 call vam#ActivateAddons(['github:oblitum/clang_complete'])
+" Clang Complete Settings
+  set completeopt=menu,menuone,longest
+""  Limit popup menu height
+  set pumheight=15
+  " SuperTab option for context aware completion
+  let g:SuperTabDefaultCompletionType = "context"
+  " Disable auto popup, use <Tab> to autocomplete
+  let g:clang_complete_auto=1
+  " Show clang errors in the quickfix window
+  let g:clang_complete_copen=1
+  "let g:clang_user_options = '|| exit 0'
+  let g:clang_user_options = '-std=c++11 -stdlib=libc++'
+  let g:clang_use_library=1
+  let g:clang_complete_copen=1
+  let g:clang_library_path="/usr/lib/"
+  let g:clang_snippets=1
+  let g:clang_snippets_engine='clang_complete'
+  let g:clang_conceal_snippets=1
+  let g:clang_trailing_placeholder=1
+  set conceallevel=2 
+  set concealcursor=inv
+"let g:clang_auto_user_options="/home/dirvine/.clang_complete""
+"  "
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 call vam#ActivateAddons(['github:xuhdev/SingleCompile'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
+" NerdTree"
+" Prevent :bd inside NERDTree buffer
+au FileType nerdtree cnoreabbrev <buffer> bd <nop>
+au FileType nerdtree cnoreabbrev <buffer> BD <nop>
+" NERDTree settings
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
+let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
+let NERDTreeShowBookmarks=1
+let NERDTreeHightlight=1
+call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
 call vam#ActivateAddons(['github:ervandew/supertab'])
+call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
+""let g:solarized_termcolors=16
+syntax enable
+""set background=dark
+""colorscheme solarized
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 filetype plugin indent on
-runtime solarized.vimrc
 " reset to vim-defaults
 if &compatible          " only if not set before:
     set nocompatible      " use vim-defaults instead of vi-defaults (easier, more user friendly)
 endif
 
 " display settings
-set background=dark     " enable for dark terminals
 set nospell               " set nowrap              " don't wrap lines
 set scrolloff=2         " 2 lines above/below cursor when scrolling
 set number              " show line numbers
@@ -107,16 +144,6 @@ map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
 imap <F11> <nop>
 set pastetoggle=<F11>
-" NerdTree"
-" Prevent :bd inside NERDTree buffer
-au FileType nerdtree cnoreabbrev <buffer> bd <nop>
-au FileType nerdtree cnoreabbrev <buffer> BD <nop>
-" NERDTree settings
-let NERDTreeChDirMode=2
-let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
-let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
-let NERDTreeShowBookmarks=1
-let NERDTreeHightlight=1
 "c-support stuff
 let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -fPIC -ldl -g -o0'
 let g:C_CplusCompiler = 'clang++'
@@ -169,32 +196,6 @@ command! DeleteTrailingWs :%s/\s\+$//
 
 " Convert all tab characters to two spaces
 command! Untab :%s/\t/  /g
-"set t_Co=16
-"let g:solarized_termcolor=256
-"set background=dark
-"colorscheme solarized
-" Complete options (disable preview scratch window)
-set completeopt=menu,menuone,longest
-" Limit popup menu height
-set pumheight=15
- " SuperTab option for context aware completion
-let g:SuperTabDefaultCompletionType = "context"
-" Disable auto popup, use <Tab> to autocomplete
-let g:clang_complete_auto=1
-" Show clang errors in the quickfix window
-let g:clang_complete_copen=1
-"let g:clang_user_options = '|| exit 0'
-let g:clang_user_options = '-std=c++11 -stdlib=libc++'
-let g:clang_use_library=1
-let g:clang_complete_copen=1
-let g:clang_library_path="/usr/lib/"
-let g:clang_snippets=1
-let g:clang_snippets_engine='clang_complete'
-let g:clang_conceal_snippets=1
-let g:clang_trailing_placeholder=1
-set conceallevel=2 
-set concealcursor=inv
-"let g:clang_auto_user_options="/home/dirvine/.clang_complete"
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                       \ exe "normal g'\"" | endif 
 " Automatically open, but do not go to (if there are errors) the quickfix /
@@ -313,4 +314,3 @@ function! GetCppIndentNoNamespace(lnum)
     endif
 endfunction
 set cino=N-s
-
