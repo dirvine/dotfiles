@@ -28,29 +28,6 @@ call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 call vam#ActivateAddons(['github:oblitum/clang_complete'])
-" Clang Complete Settings
-  set completeopt=menu,menuone,longest
-""  Limit popup menu height
-  set pumheight=15
-  " SuperTab option for context aware completion
-  let g:SuperTabDefaultCompletionType = "context"
-  " Disable auto popup, use <Tab> to autocomplete
-  let g:clang_complete_auto=1
-  " Show clang errors in the quickfix window
-  let g:clang_complete_copen=1
-  "let g:clang_user_options = '|| exit 0'
-  let g:clang_user_options = '-std=c++11 -stdlib=libc++'
-  let g:clang_use_library=1
-  let g:clang_complete_copen=1
-  let g:clang_library_path="/usr/lib/"
-  let g:clang_snippets=1
-  let g:clang_snippets_engine='clang_complete'
-  let g:clang_conceal_snippets=1
-  let g:clang_trailing_placeholder=1
-  set conceallevel=2 
-  set concealcursor=inv
-"let g:clang_auto_user_options="/home/dirvine/.clang_complete""
-"  "
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
@@ -148,7 +125,7 @@ set pastetoggle=<F11>
 let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -fPIC -ldl -g -o0'
 let g:C_CplusCompiler = 'clang++'
 
-highlight LongLine ctermbg=Grey guibg=DarkYellow
+highlight LongLine ctermbg=Blue guibg=DarkYellow
 highlight WhitespaceEOL ctermbg=Grey guibg=DarkYellow
 if v:version >= 702
   " Lines longer than 100 columns.
@@ -225,7 +202,7 @@ map <C-t><down> :tabl<cr>
 map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
 set errorformat^=%-GIn\ file\ included\ %.%# 
-set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,../src/,/usr/include/c++/v1,/usr/include/
+set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,../src/,/usr/include/
 
 "I keep pressing Q when I mean q
 cmap Q q
@@ -277,3 +254,26 @@ set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
 set statusline+=\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=\ col:%03c\                            "Colnr
 set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+" Clang Complete Settings
+  set completeopt=menu,menuone,longest
+""  Limit popup menu height
+  set pumheight=15
+  " SuperTab option for context aware completion
+  let g:SuperTabDefaultCompletionType = "context"
+  " Disable auto popup, use <Tab> to autocomplete
+  let g:clang_complete_auto=1
+  " Show clang errors in the quickfix window
+  let g:clang_complete_copen=1
+  "let g:clang_user_options = '|| exit 0'
+  let g:clang_user_options = '-std=c++11 -stdlib=libc++'
+  let g:clang_use_library=1
+  let g:clang_complete_copen=1
+  let g:clang_library_path="/usr/lib/"
+  let g:clang_snippets=1
+  let g:clang_snippets_engine='clang_complete'
+  let g:clang_conceal_snippets=1
+  let g:clang_trailing_placeholder=1
+  set conceallevel=2 
+  set concealcursor=inv
+"let g:clang_auto_user_options="/home/dirvine/.clang_complete""
+"  "
