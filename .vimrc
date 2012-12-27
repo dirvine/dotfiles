@@ -22,11 +22,20 @@
 
 "Use :Gbrowse to open the current file on GitHub, with optional line range (try it in visual mode!). If your current repository isn't on GitHub, git instaweb will be spun up instead.
 filetype off
-" Use pathogen to easily modify the runtime path to include all
-" " plugins under the ~/.vim/bundle directory
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
+set runtimepath+=~/.vim/addons/vam
+call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
+call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
+call vam#ActivateAddons(['github:kien/ctrlp.vim'])
+call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
+call vam#ActivateAddons(['github:oblitum/clang_complete'])
+call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
+call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
+call vam#ActivateAddons(['github:tpope/vim-fugitive'])
+call vam#ActivateAddons(['github:xuhdev/SingleCompile'])
+call vam#ActivateAddons(['github:scrooloose/nerdtree'])
+call vam#ActivateAddons(['github:ervandew/supertab'])
+call vam#ActivateAddons(['github:SirVer/ultisnips'])
+call vam#ActivateAddons(['github:oblitum/rainbow'])
 filetype plugin indent on
 runtime solarized.vimrc
 " reset to vim-defaults
@@ -98,6 +107,16 @@ map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
 imap <F11> <nop>
 set pastetoggle=<F11>
+" NerdTree"
+" Prevent :bd inside NERDTree buffer
+au FileType nerdtree cnoreabbrev <buffer> bd <nop>
+au FileType nerdtree cnoreabbrev <buffer> BD <nop>
+" NERDTree settings
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
+let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
+let NERDTreeShowBookmarks=1
+let NERDTreeHightlight=1
 "c-support stuff
 let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -fPIC -ldl -g -o0'
 let g:C_CplusCompiler = 'clang++'
@@ -210,6 +229,7 @@ set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,.
 "I keep pressing Q when I mean q
 cmap Q q
 nnoremap <silent> <Leader>s :CtrlP ../src/<CR>
+nnoremap <silent> <Leader>q :NERDTree ../src/<CR>
 let g:ctrlp_max_files = 100000
 "nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -ldl -c % <cr>
 noremap <F6> <C-O>za
