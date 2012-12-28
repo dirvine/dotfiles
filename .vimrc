@@ -265,7 +265,7 @@ set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/
   " Show clang errors in the quickfix window
   let g:clang_complete_copen=1
   "let g:clang_user_options = '|| exit 0'
-  let g:clang_user_options = '-std=c++11 -stdlib=libc++'
+  let g:clang_user_options = '-std=c++11 -stdlib=libc++ -ldl'
   let g:clang_use_library=1
   let g:clang_complete_copen=1
   let g:clang_library_path="/usr/lib/"
