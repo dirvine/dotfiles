@@ -158,7 +158,7 @@ augroup csrc
   au!
   autocmd FileType *      set nocindent smartindent
   autocmd FileType c,cpp,cc  set cindent
-  au BufNewFile,BufRead *.cpp,*.cc.*.h set syntax=cpp11
+  au BufNewFile,BufRead *.cpp,*.cc.,*.h,*.hpp set syntax=cpp11
 augroup END
 " open quickfix after a grep
 autocmd QuickFixCmdPost *grep* cwindow
@@ -267,7 +267,7 @@ set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/
   "let g:clang_user_options = '|| exit 0'
   let g:clang_user_options = '-std=c++11 -stdlib=libc++ -ldl'
   let g:clang_use_library=1
-  let g:clang_complete_copen=1
+  let g:clang_complete_copen=0
   let g:clang_library_path="/usr/lib/"
   let g:clang_snippets=1
   let g:clang_snippets_engine='clang_complete'
