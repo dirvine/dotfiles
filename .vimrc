@@ -32,6 +32,7 @@ call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 call vam#ActivateAddons(['github:xuhdev/SingleCompile'])
+call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 " NerdTree"
 " Prevent :bd inside NERDTree buffer
