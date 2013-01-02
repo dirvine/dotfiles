@@ -39,7 +39,7 @@ call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 au FileType nerdtree cnoreabbrev <buffer> bd <nop>
 au FileType nerdtree cnoreabbrev <buffer> BD <nop>
 " NERDTree settings
-let NERDTreeChDirMode=2
+let NERDTreeChDirMode=0
 let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
 let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
 let NERDTreeShowBookmarks=1
