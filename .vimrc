@@ -32,6 +32,29 @@ call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 call vam#ActivateAddons(['github:xuhdev/SingleCompile'])
+" SingleCompile for C++ with Clang
+function! s:LoadSingleCompileOptions()
+    call SingleCompile#SetCompilerTemplate('c',
+                \'clang',
+                \'the Clang C and Objective-C compiler',
+                \'clang',
+                \'-o $(FILE_TITLE)$ ' . g:single_compile_options,
+                \g:common_run_command)
+
+    call SingleCompile#ChooseCompiler('c', 'clang')
+
+    call SingleCompile#SetCompilerTemplate('cpp',
+                \'clang',
+                \'the Clang C and Objective-C compiler',
+                \'clang++',
+                \'-o $(FILE_TITLE)$ ' . g:single_compile_options,
+                \g:common_run_command)
+
+    call SingleCompile#ChooseCompiler('cpp', 'clang')
+endfunction
+
+nmap <F9> :SCCompileRun<cr>
+
 call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 " NerdTree"
@@ -53,6 +76,22 @@ syntax enable
 ""colorscheme solarized
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
 call vam#ActivateAddons(['github:oblitum/rainbow'])
+" vimprj
+au BufNewFile,BufRead *.vimprj set ft=vim
+
+" C++
+au FileType cpp,objcpp set syntax=cpp11
+au BufNewFile,BufRead *
+\ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
+\   if &ft != 'cpp'                                                                           |
+\     set ft=cpp                                                                              |
+\   endif                                                                                     |
+\ endif                                                                                       |
+
+let g:rainbow_operators = 2
+au FileType c,cpp,objc,objcpp call rainbow#activate()
+
+
 filetype plugin indent on
 " reset to vim-defaults
 if &compatible          " only if not set before:
@@ -278,3 +317,4 @@ set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/
   set concealcursor=inv
 "let g:clang_auto_user_options="/home/dirvine/.clang_complete""
 "  "
+
