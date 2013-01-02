@@ -313,7 +313,7 @@ set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/
   let g:clang_snippets_engine='clang_complete'
   let g:clang_conceal_snippets=1
   let g:clang_trailing_placeholder=1
-  set conceallevel=2 
+  set conceallevel=0 
   set concealcursor=inv
 "let g:clang_auto_user_options="/home/dirvine/.clang_complete""
 "  "
