@@ -33,27 +33,29 @@ call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 call vam#ActivateAddons(['github:xuhdev/SingleCompile'])
 " SingleCompile for C++ with Clang
-function! s:LoadSingleCompileOptions()
-    call SingleCompile#SetCompilerTemplate('c',
-                \'clang',
-                \'the Clang C and Objective-C compiler',
-                \'clang',
-                \'-o $(FILE_TITLE)$ ' . g:single_compile_options,
-                \g:common_run_command)
+let g:SingleCompile_alwayscompile = 1 " 0: to disable it.
+let g:SingleCompile_asyncrunmode = 'auto' " mode: auto, none, python,
+let g:SingleCompile_autowrite = 1 " save file when compile.
+let g:SingleCompile_usequickfix = 1 " use QuickFix.
+let g:SingleCompile_menumode = 2 " 0 don't show menu, 1 sub menu, 2 menu bar
+let g:SingleCompile_resultheight = 10
+let g:SingleCompile_showquickfixiferror = 1 " auto show up quickfix window
+let g:SingleCompile_showresultafterrun = 0 " show result even no error
+let g:SingleCompile_usedialog = 0 " show dialog, +dialog_con, +dialog_gui
+let g:SingleCompile_common_out_file = '$(FILE_TITLE)$'
+let g:SingleCompile_common_run_command = './$(FILE_TITLE)$'
 
-    call SingleCompile#ChooseCompiler('c', 'clang')
+""if exists('g:loaded_SingleCompile')
+    call SingleCompile#SetCompilerTemplate(
+               \'cpp', 'clang++_custom', 'the Clang C and Objective-C compiler',
+                \ 'clang++', '-std=c++11 -stdlib=libc++ -o $(FILE_TITLE)$ -ldl',
+                \ g:SingleCompile_common_run_command 
+                \ )
 
-    call SingleCompile#SetCompilerTemplate('cpp',
-                \'clang',
-                \'the Clang C and Objective-C compiler',
-                \'clang++',
-                \'-o $(FILE_TITLE)$ ' . g:single_compile_options,
-                \g:common_run_command)
+    call SingleCompile#ChooseCompiler('cpp', 'clang++_custom')
+    noremap <F9> :SCCompileRun <cr>
+""endif
 
-    call SingleCompile#ChooseCompiler('cpp', 'clang')
-endfunction
-
-nmap <F9> :SCCompileRun<cr>
 
 call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])

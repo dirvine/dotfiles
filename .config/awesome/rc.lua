@@ -22,6 +22,7 @@ develop = "qtcreator"
 sound = "gmpc"
 file = "thunar"
 tv = "xbmc"
+movie = "vlc"
 mailview = terminal .. " -e mutt -R"
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -89,7 +90,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "Debian", debian.menu.Debian_menu.Debian },
                                     { "Open terminal", terminal },
                                     { "Browse web", browser },
-                                    { "Develop code", develop },
+                                    { "Movies", movie },
                                     { "File manager", file },
                                     { "Play sounds", sound }
                                   }
