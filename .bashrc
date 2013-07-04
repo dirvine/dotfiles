@@ -108,10 +108,11 @@ parse_git_branch() {
 }
 
 PS1='\[\033[01;37m\]\w\[\033[00;35m\]$(parse_git_branch)\[\033[00m\] \$ '
-export CXX=/usr/bin/clang++
-export CC=/usr/bin/clang
-export CXXFLAGS="-stdlib=libc++ -std=c++11 -ldl -pthread"
+#export CXX=/usr/bin/clang++
+#export CC=/usr/bin/clang
+#export CXXFLAGS="-stdlib=libc++ -std=c++11 -pthread"
+#export LDFLAGS="-lc++abi"
 alias g='vim --remote-silent'
 stty -ixon
-alias cla="clang++ -std=c++11 -stdlib=libc++ -ldl"
+alias cla="clang++ -std=c++11 -stdlib=libc++ LDFLAGS=-lc++abi -ldl"
 ulimit -c unlimited

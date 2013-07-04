@@ -27,7 +27,8 @@ call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
-call vam#ActivateAddons(['github:oblitum/clang_complete'])
+call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
+call vam#ActivateAddons(['github:scrooloose/syntastic'])
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
@@ -48,7 +49,7 @@ let g:SingleCompile_common_run_command = './$(FILE_TITLE)$'
 ""if exists('g:loaded_SingleCompile')
     call SingleCompile#SetCompilerTemplate(
                \'cpp', 'clang++_custom', 'the Clang C and Objective-C compiler',
-                \ 'clang++', '-std=c++11 -stdlib=libc++ -o $(FILE_TITLE)$ -ldl',
+                \ 'clang++', '-std=c++11 -stdlib=libc++ -o $(FILE_TITLE)$ -ldl -lc++abi',
                 \ g:SingleCompile_common_run_command 
                 \ )
 
@@ -164,7 +165,7 @@ imap <F10> <C-O>:set paste<CR>
 imap <F11> <nop>
 set pastetoggle=<F11>
 "c-support stuff
-let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -fPIC -ldl -g -o0'
+let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -fPIC -ldl -lc++abi -g -o0'
 let g:C_CplusCompiler = 'clang++'
 
 highlight LongLine ctermbg=Blue guibg=DarkYellow
@@ -296,27 +297,12 @@ set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
 set statusline+=\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=\ col:%03c\                            "Colnr
 set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 " Clang Complete Settings
-  set completeopt=menu,menuone,longest
+  set completeopt+=preview
 ""  Limit popup menu height
   set pumheight=15
-  " SuperTab option for context aware completion
-  let g:SuperTabDefaultCompletionType = "context"
-  " Disable auto popup, use <Tab> to autocomplete
-  let g:clang_complete_auto=1
-  " Show clang errors in the quickfix window
-  let g:clang_complete_copen=1
-  "let g:clang_user_options = '|| exit 0'
-  let g:clang_user_options = '-std=c++11 -stdlib=libc++ -ldl'
-  let g:clang_use_library=1
-  let g:clang_complete_copen=0
-  let g:clang_library_path="/usr/lib/"
-  let g:clang_snippets=1
-  let g:clang_snippets_engine='clang_complete'
-  let g:clang_conceal_snippets=1
-  let g:clang_trailing_placeholder=1
   set conceallevel=0 
-  set concealcursor=inv
-"let g:clang_auto_user_options="/home/dirvine/.clang_complete""
+""  set concealcursor=inv
 "  "
 
