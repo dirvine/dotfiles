@@ -32,32 +32,6 @@ call vam#ActivateAddons(['github:scrooloose/syntastic'])
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
-call vam#ActivateAddons(['github:xuhdev/SingleCompile'])
-" SingleCompile for C++ with Clang
-let g:SingleCompile_alwayscompile = 1 " 0: to disable it.
-let g:SingleCompile_asyncrunmode = 'auto' " mode: auto, none, python,
-let g:SingleCompile_autowrite = 1 " save file when compile.
-let g:SingleCompile_usequickfix = 1 " use QuickFix.
-let g:SingleCompile_menumode = 2 " 0 don't show menu, 1 sub menu, 2 menu bar
-let g:SingleCompile_resultheight = 10
-let g:SingleCompile_showquickfixiferror = 1 " auto show up quickfix window
-let g:SingleCompile_showresultafterrun = 0 " show result even no error
-let g:SingleCompile_usedialog = 0 " show dialog, +dialog_con, +dialog_gui
-let g:SingleCompile_common_out_file = '$(FILE_TITLE)$'
-let g:SingleCompile_common_run_command = './$(FILE_TITLE)$'
-
-""if exists('g:loaded_SingleCompile')
-    call SingleCompile#SetCompilerTemplate(
-               \'cpp', 'clang++_custom', 'the Clang C and Objective-C compiler',
-                \ 'clang++', '-std=c++11 -stdlib=libc++ -o $(FILE_TITLE)$ -ldl -lc++abi',
-                \ g:SingleCompile_common_run_command 
-                \ )
-
-    call SingleCompile#ChooseCompiler('cpp', 'clang++_custom')
-    noremap <F9> :SCCompileRun <cr>
-""endif
-
-
 call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 " NerdTree"
@@ -158,15 +132,20 @@ map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags=./tags;/
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+noremap <F6> <C-O>za
+nnoremap <F6> za
+onoremap <F6> <C-C>za
+vnoremap <F6> zf
 map <F7> mzgg=G`z<CR>
+map <f9> :!clang++ -std=c++11 -stdlib=libc++ -lc++abi -o dave % <cr>
 map <F10> :set paste<CR>
 map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
 imap <F11> <nop>
 set pastetoggle=<F11>
 "c-support stuff
-let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -fPIC -ldl -lc++abi -g -o0'
-let g:C_CplusCompiler = 'clang++'
+""let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -ldl -lc++abi -g -o0'
+""let g:C_CplusCompiler = 'clang++'
 
 highlight LongLine ctermbg=Blue guibg=DarkYellow
 highlight WhitespaceEOL ctermbg=Grey guibg=DarkYellow
@@ -252,11 +231,6 @@ cmap Q q
 nnoremap <silent> <Leader>s :CtrlP ../src/<CR>
 nnoremap <silent> <Leader>q :NERDTree ../src/<CR>
 let g:ctrlp_max_files = 100000
-"nmap <f9> :!clang++ -std=c++11 -stdlib=libc++ -ldl -c % <cr>
-noremap <F6> <C-O>za
-nnoremap <F6> za
-onoremap <F6> <C-C>za
-vnoremap <F6> zf
 " cd to the directory containing the file in the buffer
 nmap  ,cd :lcd %:h
 
