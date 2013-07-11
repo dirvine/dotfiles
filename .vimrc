@@ -26,10 +26,28 @@ set runtimepath+=~/.vim/addons/vam
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
+  let g:ctrlp_use_caching = 1
+  let g:ctrlp_clear_cache_on_exit = 1
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_enable_signs = 1 " Put errors on left side
+  let g:syntastic_quiet_warnings = 1 " Only errors, not warnings please
+  let g:syntastic_auto_loc_list = 2 " Only show errors when I ask
+  let g:syntastic_disabled_filetypes = ['html', 'js']
+  if has('unix')
+    let g:syntastic_error_symbol='★'
+    let g:syntastic_style_error_symbol='>'
+    let g:syntastic_warning_symbol='⚠'
+    let g:syntastic_style_warning_symbol='>'
+  else
+    let g:syntastic_error_symbol='!'
+    let g:syntastic_style_error_symbol='>'
+    let g:syntastic_warning_symbol='.'
+    let g:syntastic_style_warning_symbol='>'
+  endif
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
@@ -52,7 +70,7 @@ call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 syntax enable
 ""set background=dark
 ""colorscheme solarized
-"call vam#ActivateAddons(['github:SirVer/ultisnips'])
+call vam#ActivateAddons(['github:SirVer/ultisnips'])
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 " vimprj
 au BufNewFile,BufRead *.vimprj set ft=vim
@@ -138,7 +156,7 @@ nnoremap <F6> za
 onoremap <F6> <C-C>za
 vnoremap <F6> zf
 map <F7> mzgg=G`z<CR>
-map <f9> :!clang++ -std=c++11 -stdlib=libc++ -lc++abi -o dave % ; ./dave<cr>
+map <f9> :!clang++ -std=c++11 -stdlib=libc++ -lc++abi -o dave % <cr>
 map <F10> :set paste<CR>
 map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
