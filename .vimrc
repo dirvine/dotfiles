@@ -28,6 +28,7 @@ call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
+nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
@@ -51,7 +52,7 @@ call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 syntax enable
 ""set background=dark
 ""colorscheme solarized
-call vam#ActivateAddons(['github:SirVer/ultisnips'])
+"call vam#ActivateAddons(['github:SirVer/ultisnips'])
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 " vimprj
 au BufNewFile,BufRead *.vimprj set ft=vim
@@ -137,12 +138,13 @@ nnoremap <F6> za
 onoremap <F6> <C-C>za
 vnoremap <F6> zf
 map <F7> mzgg=G`z<CR>
-map <f9> :!clang++ -std=c++11 -stdlib=libc++ -lc++abi -o dave % <cr>
+map <f9> :!clang++ -std=c++11 -stdlib=libc++ -lc++abi -o dave % ; ./dave<cr>
 map <F10> :set paste<CR>
 map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
 imap <F11> <nop>
 set pastetoggle=<F11>
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>"
 "c-support stuff
 ""let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -ldl -lc++abi -g -o0'
 ""let g:C_CplusCompiler = 'clang++'
