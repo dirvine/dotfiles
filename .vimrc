@@ -28,6 +28,7 @@ call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
   let g:ctrlp_use_caching = 1
   let g:ctrlp_clear_cache_on_exit = 1
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
   nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
