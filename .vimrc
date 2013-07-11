@@ -26,9 +26,28 @@ set runtimepath+=~/.vim/addons/vam
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
+  let g:ctrlp_use_caching = 1
+  let g:ctrlp_clear_cache_on_exit = 1
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
+  let g:ycm_confirm_extra_conf = 0
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_enable_signs = 1 " Put errors on left side
+  let g:syntastic_quiet_warnings = 1 " Only errors, not warnings please
+  let g:syntastic_auto_loc_list = 2 " Only show errors when I ask
+  let g:syntastic_disabled_filetypes = ['html', 'js']
+  if has('unix')
+    let g:syntastic_error_symbol='★'
+    let g:syntastic_style_error_symbol='>'
+    let g:syntastic_warning_symbol='⚠'
+    let g:syntastic_style_warning_symbol='>'
+  else
+    let g:syntastic_error_symbol='!'
+    let g:syntastic_style_error_symbol='>'
+    let g:syntastic_warning_symbol='.'
+    let g:syntastic_style_warning_symbol='>'
+  endif
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
@@ -143,9 +162,6 @@ map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
 imap <F11> <nop>
 set pastetoggle=<F11>
-"c-support stuff
-""let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -ldl -lc++abi -g -o0'
-""let g:C_CplusCompiler = 'clang++'
 
 highlight LongLine ctermbg=Blue guibg=DarkYellow
 highlight WhitespaceEOL ctermbg=Grey guibg=DarkYellow
