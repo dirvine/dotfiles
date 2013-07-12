@@ -67,7 +67,7 @@ flags = [
 'MAIDSAFE_LINUX',
 '-D',
 'HAVE_PTHREAD',
-'-isystem',
+'-I',
 '/home/dirvine/Devel/MaidSafe/src/third_party_libs/leveldb/include'
 '-I',
 '/home/dirvine/Devel/MaidSafe/src/lifestuff/include',

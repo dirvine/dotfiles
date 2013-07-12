@@ -27,8 +27,10 @@ call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
   let g:ctrlp_use_caching = 1
+  let g:ctrlp_max_files = 100000
   let g:ctrlp_clear_cache_on_exit = 1
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
+  nnoremap <silent> <Leader>p :CtrlP ../src/<CR>
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
   nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -37,15 +39,15 @@ call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
   let g:ycm_seed_identifiers_with_syntax = 1
   let g:ycm_add_preview_to_completeopt = 1
   let g:ycm_autoclose_preview_window_after_completion = 0
-  let g:ycm_autoclose_preview_window_after_insertion = 1
+  let g:ycm_autoclose_preview_window_after_insertion = 0
   let g:ycm_key_invoke_completion = '<C-Space>'
   let g:ycm_confirm_extra_conf = 0
 
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
   let g:syntastic_check_on_open = 1
   let g:syntastic_enable_signs = 1 " Put errors on left side
-  let g:syntastic_quiet_warnings = 1 " Only errors, not warnings please
-  let g:syntastic_auto_loc_list = 2 " Only show errors when I ask
+  let g:syntastic_quiet_warnings = 0 " Only errors, not warnings please
+  let g:syntastic_auto_loc_list = 1 " Only show errors when I ask
   let g:syntastic_disabled_filetypes = ['html', 'js']
   if has('unix')
     let g:syntastic_error_symbol='★'
@@ -63,27 +65,26 @@ call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
-" NerdTree"
-" Prevent :bd inside NERDTree buffer
-au FileType nerdtree cnoreabbrev <buffer> bd <nop>
-au FileType nerdtree cnoreabbrev <buffer> BD <nop>
-" NERDTree settings
-let NERDTreeChDirMode=0
-let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
-let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
-let NERDTreeShowBookmarks=1
-let NERDTreeHightlight=1
-call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
-call vam#ActivateAddons(['github:ervandew/supertab'])
-call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
-""let g:solarized_termcolors=16
-syntax enable
-""set background=dark
-""colorscheme solarized
+  " NerdTree"
+  " Prevent :bd inside NERDTree buffer
+  au FileType nerdtree cnoreabbrev <buffer> bd <nop>
+  au FileType nerdtree cnoreabbrev <buffer> BD <nop>
+  nnoremap <silent> <Leader>n :NERDTree ../src/<CR>
+  " NERDTree settings
+  let NERDTreeChDirMode=0
+  let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
+  let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
+  let NERDTreeShowBookmarks=1
+  let NERDTreeHightlight=1
+  call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
+  call vam#ActivateAddons(['github:ervandew/supertab'])
+  call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
+  ""let g:solarized_termcolors=16
+  syntax enable
+  ""set background=dark
+  ""colorscheme solarized
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
 call vam#ActivateAddons(['github:oblitum/rainbow'])
-" vimprj
-au BufNewFile,BufRead *.vimprj set ft=vim
 
 " C++
 au FileType cpp,objcpp set syntax=cpp11
@@ -172,14 +173,12 @@ map <F11> :set nopaste<CR>
 imap <F10> <C-O>:set paste<CR>
 imap <F11> <nop>
 set pastetoggle=<F11>
+"## ctr R for search and replace in visual mode
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>"
-"c-support stuff
-""let g:C_CFlags  = '-std=c++11 -stdlib=libc++ -ldl -lc++abi -g -o0'
-""let g:C_CplusCompiler = 'clang++'
 
 highlight LongLine ctermbg=Blue guibg=DarkYellow
 highlight WhitespaceEOL ctermbg=Grey guibg=DarkYellow
-if v:version >= 702
+if v:version >= 702 && &ft == 'cpp' 
   " Lines longer than 100 columns.
   au BufWinEnter * let w:m0=matchadd('LongLine', '\%>100v.\+', -1)
 
@@ -208,7 +207,7 @@ set nofoldenable
 " C/C++ programming helpers
 augroup csrc
   au!
-  autocmd FileType *      set nocindent smartindent
+  autocmd FileType * set nocindent smartindent
   autocmd FileType c,cpp,cc  set cindent
   au BufNewFile,BufRead *.cpp,*.cc.,*.h,*.hpp set syntax=cpp11
 augroup END
@@ -258,9 +257,6 @@ set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,.
 
 "I keep pressing Q when I mean q
 cmap Q q
-nnoremap <silent> <Leader>s :CtrlP ../src/<CR>
-nnoremap <silent> <Leader>q :NERDTree ../src/<CR>
-let g:ctrlp_max_files = 100000
 " cd to the directory containing the file in the buffer
 nmap  ,cd :lcd %:h
 
@@ -301,12 +297,3 @@ set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
 set statusline+=\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=\ col:%03c\                            "Colnr
 set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
-let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-" Clang Complete Settings
-  set completeopt+=preview
-""  Limit popup menu height
-  set pumheight=15
-  set conceallevel=0 
-""  set concealcursor=inv
-"  "
-
