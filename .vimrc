@@ -157,6 +157,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
+set makeprg=clang++\ -std=c++11\ -stdlib=libc++\ -lc++abi\ -ldl\ -o\ %<\ %
 map <F4> :TlistToggle<cr>
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags=./tags;/
@@ -167,12 +168,20 @@ nnoremap <F6> za
 onoremap <F6> <C-C>za
 vnoremap <F6> zf
 map <F7> mzgg=G`z<CR>
-map <f9> :!clang++ -std=c++11 -stdlib=libc++ -lc++abi -o dave % <cr>
-map <F10> :set paste<CR>
-map <F11> :set nopaste<CR>
-imap <F10> <C-O>:set paste<CR>
-imap <F11> <nop>
-set pastetoggle=<F11>
+
+" Save and make current file.o
+function! Make()
+  let curr_dir = expand('%:h')
+  if curr_dir == ''
+    let curr_dir = '.'
+  endif
+  echo curr_dir
+  execute 'lcd ' . curr_dir
+  execute 'make %:r'
+  execute 'lcd -'
+endfunction
+
+nnoremap <F9> :update<CR>:make<CR>
 "## ctr R for search and replace in visual mode
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>"
 

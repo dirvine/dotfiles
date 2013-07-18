@@ -114,5 +114,5 @@ PS1='\[\033[01;37m\]\w\[\033[00;35m\]$(parse_git_branch)\[\033[00m\] \$ '
 #export LDFLAGS="-lc++abi"
 alias g='vim --remote-silent'
 stty -ixon
-alias cla="clang++ -std=c++11 -stdlib=libc++ LDFLAGS=-lc++abi -ldl"
+alias cla="clang++ -std=c++11 -stdlib=libc++ -lc++abi -ldl"
 ulimit -c unlimited
