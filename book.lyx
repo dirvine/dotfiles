@@ -1,0 +1,3040 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass memoir
+\use_default_options true
+\maintain_unincluded_children false
+\language british
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Curious Minds
+\end_layout
+
+\begin_layout Author
+By: no relevance
+\end_layout
+
+\begin_layout Author
+Dedicated to al l who have not been given enough chances to succeed and
+ to a night in 'the Kings' on Friday 11th March 1983
+\end_layout
+
+\begin_layout Author
+Thanks to all of those who gave me a chance to possibly fail again.
+\end_layout
+
+\begin_layout Chapterprecis
+A story of art, maths, art, physiology, science etc.
+ in a single collection known as knowledge.
+ A story of questions with no answer, a story of answers which question
+ current knowledge and mostly a story of hope, hope that we can really and
+ truly ask large questions of small issues.
+\end_layout
+
+\begin_layout Part
+Basic Schooling
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+In school, like many others I had to learn arithmetic, how to add and subtract
+ and when this has been achieved then teachers go further and teach us times
+ tables.
+ There are even songs about times tables like the poems and songs used to
+ teach the alphabet.
+ Then there is English (or whatever your language is) or literature (it's
+ called English in Scotland).
+ In these classes you learn to read at an early age which is great.
+ Of course art and music are also taught and here teachers let us draw with
+ crayons or watercolour paints, sing and generally be creative.
+ In not one of these classes was I never shown why we do all this stuff,
+ as with foreign language or science, religion etc.
+ In School I was taught like others to repeat and the best got certificates.
+ I am not saying this is bad to receive certificates for regurgitating informati
+on, although I am not sure it deserves al l the respect of the system.
+ the kids who ask why, usually received reports with could do better , often
+ loses attention or easily distracted .
+ I was similar to the latter in primary School, but was, at least initially,
+ relatively quiet as I was taught to not speak unless being spoken to and
+ sit nice and don't be bad.
+ It was obvious questions and in particular debate was being bad, and, yes,
+ I was belted often in later years in primary school!
+\end_layout
+
+\begin_layout Standard
+I wonder how many others recognise this story as similar to their own or
+ very similar to what they encountered.
+ It is later in life I realised that the education of a child is of paramount
+ importance and perhaps mass education is not quite working as we thought
+ it should.
+ I have to be careful here and allow the reader to recognise I am 100% committed
+ to education, but with the caveat that teaching repeating tasks or theorems
+ etc.
+ is not, in my opinion, a complete education.
+ I am not impressed by people who can recite large texts or numbers (Pi
+ etc.) off by heart, my dicta-phone can do that, it's not that clever.
+ I am also unlikely to be impressed by a child remembering all the times
+ tables all the way up to 12 times 12 and I do not think that deserves certifica
+tes and honours at early ages (actually honours do not impress me at all
+ either, but that's completely another matter).
+ I agree completely with rewarding and making kids feel special and interesting,
+ it's a good start but a better way is to reward creativity in all areas
+ and this is difficult, but then again should teaching be easy ?
+\end_layout
+
+\begin_layout Standard
+Before continuing we must recognise something important.
+ The vast majority of people can get through life admirably and very successfull
+y with the basic tools of early education (reading, writing and arithmetic),
+ in fact arguably in most cases this is more than adequate.
+ This perhaps should be an area that is hived out to an elementary level
+ and yes, a recondition in this area is probably important.
+ Also the recondition of asking questions is becoming more acceptable and
+ even encouraged now in schools, as I have been reliably informed so this
+ is progress and very welcome.
+ One area that has been an issue and still is though is the creative side
+ of children, we seem to knock that out of them in the push for this elementary
+ education and that's a terrible crime.
+\end_layout
+
+\begin_layout Standard
+It's also worth noting that this early stage mass education for the masses
+ only works to an extent (a very limited extent).
+ I say extent as it does not seem clear that the education by batches of
+ ages is very clever or indeed the industrial conveyor belt approach is
+ at all beneficial to anyone.
+ In any case we can assume some good comes of it, although perhaps in a
+ sloppy and uncaring way in many cases.
+\end_layout
+
+\begin_layout Standard
+Now imagine for a moment a situation where early schooling was teaching
+ more why rather than how ! By this I mean start with why ? then teach a
+ method (and also reiterate it's only one method) of how to achieve this.
+ I prefer several methods of how, but that requires a level of questioning
+ that is perhaps too abstract for some of today's teachers (I do not mean
+ this in any derogatory way), but I bet the really dedicated would also
+ love to learn some of the answers as well.
+\end_layout
+
+\begin_layout Standard
+If I were a teacher, I would hope I would relish the days every year when
+ the first student of any age challenged me to a question I did not know
+ (never mind the answer, like what does this God look like or where did
+ we come from type questions).
+ Even better if a student showed me a different method of existing thinking,
+ a method I had not realised or seen before.
+ Now that would be magnificent.
+ I fear this is not the attitude I recognise as being fully accepted from
+ my own schooling (there are a lot of genius teachers out there though)
+ and surprisingly as I will outline later, this acceptance of difference
+ is less tolerated in later years at college.
+\end_layout
+
+\begin_layout Standard
+1.1.
+ Some teaching ideas
+\end_layout
+
+\begin_layout Standard
+OK! So what do I mean by all this gibberish ? Well it would appear that
+ teaching addition and subtraction are relatively easy to explain.
+ I have one apple and get another so I have one + one = 2 apples (more later).
+ If I remove one then I have 2 minus 1 = 1 apple.
+ There it works! That's one method for addition and subtraction that we
+ can all teach children and do so from an early age.
+ So what about the next steps multiplication and division ?
+\end_layout
+
+\begin_layout Standard
+These are just as simple as addition and subtraction but we make them extremely
+ difficult by teaching patterns and rhymes and times table songs and lose
+ children's interest in an amazing subject very early in their formative
+ years.
+ For the repeaters this method of teaching we use is great, for the thinkers
+ and potential genius's well, we may lose them at this crucial stage, unless
+ you have a good recall then what we call (incorrectly at this stage) maths
+ becomes difficult straight away.
+\end_layout
+
+\begin_layout Standard
+To compound this we have parents, the initial yardstick of how well we are
+ doing and source of comfort to us, the people we most want to please.
+ How do they t in? Well they reward us for remembering times tables and
+ scold us for not remembering, saying s/he is not good at maths (considering
+ s/he has not being doing maths, then this is quite a statement).
+ This is, to me, amazing! We would be as well kicking children in the face
+ and congratulating them for not bleeding too soon!
+\end_layout
+
+\begin_layout Standard
+So how can we teach a better or at least different, why ? This is actually
+ easy in principle, to teach addition you could say something like, I have
+ 2 screw-holes and
+\end_layout
+
+\begin_layout Section
+OUTSIDE THE BOX
+\end_layout
+
+\begin_layout Standard
+I need to screw a screw (hmm! verb == noun) into each screw-hole so I need
+ 1 plus 1 screw.
+ There that's why we need to learn to add.
+\end_layout
+
+\begin_layout Standard
+So continuing, say you were handed 3 screws for this job children.
+ Now we need to remove one screw to make 2 which is the amount we need.
+ So simply throw one screw away (or subtract it) and we have again 2 screws,
+ perfect for the job.
+ Many such examples teach a why ! and in this case it is very difficult
+ to separate the why from the how as it is relatively simple to add and
+ subtract.
+ This is an example of how using addition you can also subtract.
+ By adding the number of screws you remove from the pile (of 3) then you
+ add again the original pile (now 2) and add to the pile you removed (1).
+\end_layout
+
+\begin_layout Standard
+So subtraction can be done using only addition! what about multiplying?
+\end_layout
+
+\begin_layout Standard
+Well this is easy 5 times 3 (or multiplied by) is 5 + 5 (multiplied by 2
+ now) +5 and that's us multiplied 5 by 3, 5 + 5 + 5 now again use only addition
+ to get the answer 15!
+\end_layout
+
+\begin_layout Standard
+So multiplication can be done using addition! what about division?
+\end_layout
+
+\begin_layout Standard
+lets reverse the above example and This is a tiny (very small) bit more
+ difficult.
+ say what is 15 divided by 5? so here we start with 15 screws and remove
+ 5 from it, there's still some left so again take screws one at a time adding
+ them up to 5, we still have some left so again removing one at a time and
+ adding to 5, then the amazing thing, we have none left from our original
+ bundle, and we did this 3 times, therefore the answer is 3.
+ 15 divided by 5 can be done by removing groups of 5 till the pile is empty
+ and this can be done exactly 3 times, wow !.
+ This means an elementary school kid who can add, can also subtract, multiply
+ and divide, without any additional rules or mechanisms over and above simple
+ addition and guess what? no remembering tables yet.
+ We can cover remainders and fractions in a couple of minutes, there terrificall
+y easy too (maybe easier than this so far).
+\end_layout
+
+\begin_layout Standard
+1.2.
+ Outside the box
+\end_layout
+
+\begin_layout Standard
+Here is an interesting exercise, count your fingers, yes 1 2 3 4 5 6 7 8
+ 9 10, great so we can count to 10 (use one hand a count to 5 if its easier).
+ Now did we count to 10 or did we miss a number? this is a much more signicant
+ question and one that confounded and caused great consternation for many
+ hundreds of years so the question is very difficult indeed.
+ In today's mathematical world we did miss something.
+ Let me explain hold up 2 fingers one hand and we will subtract 2 from it
+ (don't jump to conclusions here!) so on one hand put down 1 finger (you
+ can hold up one finger on the other hand to use our subtract by addition
+ method, as one finger on one hand is put down, then hold up a finger on
+ the other hand).
+ Now put down another finger, so we subtracted 2 from the first hand (some
+ of us know because we have 2 fingers held up on the other hand and can
+ count to 2).
+ So we have how many left? when we counted our fingers there was 10 of them
+ (if you count thumbs as fingers, for the pedantic).
+\end_layout
+
+\begin_layout Standard
+So how many now? none you say excitedly none so the answer is none (which
+ is accurate), but in maths today we call nothing, something, we call it
+ zero (or nought or nothing).
+ So what's the answer? is it zero? we did not have zero fingers, we started
+ counting at 1 (again stay with me), otherwise starting at zero would give
+\end_layout
+
+\begin_layout Standard
+8
+\end_layout
+
+\begin_layout Standard
+1.
+ BASIC SCHOOLING
+\end_layout
+
+\begin_layout Standard
+us 9 fingers (try it), this is shown by simply counting backwards on your
+ fingers, so on one hand 10,9,8,7,6 (one hand gone) and we have still ve
+ fingers on the other hand, what 5 + 6 = 11 (told you not to be so hasty).
+\end_layout
+
+\begin_layout Standard
+So if we start counting at 0 we have 9 fingers, or if we count back from
+ 10, we have 11 fingers, think about this for a while, it will help you
+ understand some more of maths than you imagine.
+ Now revisit the subtracting by adding this does not occur (you add the
+ numbers you remove so 5, therefore 5 + 5 left = 10, were you hasty?).
+ So to start at zero is a bit crazy, after all zero what? fingers? cars?
+ blades of grass? but if zero is a number then why not start there?
+\end_layout
+
+\begin_layout Standard
+So is 0 actually a number? is 2 - 2 a number or is it actually nothing,
+ not a number just nothing? we will come back to this (bet you can't wait).
+\end_layout
+
+\begin_layout Standard
+1.3.
+ Far outside the box
+\end_layout
+
+\begin_layout Standard
+Counting as in the previous passage is rather easy and we can see it clearly.
+ What about the alternatives or differing approaches, are there any? An
+ interesting thing is that we are taught to read left to right and do so
+ almost automatically.
+ Why then do we count right to left, it all seems so easy and natural, but
+ it gives us limitations almost immediately.
+ for instance, how can we add a number to an irrational number (a number
+ when written in decimal approaches infinity, or maybe does, but we cannot
+ get to the end of it like pi or the square root of two).
+\end_layout
+
+\begin_layout Standard
+Well the good news is we can add such numbers together and quiet easily
+ actually.
+ Instead of adding for instance left to right as normal we can do it the
+ other way round.
+\end_layout
+
+\begin_layout Standard
+1234 + 4567 =? Normally we would carry out this task right to left like
+ 7+4=1 carry 1, then 3+6(+ carry 1) = 0 carry 1, then 2+5+1 = 8 and nally
+ 1+4 = 5, so answer is 5801 (you will note we answer backwards although
+ ignore that naturally).
+ What if instead though the problem was 1234 .
+ .
+ .
+ + 4567 .
+ .
+ .
+ =? (the ...
+ meaning, onwards towards infinity), this introduces an important issue
+ as we cannot go to the right hand number, because we cannot reach infinity
+ to find it.
+ Is our system broken then? well only if we stay in the box and think for
+ a second that the mechanical teaching we have had is all there is.
+\end_layout
+
+\begin_layout Standard
+The answer is so simple that it's not even funny, importantly doing this
+ exercise in junior school would probably mean you failed the test as your
+ working would be wrong, even though the answer is correct.
+ Let us demonstrate this wrong method now.
+\end_layout
+
+\begin_layout Standard
+In steps, first part (left to right) is 1+4=5, next part is 2+5=7, next
+ part is 6+3=9 and last part (the trickier part) is 7+4 = 1 and this time
+ we carry 1 backwards so our previous 9 becomes 10 or zero and carry backwards
+ again so the second thought becomes 7+1 or 8.
+ so the answer (read forward this time) is 5801...
+ and the numbers go on to infinity if we so desire.
+\end_layout
+
+\begin_layout Standard
+If we then try a trickier version 9235+1986 =?in this case the answer is
+ 9+1=0 carry 1 back.
+ We note here there is no back so we add an extra digit to the beginning
+ so for the first number we now have 10.
+ Then we have 9+2=1 carry 1 backwards so then we have 111 so far.
+ Then 3+8=1 carry 1, so we have 1121 so far then 6+5=1 carry 1 so we have
+ the answer 11221...
+ Which works, but importantly we have
+\end_layout
+
+\begin_layout Standard
+1.4.
+ MORE QUESTIONS
+\end_layout
+
+\begin_layout Standard
+9
+\end_layout
+
+\begin_layout Standard
+started a system where if we find another new number in our series then
+ we're set up with the thinking that would allow us to continue the process,
+ even when the carry back carries back several times, perhaps even to the
+ beginning of the number.
+\end_layout
+
+\begin_layout Standard
+I hope by now questions are starting to fester away and if there not, they
+ should be! To think we have not got to religious studies yet!
+\end_layout
+
+\begin_layout Standard
+1.4.
+ More questions
+\end_layout
+
+\begin_layout Standard
+So now! do we teach the tables and rhymes ? absolutely not, what a terrible
+ idea, now the teacher has to talk about all this and see what clever ideas
+ the kids can come up with, now they have a new skill.
+ Time to play about, do you want 6 minus 3 sweets or 6 divided by three
+ sweets ? If you cut a card till a bit falls o, how many pieces are there
+ (does a card have a limit of cuts in it?)? Now ask, If I write a number
+ on the board with this small piece of chalk and then another and then another
+ and so on (actually do it!) can you see the chalks getting smaller, so
+ how many numbers are in the chalk? If I keep speaking and don't eat or
+ drink how many words are inside me? will all my words run out? let the
+ kids discuss and talk crazy till they run out of crazy and start evaluating
+ the answers properly, watch for the crazier kids and encourage this (probably
+ at back of class with lots of energy and devilment, or at the front and
+ very quiet).
+\end_layout
+
+\begin_layout Standard
+Now some other subjects can be tackled the same way, boil a kettle dry and
+ ask the kids where all the water is? Look at the heat waves coming o a
+ radiator, ask the kids what it is (open the window and ask if anyone can
+ see the heat escaping).
+ Ask kids what the heat waves above a road are and they will be amazed when
+ you tell them the heat waves are the sky1 ! (maybe you will be to).
+ Then discuss the heat waves and say to a child, they can put there hand
+ half in the hot air and half in the colder air just at the edge of these
+ waves.
+ An adaptation of this is look at wind on the sea or loch, there is an end
+ to it in the plane of the water, therefore you must be able to put your
+ hand part in a wind and part out of it, it does end.
+\end_layout
+
+\begin_layout Standard
+Now we can explain some more phenomena, these heat waves are actually causing
+ some light air to rise2, therefore sucking air from a heat source and sending
+ it up higher.
+ So the air must be getting apparently pulled in from below this heat wave,
+ pulled from all around it and pushed upwards.
+ Easy !
+\end_layout
+
+\begin_layout Standard
+1This is a subject discussed by Richard P Feynman during talks on the subject
+ of quantum electrodynamics, where light passing through hot air can refract
+ (or bend, wow big debate, it's actually taking the fastest route) showing
+ heat haze on a road is the sky to.
+ I wont waste a good book, buy it (QED).
+ 2This is also untrue.
+ The hot air does not necessarily rise, it stays where it is, the heat increases
+ the pressure if the area is conned, in this case it's not so the heat spreads
+ apart the air molecules and the cooler air brings them together (or allows
+ the mass attraction to take over), the air neither rises or falls, simply
+ the pressure differs.
+ This is another example misstated in many subjects, including physics.
+ The hot stuff rises, what nonsense! The heat rises to reach the lesser
+ pressure area, the stuff stays where it is relatively speaking, or does
+ it? Keep thinking! As a molecule heats it will go in all directions, rising
+ to a lesser pressure is the most efficient escape route in reality, therefore
+ heated molecules may seem to rise as they bash against their partners,
+ but in doing so they heat their partners also.
+ It's a very interesting subject for another whole book.
+ Basically how much stuff rises is somewhat inversely proportional to the
+ transfer of heat capability the stuff possesses.
+\end_layout
+
+\begin_layout Standard
+10
+\end_layout
+
+\begin_layout Standard
+1.
+ BASIC SCHOOLING
+\end_layout
+
+\begin_layout Standard
+This is creating a pressure gradient in fact, this is explained now.
+ The pressure at the bottom is low as stuff is being pushed up so it's not
+ weighing on us now, it would feel lighter standing at this point as it's
+ as though were being lifted (ever so slightly).
+ Try it put a feather there and watch it rise.
+ Now discuss hand gliders and birds soaring on thermals.
+\end_layout
+
+\begin_layout Standard
+So then we can expand, if there is a low pressure here, then it must be
+ causing a higher pressure above as this is where we are pushing the stuff
+ to (air).
+ This makes sense, I hope.
+\end_layout
+
+\begin_layout Standard
+Interestingly though if we expand this thinking we must be sucking air sideways
+ towards the point of the heat (that radiator in the class), so we are creating
+ an even higher pressure at the side of the heat source.
+ So as we push air up and suck it in sideways the air we push up, cools
+ and falls down again to be sucked into the heat source again.
+\end_layout
+
+\begin_layout Standard
+This explains the beginnings of understanding worldwide weather systems,
+ and winds or pressure gradients as they are confusingly called.
+ It's a simple matter of a heat source pushing hot air up, sucking the same
+ (or in some places nearby) air back in from below as it cools.
+ This is a great thing to teach a child.
+\end_layout
+
+\begin_layout Standard
+Now you can show the child some tricks in nature.
+ As he or she can put their hand in the heat source part way they can also
+ put their hand in rain part way.
+ So you can have rain falling on part of you only, or on half of your house.
+ How so?.
+ Well it's simple now if we bring all this together.
+ If the heat source is near water it heats the water, evaporating that and
+ mixing it with hot air and lifting it up.
+ As it rises it cools, as we already know, and in doing so forms clouds
+ which is simply all the previously hotter water getting cooler and again
+ coming back closer together, thus forming larger water concentrations,
+ until it's mass is greater than the force exerted upon it by the heat (Brownian
+ motion) and it falls.
+ Interestingly though as the water falls in spheres the bottom part of the
+ sphere is closer to the earth and is pulled by gravity more, The outer
+ edges spread out though due to the air resistance pushing on the bottom
+ part of the sphere (which is stronger than the gravitational force) and
+ the sphere splits into smaller spheres (increasingly slower though), this
+ continues until they hit the ground.
+ These clouds become heavy as they cool and cannot hold together as steam
+ or vapour any more and form water, as water cannot oat in normal air, it
+ falls down, as rain.
+ The clouds have an edge and part of this divide is wet and the other is
+ dry.
+\end_layout
+
+\begin_layout Standard
+Now children can put all that together and realise why deserts have heat
+ but not much rain and seaside places tend to be wet, especially in summer
+ as the land heats faster than the water and sucks the sea vapour towards
+ beaches as it pushes the hot air up, which cools and forms clouds.
+ This is called a sea breeze and explains the thin clouds round the coasts
+ in summer (have you ever wondered why there are clouds at the seaside on
+ a sunny day), and also the relaxing breeze we feel in hot summer afternoons
+ at the beach.
+\end_layout
+
+\begin_layout Standard
+Now we can teach people about gravity! and we should be clear here, we never
+ teach people gravity, even our best scientists can only guess at it, in
+ fact Newton was embarrassed by it and Einstein theorised about it.
+ We have no clue what gravity is.
+ We can, however, explain the effects of gravity localised to our little
+ spot in the universe, and we do.
+\end_layout
+
+\begin_layout Standard
+1.5.
+ NATURE
+\end_layout
+
+\begin_layout Standard
+11
+\end_layout
+
+\begin_layout Standard
+When kids are told of this phenomenon it's confusing and so well it should
+ be, we wrap a thing around it call it a force and leave it at that, but
+ we are so wrong! Anyway as we nd out the earth is spinning many children
+ will say things like if I jump up will I land in another place ? or leave
+ the brake of the car and let it drive around backwards to the direction
+ of the earth's spin (I certainly did and still wonder) using no fuel ?
+ We tell them gravity stops that and pulls us straight back down or the
+ car is stuck to the ground too hard due to gravity that it will not move
+ with the brake o, if on a straight or level road.
+\end_layout
+
+\begin_layout Standard
+However, we do not tell the whole picture, as the earth turns it does affect
+ things as a child would imagine (and we stop them thinking this, what a
+ shame!).
+ As the earth turns the air we pushed up, or air in the upper atmosphere
+ is moved from the location it left earth from (slightly).
+ Gravity has a lesser eect on water vapour (well actually its overcome with
+ heat rising) and the place where the air is pushed is backwards from the
+ point where it left the ground source (as the earth turns below it).
+ This is again confusingly named the Coriolis eect.
+ We need to let children know their original assumptions about the turning
+ planet are true.
+\end_layout
+
+\begin_layout Standard
+Children believe gravity is such an amazingly powerful force when they are
+ young, to be told later, it is the weakest of all forces known? why do
+ we do that?
+\end_layout
+
+\begin_layout Standard
+Another interesting factoid here is that if you jump out a 7th story window
+ the earth moves up to meet you with a proportional force that you fall
+ to meet it.
+ This is the force or measure of force we call momentum, which is actually
+ velocity multiplied by mass, relatively the velocity the earth meets you
+ at is proportional to the speed you meet it at.
+ The proportion is the mass of the earth compared to you.
+ Weird but true, now discuss!
+\end_layout
+
+\begin_layout Standard
+1.5.
+ Nature
+\end_layout
+
+\begin_layout Standard
+Nature is the most important thing to teach kids and yet it is ignored,
+ kids may look out a window at some grass and tree's or a bird making a
+ nest and what do teachers do, well your in trouble now kid! This is school
+ ! no looking at nature.
+ This is the best time to teach a child, what are you looking at ? grass,
+ oh so what can you tell me about grass? (people depended on the spread
+ of grass, we would still be in Africa if it were not for grass, assuming
+ we did all migrate from there).
+ There's loads of things to learn from grass (try to destroy it by burning,
+ drowning etc.) or investigating birds or trees, in fact everywhere in nature.
+ There are more unknown organisms in a single square meter of a common garden
+ than the total number of known organisms identified buy humans to date,
+ we can observe nature for many years to come, before we can consider ourselves
+ even to have an infantile knowledge of the world around us.
+\end_layout
+
+\begin_layout Standard
+Now put a small plant or bush in a pot, one which will grow fairly large
+ in a few months, we will come back to this.
+ Water and feed it and explain what's happening all the time you do.
+\end_layout
+
+\begin_layout Standard
+So nature is life's textbook, always changing, never the same twice and
+ always fascinating, all aspects from the shape of clouds and all you can
+ teach about that, to a rock that seems to never alter, cosmic rays, heat,
+ cold, wet, dry, you bet it alters (later photons smashing into it throwing
+ electrons off back into photons when they hit air again, oh the list is
+ never ending).
+ Important to note here that like the
+\end_layout
+
+\begin_layout Standard
+12
+\end_layout
+
+\begin_layout Standard
+1.
+ BASIC SCHOOLING
+\end_layout
+
+\begin_layout Standard
+times tables and rhymes for teaching 'times tables' it is important NOT
+ to teach all different names for stuff in nature but teach what things
+ actually are, what they are made of, how they interact with other 'things'
+ and importantly how there all different, even 2 birds of the same family
+ or breed are completely different, as people are.
+\end_layout
+
+\begin_layout Standard
+Now some more interesting observations for children, when they look at,
+ say a rock or better a bird that flies away.
+ Now ask where is the bird? is it gone? or is some of it left ? Ask each
+ of the children what they remember about the bird, some may say it had
+ wings, others, it was black, had a beak etc.
+ Now discuss why they can remember what it looks like and if it's really
+ gone what bit of it got in our head ? and if it looked at us, is a bit
+ of us in it's head ? is a bit of us flying and soaring through the sky
+ chirping and freely soaring in currents of some of that warm air ripple.
+ Now you may remember the bird your whole life, many years after it's not
+ a bird any more in the world outside your window, but is it a bird still
+ in your head? your head is made of matter and that birds impression takes
+ up a piece of that matter (perhaps) so is it alive, in you? These lessons
+ may start to become interesting to teachers as well now.
+\end_layout
+
+\begin_layout Standard
+What can nature not teach us? when you think of something then don't teach
+ kids that thing (as your very likely wrong).
+ Use nature always and when teaching if you cannot reference a natural issue
+ to depict your notion of the piece of knowledge your about to impart, simply
+ don't.
+ This is fairly easy as everything we do is defined by nature, even the
+ unnatural things ! It's just important to think about it (like dividing
+ by adding !).
+\end_layout
+
+\begin_layout Standard
+OK back to the bush we planted, have the kids look at it and especially
+ look at the amount of dirt in the pot.
+ The amount is the same as when the thing was planted, but wait the thing
+ is much bigger, where did all the stuff come from ? where did the mass
+ of stuff that's there now, leaves, possibly flowers, more stalk or bark,
+ lots of stuff and it all weighs something.
+ It never came from the dirt, the dirt is still in the pot! what happened.
+ Well all the stuff came from the air (vast majority, some plants have lots
+ of water content, but dry a tree out and it's still lots of stuff ) now
+ is the time to talk of chloroform and photosynthesis not in years to come,
+ now when the kids can actually see what happened even if they can never
+ understand how they will always remember what happened and what photosynthesis
+ does, it takes air and sunlight and turns it into carbon, same stuff as
+ inside us is now inside the plant.
+\end_layout
+
+\begin_layout Standard
+Now talk about kids eating less than their parents but growing faster and
+ when they eat the same the kid still grows, so how's that?, why don't the
+ parents keep growing, where's the bones and skin all coming from, again
+ how is may be not so important here but what actually happens is very easy
+ to show.
+ If they don't understand all the complicated maths and science behind this
+ they will and should understand what the outcome is, being able to prove
+ it now should seem less of an issue.
+ It's easier to prove things you can see and touch, hear feel etc.
+ than some absurd equation or huge Latin word from a book.
+ Nature is proving to be very helpful now I hope!
+\end_layout
+
+\begin_layout Standard
+1.6.
+ THE ZERO INFINITY THING AGAIN
+\end_layout
+
+\begin_layout Standard
+13
+\end_layout
+
+\begin_layout Standard
+1.6.
+ The zero infinity thing again
+\end_layout
+
+\begin_layout Standard
+Zero, nothing, void, empty and so on, zero what ? are zero skyscrapers equal
+ to zero fingers, are innite3 skyscrapers equal to infinite fingers ? well
+ the latter is wrong you can enter a skyscraper and go into a room, can't
+ do that with a finger, no matter how many you have, but the former would
+ appear to be true! So zero being the opposite size (or dimension) of infinity
+ is not true ! but there are interesting effects on one another 0 ∗ ∞ =
+ 0 and ∞ ∗ (any number except 0) = ∞ and 0/∞ = 0 and ∞/0 = U undefined
+\end_layout
+
+\begin_layout Standard
+This is interesting if you analyse it.
+ So infinity can be destroyed or created by zero! Really interesting is
+ the undefended cases, undefended! yes in the simplest equation, never mind
+ Reinman's zeta function based problem or Fermat's last theorem, simply
+ infinity and zero together are enough to confound mathematics.
+ Are we not all taught that in School? I wasn't!
+\end_layout
+
+\begin_layout Standard
+Perhaps you would not have been taught that the proof of 1+1=2 has never
+ been mathematically proven! Two mathematicians, Russel and Whitehead wrote
+ over 300 pages in the book principia mathematica where this proof was attempted
+, but failed to do so (Godel showed the laws in what was thought to be a
+ proof of this as he introduced his incompleteness theorem).
+ Again there is a lot we are not taught, why?
+\end_layout
+
+\begin_layout Standard
+If zero is a number is it on your calculator ? is infinity then also on
+ your calculator and if not why not ?
+\end_layout
+
+\begin_layout Standard
+Sorry if that's now confusing but it's actually simple and expected, first
+ of, none of the above answers are infinity or zero, the answers tend towards
+ these numbers but will never get there.
+ So zero and infinity are destinations a traveller can journey towards but
+ in many cases, alas never reach.
+ Therefore if somebody asks how long will it take to count to infinity you
+ could reply I will finish tomorrow as this would be true every time you
+ say it (as long as you say it at least daily).
+ but to count to zero on the other hand can be done very quickly, but only
+ if we can assume 1 is a number and can be proven! oh dear this is madness
+ is it not.
+ What do we mean can we prove there is such a thing as 1.
+ Perhaps it's easier to just do the repeating thing and get a certificate
+ after all, is it not? Simple thing here is to write 1/3 as a decimal, 0.333...,
+ now multiply by 3 to get 0.999....
+ Oh oh this is not 1.
+ More soon! We need to consider time and space to understand there may be
+ a 1, but only a 1 there cannot be two 1's and we cannot really define a
+ 1 unless we can freeze time! Yes this is true, are you clutching your arithmeti
+c certificate yet and saying this is wrong, this is wrong over and over
+ again.
+\end_layout
+
+\begin_layout Standard
+Well actually it's not madness it very much depends on the way you try to
+ get to zero, for instance if you half a number every time, you will never
+ get there, so these
+\end_layout
+
+\begin_layout Standard
+3I remember being told as a child by a teacher, infinity is defined as such:
+ if you give a monkey a typewriter and infinity it will type out the complete
+ works of shake spear word perfect.
+ I immediately thought the ribbon (for younger folk the ribbon is the old
+ mechanical printers version of a print cartridge) would run out, and then
+ the paper would run out so given this infinity with infinite objects does
+ not work, there's many infinities in this definition, like number of trees
+ (therefore planets and universes), spare parts, tools for the spare parts
+ etc.
+ etc.
+ in fact to me this definition was one of many and possibly infinite infinities.
+\end_layout
+
+\begin_layout Standard
+14
+\end_layout
+
+\begin_layout Standard
+1.
+ BASIC SCHOOLING
+\end_layout
+
+\begin_layout Standard
+real numbers or integers (or whole numbers) are very handy as you can remove
+ real positive integers from another positive integer one at a time till
+ zero appears, but again they're approximations and no such thing exists
+ as I will prove later (mathematics is full of notions and real numbers
+ one of them).
+\end_layout
+
+\begin_layout Standard
+So back to the zero thing.
+ For thousands of years it did not exist along with it's partner (which
+ we have shown to be strange bedfellows indeed) infinity.
+ In fact zero was seen as the void or a place where evil lived and infinity
+ was seen as everything, a place where god lived (any god, it does not matter
+ here).
+ There have even cases of people being killed for attempting to use infinity
+ or zero (especially an early Pythagorean who mused over a thing called
+ an irrational (think crazy) number, which we will come to later).
+ Just like the system of counting we use today (the base 10 system) took
+ thousands of years to agree on so did the concept of zero.
+ Therefore when teaching children to count to 10 and being delighted, think
+ carefully are you instilling blind faith into them at this stage, after
+ all what does counting to 10 actually mean, 10 what?
+\end_layout
+
+\begin_layout Standard
+1.7.
+ Limits and things
+\end_layout
+
+\begin_layout Standard
+Zero is a notion, infinity is a notion and the base 10 system is a notion
+ (base anything is).
+ By this I mean none of them really exist unless we introduce limits into
+ nature (mathematical limits are discussed later, so don't jump ahead).
+ The limits we use to represent numbers are pretty straightforward but missed
+ by many.
+ For instance we can say we have 2 apples, but immediately we are working
+ within limits without realising it.
+ The limit here is our notion of an apple, after all if somebody held up
+ an apple and orange and stated I have 2 apples, we would realise our limits
+ have been breached pretty quickly.
+ These limits govern much of modern life and for good reason actually.
+ So taking this further lets say a person holds up a granny smith apple
+ and a golden delicious apple and says I have 2 apples, again limits are
+ introduced.
+ The person is holding up 2 dierent things but it's OK in this case the
+ limit has not been breached, there still apples, but there still different
+ things, so we can have 1 of something and 1 of another thing equal to 2,
+ what about dividing these 2 things now - can we? If that person then increases
+ the limit or parameters of his things by adding more words to the description
+ like saying I have 2 green apples (well they may be, but..) then we impose
+ further limits almost without thinking and can evaluate whether this is
+ true.
+ Add some more detail, i.e.
+ saying I have 2 green apples each with a leaf on them and we may break
+ the limit, note here the leaf in question is also limited to fall within
+ certain parameters for our human way of thinking.
+\end_layout
+
+\begin_layout Standard
+Therefore we can use these numbers like 2 apples within limits and only
+ within limits.
+ This is true for everything in nature and therefore everything in maths
+ and science as these are the study of nature, even though we forget this
+ quickly.
+ So many limits can be boiled down to individual words (like apple) and
+ these words inserted in our basic vocabulary, thereby allowing us to ignore
+ the fact that many numbers and systems of calculation are in fact not real
+ but purely notional.
+ This may hurt your head a little and it should.
+\end_layout
+
+\begin_layout Standard
+So numbers represent things limited for us to easily digest, however the
+ whole notion of adding and dividing can be shown very quickly to be against
+ nature, i.e.
+\end_layout
+
+\begin_layout Standard
+1.8.
+ MIDDLE EARTH
+\end_layout
+
+\begin_layout Standard
+15
+\end_layout
+
+\begin_layout Standard
+in the above example we cannot get to 1 thing again unless we maintain a
+ limit, but imagine for instance we do something a bit different with this,
+ while we are playing about anyway.
+ Take the apples half each of them (or more precisely cut them in 2 relatively
+ equal mass objects) and we have 4 halves of apples.
+ Now if we take a half of each apple (preferably a red and a green one)
+ and put it together in our hand and say to another person look I have an
+ apple, our limit thinking is challenged, no you don't have an apple you
+ have 2 halves, would be the likely answer.
+ Think about this 2 times 1/2 is not one any more, our limits have gotten
+ us into some trouble.
+ How do we get over this fact then? well actually the answers pretty poor,
+ we train ourselves and children to ignore it, like the ancients ignored
+ zero as evil we currently ignore this kind of thing, to the extent many
+ people reading this will simply not accept it or even be able to question
+ it.
+\end_layout
+
+\begin_layout Standard
+But wait ! we can't use precision as we cannot measure into infinitesimally
+ small differences to categorise them, we need limits!.
+ Yes we do need limits but we also need to see those limits and understand
+ them, otherwise we a removing some vision that could be important in understand
+ing nature related to maths and science etc.
+ and as we already know this is vitally important.
+ Just realise for now the notion (yes notion) of 1 is a notion and not really
+ a thing that exists without limiting factors.
+\end_layout
+
+\begin_layout Standard
+1.8.
+ Middle Earth
+\end_layout
+
+\begin_layout Standard
+Another interesting area not covered in modern teaching is what is sometimes
+ referred to as the midd le earth syndrome (well I refer to it that way).
+ This is looking and taking care of perspective in our assumptions of nature
+ and all it holds.
+\end_layout
+
+\begin_layout Standard
+Imagine being the size of an electron, difficult as an electron has no size!,
+ it's a point particle with zero dimensions! Anyhow imagine you were that
+ small, the distance from you to the nucleus of an atom is equivalent (roughly)
+ of a spectator at the edge of a large football pitch to the centre.
+ So take 1,000 football pitches in every direction as your domain (still
+ inside something of the order human hairs width) and what does your world
+ look like now.
+ Lots of empty spaces with huge globs every so often (nucleus's) and stuff
+ like you whizzing about and possibly appearing and disappearing.
+ If you were in a head of hair then perhaps your whole life would exist
+ in that area (you may only live a few thousandth of a second) This is mind
+ boggling and difficult to imagine for us as we try and relate this to our
+ world (as I just did with football pitches and human hairs).
+\end_layout
+
+\begin_layout Standard
+Now imagine instead being something the size of cosmic ob jects (planets).
+ Never mind seeing atoms you would not see people, instead your world would
+ be lots of space with big globs every so often (planets) and little stuff
+ whizzing about (comets and dust).
+ Again we cannot imagine this, but if we were that size would our view of
+ nature be the same as the micro size being or even us, the middle earth
+ being.
+\end_layout
+
+\begin_layout Standard
+So what if we were visited by something on the cosmic scale, maybe several
+ million light years away! or indeed by a micro organism the size of a sub
+ atomic particle, would we be aware of such creatures? I think not.
+\end_layout
+
+\begin_layout Standard
+More importantly if we were that scale would or view of what's important
+ be inclined to be very different, you may answer obviously, but why? it's
+ all nature, it
+\end_layout
+
+\begin_layout Standard
+16
+\end_layout
+
+\begin_layout Standard
+1.
+ BASIC SCHOOLING
+\end_layout
+
+\begin_layout Standard
+does not change.
+ So do we and should we look from differing perspectives when we try and
+ find out more in our quest for ultimate knowledge, or even just wanting
+ to know a tiny bit more than we do?
+\end_layout
+
+\begin_layout Standard
+How does all this affect another measure we use, time?
+\end_layout
+
+\begin_layout Standard
+1.9.
+ Number bases
+\end_layout
+
+\begin_layout Standard
+Time is a very interesting issue and way beyond the scope of this short
+ etching to fully understand (in fact way beyond the capability of mankind
+ I think).
+ If we limit our look at time to our counting, to stay focused on one issue,
+ then we can find some very interesting things.
+\end_layout
+
+\begin_layout Standard
+First of all time as we categorise it mechanically is broken into 12 hour
+ cycles with 60 Min and 60 second increments.
+ Interesting to note here this is similar to the ancient mechanisms of counting,
+ not in our base 10 but in base 12 and base 60 (base 60 was interesting
+ as 5 fingers on one hand and the 3 knuckles times 4 fingers of the other
+ hand) which is very useful in calculating and easily writing down huge
+ numbers.
+ It was used successfully to calculate things related to the large numbers
+ associates with cosmic events, these were important to the ancient humans.
+\end_layout
+
+\begin_layout Standard
+So time is in a strange base and not split into 10's as we would expect,
+ well not until we change this and get lower than 1 second where we jump
+ into a base 10 dierence, hundredths of a second thousands etc., does that
+ not seem strange to have 3 number bases in a time situation.
+ Yet this is the case and we ignore it and just get on with our lives as
+ though it were normal, even though it's not normal and in fact rather strange.
+ Then we have bigger times, weeks (7 day), months (28-31 days) and so on,
+ we also break down into four seasons and why ?
+\end_layout
+
+\begin_layout Standard
+For people who are debating whether this is indeed many bases, it's worth
+ looking at Gauss's (the great German mathematician remembered in Gottigen,
+ Germany) counting clock.
+ This is where he replaces the number 12 with a 0 and then uses rotations
+ around the clock as counting up to multiples of 12 and the minutes counted
+ after the number of 12's of the hour hand represent the modulo of the addition
+ or multiplication etc.
+ of any numbers in base 12.
+\end_layout
+
+\begin_layout Standard
+1.10.
+ Analogue and Digital Measurements
+\end_layout
+
+\begin_layout Standard
+In the previous section we discovered the use of an analogue clock to create
+ number bases.
+ If we replace the 12 with a 0 in out typical clock the hour hand is in
+ base 12 and the minute hand would be base 60.
+ Let us ignore the second hand for a while as it complicates matters.
+ If we considered it then it's also base 60 but that could transform the
+ minute hand to base 3600 and the hour hand to base 43200 depending on how
+ we look at it.
+ That's too big for now and a bit more complicated than we need here.
+\end_layout
+
+\begin_layout Standard
+So lets focus on only the minute and hour hand and no more, we will give
+ the clock only hour markings as well to make things even easier.
+ In this clock we only count in full numbers (no parts of numbers (yet!).
+ To represent a number 6 we move the minute hand to six.
+ To add 3 to this we move it forward 3 places.
+ So now it is at 9.
+ If we add another six to this we move it forward past zero to 3, but as
+ we did pass zero we must move the hour hand to 1 (1st pass).
+ The answer is read as 13
+\end_layout
+
+\begin_layout Standard
+1.11.
+ TIME
+\end_layout
+
+\begin_layout Standard
+17
+\end_layout
+
+\begin_layout Standard
+(hour hand first then minute hand).
+ That 13 is base 12 so in fact in base10 (our number base) it would be 15.
+ Easy! Now we have an easy way to work in any base, just imagine a clock
+ beginning at zero and divided into the numbers representing the base.
+ It may be easy to also consider every time the hour hand goes past 0 to
+ add another hour hand to count up the next range of numbers.
+\end_layout
+
+\begin_layout Standard
+Now you have actually seen this configuration many times.
+ If you look at a car odometer or an electricity or gas meter you will see
+ a configuration quite similar.
+ This is represented by a series of dials with numbers written around the
+ outer edge of the wheel.
+ The wheels are in series and each one represents another hour hand in the
+ example above.
+ However there are differences! In the digital type readouts in meters the
+ numbers can click from one to another (in some cases slowly revolve) and
+ when actual digital readouts took over the numbers do click from one to
+ the next in an instant (relatively).
+\end_layout
+
+\begin_layout Standard
+So we find digital is more accurate than analogue, digital music is clearer,
+ watches are more accurate and so on.
+ So our belief is that digital is better, but it's not natures way is it?
+ It does not go from bright sunshine to snow in an instant (well in Scotland
+ that is arguable :-)), nature takes time to change anything.
+ Therefore the move to digital seems to be in opposition to natures teachings,
+ and what have we discovered about doing that so far!
+\end_layout
+
+\begin_layout Standard
+The analogue clock example from above is more interesting than that we think
+ as you can point the hand along the 2.7...
+ and state this may represent the number e, along 1.44...
+ etc.
+ and say this is the root of 2, 3.141...
+ and say this is pi.
+ None of these are disputable as they might point to the exact irrational
+ (remember irrational == crazy or never ending) number.
+ If the hand moves across these numbers we can say they will point to each
+ of these numbers at some point.
+ Try that with a √ very powerful computer, and wonder then why this simple
+ mechanical device may work.
+ We cannot get a computer to point to e or Pi or 2 but a simple dial with
+ an analogue hour hand can! Is digital more accurate?
+\end_layout
+
+\begin_layout Standard
+1.11.
+ Time
+\end_layout
+
+\begin_layout Standard
+OK before we proceed here let's get something straight, there's a diagram
+ we are all aware of and this is the diagram of our solar system.
+ We all know it with the sun at the middle and the planets forming large
+ ellipses around it, yes! no! this is completely wrong as well.
+ If indeed the earth formed a huge ellipse around the sun we would have
+ 2 very hot summers per year and 2 very cold winters per year.
+ In fact it would be so hot the surface would likely scorch and so cold
+ we would be a ball of ice.
+ This is obviously not the case, so why ! why are we shown these pictures,
+ well in fact it's rather embarrassing when you find out.
+ These pictures are more interesting to look at that the almost concentric
+ circles the solar system actually is, completely at almost concentric circles
+ (actually it is a very slight ellipse, as Kepler and others showed, although
+ nothing quite like the pictures we have in our minds, which are rather
+ boring).
+ So to keep us interested we all tell ourselves a lie, or more accurately
+ let ourselves believe a lie, a lie that's so impossible it is almost inconceiva
+ble!
+\end_layout
+
+\begin_layout Standard
+Sorry about that, that was an introduction to how we came to look up to
+ the stars and planets and wonder how it all worked.
+ How does it get cold sometimes and for
+\end_layout
+
+\begin_layout Standard
+18
+\end_layout
+
+\begin_layout Standard
+1.
+ BASIC SCHOOLING
+\end_layout
+
+\begin_layout Standard
+how long, and what does how long mean? These questions were all very important
+ to early humans and ancestors because how could we calculate how to plant
+ seeds etc.
+ Well you could argue just watch the animals they have it sussed, and in
+ fact this answer is way smarter than we realise, animals do have it sussed,
+ but how? well that's for later.
+\end_layout
+
+\begin_layout Standard
+So many years ago a system of watching the stars and calculating numbers
+ to represent how many darkness periods there were in the time it took the
+ earth to go around the sun from a point in space and return to that point
+ became a year, eventually.
+ Breaking things down further we needed to calculate when the heat would
+ appear and when the cold would come.
+ This meant breaking the number for a year down somehow to smaller increments,
+ that was seasons, then months and then weeks.
+ On of the most interesting divisions is that of months and these are related
+ to the 12 zodiac signs and the planets related to them.
+ So in between planting seed we had time to conjure up unearthly beings
+ or Gods to occupy ourselves with, after all what could have made the thing
+ we call earth and why?
+\end_layout
+
+\begin_layout Standard
+Enough of that.
+ The point is there were numbers representing all this stuff, not base 10
+ or calender related dates (not our modern calender anyway) but many other
+ things like, sun lining up with cracks in caves, stones lining up with
+ planets etc.
+ and these things appeared everywhere and amaze us even to this day as to
+ their accuracy and more interestingly some of the stones line up with planets
+ and stars that were likely not visible in the days the stones were laid.
+ We're maybe not as smart as our forefathers yet in many ways, but thankfully
+ not all, I hope.
+ Here is an example of nature not following our maths system of base ten
+ and in fact being, well nature and doing it differently.
+\end_layout
+
+\begin_layout Standard
+Even today's calender is in question, if you think about it we went from
+ the year 1 BC (Before Christ) to the year 1 AD (Ano Domini) but what of
+ year zero.
+ Our calender started at year 1 so after a year we were at year 2, so as
+ a child is 1 after a year our calendar was 2.
+ This is even more amusing when you consider the years are counted backwards
+ towards zero (BC) before year 1 (I would not have enjoyed that time counting
+ down to a date we did not know then) so they are actually negative years
+ going back in time, but yet we automatically remove the minus sign and
+ do not consider going back in years ! So our current calender had no initial
+ few months before zero like a child who is less than 1 is said to be x
+ months old etc.
+ our own time just went straight to 1.
+ This is another example of us being able to accept illogical and mathematically
+ very debatable concepts in our ideas of time.
+ It also shows though that whether there is a God or Jesus it was good that
+ there was an event that we used to start the calendar at, no matter what
+ the event was as counting years in numbers requires a start time, even
+ though arguably we should have started at year zero.
+\end_layout
+
+\begin_layout Standard
+Therefore we now see that our concept of time is that it's constant (otherwise
+ our clocks would have expanding and contracting faces with added and removed
+ numbers) or so we believe.
+ If we look at time a little bit closer then we realise there's something
+ far from constant about it in fact.
+ Take satellite GPS systems where remote objects (satellites) beam down
+ signals to devices we hold and these devices (GPS receivers) calculate
+ the distance from each satellite and triangulate our current position very
+ accurately.
+ However it is interesting when further researching this very worthwhile
+ tool that we look at how it works a tiny bit closer.
+ The hand-held
+\end_layout
+
+\begin_layout Standard
+1.12.
+ TRUTH
+\end_layout
+
+\begin_layout Standard
+19
+\end_layout
+
+\begin_layout Standard
+device needs to know how far each satellite is and it does this using time!
+ so each satellite transmits a signal with a time stamp, our device reads
+ the time stamp and uses the very elementary speed time distance triangle
+ calculation (dist = speed / time) where we know the speed of radio waves
+ (radio waves are like light waves just of different frequencies from what
+ we consider light, later we find out everything is!) through air, we know
+ the time and we can work out the distance.
+ This seems reasonably easy to understand and it is (although geostationary
+ satellites are not at constant height orbits, and therefore the speed of
+ light through space and through our atmosphere is dierent and therefore
+ changing every small time increment, but ignoring this for now) until,
+ however we see that the satellite ground stations have to transmit time
+ corrections to the satellite's to maintain accuracy.
+ This is mainly (but not completely as noted earlier) due to the fact time
+ way up there is going slower than way down here on earth.
+ So time may be constant but it's also using going at dierent speeds at
+ different points in space.
+ On earth, if you want to go forward in time (well actually time to go slower
+ for you) just stand up, to go back in time (well actually time to go faster
+ for you) lie down, it's just that the increments of faster or slower in
+ time as so small you will not see them, but it's true you are time travelling
+ in the actual sense of the phrase! So is time constant, or constantly changing,
+ or relatively constant at constant distances from planets and objects in
+ space (which is impossible) ? It certainly seems like another notion we
+ do not quite understand but again within limits we can deal with it, albeit
+ we also ignore lots of facts about time.
+\end_layout
+
+\begin_layout Standard
+1.12.
+ Truth
+\end_layout
+
+\begin_layout Standard
+Truth is something we are also inclined to be negligent about and consider
+ it something we have or own and something we mostly (I hope) look after,
+ but we con- stantly go against it.
+ Take for instance the person who states they would never harm or kill an
+ animal, whilst eating a hamburger! or the person who says I would never
+ steal, whilst wearing a tee shirt made in a sweat shop somewhere in the
+ developing world.
+ There's loads of incidents and it's interesting to look a bit further and
+ understand what's going on here.
+ It's only investigation so not to worry, we will see we are all terrible
+ liars and extremely honest!
+\end_layout
+
+\begin_layout Standard
+We know a lie is defined as being an untruth or the opposite of truth, we
+ have also seen so far there's likely a couple of untruths we have been
+ proliferating through our lives.
+ It's very likely then so far we have started to realise we lie and the
+ truth is maybe something we search for but only from a source of either
+ unknown or misinformation to a great extent.
+\end_layout
+
+\begin_layout Standard
+The truth or the ultimate truths we strive to attain are very difficult
+ and require to be compartmentalised.
+ Any truth we know is only a truth if the foundations we used to calculate
+ that truth are themselves true.
+ As we know without any question we are not in possession of all the facts
+ of the world (nature again) then we know that there can not really be a
+ truth.
+ So our truths and beliefs are all based on information that we know is
+ wrong, therefore our truths are incorrect.
+ They may happen to explain some information in a way that works in these
+ pockets.
+\end_layout
+
+\begin_layout Standard
+An example is aircraft lift, for many years there was belief that planes
+ wings (and yacht sails) created a lift force due to splitting air molecules
+ and forcing one through
+\end_layout
+
+\begin_layout Standard
+20
+\end_layout
+
+\begin_layout Standard
+1.
+ BASIC SCHOOLING
+\end_layout
+
+\begin_layout Standard
+a longer route than the other.
+ The lift being created by the longer route molecules creating a vacuum,
+ this is now shown to be wrong (surprisingly! or maybe not).
+ What really happens is the wings cut through the air and the speed of the
+ air passing under the wing causes the lift (it's not really lift).
+ It's surprisingly just the same as putting your hand out the window of
+ a moving car and adjusting the angle to the ground and feeling our arm
+ being raised or pushed down.
+ Regardless though the equations work almost in the same way when designing
+ these wings or setting a sail in a racing yacht.
+\end_layout
+
+\begin_layout Standard
+In the same way in the UK we use electric current ow in one direction and
+ in America it's the opposite that is believed, again it's not so important
+ and the equations work (although there is minus sign issues at times).
+ So we can be wrong but still stuff works.
+ So even when we see nature does what we think it should, given our knowledge
+ we still have to realise we do not have the big picture, only nature has
+ and it will show us some new rules every so often, we just need to be prepared
+ to accept them and that means admission of being wrong, for the really
+ smart it's not admission it should be gleeful acceptance.
+ That is the path enlightenment lives on.
+\end_layout
+
+\begin_layout Standard
+This knowledge can allow us to expand our minds well beyond any existing
+ under- standing.
+ The absolute understanding we are in fact wrong probably about nearly everythin
+g we currently know is arguably the only way we can grow as a species.
+ This is not what the current system teaches us, but looking back at history
+ we have nearly always had to alter our knowledge base as the fundamentals
+ (or first principles) are altered.
+ There is lots of proof of this, think of Archimedes and maths, Galileo,
+ Copernicus, Kepler, Newton, Maxwell Clerk, Einstein and many others who
+ showed us new ways and on occasion re-addressed some mistakes and in some
+ cases by causing massive upheaval and rewriting of what we believed our
+ knowledge was.
+ sometimes this happened at great cost, with people being killed by burning,
+ drowning or simply beaten to death, just for uncovering new truths.
+\end_layout
+
+\begin_layout Standard
+We are not, as a species, tolerant of change and this has to change.
+ Only a strong and well founded education system that relishes dierences
+ and thirsts new knowl- edge and belief will allow this to happen.
+\end_layout
+
+\begin_layout Standard
+1.13.
+ Our own bodies
+\end_layout
+
+\begin_layout Standard
+By the time we get to primary school (starts at 5 years old in Scotland)
+ and do a couple of years study we can read and write with some degree of
+ ability.
+ What we maybe do not realise is that we were never born!
+\end_layout
+
+\begin_layout Standard
+So we are all aware that our cells replenish a lot, that's why children
+ grow and adults slowly age, cells are replaced by newer cells and some
+ of the newer cells maybe are not so good as the old ones were and we age
+ etc.
+ So again we all know this, it's empirical we can see it or at least the
+ eects of it.
+ It also does not surprise us to learn that pretty much (lets consider 100%
+ here just now) all of our cells are replaced frequently.
+ Again it's no surprise to learn the oldest cell we have is approx seven
+ years old and will be replaced very soon in this case.
+ None of this is real news, so what's the idea here ?
+\end_layout
+
+\begin_layout Standard
+Well now put all this together like the solar system picture we learn, we
+ can see there's a glaring omission in our thinking, at 7 years old were
+ a completely new
+\end_layout
+
+\begin_layout Standard
+1.13.
+ OUR OWN BODIES
+\end_layout
+
+\begin_layout Standard
+21
+\end_layout
+
+\begin_layout Standard
+body from we were born, arghh!, even more alarming is to think the person
+ we go home to and call mother is not the person who gave birth to us, neither
+ of us was at the birth ! So seven years after looking out the window at
+ the bird which a part of landed in our brain, is the bird still there or
+ forgotten and if it's there then is it on a new piece of matter ?
+\end_layout
+
+\begin_layout Standard
+So we leaned we can do time travel pretty easily and now we see we can do
+ matter transport just as easy, in fact we cannot, not do matter transport
+ as our cells are being left behind and new ones growing continually! Some
+ of these understanding may make later revelations and perhaps untruths
+ easier to accept as being remotely plausible.
+\end_layout
+
+\begin_layout Standard
+CHAPTER 2
+\end_layout
+
+\begin_layout Standard
+Further Education
+\end_layout
+
+\begin_layout Standard
+2.1.
+ Fork in the road
+\end_layout
+
+\begin_layout Standard
+So on we go to further education, secondary school, college, university
+ and so on and what are we achieving.
+ Well lets look back for a minute at primary education all the way to here.
+ We had our parents likely teaching us (even if we did not realise it) and
+ perhaps nursery teachers and then school teachers.
+ Hopefully they all did a good job, but what were they teaching us? I think
+ they were teaching us knowledge, but not a split up or single track of
+ knowledge but just knowledge.
+\end_layout
+
+\begin_layout Standard
+So in furthering our education we perhaps for the first time in our lives
+ realise something (or are trained to), and this is a very peculiar thing
+ indeed, more strange than some of the initial chapter.
+ We are not only told we cannot keep learning knowledge but in fact we are
+ prohibited from doing so by the whole weight of the education system.
+ It is time to stop learning knowledge that's what furthering our studies
+ is forcing us to do.
+\end_layout
+
+\begin_layout Standard
+This is the time in our lives that we start to make choices about what part
+ of knowledge we want to explore, is it Literature and arts or maths and
+ science ? This is perhaps required due to the mechanisms we use to teach
+ but also very dangerous indeed.
+\end_layout
+
+\begin_layout Standard
+It is important to recall what we are all trying to learn about and what
+ issues we are looking to solve (otherwise we don't need education we just
+ need a good book with the answer in it).
+ All we are studying and learning about is nature and that's it.
+ Nature as we know is everything around us, animals, water, all the basic
+ chemical compounds, plants, trees, sky, planets, stars etc.
+ even questions like who are we? why are we ? are part of the study if nature.
+ Now we are told you can only use certain tools to nd these answers, sort
+ of like saying to a car mechanic, you may x this car but can only choose
+ a subset of tools to do it with and beforehand we cannot tell you what's
+ the problem is, it may need repeated or a new engine, but you Can only
+ choose a small set of tools form this tool-bag.
+ The further we go into education the lesser the set of tools we are allowed
+ to use and likely the cars we attempt to repair are extremely more complex.
+ This is one of the ultimate dichotomies of an apparently educated society.
+\end_layout
+
+\begin_layout Standard
+2.2.
+ Cement the disbelief
+\end_layout
+
+\begin_layout Standard
+To achieve this dichotomy in a way we can accept we need to do some work
+ to force ourselves into certain untruths again.
+ Sorry but this is how we do things, or at least have done so far.
+ So we need to choose only some tools and not others, in the above analogy.
+ A good way to accept this is to imagine the tools we did not
+\end_layout
+
+\begin_layout Standard
+23
+\end_layout
+
+\begin_layout Standard
+24
+\end_layout
+
+\begin_layout Standard
+2.
+ FURTHER EDUCATION
+\end_layout
+
+\begin_layout Standard
+choose were only tools we could not use anyway, they are either rubbish
+ and don't work (although we know they do for others) or there too complex
+ (although OK for others) or there simply the wrong tools (although there
+ OK for others).
+ There we have a bag of mis-truths we can use.
+ So now we need to cement these truths and we have some help along the way.
+ As we now segregate into our groups who have all chosen the same tools
+ we find a very powerful force that humanity has made enormous use of in
+ the past to perpetuate many kinds of half-truths.
+ This force is found in groups of peers, peers who share a same belief and
+ can enhance that by agreement with your lies.
+ Hey I have the same lie you're unlikely to hear but absolutely that's the
+ truth you're very likely to hear.
+ There we go it's becoming cemented now, nearly enough to believe the other
+ students who picked dierent tools are wrong.
+ (I know and so do you we all did it).
+\end_layout
+
+\begin_layout Standard
+Now we can go into class and be rearmed from our mentor and idol for the
+ time were there, the teacher, that our beliefs are correct this is the
+ best sub ject (tool) to have chosen and holds such wonder and merriment
+ that life without this tool would be woefully incomplete.
+ Job done, lie is set.
+ But! this is a strange lie as we probably have several sub jects and hear
+ the same thing in all of them from possibly different peers and different
+ teachers, but then we have another protection we can adapt and reform the
+ lie to oh all these tools are so good, none are bad and yet I am glad I
+ did not choose the others cause there obviously all the wrong tools for
+ life on this planet, he he!.
+ We ignore that each tools is the best thing to have chosen and now it's
+ a set of the best things to have chosen, we can adapt truths to match our
+ beliefs very quickly.
+ I am painting a very poor picture here and please forgive me but I need
+ to get this point driven home then tear it all down again, hopefully.
+\end_layout
+
+\begin_layout Standard
+2.3.
+ Laws and Theories
+\end_layout
+
+\begin_layout Standard
+In many subjects we have what is referred to as laws.
+ A law is something that allows theories to be proven by experiment or vision
+ in nature.
+ A theory is the opposite of this, it may be something that sounds right,
+ or has maths that appear to work, but not yet proven completely by experiment
+ (or seen continually and consistently in nature).
+\end_layout
+
+\begin_layout Standard
+Something that is extraordinary is that this is a fundamental and absolute
+ foundation of our knowledge, however, we teach people theories as though
+ they are laws.
+ As time goes by these theories (still unproven) are added to with more
+ theories on top of the original idea.
+ After this we build great universities and education es- tablishments and
+ ll these with professors, lecturers and impart these theories onto students.
+ These students then believe the theories are true (they are not really
+ told or reminded of this fact).
+ As the students themselves become industry employees and perhaps even lecturers
+ themselves the theory becomes further believed, until we forget it was
+ a theory in the first place.
+\end_layout
+
+\begin_layout Standard
+We must have theories and we must constantly remind ourselves these theories
+ are simply theories.
+ This is a thing to investigate, not to believe is true, in fact acceptance
+ of a theory as true is what propaganda tries to do when persuading people
+ you are correct and they are wrong, it's also what many believe religion
+ is and this is not something that should ever be taught as correct.
+ It should be part
+\end_layout
+
+\begin_layout Standard
+2.4.
+ E = M C 2
+\end_layout
+
+\begin_layout Standard
+25
+\end_layout
+
+\begin_layout Standard
+of education, but firmly in the theory category and never in the law category,
+ until proven to a level that satises us it is absolute and measurable.
+\end_layout
+
+\begin_layout Standard
+There are many examples of this, far to numerous to mention, but even simply
+ looking back and seeing all the discoveries that happened and are still
+ happening it is obvious we must continue to check and recheck what we teach
+ children.
+ Electrons or photons with the wave/partial duality is an example, this
+ whole thing is in disarray and thought to be corpuscular (particles) in
+ fact.
+ I know I was taught light was a wave and I believe many others have been,
+ and still probably are.
+ This is something we have to address, before the untruth is cemented into
+ an education system that then builds on a theory that is wrong.
+ What makes this a disaster is that we would take marks o or penalise a
+ student who used the correct or updated theory over the currently being
+ taught incorrect theory, this is amazing and casts the education system
+ as a weapon against knowledge growth rather than as the most important
+ allay.
+\end_layout
+
+\begin_layout Standard
+2.4.
+ E = M C 2
+\end_layout
+
+\begin_layout Standard
+Physics, an amazing subject, the study of maths applied to nature and the
+ constant search for the answer to the next thing we don't know!
+\end_layout
+
+\begin_layout Standard
+Many people do not understand physics due the predominantly mathematical
+ nature of the subject but we all actually use physics daily in many ways.
+ Whereas not many people can relate to physics we all know a couple of things
+ about it.
+ One such thing is the famous Swiss Patent Clerk Albert Einstein, seen as
+ the scruffy doddering genius and loving it.
+ An icon of the modern world and revered by many as the ultimate brain Einstein
+ on top of the works of his predecessors came up with a few good theories
+ and the famous equation E = M C 2 which I have never bought into.
+ This equation is misrepresented in may ways by many people either eminent
+ physicians or simply ordinary folks, not that physicians are not ordinary
+ folks mind.
+\end_layout
+
+\begin_layout Standard
+Primarily this is part of a theory, not a law! that means it is not proved
+ conclusively, although it shows promise.
+ So what does that all mean?
+\end_layout
+
+\begin_layout Standard
+There are a few things this equation shows, energy and mass are related
+ directly if we introduce a constant.
+ That's really about it, it's a mass energy swapping device, i.e.
+ mass can become energy and energy can become mass.
+\end_layout
+
+\begin_layout Standard
+So why do I have a problem?
+\end_layout
+
+\begin_layout Standard
+I remember as a child playing with batteries and motors and bulbs and realising
+ that when I first saw a dynamo (DC generator on a wheel of a bike) I had
+ an epiphany, anything that can make energy can be made from energy.
+ This was my understanding from my very limited experiments with coiling
+ wire and moving magnets through them and creating electricity (reverse
+ motor), or heating a coil to create electricity (reverse bulb) etc.
+ of course I realised this was true but energy losses appeared considerable
+ so I looked at them.
+ I seen that the heat I used to heat a coil was nearly all lost to the atmospher
+e and the energy used by me from food and air was to hard to measure to
+ see how much I lost moving that magnet through a coil.
+ I was convinced though that there may not be energy conservation there
+ was certainly energy conversion from one form and always back again.
+ I still do!
+\end_layout
+
+\begin_layout Standard
+26
+\end_layout
+
+\begin_layout Standard
+2.
+ FURTHER EDUCATION
+\end_layout
+
+\begin_layout Standard
+Lately I have studied some of Einstein, Penrose, Feynman (best yet I think)
+ and some others along with going back and looking at some maths bits and
+ pieces, but doing so yearning to know rather than needing to pass a test.
+ In this time I have revisited my early thinking which was squished out
+ of me I think a wee bit by modern society or something.
+\end_layout
+
+\begin_layout Standard
+There are a few issues here at play and there quite interesting.
+ First though let me say all these chaps and women who have gone down the
+ road of learning and taking us further have done fantastically well, much
+ better than I could, but never the less, there's some questions physics
+ students have and there largely ignored I feel.
+ Examples of these are: • You cannot move something faster than the speed
+ of light • Some sub atomic particles appear to have no mass • Lots of distant
+ ob jects depend on general relativity and the speed of light to measure
+ properly
+\end_layout
+
+\begin_layout Standard
+There are some more but let's tackle these a bit at a time.
+ OK Muons travelling through glass move faster than the speed of light.
+ So it's nothing can move faster than the speed of light in a vacuum some
+ will say.
+ Well I feel it's not the approaching speed of light that's the issue it's
+ nding a vacuum.
+ Space is not a vacuum as we know know so does that mean we can travel faster
+ than light in a non vacuum, muons and some other particles can!
+\end_layout
+
+\begin_layout Standard
+Sub atomic particles appear to start life with no mass and get mass somehow,
+ from big bang theories mass must have come from somewhere, we are searching
+ for a Higgs Boson in CERN now with the large hadron collider which smashes
+ hadrons together to create images of what the big bang may have looked
+ like.
+ This is done to attempt to emulate the beginning of what we understand
+ as the universe.
+\end_layout
+
+\begin_layout Standard
+Now there's the last point and I will lump it together in this little trip
+ down insanity lane again for a while.
+\end_layout
+
+\begin_layout Standard
+If light exists, and were pretty sure it does, it's the part of the electromagne
+tic spectrum we can see (we can feel, smell etc.
+ other parts of it, hmm!).
+ If it exists it must not have at one point i.e.
+ till you switch on a torch bulb for instance and electrons thrash about
+ and give of photons of light corpuscles (particles basically).
+ So it's moving at the speed of light in the stuff were also in (our atmosphere,
+ the atmosphere in the room etc.) but how did it get to that speed and in
+ how long a time.
+ Well apparently instantly which means immediately it must have accelerated
+ faster than the speed of light to get there, so a scalar limit can be broken
+ by a vector quantity, eh? I mean give light direction and it can go faster
+ than the scalar constant that is it's apparent limit.
+ That's strange.
+\end_layout
+
+\begin_layout Standard
+OK that's issue 1, but what about the rest.
+ Well if you imagine light accelerates from rest (which it kinda has to)
+ and reaches a speed in the matter it's currently in (whether space or here
+ on earth) and stays at that speed till the matter changes (i.e.
+ in any matter the light instantaneously slows or accelerates to the light
+ matter velocity and remains static at that velocity).
+ This may seem weird but it's just maybe we don't think like this normally
+ so keep that mind open a wee bit longer.
+ If light can accelerate/decelerate faster than light velocity (which is
+ the C in C 2 ) then we have something we can cope with, though a tough
+ way of getting there I
+\end_layout
+
+\begin_layout Standard
+2.4.
+ E = M C 2
+\end_layout
+
+\begin_layout Standard
+27
+\end_layout
+
+\begin_layout Standard
+admit.
+ This is that we can see light as a normal (in our mid earth limited view
+ of everything) ob ject with inertia, gathering momentum and eventually
+ stopping (or being absorbed).
+ So it's like a car starting driving to its top speed and staying there.
+ If you move the car to a higher altitude with better gripping roads it
+ may go faster than if you drive it through thick sand.
+ There ye go we can see light like a car now.
+\end_layout
+
+\begin_layout Standard
+So imagine at the sub atomic level if light speed is quite small and at
+ cosmic distances its very fast (faster than C), what would this mean? well
+ according to Einstein and proved in labs there is a relationship between
+ mass and speed, if you accelerate faster you get more mass, decelerate
+ and you get less mass.
+ So slower speed less mass, this seems reasonable.
+\end_layout
+
+\begin_layout Standard
+If this is the case and the previous paragraph is correct then at the sub
+ atomic level (slow light) mass would be tiny and in fact at zero speed
+ there's zero mass, aha the invisible Higgs Boson may not be required after
+ all, as particles will get mass with speed.
+ Now what of those distant planets who appear massive, more so that we would
+ have imagined in many cases (I hear this a lot, we found a planet in a
+ solar system but it seems very massive).
+ What if the lights not going at the speed of light all the way there and
+ back as we imagine, thereby giving us the ability to verify mass, what
+ if the lights going slower, then the planets would not be as massive.
+ Could this be an answer to a riddle ? who knows but it's worth more thought
+ and we will get back to it soon.
+ We need to remember questions create know ledge listening only permeates
+ it.
+\end_layout
+
+\begin_layout Standard
+CHAPTER 3
+\end_layout
+
+\begin_layout Standard
+Nature of thought
+\end_layout
+
+\begin_layout Standard
+3.1.
+ Language
+\end_layout
+
+\begin_layout Standard
+What's makes us soft, tough, expressive, accurate or mellow ? If we study
+ the language used to communicate then we can see a lot of our culture in
+ that language.
+ I am sure this is quite well known but I am not sure how well understood.
+ Looking at Chinese or Far Eastern languages in general which can be made
+ up of essentially symbols very dierent from Middle Eastern or Western symbols.
+ What does this mean first?
+\end_layout
+
+\begin_layout Standard
+Well all symbols are dierent somehow but the general structure of symbols
+ in these cases are interesting i.e.
+ Arabic with its long owing very joined up right to left direction is very
+ dierent from the almost box shaped very regular symbols of the Far East,
+ and also very different from Latin or Germanic based languages as in the
+ West which seem to form some basic shapes which are repeated or joined
+ vertically to form our symbols.
+\end_layout
+
+\begin_layout Standard
+The language structure of each of these regions (and within them) is also
+ very telling, i.e.
+ in native Scott's language (Gaelic) there is no real way to express yes
+ or no and in fact it's considered a spoken language.
+ This means that stories and teachings are passed down orally and therefore
+ this is one reason perhaps Scott's are considered relatively honest in
+ the world as dishonesty, especially when Gaelic was prevalent, would have
+ hampered teaching and historic records.
+ Compared with today's use of a language which is very much a written one
+ and we nd contracts and certificates important, i.e.
+ written proof as it were.
+ Although when we can rely on the written word and treat it with more respect
+ that the spoken word we nd the spoken word is very often used to express
+ untruths (and confidence trickery) and this may be due in part to the fact
+ that this can be tolerated as the written word is the ultimate truth (well
+ lawyers would certainly say so).
+\end_layout
+
+\begin_layout Standard
+Perhaps seeing the spoken word as the ultimate truth would force society
+ to be more open and honest as arguably the Gaels were and probably still
+ are to this day.
+ I single out Scotland here for this example only, there are lots of examples
+ of this through history, i.e.
+ even in English prior to written testament by the masses was possible and
+ pre-Gutenberg1 then perhaps the situation in England was very similar.
+\end_layout
+
+\begin_layout Standard
+Now worldwide we have the situation where speeches reflect feeling on occasion
+ but the written testament or agreements are what matters most.
+ Presidents can talk of getting rid of all nuclear weapons for example but
+ until an agreement is in writing
+\end_layout
+
+\begin_layout Standard
+1Printing press technology to allow the creation of cheap and available
+ to the masses, copies of written text or books as we call them.
+\end_layout
+
+\begin_layout Standard
+29
+\end_layout
+
+\begin_layout Standard
+30
+\end_layout
+
+\begin_layout Standard
+3.
+ NATURE OF THOUGHT
+\end_layout
+
+\begin_layout Standard
+which we tend to photograph and celebrate, then it's not really considered
+ real or lawful.
+ This is an example of how understated and less respected the spoken word
+ can be.
+\end_layout
+
+\begin_layout Standard
+In noting this it's also interesting how countries may then use actual spoken
+ words of foreign nationals etc., which may be out of context or overstated
+ in a passionate address, to invade their countries and ignore written testament
+ to the contrary.
+\end_layout
+
+\begin_layout Standard
+So we trust the written word almost exclusively except when we have something
+ that's perhaps not supported or even not completely true to be carried
+ out and then we rely on the here-say to allow us an element of obfuscation
+ from our actual motives.
+\end_layout
+
+\begin_layout Standard
+This happens in nearly all walks of society where we cannot buy a car without
+ paperwork but we can put somebody in jail for years with false evidence
+ or witnesses who are less than truthful.
+ It is a strange dichotomy we seem to be able to follow very easily and
+ ignore the weird nature of language in it's forms which alter from acceptable
+ to not acceptable depending on the circumstance it's used.
+\end_layout
+
+\begin_layout Standard
+Looking at world events of great importance we see the largest events are
+ very much based on oral communications which must be misunderstood as we
+ do go to war ! Smaller issues where control of masses are involved require
+ a paper trail to ensure control is retained over great periods of time
+ and unlike the larger world events which tend to be relatively quickly
+ undertaken and therefore in no need of paper trails to remind us (in case
+ we were wrong, think weapons of mass destruction).
+ This lack of tangible evidence serves many purposes and not al l of them
+ would appear honourable.
+\end_layout
+
+\begin_layout Standard
+Of course it is not acceptable to expect all ma jor events, due to their
+ very nature, to have written communication.
+ This section merely hints at the issues involved in traversing from a spoken
+ word society to one of written word and maybe doing so very quickly without
+ a chance to create some ground rules or learn how we could do it most eectively.
+\end_layout
+
+\begin_layout Standard
+3.2.
+ Nature of perception of goodness
+\end_layout
+
+\begin_layout Standard
+What drives change and why? Are good deeds done by selfish people?
+\end_layout
+
+\begin_layout Standard
+I have heard people state, there is no such thing as a good gesture and
+ everyone is helping themselves and not helping others, especially active
+ charity workers and the like.
+ I understand this thought process and perhaps even agree, but looking further
+ there is good reason.
+ Again nature is amazing and has likely planned all this.
+\end_layout
+
+\begin_layout Standard
+We all have issues and are built to imagine our past could always be better,
+ this may be abusive parents, too caring parents or other issues like environmen
+tal or social standing etc.
+ The list is endless actually and great that it is.
+\end_layout
+
+\begin_layout Standard
+So why would somebody wish to help others, is that person saving themselves,
+ in the bigger picture does that even matter.
+ In the study of complexity theory we learn things like the buttery eect
+ and why small changes can lead to enormous differences, even catastrophic
+ at times.
+ In general good grows good and vice verse.
+\end_layout
+
+\begin_layout Standard
+3.4.
+ HERE COMES COMPLEXITY THEORY AGAIN AND THE LITTLE WE KNOW OF IT.31
+\end_layout
+
+\begin_layout Standard
+So are good deeds selshly for you or are they actually you being a good
+ person.
+ I firmly believe it's the same thing! This is where I agree with the no
+ good deed is pure and only for others, notion.
+ It cannot be, but in the same token it makes complete sense and if anything
+ it makes the good deed even more important.
+\end_layout
+
+\begin_layout Standard
+3.3.
+ What about bad people doing bad deeds and what is a bad deed?
+\end_layout
+
+\begin_layout Standard
+I think there is a disease in society and it takes many forms;
+\end_layout
+
+\begin_layout Standard
+Greed and money lust ghting every possible ght acting without knowledge,
+ believing bad too quickly, constantly shouting at injustice (even perceived).
+ Of course religious and political extremism need to be added, I think consideri
+ng these as the same thing and just extremism is good enough.
+ I can see no dierence in either, in both cases children are inuenced into
+ one 'church' or another or in some cases go to the other 'church' in deance
+ of some other issue (usually parents or early peer pressure).
+\end_layout
+
+\begin_layout Standard
+So lets get straight to it, there are probably no completely bad people,
+ even mass murderers and rapists have been interviewed and seen as really
+ nice calm and caring individuals and to many who know them this is what
+ they are, but to their victims they are the devil incarnate and rightly
+ so! So there are people who are a bit bad and a bit good, this works in
+ reverse as well so it's a relative balance, but what is the constituent
+ part of our make up that can be considered the fulcrum of this scale of
+ good verses evil.
+\end_layout
+
+\begin_layout Standard
+Who can judge the middle part, or do we take a simpler view, there is an
+ extreme bad and crossing that makes somebody permanently bad (it seems
+ that is the case).
+ So what about extreme good, can a person do so much good there outcast
+ as an extremest.
+ Well it depends on the judges, does it not? In the latter example if the
+ judges are extremist religious group who celebrate the ultimate sacrice
+ (and good deed) of a suicide bomber who skilfully kills lots of 'the enemy'.
+\end_layout
+
+\begin_layout Standard
+So who is the judge, is it the ma jority, what then of minority protection,
+ should we abandon this and just kill all the red headed people for instance?
+ My hair goes red in the sun, so I had better be careful here.
+\end_layout
+
+\begin_layout Standard
+These, in my opinion, are all examples of lack of true education and free
+ thinking.
+\end_layout
+
+\begin_layout Standard
+3.4.
+ Here comes complexity theory again and the little we know of it.
+\end_layout
+
+\begin_layout Standard
+Let's go back to our minority group, the extremists, that is religious and
+ political activists (yes activists, not extreme activists, just activists).
+\end_layout
+
+\begin_layout Standard
+There are some famous experiments carried out at Stanford University in
+ California that look into human perceived levels of crossing the line (or
+ placing the fulcrum), in all of these experiments it showed the evil (relativel
+y measured) everyone is not only capable of, but indeed easily (in a few
+ hours) adopt what we would consider an evil personality and not only that
+ but maintain it and allow it to grow very quickly.
+\end_layout
+
+\begin_layout Standard
+The reason for some of these experiments was to try and thought out just
+ how some atrocities can happen like the holocaust or what the crusaders
+ did to the Muslims and the uncountable mass acts of barbarism there are
+ to choose from.
+\end_layout
+
+\begin_layout Standard
+32
+\end_layout
+
+\begin_layout Standard
+3.
+ NATURE OF THOUGHT
+\end_layout
+
+\begin_layout Standard
+One test was to take people from the street and take them into a room with
+ a scientic adviser, who was an actor that represented the authority thought.
+ The people were told to read out questions to another person who was hidden
+ behind a wall.
+ An incorrect answer meant the quiz master (the person of the street) would
+ ip a switch administering an electric shock to the person behind the wall.
+ These people (over 80%) administered shocks in an ever increasing manner
+ to well over 400Volts, which of course is deadly.
+ The person behind the wall would scream after each shock and in latter
+ stages make no noise as though they were unconscious (or worse).
+ Regardless the people administering the tests did apply these deadly shocks,
+ which of course were fake.
+ This test was carried out twice with the same results, people would take
+ action that kills when told to do so or by being relieved of the authority
+ of killing.
+\end_layout
+
+\begin_layout Standard
+Another test carried out twice (as far as I know) was to take Stanford students
+ and split them into 2 groups, prison wardens and prisoners.
+ This was started by the police rushing into their homes and taking the
+ students to a jail.
+ The test had to be abandoned both times after a short period as the wardens
+ became extremely controlling and actually started to make the prisoners
+ perform sexual acts and other acts that were incredibly degrading.
+ The experiment was stopped and psychiatrists were required from many students
+ to recover from the ordeal.
+ Why ? you may ask did they do this, and that is the unanswered question,
+ never the less it is the case this is what did happen.
+\end_layout
+
+\begin_layout Standard
+This gives clear results and shows we are very easily manipulated, but it
+ leaves a bigger question, what's natural, evil or good? there was no attempt
+ to answer this question, perhaps we are to scared to know.
+ I note another interesting thing about these experiments though, they seem
+ to be mostly measured against men, I did not see any women involved, perhaps
+ there is a clue there.
+\end_layout
+
+\begin_layout Standard
+Were men evolved from hunters and therefor ghters with ability to kill and
+ do so without remorse or much thought? Did it have to be like this to get
+ us to where we currently are? and is this a mostly dormant although overwhelmin
+g emotion that exists in us all.
+ I know many previous people say it is, but that is too easy and a cop out
+ headline hunting thing to say.
+\end_layout
+
+\begin_layout Standard
+What about women then, are they naturally programmed to not question these
+ acts? I would think they have to be.
+ Just as much as it's possible for a male to be 'evil' it's possible for
+ a female to ignore that.
+ Maybe that is why so many men get married in prison to women they have
+ not met!
+\end_layout
+
+\begin_layout Standard
+Is it wrong then?
+\end_layout
+
+\begin_layout Standard
+Well it's probably not, it is what nature had to do to get us here, where
+ we are today.
+ Therefor we need to not only accept it but be thankful for it.
+\end_layout
+
+\begin_layout Standard
+Is that getting better ?
+\end_layout
+
+\begin_layout Standard
+Absolutely! If we take all known data about population and deaths, particularly
+ deaths of a person by another (including all war) then there is an exponential
+ decay.
+ This means we are moving towards zero, but unlikely ever to get there.
+ This is what exponential decay means, not a worry we may be so close to
+ zero it's immeasurable.
+ What ? pardon ? how can that be ?
+\end_layout
+
+\begin_layout Standard
+3.4.
+ HERE COMES COMPLEXITY THEORY AGAIN AND THE LITTLE WE KNOW OF IT.33
+\end_layout
+
+\begin_layout Standard
+Well people kill people in a variety of ways, perhaps the recent banking
+ crisis has killed more people than say a few plane crashes or wars (personally
+ I think it has).
+ These deaths may be subtle like people who commit suicide due to it or
+ people who have not been able to live their dream of creating a new thing
+ for us all, eectively killed as far as humanity is concerned as they may
+ now never fully contribute.
+ This not not zero but closer and the closer we get to that we have to imagine
+ we are evolving for the better.
+\end_layout
+
+\begin_layout Standard
+This is all related to education and education is at the root of all of
+ this seemingly misplaced chapter.
+ As people realise their own value and can question even their deepest beliefs
+ with clarity and full acceptance of the opposite being more likely we will
+ get to the magic zero.
+\end_layout
+
+\begin_layout Standard
+CHAPTER 4
+\end_layout
+
+\begin_layout Standard
+Nature of Consciousness
+\end_layout
+
+\begin_layout Standard
+4.1.
+ Natures very clever game
+\end_layout
+
+\begin_layout Standard
+Nature is what we refer to as the ever evolving mixture of molecules, atoms
+ and cells which form things, these things can be animals, plants, structures
+ etc.
+ but in essence there all evolving and must have evolved if we are to believe
+ once there was nothing or a big bang.
+ It is interesting to note this big bang theory is again a theory, we may
+ always have been here, or perhaps we never were! The answer is likely in
+ between these two hypothesis.
+\end_layout
+
+\begin_layout Standard
+An interesting theory that I have been playing with recently is that thought,
+ just like any other thing is also evolving.
+ So whether other beings are capable of thought is irrelevant here in this
+ debate, thereby making it an easier hypothesis to follow.
+\end_layout
+
+\begin_layout Standard
+4.2.
+ So how does this work then ?
+\end_layout
+
+\begin_layout Standard
+Looking back as far as we feasibly can in time and history we see the evolution
+ of speech or communication beyond basic sounds into what we call today
+ language.
+ This language may be recorded, written, spoken, sung etc.
+ and we use it in many ways.
+ The driving force behind the communication ability (beyond the evolution
+ of vocal chords such as ours) is often referred to as thought or intelligence
+ (which I do not favour, Canadian tree frogs can freeze solid and thaw out
+ again, year in year out without damage, we cannot manage that with all
+ our intelligence).
+\end_layout
+
+\begin_layout Standard
+As time has passed to the current day we can map out the advances in communi-
+ cation and now we have the Internet and global communications for the first
+ time and this is improving exponentially.
+ This is much more remarkable time in our evolution than I feel most people
+ realise.
+\end_layout
+
+\begin_layout Standard
+We still have governments and large companies saying things such as we cannot
+ yet measure the benets of a more integrated and faster Internet, therefore
+ cannot spend money on it! This must be one of the most ludicrous statements
+ and a clear example of a society with insanity at it's core.
+ We all see increased communications as one of the most dramatic changes
+ to our life's and yet when looking at improving it we feel we need to have
+ the ability to time travel forward to make doubly sure it works, with all
+ the weight of evidence that it does so readily available.
+\end_layout
+
+\begin_layout Standard
+If you now think laterally it would appear thought takes a part in this
+ evolution, as thought (or consciousness) evolves then we communicate more
+ eectively.
+ An example is the fact we kill less people today than every before (if
+ you map the amount of people killed by people throughout history the graph
+ is an exponential
+\end_layout
+
+\begin_layout Standard
+35
+\end_layout
+
+\begin_layout Standard
+36
+\end_layout
+
+\begin_layout Standard
+4.
+ NATURE OF CONSCIOUSNESS
+\end_layout
+
+\begin_layout Standard
+decay, almost getting to zero now, this includes all wars and genocidal
+ acts of recent times).
+\end_layout
+
+\begin_layout Standard
+As we have already seen nature is far more complex than we can understand
+ today and can achieve things we cannot such as the tree frog or bacteria
+ that live in radiation etc.
+ It appears then that thought is an evolutionary issue and this may explain
+ other issues as well, such as why are so many people depressed these days
+ (animals don't seem to be as eected).
+ Could it be this evolutionary process is like every other i.e.
+ there's lots of mistakes along the way that are rectied in later generations
+ of the evolutionary process.
+\end_layout
+
+\begin_layout Standard
+This would also indicate there's another issue nature has to deal with and
+ perhaps it does it very well.
+ This issue is ltering, how can a collection of thoughts be added together
+ in a random fashion.
+ Well the answer is it cannot! unless we introduce ltering.
+\end_layout
+
+\begin_layout Standard
+4.3.
+ Natures Filter
+\end_layout
+
+\begin_layout Standard
+So how does the lter work ? If we look at people then there's a pretty large
+ body of evidence that secluded people become ill fast and generally do
+ not survive too long.
+ Also we should note that people are automatic lters, by this I mean if
+ you listen to a story you may repeat it (adding to collective intelligence)
+ or you may be bored by the story and not repeat it, thereby naturally ltering
+ what gets passed on.
+\end_layout
+
+\begin_layout Standard
+As you grow then you gather lots of information personal to you that you
+ do not pass on such as your own memories, everything your eyes see (and
+ also lter to an extent) and every feeling you have.
+ As you age the brain lls up with a lot more of this and you are left with
+ a head full of these thoughts like a washing machine with a dirty lter,
+ it starts to clog up.
+ As you age then you also communicate less and slow down, thereby discovering
+ less to pass on (in many cases) and this is where nature has built the
+ perfect lter, death ! That's correct as the ltering device is age and the
+ person is less able to add to the collective thoughts or consciousness
+ then nature terminates the collection of molecules that we call humans.
+\end_layout
+
+\begin_layout Standard
+This theory may seem absurd, but it is just a theory and perhaps it t's
+ more than we realise.
+ Nature is very complex and extremely ecient, when you look and see that
+ any action such as turning left instead of right at a junction could inuence
+ a seemingly unrelated event on the other side of the world (chaos theory
+ or the buttery eect) then you can begin to understand the hugely complex
+ realm nature has created.
+\end_layout
+
+\begin_layout Standard
+So back to the theory of thought.
+ If nature is complex and we believe it is, it also must have a rule set
+ which ensures that each part of nature obeys the purpose for which is was
+ evolved or created to do.
+ In this case then we see animals or plants that are ill formed, die and
+ wither away to be absorbed into the collection of stuff that is our universe,
+ only the be born again as something else.
+ This is the ultimate recycling system.
+ we also see severely injured organisms who fail to perform their roles
+ as intended, also die out and get recycled.
+\end_layout
+
+\begin_layout Standard
+As humans we have overcome some of these otherwise fatal events and have
+ done so amazingly well, with medicines and suchlike.
+ We do however live in this complex
+\end_layout
+
+\begin_layout Standard
+4.3.
+ NATURES FILTER
+\end_layout
+
+\begin_layout Standard
+37
+\end_layout
+
+\begin_layout Standard
+thing called earth that we do not understand or can comprehend.
+ The question has to be that if we keep interfering with nature and bending
+ these rules, without a complete understanding of the machine, what will
+ be the outcomes? Will nature have an overall strategy to deal with this
+ forced change of rules by one species, it very well may.
+\end_layout
+
+\begin_layout Standard
+Again though if we consider a part of nature we have not been able to meddle
+ with yet, thought or consciousness.
+ The study of the computer or brain is staring to try and unravel some of
+ these rules, but it is still at an extraordinary elementary stage at this
+ time.
+ We cannot understand much of the brain, although for years we talk of a
+ right hand side, left hand side thinker, which is preposterous as we have
+ no clue if left hand side of the brain can function as a logical side with
+ the right hand side as the creative side.
+ This is a silly meme we all take as true, even when the science world could
+ tell us they do not know, for some reason we maintain a belief that we
+ know this to be true.
+ Startling actually!
+\end_layout
+
+\begin_layout Standard
+As somebody once said If I have an apple and you have an apple then we have
+ an apple each, if I give you mine there are still only two apples and I
+ am left without, however if we have a thought each and share this then
+ we each have two thoughts.
+ I think that although this is true, there is more to it than we st see.
+ The sharing of a thought between people is a very complex thing.
+ If we imagine that there are thousands of thoughts each and every one of
+ us has a dierent set of thoughts, then imagine each person thoughts as
+ a circle (Venn diagram for all you maths people).
+ Each circle contains all the thoughts of a single individual.
+ Now imagine drawing this diagram, but this time show each persons shared
+ thoughts.
+ If we could freeze the thought transfer process and stop everyone thinking
+ for a while this may be eventually possible, although we need a sentient
+ being to create the drawing as any human would increase the complexity
+ by merely thinking about drawing it.
+\end_layout
+
+\begin_layout Standard
+So we can see this Venn diagram would be extremely complex and ever changing.
+ Now introduce the Internet and connect everyone to it, the diagram is now
+ crazy and showing symptoms of Brownian type motion.
+ We have seen this before, have we not?
+\end_layout
+
+\begin_layout Standard
+This is an example of entropy or as some have coined the phrase the arrow
+ of time.
+ As this diagram grows the complexity only gets more complex and never simpler.
+ Here nature is doing it's wonderful job right in front of our eyes and
+ we are not as aware of it as we should.
+ This entropy is exponential, which means the increased shared knowledge
+ is exponentially increasing (we do not really know the rate), so the question
+ is, are we ready for what comes next ?
+\end_layout
+
+\begin_layout Standard
+So back to sharing that idea or thought.
+ Now the questions is easier to formulate in our mind, who exactly are we
+ sharing the thought with ? is it only the person we speak to, as he is
+ connected to everyone else indirectly or is it a collective? I believe
+ it is the latter, which brings a new and fresh approach to this question,
+ or should I say answer.
+ The answer is we are sharing it with ourselves, we are giving ourselves
+ back the idea, but it's now measured, calculated, postulated and well formed
+ and associated with all other ideas in this collective, of which we are
+ all part.
+ Whack or what ?
+\end_layout
+
+\begin_layout Standard
+So if this is what nature has created, then it must have a mechanism for
+ ensuring the collective thoughts or consciousness are constantly updated
+ and accurate.
+ If
+\end_layout
+
+\begin_layout Standard
+38
+\end_layout
+
+\begin_layout Standard
+4.
+ NATURE OF CONSCIOUSNESS
+\end_layout
+
+\begin_layout Standard
+we think back to the assumption that we learn errors and perpetuate them,
+ then if nature is smart, it has a way of xing that situation.
+ Again death performs an important role here.
+ If we have educated a person with false knowledge (at earth folks), then
+ it much easier to end that train of thought (kill o the person) and create
+ a new person who will be taught the correct ways of working.
+ That new person will then add to the collective thoughts and x the old
+ mistakes, basically by introducing many new ideas on top of the new found
+ approach he was created to achieve.
+\end_layout
+
+\begin_layout Standard
+If this is indeed how nature works, and it seems very plausible, then it
+ must have created us to add to this consciousness.
+ So what about people who do not? This is where the contentious issue may
+ lie, as we grow old or merely have been around for a while, then our early
+ ideas will be old now and newer and better ideas are in play.
+ We lose the ability to add to the collective, by dis association, we may
+ get boring or perhaps reclusive, either way the collective is not gaining
+ from us and if natures game is to create a consciousness, then we are not
+ relevant any more.
+ So nature builds in a protection mechanism and this is death and the journey
+ to it.
+ as we distance ourselves from the ability to add to the collective and
+ interesting conversations, we become more depressed or less happy, this
+ in turn starts to allow our bodies to begin decay and eventual extinction.
+ This is a fantastic mechanism and as with many things in nature, it works
+ exceptionally well.
+\end_layout
+
+\begin_layout Standard
+So death is required to continue the advancement of mankind or at least
+ grow the collective consciousness.
+ This may also explain why as we evolved we now live longer as we have better
+ communications and mechanisms in place to allow continued addition of knowledge
+ to the collective consciousness.
+ If this is indeed the case then nature has again outsmarted us by a long
+ way.
+\end_layout
+
+\begin_layout Standard
+We may even learn this is true (remember this is a theory and not a law)
+ and begin to accept this constant recycling is necessary and should be
+ something we all understand and perhaps we can accept death for the natural
+ process it is and maybe the young should be thanking the older people for
+ dying, not mourning death and fearing it.
+ It does make their job of using new knowledge and getting it accepted by
+ the collective that much easier.
+ We can see the reduction in racism, sexism and many other things require
+ older generations to die o and a great thing that is.
+\end_layout
+
+\begin_layout Standard
+This also begs, another question and one which many people spend a lot of
+ time pondering.
+ Is there a way to prolong life ? I know when I was about seven or eight
+ years old my grandfather died and I spent days wandering alone in the playgroun
+d at School, thinking about this and realising I did not want to die.
+ I still feel that way actually.
+\end_layout
+
+\begin_layout Standard
+Imagine though if nature has in fact arranged death for the reasons mentioned
+ above and we cheat.
+ If we can continue to add new information then perhaps we are valuable
+ and nature keeps us OK and alive.
+ This would mean maintain the ability to be articulate, whether writing,
+ speaking or inventing new stuff.
+ It would also mean we learn a lesson that has so far eluded people and
+ this is the lesson of complete humility and acceptance of new truths, the
+ ability to accept new information and redo our understanding of what we
+ previously believed to be true.
+ Now this would not be simple, think of the Venn diagram again, extremely
+ complex and indicative of the links of all the bits of knowledge we have
+ when added to the collective, which as we know comes back to us in our
+ thought process.
+\end_layout
+
+\begin_layout Standard
+4.3.
+ NATURES FILTER
+\end_layout
+
+\begin_layout Standard
+39
+\end_layout
+
+\begin_layout Standard
+Is this possible? you may ask and I believe it is, although it's like infinity,
+ it's a destination we never reach but can certainly journey towards it.
+\end_layout
+
+\begin_layout Standard
+CHAPTER 5
+\end_layout
+
+\begin_layout Standard
+An Option For The Future
+\end_layout
+
+\begin_layout Standard
+5.1.
+ A blueprint
+\end_layout
+
+\begin_layout Standard
+"Would it not be great to have an educated society?", yes ! of course we
+ all agree.
+ However there is a ma jor issue, and this is simply what is education ?
+\end_layout
+
+\begin_layout Standard
+This needs thought and clear thought devoid of prejudiced and entrenched
+ views of what education is.
+ This is difficult as we do have a view of education that's been taught
+ and hammered home, successfully over years.
+\end_layout
+
+\begin_layout Standard
+Like in life when we think every accountant can count, every lawyer knows
+ the law we also believe that every lecturer knows best.
+ To add to this there is a ton of people telling us so, from parents, politician
+s and eventually employers who all seem to think we should have our worth
+ measured in sub ject based certificates.
+\end_layout
+
+\begin_layout Standard
+Our current education system is based on excellent ideals and foundations,
+ however it is does fail so many people now with it's rigid approach and
+ pigeon hole approach to identifying people and ability.
+\end_layout
+
+\begin_layout Standard
+5.2.
+ Dropouts and success of dropping out
+\end_layout
+
+\begin_layout Standard
+If we study some of the worlds largest companies and look at the founders,
+ whom we are either proud of or are very jealous of, they have generally
+ one thing in common, they rarely completed University courses.
+ They mostly did have to go to University to drop out though and again this
+ is important.
+ This shows a thirst for knowledge, but perhaps identies situations and
+ circumstances where that was not being fullled, in many cases, talking
+ to some people they were frankly bored in a lot of cases.
+\end_layout
+
+\begin_layout Standard
+5.3.
+ Industrialised Education
+\end_layout
+
+\begin_layout Standard
+In the post industrial revolution, motivation for education increased substantia
+lly.
+ The good intent to provide global education was driven and accepted by
+ the vast ma jority, after all an educated society has so much more to oer.
+ It is a great thing to attempt, however mass education like this with children
+ grouped by age and educated in a conveyor belt one size ts all system does
+ have many weaknesses, as well as advantages.
+ The ability to read, write and count is almost a minimum re- quirement
+ for today's society.
+ Mass education of this kind is arguably a good thing, but it is a core
+ skill, like walking we still need to teach talking, jumping and running
+ and we will all do this with varying degrees of ability skill and determination
+, as it should be.
+\end_layout
+
+\begin_layout Standard
+41
+\end_layout
+
+\begin_layout Standard
+42
+\end_layout
+
+\begin_layout Standard
+5.
+ AN OPTION FOR THE FUTURE
+\end_layout
+
+\begin_layout Standard
+5.4.
+ So what is a qualication ?
+\end_layout
+
+\begin_layout Standard
+We often hear statements like, "you're not qualied to talk about that!",
+ and we are presented with 'expert' opinion from people who are qualied.
+ The interesting point is that very rarely does a certicate get produced
+ showing a degree or similar in a sub ject and this is alone accepted as
+ making somebody, qualied to discuss an important issue.
+ For instance there would not be many expert witnesses in a court that are
+ there simply because they hold a certicate from some University or College!
+ It is nearly always experience in that eld that counts, experience is important
+, the willingness to do something cause you like it.
+ We will come back to that I think.
+\end_layout
+
+\begin_layout Standard
+This is an example of a situation where we as people twist our knowledge
+ and belief structure in a manner that hides what we really know.
+ A paper based qualication does not make one qualied, so why do we refer
+ to these things as qualications ?
+\end_layout
+
+\begin_layout Standard
+So a certicate is a very rough measure of capability in a very specialised
+ and rigidly applied curriculum.
+ What value is there in such a thing ? Arguably lots if we can consider
+ it from a certain angle and ignore the important stuff.
+ For example a degree in art from one college may show a person is good
+ at art, but what kind of art? what was the basis for this certicate being
+ relevant to an employer looking for somebody versed in art ? For these
+ reasons the certicate is a very rough guide and potentially also a very
+ poor indicator of what the content of the course involved.
+\end_layout
+
+\begin_layout Standard
+For the mechanical and baseline education such as basic maths, writing,
+ reading and arguably drama, languages, art etc.
+ then a certicate can show there is elementary ability in an easy for us
+ all to understand syllabus.
+\end_layout
+
+\begin_layout Standard
+5.5.
+ What is a certicate
+\end_layout
+
+\begin_layout Standard
+We believe a certicate is the golden eece whilst we study very hard to attain
+ it.
+ During a course that is laid out for us we force ourselves to stay awake
+ in lessons we have no interest in, but are deemed part of the course by
+ the system.
+ A certicate is an approximation of a degree of capability in a wide ranging
+ course.
+ Advanced courses do specialise in part, although these parts are managed
+ by others who have also been sub jected to this system.
+\end_layout
+
+\begin_layout Standard
+Employers take less interest in certificates, people are less interested
+ in certificates.
+ The meaning of certificates has reduced in stature over the post-industrial
+ years and this should be no surprise.
+\end_layout
+
+\begin_layout Standard
+5.6.
+ The Option
+\end_layout
+
+\begin_layout Standard
+To redress the balance of the education system a University that encourages
+ learn- ing, teaching and most importantly the growth of knowledge as opposed
+ to the transfer alone will require to be created.
+ Transferring knowledge in a class where teachers teach and students listen
+ has logically to reduce and water down the to- tality of knowledge available
+ whilst ignoring the potential of the students.
+\end_layout
+
+\begin_layout Standard
+Given the fact that people, as with any known thing in nature, will pay
+ attention to what they are interested in and shun what they are not.
+ It makes sense to allow them to levitate to interesting things, this will
+ encourage learning and passing of
+\end_layout
+
+\begin_layout Standard
+5.6.
+ THE OPTION
+\end_layout
+
+\begin_layout Standard
+43
+\end_layout
+
+\begin_layout Standard
+information to and for.
+ It would appear very logical to provide a system where people with a thirst
+ for knowledge can nd it and nd it when they wish, easily, simply and immediatel
+y.
+ This is a lot simpler than one can imagine.
+\end_layout
+
+\begin_layout Standard
+CHAPTER 6
+\end_layout
+
+\begin_layout Standard
+The new University
+\end_layout
+
+\begin_layout Standard
+6.1.
+ Entrance Qualications
+\end_layout
+
+\begin_layout Standard
+This University will not not require any entrance certificates or qualications.
+ In- stead it will provide free to attend classes on several sub jects,
+ all sub ject given by interested teachers.
+ These teachers act as leaders of conversations rather than lecturing continuall
+y.
+ Free debates, challenges and actual two way growth of knowl- edge in many
+ sub jects.
+ No overall keeper of any faith or ego driven megalomaniac, instead a yearning
+ for more, satised in every class to varying degrees.
+\end_layout
+
+\begin_layout Standard
+6.2.
+ Exit certificates
+\end_layout
+
+\begin_layout Standard
+As we have already seen, exit certificates are very general and vague.
+ What employ- ers require is people who work in jobs they would love to
+ do, given the opportunity.
+ The intent here is to provide those people and at the same time that opportunit
+y.
+ At any time a student should be able to print o his or her attendance at
+ classes as a means of proof of thirst for knowledge in a sub ject range.
+ For instance an Engineering student may show great interest in physics,
+ mathematics and certain forms of Engineering, not generally but specically
+ and related to the job being applied for if all is well.
+ In this case is may be aeronautical Engineering and associ- ated classes
+ that would allow the Employer to see exactly where this new Engineer would
+ t.
+ It may be a company or museum or dance troupe looking for people with dierent
+ skills altogether and again an inspection of the classes attended will
+ show desire and dedication to the task at hand.
+\end_layout
+
+\begin_layout Standard
+now people will think, yes all very good but what if the person attended
+ the classes just to get a job with high pay or get into that dance troupe?
+ Attending does not measure ability, but does it not! remember the basis
+ of this philosophy, people are drawn to what they are interested in and
+ shun what they are not.
+ It would be very unusual indeed form somebody to show interest in areas
+ they have no ability, it makes no sense at all.
+ The longer the student spends then it should be easy to assume there is
+ ability.
+ In fact this would be easily proven at an interview or trial period of
+ employment.
+\end_layout
+
+\begin_layout Standard
+This model shows no requirement for the existence of certificates and in
+ fact such certificates would undermine any measure of both ability and
+ more importantly desire.
+\end_layout
+
+\begin_layout Standard
+45
+\end_layout
+
+\begin_layout Standard
+46
+\end_layout
+
+\begin_layout Standard
+6.
+ THE NEW UNIVERSITY
+\end_layout
+
+\begin_layout Standard
+6.3.
+ Funding
+\end_layout
+
+\begin_layout Standard
+Unfortunately we live in a world with opposing driving forces, short term
+ govern- ments and an economy.
+ The latter means we need to show prot and the former means this prot has
+ to be measurable and fast.
+ This does not bode well for educa- tion and in fact shows why the system
+ is so industrially focused with mass conveyor belt education machines being
+ forced upon us all.
+\end_layout
+
+\begin_layout Standard
+People see certificates as a way out, a route to money and success, unfortunatel
+y if we were better educated as a while we may realise this process is awed
+ at the very core.
+ We must provide a system of education that grows knowledge and that is
+ the foundation we cannot alter, although the short term government system
+ will oppose such ideals as not being in line with industry requirements.
+ This is a mountain to climb and climb it we must.
+\end_layout
+
+\begin_layout Standard
+So to fund such a venture will require a very focused and determined eort
+ with little regard for immediate measurements.
+ We hear of the arrow of time and increasing entropy, then how can we measure
+ future success, simply we cannot.
+ We must put our faith in nature once more.
+ It has made us what we are and also made us interested in what we are intereste
+d in individually.
+ we should not ght this as we have done in recent years.
+ It is the largest and most destructive war the human race has fought so
+ far.
+\end_layout
+
+\begin_layout Standard
+If we really want to create peace and life saving inventions, then we must
+ let the quest for knowledge be fullled.
+ We must also allow the creativity of children to last and grow naturally
+ as it will given the chance.
+ To do this a stand may have to be taken.
+\end_layout
+
+\begin_layout Standard
+The way education should be funded is that on attending a class, a person
+ receives a monetary payment.
+ The more classes the more payment.
+\end_layout
+
+\begin_layout Standard
+This seems like heresy in today's world.
+ We all think that this will mean people will just go and learn for money.
+ Well so what if they did! although would you sit though a quantum cryptography
+ class for several hours every week or day for years for a few pounds, I
+ think not, well not unless you loved it.
+\end_layout
+
+\begin_layout Standard
+In this manner perhaps children who shun today's system as elitist or out
+ of reach would initially think there is money in this, then on attending
+ start to learn.
+ In learning they will nd it's not elitist and they are capable of learning
+ and enjoying it, given the range of sub jects they can try and see what
+ they like.
+ No pressure or forcing, no stick and no real carrot of any signicance,
+ purely a chance to self develop in the route nature has best made you t
+ for the sake of us all.
+\end_layout
+
+\begin_layout Standard
+6.4.
+ Graduates
+\end_layout
+
+\begin_layout Standard
+On passing through this university people should have touched something
+ special.
+ This is the self belief and understanding of differing views and realisation
+ of the immense amount of unknown information still to be understood.
+ Importantly they should realise that everyone is special and important.
+\end_layout
+
+\begin_layout Standard
+I would hope that students also realise they never qualify, by that I mean
+ there is no destination on the route to knowledge it is an never ending
+ journey and hopefully lasts a whole life.
+ The longer the better and regardless of actually gaining something
+\end_layout
+
+\begin_layout Standard
+6.4.
+ GRADUATES
+\end_layout
+
+\begin_layout Standard
+47
+\end_layout
+
+\begin_layout Standard
+measurable like a job from it they will pass on this understanding to others,
+ perhaps people who do not even attend.
+\end_layout
+
+\begin_layout Standard
+These people will also be an important funding source for the university
+ with these alumni hopefully volunteering assistance back to the university
+ both n terms of lecturing, mixing with students and improving understanding
+ as well as nancially assisting through donations where they are gainfully
+ employed, hopefully doing jobs they love and are suited to.
+\end_layout
+
+\end_body
+\end_document

@@ -69,6 +69,7 @@ call vam#ActivateAddons(['github:scrooloose/nerdtree'])
   " Prevent :bd inside NERDTree buffer
   au FileType nerdtree cnoreabbrev <buffer> bd <nop>
   au FileType nerdtree cnoreabbrev <buffer> BD <nop>
+  au BufRead,BufNewFile *.md set filetype=markdown
   nnoremap <silent> <Leader>n :NERDTree ../src/<CR>
   " NERDTree settings
   let NERDTreeChDirMode=0
@@ -77,6 +78,7 @@ call vam#ActivateAddons(['github:scrooloose/nerdtree'])
   let NERDTreeShowBookmarks=1
   let NERDTreeHightlight=1
   call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
+  let g:EasyMotion_leader_key = '<Leader>' 
   call vam#ActivateAddons(['github:ervandew/supertab'])
   call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
   ""let g:solarized_termcolors=16
@@ -264,8 +266,6 @@ map <C-t><right> :tabn<cr>
 set errorformat^=%-GIn\ file\ included\ %.%# 
 set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,../src/,/usr/include/
 
-"I keep pressing Q when I mean q
-cmap Q q
 " cd to the directory containing the file in the buffer
 nmap  ,cd :lcd %:h
 
