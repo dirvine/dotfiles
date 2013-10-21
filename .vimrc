@@ -78,7 +78,7 @@ call vam#ActivateAddons(['github:scrooloose/nerdtree'])
   let NERDTreeShowBookmarks=1
   let NERDTreeHightlight=1
   call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
-  let g:EasyMotion_leader_key = '<Leader>' 
+  let g:EasyMotion_leader_key = '<Leader> m' 
   call vam#ActivateAddons(['github:ervandew/supertab'])
   call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
   ""let g:solarized_termcolors=16
