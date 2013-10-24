@@ -43,6 +43,7 @@ flags = [
 'c++',
 '-I',
 '.',
+'-lc++abi'
 '-isystem',
 '/usr/lib/c++/v1',
 '-D',
@@ -111,7 +112,8 @@ flags = [
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.
 #compilation_database_folder = '/home/dirvine/Devel/MaidSafe/buildclangDebug'
-compilation_database_folder = ''
+
+compilation_database_folder = '/home/dirvine/Devel/MaidSafe/buildqt'
 
 if compilation_database_folder:
   database = ycm_core.CompilationDatabase( compilation_database_folder )
