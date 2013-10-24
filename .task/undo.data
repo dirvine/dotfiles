@@ -1,0 +1,12 @@
+time 1382652994
+new [description:"use task" entry:"1382652994" status:"pending" uuid:"c47d7052-8e5f-4661-8efd-4493ebbe88a0"]
+---
+time 1382653022
+new [description:"use turses" entry:"1382653022" status:"pending" uuid:"64f59a61-a1ee-4551-8e10-7c8ce5a41891"]
+---
+time 1382653881
+new [description:"create tmux scripts for startup" entry:"1382653881" status:"pending" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+---
+time 1382653887
+new [description:"use newsbeuter" entry:"1382653887" status:"pending" uuid:"bb36acbe-2231-4f7b-849e-f3e44932eb1e"]
+---
