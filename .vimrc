@@ -99,7 +99,8 @@ au BufNewFile,BufRead *
 
 let g:rainbow_operators = 2
 au FileType c,cpp,objc,objcpp call rainbow#activate()
-
+autocmd BufRead *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
+autocmd BufRead *.lyx syntax sync fromstart
 
 filetype plugin indent on
 " reset to vim-defaults

@@ -10,3 +10,6 @@ new [description:"create tmux scripts for startup" entry:"1382653881" status:"pe
 time 1382653887
 new [description:"use newsbeuter" entry:"1382653887" status:"pending" uuid:"bb36acbe-2231-4f7b-849e-f3e44932eb1e"]
 ---
+time 1382657400
+new [description:"use ranger" entry:"1382657400" status:"pending" uuid:"66a832b3-2a6a-4765-8601-628c16619837"]
+---
