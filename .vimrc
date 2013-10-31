@@ -26,76 +26,76 @@ set runtimepath+=~/.vim/addons/vam
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
-  let g:ctrlp_use_caching = 1
-  let g:ctrlp_max_files = 100000
-  let g:ctrlp_clear_cache_on_exit = 1
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
-  nnoremap <silent> <Leader>p :CtrlP ../src/<CR>
+let g:ctrlp_use_caching = 1
+let g:ctrlp_max_files = 100000
+let g:ctrlp_clear_cache_on_exit = 1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
+nnoremap <silent> <Leader>p :CtrlP ../src/<CR>
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
-  nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
-  let g:ycm_complete_in_comments = 1
-  let g:ycm_collect_identifiers_from_tags_files = 1
-  let g:ycm_seed_identifiers_with_syntax = 1
-  let g:ycm_add_preview_to_completeopt = 1
-  let g:ycm_autoclose_preview_window_after_completion = 0
-  let g:ycm_autoclose_preview_window_after_insertion = 0
-  let g:ycm_key_invoke_completion = '<C-Space>'
-  let g:ycm_confirm_extra_conf = 0
+nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_confirm_extra_conf = 0
 
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_enable_signs = 1 " Put errors on left side
-  let g:syntastic_quiet_warnings = 0 " Only errors, not warnings please
-  let g:syntastic_auto_loc_list = 1 " Only show errors when I ask
-  let g:syntastic_disabled_filetypes = ['html', 'js']
-  if has('unix')
-    let g:syntastic_error_symbol='★'
-    let g:syntastic_style_error_symbol='>'
-    let g:syntastic_warning_symbol='⚠'
-    let g:syntastic_style_warning_symbol='>'
-  else
-    let g:syntastic_error_symbol='!'
-    let g:syntastic_style_error_symbol='>'
-    let g:syntastic_warning_symbol='.'
-    let g:syntastic_style_warning_symbol='>'
-  endif
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 1 " Put errors on left side
+let g:syntastic_quiet_warnings = 0 " Only errors, not warnings please
+let g:syntastic_auto_loc_list = 1 " Only show errors when I ask
+let g:syntastic_disabled_filetypes = ['html', 'js']
+if has('unix')
+  let g:syntastic_error_symbol='★'
+  let g:syntastic_style_error_symbol='>'
+  let g:syntastic_warning_symbol='⚠'
+  let g:syntastic_style_warning_symbol='>'
+else
+  let g:syntastic_error_symbol='!'
+  let g:syntastic_style_error_symbol='>'
+  let g:syntastic_warning_symbol='.'
+  let g:syntastic_style_warning_symbol='>'
+endif
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
-  " NerdTree"
-  " Prevent :bd inside NERDTree buffer
-  au FileType nerdtree cnoreabbrev <buffer> bd <nop>
-  au FileType nerdtree cnoreabbrev <buffer> BD <nop>
-  au BufRead,BufNewFile *.md set filetype=markdown
-  nnoremap <silent> <Leader>n :NERDTree ../src/<CR>
-  " NERDTree settings
-  let NERDTreeChDirMode=0
-  let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
-  let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
-  let NERDTreeShowBookmarks=1
-  let NERDTreeHightlight=1
-  call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
-  let g:EasyMotion_leader_key = '<Leader> m' 
-  call vam#ActivateAddons(['github:ervandew/supertab'])
-  call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
-  ""let g:solarized_termcolors=16
-  syntax enable
-  ""set background=dark
-  ""colorscheme solarized
+" NerdTree"
+" Prevent :bd inside NERDTree buffer
+au FileType nerdtree cnoreabbrev <buffer> bd <nop>
+au FileType nerdtree cnoreabbrev <buffer> BD <nop>
+au BufRead,BufNewFile *.md set filetype=markdown
+nnoremap <silent> <Leader>n :NERDTree ../src/<CR>
+" NERDTree settings
+let NERDTreeChDirMode=0
+let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
+let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
+let NERDTreeShowBookmarks=1
+let NERDTreeHightlight=1
+call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
+let g:EasyMotion_leader_key = '<Leader> m' 
+call vam#ActivateAddons(['github:ervandew/supertab'])
+call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
+""let g:solarized_termcolors=16
+syntax enable
+""set background=dark
+""colorscheme solarized
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 
 " C++
 au FileType cpp,objcpp set syntax=cpp11
 au BufNewFile,BufRead *
-\ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
-\   if &ft != 'cpp'                                                                           |
-\     set ft=cpp                                                                              |
-\   endif                                                                                     |
-\ endif                                                                                       |
+      \ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
+      \   if &ft != 'cpp'                                                                           |
+      \     set ft=cpp                                                                              |
+      \   endif                                                                                     |
+      \ endif                                                                                       |
 
 let g:rainbow_operators = 2
 au FileType c,cpp,objc,objcpp call rainbow#activate()
@@ -105,7 +105,7 @@ autocmd BufRead *.lyx syntax sync fromstart
 filetype plugin indent on
 " reset to vim-defaults
 if &compatible          " only if not set before:
-    set nocompatible      " use vim-defaults instead of vi-defaults (easier, more user friendly)
+  set nocompatible      " use vim-defaults instead of vi-defaults (easier, more user friendly)
 endif
 
 " display settings
@@ -154,23 +154,22 @@ set undoreload=100000 "maximum number lines to save for undo on a buffer reload
 set incsearch
 " color settings (if terminal/gui supports it)
 if &t_Co > 2 || has("gui_running")
-    syntax on          " enable colors
-    set hlsearch       " highlight search (very useful!)
-   set incsearch       "search incremently (search while typing)
+  syntax on          " enable colors
+  set hlsearch       " highlight search (very useful!)
+  set incsearch       "search incremently (search while typing)
 endif
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 "set makeprg=clang++\ -std=c++11\ -stdlib=libc++\ -lc++abi\ -ldl\ -o\ %<\ %
-map <F4> :TlistToggle<cr>
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags=./tags;/
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-noremap <F6> <C-O>za
-nnoremap <F6> za
-onoremap <F6> <C-C>za
-vnoremap <F6> zf
-map <F7> mzgg=G`z<CR>
+noremap <F5> <C-O>zA
+nnoremap <F5> zA
+onoremap <F5> <C-C>zA
+vnoremap <F5> zf
+noremap <F6> zR
 
 " Save and make current file.o
 function! Make()
@@ -209,8 +208,8 @@ endif
 set nocompatible
 " FOLDING
 augroup vimrc
-    au BufReadPre * setlocal foldmethod=indent
-      au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
@@ -237,7 +236,7 @@ command! DeleteTrailingWs :%s/\s\+$//
 " Convert all tab characters to two spaces
 command! Untab :%s/\t/  /g
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-                      \ exe "normal g'\"" | endif 
+      \ exe "normal g'\"" | endif 
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " " location list window, or close it when is has become empty.
 " "
@@ -257,8 +256,8 @@ autocmd QuickFixCmdPost    l* nested lwindow
 ":clist   list all errors
 au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
-    exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
-  endfunction
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
 set switchbuf+=usetab,newtab
 map <C-t><up> :tabr<cr>
 map <C-t><down> :tabl<cr>
@@ -271,7 +270,7 @@ set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,.
 nmap  ,cd :lcd %:h
 
 nmap <F2> :cnext <cr> 
-nmap <S-F2> :cprev <cr> 
+nmap <F3> :cprev <cr> 
 " chdir to current file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 " "no cursor keys

@@ -13,3 +13,23 @@ new [description:"use newsbeuter" entry:"1382653887" status:"pending" uuid:"bb36
 time 1382657400
 new [description:"use ranger" entry:"1382657400" status:"pending" uuid:"66a832b3-2a6a-4765-8601-628c16619837"]
 ---
+time 1383002702
+old [description:"use task" entry:"1382652994" status:"pending" uuid:"c47d7052-8e5f-4661-8efd-4493ebbe88a0"]
+new [description:"use task" entry:"1382652994" modified:"1383002702" project:"programes" status:"pending" uuid:"c47d7052-8e5f-4661-8efd-4493ebbe88a0"]
+---
+time 1383002702
+old [description:"use turses" entry:"1382653022" status:"pending" uuid:"64f59a61-a1ee-4551-8e10-7c8ce5a41891"]
+new [description:"use turses" entry:"1382653022" modified:"1383002702" project:"programes" status:"pending" uuid:"64f59a61-a1ee-4551-8e10-7c8ce5a41891"]
+---
+time 1383002713
+old [description:"create tmux scripts for startup" entry:"1382653881" status:"pending" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+new [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002713" project:"programes" status:"pending" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+---
+time 1383002722
+old [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002713" project:"programes" status:"pending" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+new [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002722" project:"programes" status:"pending" tags:"test" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+---
+time 1383002783
+old [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002722" project:"programes" status:"pending" tags:"test" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+new [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002783" project:"programes" status:"pending" tags:"test,tests" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+---
