@@ -27,7 +27,7 @@ def DirectoryOfThisScript():
 def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
   if not working_directory:
     return list( flags )
-  new_flags = []
+  new_flags = [ '-std=c++11' ]
 
   make_next_absolute = False
   remove_next = False
@@ -97,7 +97,8 @@ def FlagsForFile( filename ):
   # This -x option is necessary in order to compile header files (as C++ files).
   final_flags.append('-x')
   final_flags.append('c++')
-
+  final_flags.append('-std=c++11')
+  
   # On macs, I need this in order to find the system libraries.
   # See: https://github.com/Valloric/YouCompleteMe/issues/303
   final_flags.append('-isystem')

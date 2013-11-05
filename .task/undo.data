@@ -33,3 +33,6 @@ time 1383002783
 old [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002722" project:"programes" status:"pending" tags:"test" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
 new [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002783" project:"programes" status:"pending" tags:"test,tests" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
 ---
+time 1383251540
+new [description:"use note for quick notes" entry:"1383251540" status:"pending" uuid:"b8d705ab-526c-4437-97fa-9d74b07ebaa3"]
+---
