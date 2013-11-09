@@ -35,6 +35,7 @@
     antialias = False
     copy_on_selection = True
     background_color = "#002b36"
+    allow_bold = False
     scrollback_infinite = True
   [[solarized-light]]
     scrollbar_position = hidden
