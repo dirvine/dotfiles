@@ -17,19 +17,21 @@ beautiful.init( awful.util.getdir("config") .. "/themes/awesome-solarized/dark/t
 terminal = "terminator"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
-browser = "google-chrome"
+browser = "firefox"
 develop = "qtcreator"
 sound = "gmpc"
 file = "thunar"
 tv = "xbmc"
 movie = "vlc"
 mailview = terminal .. " -e mutt -R"
+
+awesome.font = "Terminus 8"
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+modkey = "Mod5"
 function run_once(prg,arg_string,pname,screen)
     if not prg then
         do return nil end

@@ -25,6 +25,7 @@
 set runtimepath+=~/.vim/addons/vam
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
+call vam#ActivateAddons(['github:Shougo/vimproc.vim'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 let g:ctrlp_use_caching = 1
 let g:ctrlp_max_files = 100000
