@@ -99,7 +99,7 @@ def FlagsForFile( filename ):
   final_flags.append('c++')
   final_flags.append('-std=c++11')
   final_flags.append('-stdlib=libc++')
-  final_flags.append('-lc++abi')
+  #final_flags.append('-lc++abi')
   
   # On macs, I need this in order to find the system libraries.
   # See: https://github.com/Valloric/YouCompleteMe/issues/303

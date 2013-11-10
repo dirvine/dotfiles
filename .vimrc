@@ -62,7 +62,7 @@ else
   let g:syntastic_style_warning_symbol='>'
 endif
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
-call vam#ActivateAddons(['github:jiangmiao/auto-pairs'])
+call vam#ActivateAddons(['github:Raimondi/delimitMate'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
@@ -79,7 +79,7 @@ let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeHightlight=1
 call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
-let g:EasyMotion_leader_key = '<Leader> m' 
+let g:EasyMotion_leader_key = '<Leader><Leader>' 
 call vam#ActivateAddons(['github:ervandew/supertab'])
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 ""let g:solarized_termcolors=16
@@ -87,8 +87,25 @@ syntax enable
 ""set background=dark
 ""colorscheme solarized
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
+let  g:rainbow_ctermfgs = [
+            \ 'brown',
+            \ 'Darkblue',
+            \ 'darkgreen',
+            \ 'darkcyan',
+            \ 'darkred',
+            \ 'darkmagenta',
+            \ 'brown',
+            \ 'gray',
+            \ 'black',
+            \ 'darkmagenta',
+            \ 'Darkblue',
+            \ 'darkgreen',
+            \ 'darkcyan',
+            \ 'darkred',
+            \ 'red',
+            \ ]
 call vam#ActivateAddons(['github:oblitum/rainbow'])
-
+let g:rainbow_active = 1
 " C++
 au FileType cpp,objcpp set syntax=cpp11
 au BufNewFile,BufRead *
