@@ -12,7 +12,7 @@ flags = []
 #
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.
-compilation_database_folder='/home/dirvine/Devel/MaidSafe/buildclang'
+compilation_database_folder='/home/dirvine/Devel/MaidSafe/buildgccDebug'
 
 if compilation_database_folder:
   database = ycm_core.CompilationDatabase( compilation_database_folder )
@@ -98,7 +98,7 @@ def FlagsForFile( filename ):
   final_flags.append('-x')
   final_flags.append('c++')
   final_flags.append('-std=c++11')
-  final_flags.append('-stdlib=libc++')
+#  final_flags.append('-stdlib=libc++')
   #final_flags.append('-lc++abi')
   
   # On macs, I need this in order to find the system libraries.

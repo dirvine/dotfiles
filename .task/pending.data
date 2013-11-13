@@ -4,3 +4,5 @@
 [description:"use newsbeuter" entry:"1382653887" status:"pending" uuid:"bb36acbe-2231-4f7b-849e-f3e44932eb1e"]
 [description:"use ranger" entry:"1382657400" status:"pending" uuid:"66a832b3-2a6a-4765-8601-628c16619837"]
 [description:"use note for quick notes" entry:"1383251540" status:"pending" uuid:"b8d705ab-526c-4437-97fa-9d74b07ebaa3"]
+[description:"check camelcase in cmake" entry:"1384336806" status:"pending" uuid:"46898149-1166-439d-a549-54ce3f540a7f"]
+[description:"check prepending maidsafe in cmake" entry:"1384336820" status:"pending" uuid:"c64eb20a-29b0-4da9-af34-953c08bd0b1e"]

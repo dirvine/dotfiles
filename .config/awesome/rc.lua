@@ -50,8 +50,7 @@ end
 run_once("gnome-keyring-daemon", nil, nil, nil);
 run_once("gnome-settings-daemon", nil, nil, nil);
 run_once("gnome-sound-applet", nil, nil, nil);
-run_once("nm-applet", nil, nil, nil);
---run_once("firefox", nil, nil, 1);
+--run_once("nm-applet", nil, nil, nil);
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
