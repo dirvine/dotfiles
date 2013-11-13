@@ -115,7 +115,7 @@ PS1='\[\033[01;37m\]\w\[\033[00;35m\]$(parse_git_branch)\[\033[00m\] \$ '
 alias g='vim --remote-silent'
 stty -ixon
 alias cla="clang++ -std=c++11 -stdlib=libc++ -lc++abi -ldl"
+alias f='/usr/bin/ranger'
 ulimit -c unlimited
-export QML_IMPORT_PATH=/opt/Qt/5.1.0/gcc_64/imports
 export BROWSER=/usr/bin/elinks
 export EDITOR=/usr/bin/vim
