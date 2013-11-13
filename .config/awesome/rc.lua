@@ -47,12 +47,11 @@ function run_once(prg,arg_string,pname,screen)
         awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. " " .. arg_string .. ")",screen)
     end
 end
-
-run_once("gnome-sound-applet", nil, nil, nil);
-run_once("nm-applet", nil, nil, nil);
 run_once("gnome-keyring-daemon", nil, nil, nil);
 run_once("gnome-settings-daemon", nil, nil, nil);
-run_once("google-chrome", nil, nil, 1);
+run_once("gnome-sound-applet", nil, nil, nil);
+run_once("nm-applet", nil, nil, nil);
+--run_once("firefox", nil, nil, 1);
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
@@ -269,14 +268,14 @@ globalkeys = awful.util.table.join(
 )
 
 clientkeys = awful.util.table.join(
-    awful.key({modkey,            }, "F1",     function () awful.screen.focus(4) end),
-    awful.key({modkey,            }, "F2",     function () awful.screen.focus(1) end),
-    awful.key({modkey,            }, "F3",     function () awful.screen.focus(2) end),
-    awful.key({modkey,            }, "F4",     function () awful.screen.focus(3) end),
-    awful.key({ modkey, "Shift"   }, "F1", function (c) awful.client.movetoscreen(c, 4) end),
-    awful.key({ modkey, "Shift"   }, "F2", function (c) awful.client.movetoscreen(c, 1) end),
-    awful.key({ modkey, "Shift"   }, "F3", function (c) awful.client.movetoscreen(c, 2) end),
-    awful.key({ modkey, "Shift"   }, "F4", function (c) awful.client.movetoscreen(c, 3) end),
+    awful.key({modkey,            }, "F1",     function () awful.screen.focus(1) end),
+    awful.key({modkey,            }, "F2",     function () awful.screen.focus(2) end),
+--    awful.key({modkey,            }, "F3",     function () awful.screen.focus(2) end),
+--    awful.key({modkey,            }, "F4",     function () awful.screen.focus(3) end),
+    awful.key({ modkey, "Shift"   }, "F1", function (c) awful.client.movetoscreen(c, 1) end),
+    awful.key({ modkey, "Shift"   }, "F2", function (c) awful.client.movetoscreen(c, 2) end),
+--    awful.key({ modkey, "Shift"   }, "F3", function (c) awful.client.movetoscreen(c, 2) end),
+--    awful.key({ modkey, "Shift"   }, "F4", function (c) awful.client.movetoscreen(c, 3) end),
     awful.key({ modkey , "Control" }, "Next",  function () awful.client.moveresize( 20,  20, -40, -40) end),
     awful.key({ modkey , "Control" }, "Prior", function () awful.client.moveresize(-20, -20,  40,  40) end),
     awful.key({ modkey , "Shift"   }, "Left",  function () awful.client.moveresize(  0,   0, -20,   0) end),
