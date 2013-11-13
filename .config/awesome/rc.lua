@@ -47,11 +47,10 @@ function run_once(prg,arg_string,pname,screen)
         awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. " " .. arg_string .. ")",screen)
     end
 end
-
-run_once("gnome-sound-applet", nil, nil, nil);
-run_once("nm-applet", nil, nil, nil);
 run_once("gnome-keyring-daemon", nil, nil, nil);
 run_once("gnome-settings-daemon", nil, nil, nil);
+run_once("gnome-sound-applet", nil, nil, nil);
+--run_once("nm-applet", nil, nil, nil);
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
