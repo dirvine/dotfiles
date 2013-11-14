@@ -20,3 +20,5 @@
 	browser = google-chrome
 [gui]
 	warndetachedcommit = true
+[github]
+	user = dirvine

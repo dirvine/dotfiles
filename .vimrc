@@ -26,6 +26,21 @@ set runtimepath+=~/.vim/addons/vam
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:Shougo/vimproc.vim'])
+call vam#ActivateAddons(['github:mattn/webapi-vim'])
+call vam#ActivateAddons(['github:mattn/gist-vim'])
+"requires git config --global github.user Username
+call vam#ActivateAddons(['github:vimoutliner/vimoutliner'])
+call vam#ActivateAddons(['github:bling/vim-airline'])
+let g:airline#extensions#tabline#enabled = 1
+call vam#ActivateAddons(['github:paranoida/vim-airlineish'])
+""#let g:airline_theme = 'airlineish'
+call vam#ActivateAddons(['github:mattn/gist-vim'])
+let g:cmake_cxx_compiler = 'clang++'
+let g:cmake_c_compiler = 'clang'
+let g:cmake_build_dir = [ "build" ]
+let g:cmake_build_type = "Debug"
+let g:cmake_set_makeprg = 1
+
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 let g:ctrlp_use_caching = 1
 let g:ctrlp_max_files = 100000
@@ -191,7 +206,7 @@ onoremap <F5> <C-C>zA
 vnoremap <F5> zf
 noremap <F6> zR
 map <F7> :setlocal spell! spelllang=en_gb<CR>
-map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ../ <CR>
 
 " Save and make current file.o
 function! Make()
