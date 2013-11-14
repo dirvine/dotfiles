@@ -1,0 +1,44 @@
+time 1382652994
+new [description:"use task" entry:"1382652994" status:"pending" uuid:"c47d7052-8e5f-4661-8efd-4493ebbe88a0"]
+---
+time 1382653022
+new [description:"use turses" entry:"1382653022" status:"pending" uuid:"64f59a61-a1ee-4551-8e10-7c8ce5a41891"]
+---
+time 1382653881
+new [description:"create tmux scripts for startup" entry:"1382653881" status:"pending" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+---
+time 1382653887
+new [description:"use newsbeuter" entry:"1382653887" status:"pending" uuid:"bb36acbe-2231-4f7b-849e-f3e44932eb1e"]
+---
+time 1382657400
+new [description:"use ranger" entry:"1382657400" status:"pending" uuid:"66a832b3-2a6a-4765-8601-628c16619837"]
+---
+time 1383002702
+old [description:"use task" entry:"1382652994" status:"pending" uuid:"c47d7052-8e5f-4661-8efd-4493ebbe88a0"]
+new [description:"use task" entry:"1382652994" modified:"1383002702" project:"programes" status:"pending" uuid:"c47d7052-8e5f-4661-8efd-4493ebbe88a0"]
+---
+time 1383002702
+old [description:"use turses" entry:"1382653022" status:"pending" uuid:"64f59a61-a1ee-4551-8e10-7c8ce5a41891"]
+new [description:"use turses" entry:"1382653022" modified:"1383002702" project:"programes" status:"pending" uuid:"64f59a61-a1ee-4551-8e10-7c8ce5a41891"]
+---
+time 1383002713
+old [description:"create tmux scripts for startup" entry:"1382653881" status:"pending" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+new [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002713" project:"programes" status:"pending" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+---
+time 1383002722
+old [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002713" project:"programes" status:"pending" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+new [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002722" project:"programes" status:"pending" tags:"test" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+---
+time 1383002783
+old [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002722" project:"programes" status:"pending" tags:"test" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+new [description:"create tmux scripts for startup" entry:"1382653881" modified:"1383002783" project:"programes" status:"pending" tags:"test,tests" uuid:"6c986201-b3ad-4ac5-b050-9bf66f137b96"]
+---
+time 1383251540
+new [description:"use note for quick notes" entry:"1383251540" status:"pending" uuid:"b8d705ab-526c-4437-97fa-9d74b07ebaa3"]
+---
+time 1384336806
+new [description:"check camelcase in cmake" entry:"1384336806" status:"pending" uuid:"46898149-1166-439d-a549-54ce3f540a7f"]
+---
+time 1384336820
+new [description:"check prepending maidsafe in cmake" entry:"1384336820" status:"pending" uuid:"c64eb20a-29b0-4da9-af34-953c08bd0b1e"]
+---

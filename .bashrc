@@ -117,3 +117,5 @@ stty -ixon
 alias cla="clang++ -std=c++11 -stdlib=libc++ -lc++abi -ldl"
 ulimit -c unlimited
 export QML_IMPORT_PATH=/opt/Qt/5.1.0/gcc_64/imports
+export BROWSER=/usr/bin/elinks
+export EDITOR=/usr/bin/vim

@@ -1,119 +1,18 @@
-# This file is NOT licensed under the GPLv3, which is the license for the rest
-# of YouCompleteMe.
-#
-# Here's the license text for this file:
-#
-# This is free and unencumbered software released into the public domain.
-#
-# Anyone is free to copy, modify, publish, use, compile, sell, or
-# distribute this software, either in source code form or as a compiled
-# binary, for any purpose, commercial or non-commercial, and by any
-# means.
-#
-# In jurisdictions that recognize copyright laws, the author or authors
-# of this software dedicate any and all copyright interest in the
-# software to the public domain. We make this dedication for the benefit
-# of the public at large and to the detriment of our heirs and
-# successors. We intend this dedication to be an overt act of
-# relinquishment in perpetuity of all present and future rights to this
-# software under copyright law.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-# IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-# OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-# OTHER DEALINGS IN THE SOFTWARE.
-#
-# For more information, please refer to <http://unlicense.org/>
-
 import os
 import ycm_core
 
-from clang_helpers import PrepareClangFlags
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
-flags = [
-'-Wall',
-'-std=c++11',
-'-stdlib=libc++',
-'-x',
-'c++',
-'-I',
-'.',
-'-lc++abi'
-'-isystem',
-'/usr/lib/c++/v1',
-'-D',
-'COMPANY_NAME=maidsafe',
-'-D',
-'APPLICATION_NAME=lifestuff',
-'-D',
-'APPLICATION_VERSION_MAJOR=0',
-'-D',
-'APPLICATION_VERSION_MINOR=1',
-'-D',
-'APPLICATION_VERSION_PATCH=002',
-'-D',
-'TESTING -DBOOST_FILESYSTEM_NO_DEPRECATED',
-'-D',
-'BOOST_FILESYSTEM_VERSION=3',
-'-D',
-'BOOST_PYTHON_STATIC_LIB',
-'-D',
-'_FILE_OFFSET_BITS=64',
-'-D',
-'MAIDSAFE_LINUX',
-'-D',
-'HAVE_PTHREAD',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/third_party_libs/leveldb/include'
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/lifestuff/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/lifestuff/src',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/third_party_libs',
-'-isystem',
-'/home/dirvine/Devel/MaidSafe/buildclangDebug/boost_1_54_0/src/boost',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/third_party_libs/protobuf/src',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/third_party_libs/googlemock/gtest/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/third_party_libs/googlemock/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/common/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/private/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/encrypt/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/drive/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/passport/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/rudp/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/routing/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/lifestuff/include',
-'-I',
-'/home/dirvine/Devel/MaidSafe/src/vault/src',
-'-I',
-'/usr/include/python2.7'
-]
+flags = []
+
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
 # more details: http://clang.llvm.org/docs/JSONCompilationDatabase.html
 #
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.
-#compilation_database_folder = '/home/dirvine/Devel/MaidSafe/buildclangDebug'
-
-compilation_database_folder = '/home/dirvine/Devel/MaidSafe/buildqt'
+compilation_database_folder='/home/dirvine/Devel/MaidSafe/buildgccDebug'
 
 if compilation_database_folder:
   database = ycm_core.CompilationDatabase( compilation_database_folder )
@@ -128,11 +27,18 @@ def DirectoryOfThisScript():
 def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
   if not working_directory:
     return list( flags )
-  new_flags = []
+  new_flags = [ '-std=c++11' ]
+
   make_next_absolute = False
-  path_flags = [ '-isystem', '-I', '-iquote', '--sysroot=' ]
+  remove_next = False
+  remove_this = False
+  path_flags = [ '-isystem', '-I', '-iquote', '--sysroot=/usr/lib/c++/v1' ]
   for flag in flags:
     new_flag = flag
+
+    if remove_next:
+      remove_next = False;
+      remove_this = True;
 
     if make_next_absolute:
       make_next_absolute = False
@@ -149,32 +55,59 @@ def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
         new_flag = path_flag + os.path.join( working_directory, path )
         break
 
-    if new_flag:
+      # Remove the -c compiler directive (necessary to get header files compiling...)
+      # YouCompleteMe seems to remove this directive correctly for the cpp files,
+      # but not the header files.
+      if flag == '-c':
+        remove_next = True
+        break
+
+    if new_flag and remove_next == False and remove_this == False:
       new_flags.append( new_flag )
+
+    if remove_this:
+      remove_this = False
   return new_flags
 
 
 def FlagsForFile( filename ):
   if database:
+    # Swap .h and .cpp files 
+    # Check to see if given file is a .h file, if so, swap .h and .cpp then
+    # perform the lookup. This is because .h files are not included in the
+    # compilation database. See: https://github.com/Valloric/YouCompleteMe/issues/174.
+    # We should also resort to a minimum set of flags that work inside the
+    # standard library if we can't find the compilation database entry.
+    baseFilename, fileExtension = os.path.splitext(filename)
+    if (fileExtension == '.h'):
+      filename = baseFilename + '.cpp'
+
     # Bear in mind that compilation_info.compiler_flags_ does NOT return a
     # python list, but a "list-like" StringVec object
+    # TODO: If we don't find any flags, use the default list of flags provided.
     compilation_info = database.GetCompilationInfoForFile( filename )
     final_flags = MakeRelativePathsInFlagsAbsolute(
       compilation_info.compiler_flags_,
       compilation_info.compiler_working_dir_ )
 
-    # NOTE: This is just for YouCompleteMe; it's highly likely that your project
-    # does NOT need to remove the stdlib flag. DO NOT USE THIS IN YOUR
-    # ycm_extra_conf IF YOU'RE NOT 100% YOU NEED IT.
-    try:
-      final_flags.remove( '-stdlib=libc++' )
-    except ValueError:
-      pass
   else:
     relative_to = DirectoryOfThisScript()
     final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )
+
+  # This -x option is necessary in order to compile header files (as C++ files).
+  final_flags.append('-x')
+  final_flags.append('c++')
+  final_flags.append('-std=c++11')
+#  final_flags.append('-stdlib=libc++')
+  #final_flags.append('-lc++abi')
+  
+  # On macs, I need this in order to find the system libraries.
+  # See: https://github.com/Valloric/YouCompleteMe/issues/303
+  final_flags.append('-isystem')
+  final_flags.append('/usr/lib/c++/v1')
 
   return {
     'flags': final_flags,
     'do_cache': True
   }
+
