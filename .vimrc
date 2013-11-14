@@ -127,7 +127,7 @@ if &compatible          " only if not set before:
 endif
 
 " display settings
-set nospell               " set nowrap              " don't wrap lines
+set nowrap              " set nowrap              " don't wrap lines
 set scrolloff=2         " 2 lines above/below cursor when scrolling
 set number              " show line numbers
 set showmatch           " show matching bracket (briefly jump)
@@ -179,7 +179,9 @@ endif
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 "set makeprg=clang++\ -std=c++11\ -stdlib=libc++\ -lc++abi\ -ldl\ -o\ %<\ %
-map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nmap <F2> :cnext <cr> 
+nmap <F3> :cprev <cr> 
+map <F4> :TlistToggle<cr>
 set tags=./tags;/
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
@@ -188,6 +190,8 @@ nnoremap <F5> zA
 onoremap <F5> <C-C>zA
 vnoremap <F5> zf
 noremap <F6> zR
+map <F7> :setlocal spell! spelllang=en_gb<CR>
+map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " Save and make current file.o
 function! Make()
@@ -287,8 +291,6 @@ set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,.
 " cd to the directory containing the file in the buffer
 nmap  ,cd :lcd %:h
 
-nmap <F2> :cnext <cr> 
-nmap <F3> :cprev <cr> 
 " chdir to current file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 " "no cursor keys
