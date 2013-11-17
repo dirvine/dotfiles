@@ -3,24 +3,35 @@
 " Tabs nav - Alt-<num>
 " vimdiff - do - get changes from other, dp - put changes to other, [c next
 " change c[ rpevious change (diffoff to turn off) 
-"\p< #include<...> \p" #include"..." 
-"\cfr (framed comment) 
-" \im (add main) 
-"\rc (save compile and run)
-"\rr (run exe)
-" View any blob, tree, commit, or tag in the repository with :Gedit (and :Gsplit, :Gvsplit, :Gtabedit, ...). Edit a file in the index and write to it to stage the changes. Use :Gdiff to bring up the staged version of the file side by side with the working tree version and use Vim's diff handling capabilities to stage a subset of the file's changes.
+" View any blob, tree, commit, or tag in the repository with :Gedit (and :Gsplit, :Gvsplit, :Gtabedit, ...). 
+" Edit a file in the index and write to it to stage the changes. 
+" Use :Gdiff to bring up the staged version of the file side by side with the working tree version and use 
+" Vim's diff handling capabilities to stage a subset of the file's changes.
 
-"Bring up the output of git status with :Gstatus. Press - to add/reset a file's changes, or p to add/reset --patch that mofo. And guess what :Gcommit does!
+"Bring up the output of git status with :Gstatus. 
+"Press - to add/reset a file's changes, or p to add/reset --patch that mofo. 
+"And guess what :Gcommit does!
 
-":Gblame brings up an interactive vertical split with git blame output. Press enter on a line to reblame the file as it stood in that commit, or o to open that commit in a split. When you're done, use :Gedit in the historic buffer to go back to the work tree version.
+":Gblame brings up an interactive vertical split with git blame output. 
+"Press enter on a line to reblame the file as it stood in that commit, 
+"or o to open that commit in a split. When you're done, 
+"use :Gedit in the historic buffer to go back to the work tree version.
 
-":Gmove does a git mv on a file and simultaneously renames the buffer. :Gremove does a git rm on a file and simultaneously deletes the buffer.
+":Gmove does a git mv on a file and simultaneously renames the buffer. 
+":Gremove does a git rm on a file and simultaneously deletes the buffer.
 
-"Use :Ggrep to search the work tree (or any arbitrary commit) with git grep, skipping over that which is not tracked in the repository. :Glog loads all previous revisions of a file into the quickfix list so you can iterate over them and watch the file evolve!
+"Use :Ggrep to search the work tree (or any arbitrary commit) with git grep, 
+"skipping over that which is not tracked in the repository. 
+":Glog loads all previous revisions of a file into the quickfix list so you can 
+"iterate over them and watch the file evolve!
 
-":Gread is a variant of git checkout -- filename that operates on the buffer rather than the filename. This means you can use u to undo it and you never get any warnings about the file changing outside Vim. :Gwrite writes to both the work tree and index versions of a file, making it like git add when called from a work tree file and like git checkout when called from the index or a blob in history.
+":Gread is a variant of git checkout -- filename that operates on the buffer rather than the filename. 
+"This means you can use u to undo it and you never get any warnings about the file changing outside Vim. 
+":Gwrite writes to both the work tree and index versions of a file, making it like git add when called 
+"from a work tree file and like git checkout when called from the index or a blob in history.
 
-"Use :Gbrowse to open the current file on GitHub, with optional line range (try it in visual mode!). If your current repository isn't on GitHub, git instaweb will be spun up instead.
+"Use :Gbrowse to open the current file on GitHub, with optional line range (try it in visual mode!). 
+"If your current repository isn't on GitHub, git instaweb will be spun up instead.
 "filetype off
 set runtimepath+=~/.vim/addons/vam
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
@@ -30,17 +41,7 @@ call vam#ActivateAddons(['github:mattn/webapi-vim'])
 call vam#ActivateAddons(['github:mattn/gist-vim'])
 "requires git config --global github.user Username
 call vam#ActivateAddons(['github:vimoutliner/vimoutliner'])
-call vam#ActivateAddons(['github:bling/vim-airline'])
-let g:airline#extensions#tabline#enabled = 1
-call vam#ActivateAddons(['github:paranoida/vim-airlineish'])
-""#let g:airline_theme = 'airlineish'
 call vam#ActivateAddons(['github:mattn/gist-vim'])
-let g:cmake_cxx_compiler = 'clang++'
-let g:cmake_c_compiler = 'clang'
-let g:cmake_build_dir = [ "build" ]
-let g:cmake_build_type = "Debug"
-let g:cmake_set_makeprg = 1
-
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 let g:ctrlp_use_caching = 1
 let g:ctrlp_max_files = 100000
@@ -142,7 +143,12 @@ if &compatible          " only if not set before:
 endif
 
 " display settings
-set nowrap              " set nowrap              " don't wrap lines
+set textwidth=0
+set wrapmargin=0
+set nowrap              " don't wrap lines
+set linebreak
+set nolist
+set fo+=l
 set scrolloff=2         " 2 lines above/below cursor when scrolling
 set number              " show line numbers
 set showmatch           " show matching bracket (briefly jump)
@@ -206,7 +212,7 @@ onoremap <F5> <C-C>zA
 vnoremap <F5> zf
 noremap <F6> zR
 map <F7> :setlocal spell! spelllang=en_gb<CR>
-map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ../ <CR>
+"map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ../ <CR>
 
 " Save and make current file.o
 function! Make()
