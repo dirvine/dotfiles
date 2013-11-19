@@ -28,7 +28,7 @@ def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
   if not working_directory:
     return list( flags )
   new_flags = [ '-std=c++11' ]
-
+  new_flags.append('/usr/lib/c++/v1')
   make_next_absolute = False
   remove_next = False
   remove_this = False
@@ -80,6 +80,8 @@ def FlagsForFile( filename ):
     # standard library if we can't find the compilation database entry.
     baseFilename, fileExtension = os.path.splitext(filename)
     if (fileExtension == '.h'):
+      filename = baseFilename + '.cc'
+    if (fileExtension == '.hpp'):
       filename = baseFilename + '.cpp'
 
     # Bear in mind that compilation_info.compiler_flags_ does NOT return a
@@ -98,7 +100,7 @@ def FlagsForFile( filename ):
   final_flags.append('-x')
   final_flags.append('c++')
   final_flags.append('-std=c++11')
-#  final_flags.append('-stdlib=libc++')
+  final_flags.append('-stdlib=libc++')
   #final_flags.append('-lc++abi')
   
   # On macs, I need this in order to find the system libraries.

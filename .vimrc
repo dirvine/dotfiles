@@ -80,6 +80,9 @@ endif
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:Raimondi/delimitMate'])
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
+call vam#ActivateAddons(['github:xolox/vim-session'])
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
 call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 " NerdTree"
