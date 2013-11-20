@@ -52,7 +52,7 @@ call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -79,10 +79,15 @@ else
 endif
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:Raimondi/delimitMate'])
+call vam#ActivateAddons(['github:szw/vim-tags'])
+" Create an wmpty tags dir in project root"
+let g:vim_tags_project_tags_command = "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q  /home/dirvine/Devel/MaidSafe/src 2>/dev/null"
+let g:vim_tags_auto_generate = 1
+let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore', 'build*']
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
-call vam#ActivateAddons(['github:xolox/vim-session'])
-let g:session_autosave = 'yes'
-let g:session_autoload = 'yes'
+"call vam#ActivateAddons(['github:xolox/vim-session'])
+"let g:session_autosave = 'yes'
+"let g:session_autoload = 'yes'
 call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 " NerdTree"
@@ -187,7 +192,7 @@ set confirm             " get a dialog when :q, :w, or :wq fails
 set nobackup            " no backup~ files.
 set viminfo='20,\"500   " remember copy registers after quitting in the .viminfo file'
 set hidden              " remember undo after quitting
-set history=50          " keep 50 lines of command history
+set history=100          " keep 50 lines of command history
 set mouse=a             " use mouse in visual, normal,insert,command,help mode (shift key disables)
 set undodir=~/.vim/undodir
 set undofile
@@ -206,7 +211,7 @@ let Tlist_WinWidth = 50
 nmap <F2> :cnext <cr> 
 nmap <F3> :cprev <cr> 
 map <F4> :TlistToggle<cr>
-set tags=./tags;/
+set tags=tags;/
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 noremap <F5> <C-O>zA
