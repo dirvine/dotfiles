@@ -118,9 +118,6 @@ let  g:rainbow_ctermfgs = [
             \ 'darkcyan',
             \ 'darkred',
             \ 'darkmagenta',
-            \ 'brown',
-            \ 'gray',
-            \ 'black',
             \ 'darkmagenta',
             \ 'Darkblue',
             \ 'darkgreen',
@@ -220,7 +217,7 @@ onoremap <F5> <C-C>zA
 vnoremap <F5> zf
 noremap <F6> zR
 map <F7> :setlocal spell! spelllang=en_gb<CR>
-"map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ../ <CR>
+map <F10> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src <CR>
 
 " Save and make current file.o
 function! Make()
