@@ -21,8 +21,9 @@ browser = "firefox"
 develop = "qtcreator"
 sound = "gmpc"
 file = "thunar"
-tv = "xbmc"
 movie = "vlc"
+pcb = "/home/dirvine/fritzing/Fritzing"
+ThreeDPrint = "cura"
 mailview = terminal .. " -e mutt -R"
 
 awesome.font = "Terminus 8"
@@ -90,9 +91,10 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "Debian", debian.menu.Debian_menu.Debian },
                                     { "Open terminal", terminal },
                                     { "Browse web", browser },
-                                    { "Movies", movie },
                                     { "File manager", file },
-                                    { "Play sounds", sound }
+                                    { "Play sounds", sound },
+                                    { "3d Print", ThreeDPrint },
+                                    { "Design PCBs", pcb }
                                   }
                         })
 

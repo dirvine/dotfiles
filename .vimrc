@@ -34,9 +34,20 @@
 "If your current repository isn't on GitHub, git instaweb will be spun up instead.
 "filetype off
 set runtimepath+=~/.vim/addons/vam
+
+:function! DirCheck()
+:let homedir = $PWD
+:   if finddir("src", homedir."../;") != ""
+:      return "../src/"
+:    else
+:      return = "."
+:   endif
+:endfunction
+
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
 call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:Shougo/vimproc.vim'])
+call vam#ActivateAddons(['github:plasticboy/vim-markdown'])
 call vam#ActivateAddons(['github:mattn/webapi-vim'])
 call vam#ActivateAddons(['github:mattn/gist-vim'])
 "requires git config --global github.user Username
@@ -47,7 +58,7 @@ let g:ctrlp_use_caching = 1
 let g:ctrlp_max_files = 100000
 let g:ctrlp_clear_cache_on_exit = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
-nnoremap <silent> <Leader>p :CtrlP ../src/<CR>
+nnoremap <silent> <Leader>p :CtrlP ../src<CR>
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -80,14 +91,14 @@ endif
 call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:Raimondi/delimitMate'])
 call vam#ActivateAddons(['github:szw/vim-tags'])
-" Create an wmpty tags dir in project root"
+" Create an empty tags dir in project root"
 let g:vim_tags_project_tags_command = "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q  /home/dirvine/Devel/MaidSafe/src 2>/dev/null"
 let g:vim_tags_auto_generate = 1
 let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore', 'build*']
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
-"call vam#ActivateAddons(['github:xolox/vim-session'])
+call vam#ActivateAddons(['github:xolox/vim-session'])
 "let g:session_autosave = 'yes'
-"let g:session_autoload = 'yes'
+let g:session_autoload = 'no'
 call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 " NerdTree"
@@ -95,7 +106,7 @@ call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 au FileType nerdtree cnoreabbrev <buffer> bd <nop>
 au FileType nerdtree cnoreabbrev <buffer> BD <nop>
 au BufRead,BufNewFile *.md set filetype=markdown
-nnoremap <silent> <Leader>n :NERDTree ../src/<CR>
+nnoremap <silent> <Leader>n :NERDTree ../src <CR>
 " NERDTree settings
 let NERDTreeChDirMode=0
 let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
@@ -237,7 +248,7 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>"
 
 highlight LongLine ctermbg=Grey guibg=DarkYellow
 highlight WhitespaceEOL ctermbg=Grey guibg=DarkYellow
-if v:version >= 702 && &ft == 'cpp' 
+if v:version >= 702 && &ft == 'cpp'
   " Lines longer than 100 columns.
   au BufWinEnter * let w:m0=matchadd('LongLine', '\%>100v.\+', -1)
 
@@ -275,16 +286,16 @@ autocmd QuickFixCmdPost *grep* cwindow
 " Set a few indentation parameters. See the VIM help for cinoptions-values for
 " details.  These aren't absolute rules; they're just an approximation of
 " common style in LLVM source.
-set cinoptions=:0,g0,(0,Ws,l1
+set cinoptions=:0,g0,(0,Ws,l1)
 " Add and delete spaces in increments of `shiftwidth' for tabs
 set smarttab
 " Delete trailing whitespace and tabs at the end of each line
 command! DeleteTrailingWs :%s/\s\+$//
-
 " Convert all tab characters to two spaces
 command! Untab :%s/\t/  /g
+
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-      \ exe "normal g'\"" | endif 
+      \ exe "normal g'\"" | endif
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " " location list window, or close it when is has become empty.
 " "
