@@ -17,7 +17,7 @@ beautiful.init( awful.util.getdir("config") .. "/themes/awesome-solarized/dark/t
 terminal = "terminator"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
-browser = "firefox"
+browser = "chromium-browser"
 develop = "qtcreator"
 sound = "gmpc"
 file = "thunar"
