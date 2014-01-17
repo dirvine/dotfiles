@@ -74,7 +74,7 @@ let g:ycm_confirm_extra_conf = 0
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1 " Put errors on left side
-let g:syntastic_quiet_warnings = 0 " Only errors, not warnings please
+let g:syntastic_quiet_messages = 0 " Only errors, not warnings please
 let g:syntastic_auto_loc_list = 1 " Only show errors when I ask
 let g:syntastic_disabled_filetypes = ['html', 'js']
 if has('unix')
