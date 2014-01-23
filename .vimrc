@@ -88,7 +88,7 @@ else
   let g:syntastic_warning_symbol='.'
   let g:syntastic_style_warning_symbol='>'
 endif
-call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
+"call vam#ActivateAddons(['github:flazz/vim-colorschemes'])
 call vam#ActivateAddons(['github:Raimondi/delimitMate'])
 call vam#ActivateAddons(['github:szw/vim-tags'])
 " Create an empty tags dir in project root"
