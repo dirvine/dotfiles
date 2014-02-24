@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-my dotfiles, probably no use to anyone else
+my dotfiles, probably of use to someone
