@@ -21,7 +21,7 @@ browser = "chromium-browser"
 develop = "qtcreator"
 sound = "gmpc"
 file = "thunar"
-movie = "vlc"
+movie = "/home/dirvine/popcorn/Popcorn-Time"
 pcb = "/home/dirvine/fritzing/Fritzing"
 ThreeDPrint = "cura"
 mailview = terminal .. " -e mutt -R"
@@ -32,7 +32,7 @@ awesome.font = "Terminus 8"
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod5"
+modkey = "Mod4"
 function run_once(prg,arg_string,pname,screen)
     if not prg then
         do return nil end
@@ -93,6 +93,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "Browse web", browser },
                                     { "File manager", file },
                                     { "Play sounds", sound },
+                                    { "Watch movies", movie },
                                     { "3d Print", ThreeDPrint },
                                     { "Design PCBs", pcb }
                                   }
