@@ -23,6 +23,7 @@ sound = "gmpc"
 file = "thunar"
 movie = "/home/dirvine/popcorn/Popcorn-Time"
 pcb = "/home/dirvine/fritzing/Fritzing"
+mumble = "mumble"
 ThreeDPrint = "cura"
 mailview = terminal .. " -e mutt -R"
 
@@ -93,6 +94,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "Browse web", browser },
                                     { "File manager", file },
                                     { "Play sounds", sound },
+                                    { "Mumble ", mumble },
                                     { "Watch movies", movie },
                                     { "3d Print", ThreeDPrint },
                                     { "Design PCBs", pcb }
