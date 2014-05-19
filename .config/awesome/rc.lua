@@ -1,3 +1,12 @@
+ -- Override awesome.quit when were using GNOME
+    _awesome_quit = awesome.quit
+    awesome.quit = function()
+        if os.getenv("DESKTOP_SESSION") == "awesome-gnome" then
+           os.execute("/usr/bin/gnome-session-quit")
+        else
+      _awesome_quit()
+        end
+    end
 -- Standard awesome library
 require("awful")
 require("awful.autofocus")
@@ -25,6 +34,7 @@ movie = "/home/dirvine/popcorn/Popcorn-Time"
 pcb = "/home/dirvine/fritzing/Fritzing"
 mumble = "mumble"
 ThreeDPrint = "cura"
+skype = "skype"
 mailview = terminal .. " -e mutt -R"
 
 awesome.font = "Terminus 8"
@@ -96,6 +106,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "Play sounds", sound },
                                     { "Mumble ", mumble },
                                     { "Watch movies", movie },
+                                    { "Skype", skype },
                                     { "3d Print", ThreeDPrint },
                                     { "Design PCBs", pcb }
                                   }
