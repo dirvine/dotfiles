@@ -77,6 +77,8 @@ let g:syntastic_enable_signs = 1 " Put errors on left side
 let g:syntastic_quiet_messages = 0 " Only errors, not warnings please
 let g:syntastic_auto_loc_list = 1 " Only show errors when I ask
 let g:syntastic_disabled_filetypes = ['html', 'js']
+hi SpellBad ctermfg=007 ctermbg=000 
+hi SpellCap ctermfg=007 ctermbg=000
 if has('unix')
   let g:syntastic_error_symbol='★'
   let g:syntastic_style_error_symbol='>'
