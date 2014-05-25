@@ -99,7 +99,7 @@ let g:vim_tags_auto_generate = 1
 let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore', 'build*']
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 call vam#ActivateAddons(['github:xolox/vim-session'])
-"let g:session_autosave = 'yes'
+let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
 call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])

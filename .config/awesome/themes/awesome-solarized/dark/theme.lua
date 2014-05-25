@@ -8,8 +8,8 @@
 
 -- {{{ Main
 theme = {}
-theme.default_themes_path = "/home/dirvine/.config/awesome/themes"
-theme.wallpaper_cmd = { "awsetbg -c "..theme.default_themes_path.."/dude.jpg" }
+theme.default_themes_path = "/usr/share/awesome/themes"
+theme.wallpaper_cmd = { "awsetbg "..theme.default_themes_path.."/zenburn/zenburn-background.png" }
 theme.colors = {}
 theme.colors.base3   = "#002b36"
 theme.colors.base2   = "#073642"
@@ -30,7 +30,7 @@ theme.colors.green   = "#859900"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Ubuntu Mono 11"
+theme.font      = "Dejavu Sans 8"
 
 -- {{{ Colors
 theme.fg_normal  = theme.colors.base02
