@@ -217,6 +217,8 @@ endif
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 "set makeprg=clang++\ -std=c++11\ -stdlib=libc++\ -lc++abi\ -ldl\ -o\ %<\ %
+map <C-K> :pyf ~/.vim/clang-format.py<CR>
+imap <C-K> <ESC>:pyf ~/.vim/clang-format.py<CR>i
 nmap <F2> :cnext <cr> 
 nmap <F3> :cprev <cr> 
 map <F4> :TlistToggle<cr>
