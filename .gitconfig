@@ -7,6 +7,7 @@
 	main-window-view = FileView
 [core]
 	editor = vim
+	excludesfile = /home/dirvine/.gitignore
 [push]
 	default = tracking
 [color]

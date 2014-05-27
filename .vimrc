@@ -52,6 +52,7 @@ call vam#ActivateAddons(['github:mattn/webapi-vim'])
 call vam#ActivateAddons(['github:mattn/gist-vim'])
 "requires git config --global github.user Username
 call vam#ActivateAddons(['github:vimoutliner/vimoutliner'])
+call vam#ActivateAddons(['github:int3/vim-extradite'])
 call vam#ActivateAddons(['github:mattn/gist-vim'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 let g:ctrlp_use_caching = 1
@@ -72,6 +73,10 @@ let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_confirm_extra_conf = 0
 
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
+let g:syntastic_cpp_remove_include_errors = 1
+let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1 " Put errors on left side
 let g:syntastic_auto_loc_list = 0 " Only show errors when I ask
@@ -217,12 +222,10 @@ endif
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 "set makeprg=clang++\ -std=c++11\ -stdlib=libc++\ -lc++abi\ -ldl\ -o\ %<\ %
-map <C-K> :pyf ~/.vim/clang-format.py<CR>
-imap <C-K> <ESC>:pyf ~/.vim/clang-format.py<CR>i
 nmap <F2> :cnext <cr> 
 nmap <F3> :cprev <cr> 
 map <F4> :TlistToggle<cr>
-set tags=tags;/
+set tags=./tags,tags;
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 noremap <F5> <C-O>zA
