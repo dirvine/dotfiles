@@ -29,4 +29,4 @@ X-GNOME-Autostart-Notify=true
 X-GNOME-AutoRestart=true
 X-Ubuntu-Gettext-Domain=gnome-settings-daemon" > /etc/xdg/autostart/gnome-settings-daemon.desktop
 dconf write /org/gnome/settings-daemon/plugins/cursor/active false
-for i in `ls  /usr/share/applications/gnome*panel*`;do sudo sed -ri 's/OnlyShowIn=/OnlyShowIn=Awesome;/'  $i  ;done
+for i in `ls  /usr/share/applications/gnome*panel* | grep -v Awesome`;do sudo sed -ri 's/OnlyShowIn=/OnlyShowIn=Awesome;/'  $i  ;done

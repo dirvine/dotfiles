@@ -80,7 +80,7 @@ def FlagsForFile( filename ):
     # standard library if we can't find the compilation database entry.
     baseFilename, fileExtension = os.path.splitext(filename)
     if (fileExtension == '.h'):
-      filename = baseFilename + '.cpp'
+      filename = baseFilename + '.cc'
 
     # Bear in mind that compilation_info.compiler_flags_ does NOT return a
     # python list, but a "list-like" StringVec object
