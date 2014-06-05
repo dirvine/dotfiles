@@ -103,7 +103,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
     export GOROOT=$HOME/Devel/go
-    export PATH=$PATH:$GOROOT/bin
+    export PATH=$PATH:$GOROOT/bin:/home/dirvine/node/bin/
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }

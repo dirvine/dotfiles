@@ -252,8 +252,8 @@ nnoremap <F9> :update<CR>:make<CR>
 "## ctr R for search and replace in visual mode
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>"
 
-highlight LongLine ctermbg=Grey guibg=DarkYellow
-highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow
+highlight LongLine ctermbg=Grey guibg=Yellow
+highlight WhitespaceEOL ctermbg=Yellow guibg=Yellow
 if v:version >= 702 && &ft == 'cpp'
   " Lines longer than 100 columns.
   au BufWinEnter * let w:m0=matchadd('LongLine', '\%>100v.\+', -1)
