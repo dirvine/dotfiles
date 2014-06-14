@@ -265,10 +265,10 @@ if v:version >= 702 && &ft == 'cpp'
   au InsertEnter * let w:m1=matchadd('WhitespaceEOL', '\s\+\%#\@<!$', -1)
   au InsertLeave * call matchdelete(w:m1)
   au InsertLeave * let w:m1=matchadd('WhitespaceEOL', '\s\+$', -1)
-else
-  au BufRead,BufNewFile * syntax match LongLine /\%>100v.\+/
-  au InsertEnter * syntax match WhitespaceEOL /\s\+\%#\@<!$/
-  au InsertLeave * syntax match WhitespaceEOL /\s\+$/
+" else
+"   au BufRead,BufNewFile * syntax match LongLine /\%>100v.\+/
+"   au InsertEnter * syntax match WhitespaceEOL /\s\+\%#\@<!$/
+"   au InsertLeave * syntax match WhitespaceEOL /\s\+$/
 endif
 set nocompatible
 " FOLDING

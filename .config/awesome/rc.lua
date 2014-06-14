@@ -19,6 +19,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local APW = require("apw/widget")
+
 
 -- Load Debian menu entries
 require("debian.menu")
@@ -273,6 +275,7 @@ for s = 1, screen.count() do
     right_layout:add(musicwidget.widget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
+    right_layout:add(APW)
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
@@ -297,6 +300,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
+    awful.key({ }, "XF86AudioRaiseVolume",  APW.Up),
+    awful.key({ }, "XF86AudioLowerVolume",  APW.Down),
+    awful.key({ }, "XF86AudioMute",         APW.ToggleMute),
 
     awful.key({ modkey,           }, "j",
         function ()
