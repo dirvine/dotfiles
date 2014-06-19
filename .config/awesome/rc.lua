@@ -67,6 +67,7 @@ pcb = "/home/dirvine/fritzing/Fritzing"
 mumble = "mumble"
 ThreeDPrint = "cura"
 skype = "skype"
+screen_setting = "arandr"
 settings = "gnome-control-center"
 mailview = terminal .. " -e mutt -R"
 
@@ -131,6 +132,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "Mumble ", mumble },
                                     { "Watch movies", movie },
                                     { "Skype", skype },
+                                    { "Screen Settings", screen_setting },
                                     { "settings", settings },
                                     { "3d Print", ThreeDPrint },
                                     { "Design PCBs", pcb }
