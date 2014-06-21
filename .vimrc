@@ -44,16 +44,16 @@ set runtimepath+=~/.vim/addons/vam
 :   endif
 :endfunction
 
-call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
-call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
+" call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
+" call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:Shougo/vimproc.vim'])
 call vam#ActivateAddons(['github:plasticboy/vim-markdown'])
-call vam#ActivateAddons(['github:mattn/webapi-vim'])
+let g:vim_markdown_folding_disabled=1
+call vam#ActivateAddons(['github:mattn/webapi-vim']) " for gist"
 call vam#ActivateAddons(['github:mattn/gist-vim'])
 "requires git config --global github.user Username
 call vam#ActivateAddons(['github:vimoutliner/vimoutliner'])
 call vam#ActivateAddons(['github:int3/vim-extradite'])
-call vam#ActivateAddons(['github:mattn/gist-vim'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 let g:ctrlp_use_caching = 1
 let g:ctrlp_max_files = 100000
@@ -112,6 +112,9 @@ call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 au FileType nerdtree cnoreabbrev <buffer> bd <nop>
 au FileType nerdtree cnoreabbrev <buffer> BD <nop>
 au BufRead,BufNewFile *.md set filetype=markdown
+set spelllang=en_gb
+autocmd Filetype markdown setlocal wrap spell
+
 nnoremap <silent> <Leader>n :NERDTree ../src <CR>
 " NERDTree settings
 let NERDTreeChDirMode=0
