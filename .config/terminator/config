@@ -27,7 +27,7 @@
     cursor_shape = underline
     use_system_font = False
     cursor_color = "#eee8d5"
-    foreground_color = "#eee8d5"
+    foreground_color = "#839496"
     scroll_on_output = False
     icon_bell = False
     show_titlebar = False
