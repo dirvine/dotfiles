@@ -47,6 +47,7 @@ set runtimepath+=~/.vim/addons/vam
 " call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/dfrank_util'])
 " call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:Shougo/vimproc.vim'])
+call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
 call vam#ActivateAddons(['github:plasticboy/vim-markdown'])
 "let g:vim_markdown_folding_disabled=1
 call vam#ActivateAddons(['github:mattn/webapi-vim']) " for gist"
