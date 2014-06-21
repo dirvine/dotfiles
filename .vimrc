@@ -48,7 +48,7 @@ set runtimepath+=~/.vim/addons/vam
 " call vam#ActivateAddons(['hg:http://hg.dfrank.ru/vim/bundle/vimprj'])
 call vam#ActivateAddons(['github:Shougo/vimproc.vim'])
 call vam#ActivateAddons(['github:plasticboy/vim-markdown'])
-let g:vim_markdown_folding_disabled=1
+"let g:vim_markdown_folding_disabled=1
 call vam#ActivateAddons(['github:mattn/webapi-vim']) " for gist"
 call vam#ActivateAddons(['github:mattn/gist-vim'])
 "requires git config --global github.user Username
@@ -126,10 +126,12 @@ call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
 let g:EasyMotion_leader_key = '<Leader><Leader>' 
 call vam#ActivateAddons(['github:ervandew/supertab'])
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
-""let g:solarized_termcolors=16
+let g:solarized_termcolors = 16
+
 syntax enable
-""set background=dark
-""colorscheme solarized
+set t_Co=16
+set background=dark
+colorscheme solarized
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
 let  g:rainbow_ctermfgs = [
             \ 'brown',
