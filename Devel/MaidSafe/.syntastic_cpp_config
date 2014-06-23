@@ -1,0 +1,12 @@
+-Isrc/api/src/
+-Isrc/common/src/
+-Isrc/drive/src/
+-Isrc/encrypt/src/
+-Isrc/nfs/src/
+-Isrc/passport/src/
+-Isrc/routing/src/
+-Isrc/rudp/src/
+-Isrc/third_party_libs/cryptopp
+-Isrc/vault/src/
+-Isrc/vault_manager/src/
+
