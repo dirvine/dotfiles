@@ -110,8 +110,8 @@ endif
 " call vam#ActivateAddons(['github:Raimondi/delimitMate'])
 
 call vam#ActivateAddons(['github:gilligan/vim-lldb'])
-let g:lldb_map_Lnext = "<Ctrl-n>"
-let g:lldb_map_Lstep = "<Ctrl-s>"
+let g:lldb_map_Lnext = "<leader>n"
+let g:lldb_map_Lstep = "<leader>s"
 
 call vam#ActivateAddons(['github:szw/vim-tags'])
 " Create an empty tags dir in project root"
@@ -265,7 +265,7 @@ set incsearch       "search incremently (search while typing)
 nmap <F1> :TrinityToggleAll <CR>
 nmap <F2> :cnext <cr>
 nmap <F3> :cprev <cr>
-map <F4> :TlistToggle<cr>
+map <F4> :TlistToggle <cr>
 set tags=./tags,../tags;/home/dirvine/Devel/MaidSafe/tags;
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>

@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 eval `dbus-launch --sh-syntax --exit-with-session`
 nm-applet &                  # assuming you're using Network Manager
 mpd &
