@@ -76,6 +76,14 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_confirm_extra_conf = 0
 
+
+" call vam#ActivateAddons(['github:Rip-Rip/clang_complete'])
+"
+" let g:clang_periodic_quickfix = 1
+" let g:clang_snippets = 1
+" let g:clang_auto_user_options = "-std=c++11"
+
+
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
@@ -102,6 +110,8 @@ endif
 " call vam#ActivateAddons(['github:Raimondi/delimitMate'])
 
 call vam#ActivateAddons(['github:gilligan/vim-lldb'])
+let g:lldb_map_Lnext = "<Ctrl-n>"
+let g:lldb_map_Lstep = "<Ctrl-s>"
 
 call vam#ActivateAddons(['github:szw/vim-tags'])
 " Create an empty tags dir in project root"
@@ -264,13 +274,9 @@ nnoremap <F5> zA
 onoremap <F5> <C-C>zA
 vnoremap <F5> zf
 noremap <F6> zR
-map <F7> :setlocal spell! spelllang=en_gb<CR>
-" // Set "Enter" key to jump into the exact definition context
-let g:SrcExpl_jumpKey = "<F8>"
-
-" // Set "Space" key for back from the definition context
-let g:SrcExpl_gobackKey = "<F9>"
-map <F10> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src <CR>
+nmap <F7> :setlocal spell! spelllang=en_gb<CR>
+nmap <F8> :Lhide backtrace<CR> :Lhide breakpoints<CR> :Lhide disassembly<CR> :Lhide locals<CR> :Lhide registers<CR> :Lhide threads<CR>
+nmap <F10> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src <CR>
 
 " ################### FOLDING #############################################
 augroup vimrc
