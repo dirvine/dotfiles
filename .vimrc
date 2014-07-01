@@ -132,7 +132,7 @@ call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 au FileType nerdtree cnoreabbrev <buffer> bd <nop>
 au FileType nerdtree cnoreabbrev <buffer> BD <nop>
 au BufRead,BufNewFile *.md set filetype=markdown
-nnoremap <silent> <Leader>n :NERDTree ../src <CR>
+nnoremap <silent> <Leader>t :NERDTree ../src <CR>
 " NERDTree settings
 let NERDTreeChDirMode=0
 let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
@@ -209,8 +209,8 @@ set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,.
 
 "###################### display settings ##########################
 set textwidth=0
-set wrapmargin=0
-set nowrap              " don't wrap lines
+set wrapmargin=1
+set wrap              " don't wrap lines
 set linebreak
 set nolist
 set fo+=l
@@ -226,7 +226,7 @@ set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
 set laststatus=2        " use 2 lines for the status bar
 set matchtime=2         " show matching bracket for 0.2 seconds
 set matchpairs+=<:>     " specially for html
-set showtabline=0       " do not want to see how many files are open
+set showtabline=2       " do not want to see how many files are open
 
 " editor settings
 set esckeys             " map missed escape sequences (enables keypad keys)
