@@ -28,17 +28,53 @@ set spelllang=en_gb
 autocmd Filetype markdown setlocal wrap spell
 
 
-call vam#ActivateAddons(['github:wesleyche/SrcExpl'])
 
-call vam#ActivateAddons(['github:wesleyche/Trinity'])
-let g:SrcExpl_updateTagsCmd = "ctags  --sort=foldcase -R --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src"
-let g:SrcExpl_pluginList = [  "__Tag_List__", "[BufExplorer]",  "Source_Explorer"," _NERD_tree_"  ]
-let g:SrcExpl_isUpdateTags = 0
-" // Set the height of Source Explorer window
-let g:SrcExpl_winHeight = 8
-
-" // Set 100 ms for refreshing the Source Explorer
-let g:SrcExpl_refreshTime = 100
+call vam#ActivateAddons(['github:rhysd/vim-clang-format']) 
+let g:clang_format#auto_format = 0
+let g:clang_format#auto_format_on_insert_leave = 1
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+let g:clang_format#style_options = {
+\"AccessModifierOffset": -1,
+\"ConstructorInitializerIndentWidth": 4,
+\"AlignEscapedNewlinesLeft": "true",
+\"AlignTrailingComments": "true",
+\"AllowAllParametersOfDeclarationOnNextLine": "true",
+\"AllowShortIfStatementsOnASingleLine": "false",
+\"AllowShortLoopsOnASingleLine": "false",
+\"AlwaysBreakTemplateDeclarations": "true",
+\"AlwaysBreakBeforeMultilineStrings": "true",
+\"BreakBeforeBinaryOperators": "false",
+\"BreakConstructorInitializersBeforeComma": "false",
+\"BinPackParameters": "true",
+\"ColumnLimit":     100,
+\"ConstructorInitializerAllOnOneLineOrOnePerLine": "true",
+\"Cpp11BracedListStyle": "true",
+\"DerivePointerBinding": "false",
+\"ExperimentalAutoDetectBinPacking": "false",
+\"IndentCaseLabels": "true",
+\"MaxEmptyLinesToKeep": 3,
+\"NamespaceIndentation": "None",
+\"ObjCSpaceBeforeProtocolList": "false",
+\"PenaltyBreakComment": 60,
+\"PenaltyBreakString": 1000,
+\"PenaltyBreakFirstLessLess": 120,
+\"PenaltyExcessCharacter": 1000000,
+\"PenaltyReturnTypeOnItsOwnLine": 200,
+\"PointerBindsToType": "true",
+\"SpacesBeforeTrailingComments": 2,
+\"SpacesInParentheses": "false",
+\"SpacesInAngles": "false",
+\"SpaceInEmptyParentheses": "false",
+\"SpacesInCStyleCastParentheses": "false",
+\"SpaceAfterControlStatementKeyword": "true",
+\"Standard":        "Cpp11",
+\"IndentWidth":     2,
+\"UseTab":          "false",
+\"BreakBeforeBraces": "Attach",
+\"IndentFunctionDeclarationAfterType": "true",
+\"Language": "Cpp"}
 
 call vam#ActivateAddons(['github:mattn/webapi-vim']) " for gist
 
@@ -76,14 +112,6 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_confirm_extra_conf = 0
 
-
-" call vam#ActivateAddons(['github:Rip-Rip/clang_complete'])
-"
-" let g:clang_periodic_quickfix = 1
-" let g:clang_snippets = 1
-" let g:clang_auto_user_options = "-std=c++11"
-
-
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
@@ -109,13 +137,13 @@ endif
 
 " call vam#ActivateAddons(['github:Raimondi/delimitMate'])
 
-call vam#ActivateAddons(['github:gilligan/vim-lldb'])
-let g:lldb_map_Lnext = "<leader>n"
-let g:lldb_map_Lstep = "<leader>s"
+" call vam#ActivateAddons(['github:gilligan/vim-lldb'])
+" let g:lldb_map_Lnext = "<leader>n"
+" let g:lldb_map_Lstep = "<leader>s"
 
 call vam#ActivateAddons(['github:szw/vim-tags'])
 " Create an empty tags dir in project root"
-let g:vim_tags_project_tags_command = "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q  /home/dirvine/Devel/MaidSafe/src 2>/dev/null"
+let g:vim_tags_project_tags_command = "ctags -R --sort=foldcase --c++-kinds=+p --fields=+iaS --extra=+q  /home/dirvine/Devel/MaidSafe/src 2>/dev/null"
 let g:vim_tags_auto_generate = 1
 let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore', 'build*']
 
@@ -167,6 +195,18 @@ let  g:rainbow_ctermfgs = [
             \ 'darkred',
             \ 'red',
             \ ]
+
+call vam#ActivateAddons(['github:wesleyche/SrcExpl'])
+
+" call vam#ActivateAddons(['github:wesleyche/Trinity'])
+let g:SrcExpl_updateTagsCmd = "ctags  --sort=foldcase -R --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src"
+let g:SrcExpl_pluginList = [  "__Tag_List__", "[BufExplorer]",  "Source_Explorer"," _NERD_tree_"  ]
+let g:SrcExpl_isUpdateTags = 0
+" // Set the height of Source Explorer window
+let g:SrcExpl_winHeight = 8
+
+" // Set 100 ms for refreshing the Source Explorer
+let g:SrcExpl_refreshTime = 100
 
 "################### C++ ##########################################
 au FileType cpp,objcpp set syntax=cpp11
@@ -242,6 +282,7 @@ set shiftwidth=2        " spaces for autoindents
 set expandtab           " turn a tabs into spaces
 
 set fileformat=unix     " file mode is unix
+set cc=100              " set colourcolum at 100
 "set fileformats=unix,dos    # only detect unix file format, displays that ^M with dos files
 set noautochdir
 " system settings
@@ -262,7 +303,7 @@ set hlsearch       " highlight search (very useful!)
 set incsearch       "search incremently (search while typing)
 
 "######################### Function Key Mappings ####################
-nmap <F1> :TrinityToggleAll <CR>
+nmap <F1> :NERDTreeToggle ../src <CR>
 nmap <F2> :cnext <cr>
 nmap <F3> :cprev <cr>
 map <F4> :TlistToggle <cr>
@@ -332,31 +373,8 @@ inoremap <A-k> <Down>
 inoremap <A-l> <Up>
 inoremap <A-m> <Right>
 
-
-
 "## ctr R for search and replace in visual mode
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>"
-"##################### Highlight lines longer than 100 chars ##############
-highlight LongLine ctermbg=Grey guibg=Yellow
-highlight WhitespaceEOL ctermbg=Yellow guibg=Yellow
-if v:version >= 702 && &ft == 'cpp'
-  " Lines longer than 100 columns.
-  au BufWinEnter * let w:m0=matchadd('LongLine', '\%>100v.\+', -1)
-
-  " Whitespace at the end of a line. This little dance suppresses
-  " whitespace that has just been typed.
-  au BufWinEnter * let w:m1=matchadd('WhitespaceEOL', '\s\+$', -1)
-  au InsertEnter * call matchdelete(w:m1)
-  au InsertEnter * let w:m1=matchadd('WhitespaceEOL', '\s\+\%#\@<!$', -1)
-  au InsertLeave * call matchdelete(w:m1)
-  au InsertLeave * let w:m1=matchadd('WhitespaceEOL', '\s\+$', -1)
-" else
-"   au BufRead,BufNewFile * syntax match LongLine /\%>100v.\+/
-"   au InsertEnter * syntax match WhitespaceEOL /\s\+\%#\@<!$/
-et paste
-iau InsertLeave * syntax match WhitespaceEOL /\s\+$/
-endif
-
 "################### save on lost focus ###########################
 au FocusLost * :wa
 " save on lost focus/make etc.
