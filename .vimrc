@@ -31,7 +31,7 @@ autocmd Filetype markdown setlocal wrap spell
 
 call vam#ActivateAddons(['github:rhysd/vim-clang-format']) 
 let g:clang_format#auto_format = 0
-let g:clang_format#auto_format_on_insert_leave = 1
+let g:clang_format#auto_format_on_insert_leave = 0
 " map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
@@ -137,9 +137,9 @@ endif
 
 " call vam#ActivateAddons(['github:Raimondi/delimitMate'])
 
-" call vam#ActivateAddons(['github:gilligan/vim-lldb'])
-" let g:lldb_map_Lnext = "<leader>n"
-" let g:lldb_map_Lstep = "<leader>s"
+call vam#ActivateAddons(['github:gilligan/vim-lldb'])
+let g:lldb_map_Lnext = "<leader>n"
+let g:lldb_map_Lstep = "<leader>s"
 
 call vam#ActivateAddons(['github:szw/vim-tags'])
 " Create an empty tags dir in project root"
