@@ -27,9 +27,16 @@ let g:vim_markdown_folding_disabled=1
 set spelllang=en_gb
 autocmd Filetype markdown setlocal wrap spell
 
+call vam#ActivateAddons([ 'vim-airline' ])
+let g:airline#extensions#tabline#enabled = 0
 
 
-call vam#ActivateAddons(['github:rhysd/vim-clang-format']) 
+call vam#ActivateAddons(['vim-signify'])
+let g:signify_vcs_list = [ 'git', 'hg' ]
+let g:signify_disable_by_default = 0
+
+
+call vam#ActivateAddons(['github:rhysd/vim-clang-format'])
 let g:clang_format#auto_format = 0
 let g:clang_format#auto_format_on_insert_leave = 0
 " map to <Leader>cf in C++ code
@@ -266,7 +273,7 @@ set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
 set laststatus=2        " use 2 lines for the status bar
 set matchtime=2         " show matching bracket for 0.2 seconds
 set matchpairs+=<:>     " specially for html
-set showtabline=2       " do not want to see how many files are open
+set showtabline=0       " do not want to see how many files are open
 
 " editor settings
 set esckeys             " map missed escape sequences (enables keypad keys)
