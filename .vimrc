@@ -21,16 +21,22 @@ set runtimepath+=~/.vim/addons/vam
 call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
+let Tlist_Auto_Highlight_Tag = 1
+let Tlist_Auto_Update = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_File_Fold_Auto_Close = 1
+let Tlist_Highlight_Tag_On_BufEnter = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Use_SingleClick = 1
+
+let g:ctags_statusline=1
 
 call vam#ActivateAddons(['github:plasticboy/vim-markdown'])
 let g:vim_markdown_folding_disabled=1
 set spelllang=en_gb
 autocmd Filetype markdown setlocal wrap spell
 
-call vam#ActivateAddons([ 'vim-airline' ])
-let g:airline#extensions#tabline#enabled = 0
-
-
+call vam#ActivateAddons(['TaskList'])
 call vam#ActivateAddons(['vim-signify'])
 let g:signify_vcs_list = [ 'git', 'hg' ]
 let g:signify_disable_by_default = 0
@@ -142,7 +148,10 @@ else
   let g:syntastic_style_warning_symbol='>'
 endif
 
-" call vam#ActivateAddons(['github:Raimondi/delimitMate'])
+call vam#ActivateAddons(['delimitMate'])
+
+call vam#ActivateAddons(['github:garbas/vim-snipmate'])
+
 
 call vam#ActivateAddons(['github:gilligan/vim-lldb'])
 let g:lldb_map_Lnext = "<leader>n"
@@ -167,7 +176,6 @@ call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 au FileType nerdtree cnoreabbrev <buffer> bd <nop>
 au FileType nerdtree cnoreabbrev <buffer> BD <nop>
 au BufRead,BufNewFile *.md set filetype=markdown
-nnoremap <silent> <Leader>t :NERDTree ../src <CR>
 " NERDTree settings
 let NERDTreeChDirMode=0
 let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
@@ -176,7 +184,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeHightlight=1
 "
 call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
-let g:EasyMotion_leader_key = '<Leader><Leader>'
+let g:EasyMotion_leader_key = '<Leader>'
 call vam#ActivateAddons(['github:ervandew/supertab'])
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 let g:solarized_termcolors = 16
