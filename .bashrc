@@ -122,3 +122,5 @@ export BROWSER=/usr/bin/chromium-browser
 export EDITOR=/usr/bin/vim
 gsettings set org.gnome.desktop.wm.preferences focus-mode 'mouse'
 gsettings set org.gnome.desktop.wm.preferences auto-raise-delay 500
+# temp fix for lldb 
+export PYTHONPATH=$PYTHONPATH:/usr/lib/llvm-3.5/lib/python2.7/site-packages/
