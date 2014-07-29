@@ -18,6 +18,7 @@ VAMActivate matchit.zip vim-addon-commenting
 " use <c-x><c-p> to complete plugin names
 set runtimepath+=~/.vim/addons/vam
 
+call vam#ActivateAddons(['vimproc'])
 call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
@@ -42,9 +43,13 @@ let g:signify_vcs_list = [ 'git', 'hg' ]
 let g:signify_disable_by_default = 0
 
 
+call vam#ActivateAddons(['github:kana/vim-operator-user'])
 call vam#ActivateAddons(['github:rhysd/vim-clang-format'])
-let g:clang_format#auto_format = 0
-let g:clang_format#auto_format_on_insert_leave = 0
+let g:clang_format#auto_format = 1
+let g:clang_format#auto_format_on_insert_leave = 1
+let clang_format#command = '/usr/bin/clang-format-3.4'
+let g:clang_format#detect_style_file = 0 
+
 " map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
@@ -86,8 +91,8 @@ let g:clang_format#style_options = {
 \"IndentWidth":     2,
 \"UseTab":          "false",
 \"BreakBeforeBraces": "Attach",
-\"IndentFunctionDeclarationAfterType": "true",
-\"Language": "Cpp"}
+\"IndentFunctionDeclarationAfterType": "true"}
+" \"Language": "Cpp"}
 
 call vam#ActivateAddons(['github:mattn/webapi-vim']) " for gist
 
@@ -149,11 +154,14 @@ else
 endif
 
 call vam#ActivateAddons(['delimitMate'])
+" au FileType c,cpp,perl let b:delimitMate_eol_marker = ";"
+au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
+
 
 call vam#ActivateAddons(['github:garbas/vim-snipmate'])
 
 
-call vam#ActivateAddons(['github:gilligan/vim-lldb'])
+" call vam#ActivateAddons(['github:gilligan/vim-lldb'])
 let g:lldb_map_Lnext = "<leader>n"
 let g:lldb_map_Lstep = "<leader>s"
 
@@ -169,7 +177,7 @@ call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 " let g:session_autosave = 'yes'
 " let g:session_autoload = 'no'
 
-call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
+ call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 " Prevent :bd inside NERDTree buffer
@@ -184,7 +192,8 @@ let NERDTreeShowBookmarks=1
 let NERDTreeHightlight=1
 "
 call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
-let g:EasyMotion_leader_key = '<Leader>'
+map <Leader> <Plug>(easyymotion-prefix)
+" let g:EasyMotion_leader_key = '<Leader> <Leader>'
 call vam#ActivateAddons(['github:ervandew/supertab'])
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 let g:solarized_termcolors = 16
@@ -222,7 +231,7 @@ let g:SrcExpl_winHeight = 8
 
 " // Set 100 ms for refreshing the Source Explorer
 let g:SrcExpl_refreshTime = 100
-
+"
 "################### C++ ##########################################
 au FileType cpp,objcpp set syntax=cpp11
 au BufNewFile,BufRead *
