@@ -44,6 +44,7 @@ let g:signify_disable_by_default = 0
 
 
 call vam#ActivateAddons(['github:kana/vim-operator-user'])
+
 call vam#ActivateAddons(['github:rhysd/vim-clang-format'])
 let g:clang_format#auto_format = 1
 let g:clang_format#auto_format_on_insert_leave = 1
@@ -326,31 +327,29 @@ syntax on          " enable colors
 set hlsearch       " highlight search (very useful!)
 set incsearch       "search incremently (search while typing)
 
-"######################### Function Key Mappings ####################
-nmap <F1> :NERDTreeToggle ../src <CR>
-nmap <F2> :cnext <cr>
-nmap <F3> :cprev <cr>
-map <F4> :TlistToggle <cr>
-set tags=./tags,../tags;/home/dirvine/Devel/MaidSafe/tags;
-map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-noremap <F5> <C-O>zA
-nnoremap <F5> zA
-onoremap <F5> <C-C>zA
-vnoremap <F5> zf
-noremap <F6> zR
-nmap <F7> :setlocal spell! spelllang=en_gb<CR>
-nmap <F8> :Lhide backtrace<CR> :Lhide breakpoints<CR> :Lhide disassembly<CR> :Lhide locals<CR> :Lhide registers<CR> :Lhide threads<CR>
-nmap <F10> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src <CR>
-
 " ################### FOLDING #############################################
 augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
+  au BufReadPre * setlocal foldmethod=syntax
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
-set nofoldenable
+" set fdm=syntax 
+set foldlevel=2
+
+"######################### Function Key Mappings ####################
+nmap <F2> :cnext <cr>
+nmap <F3> :cprev <cr>
+map <F4> :TlistToggle <cr>
+nmap <F5> :SrcExplToggle <cr>
+nmap <F6> :NERDTreeToggle ../src <CR>
+set tags=./tags,../tags;/home/dirvine/Devel/MaidSafe/tags;
+map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+nmap <F7> :setlocal spell! spelllang=en_gb<CR>
+nmap <F8> :Lhide backtrace<CR> :Lhide breakpoints<CR> :Lhide disassembly<CR> :Lhide locals<CR> :Lhide registers<CR> :Lhide threads<CR>
+nmap <F10> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src <CR>
+
 " open quickfix after a grep
 autocmd QuickFixCmdPost *grep* cwindow
 " Add and delete spaces in increments of `shiftwidth' for tabs
