@@ -27,7 +27,7 @@ let Tlist_Auto_Update = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Highlight_Tag_On_BufEnter = 1
-let Tlist_Use_Right_Window = 1
+let Tlist_Use_Right_Window = 0
 let Tlist_Use_SingleClick = 1
 
 let g:ctags_statusline=1
@@ -46,8 +46,8 @@ let g:signify_disable_by_default = 0
 call vam#ActivateAddons(['github:kana/vim-operator-user'])
 
 call vam#ActivateAddons(['github:rhysd/vim-clang-format'])
-let g:clang_format#auto_format = 1
-let g:clang_format#auto_format_on_insert_leave = 1
+let g:clang_format#auto_format = 0
+let g:clang_format#auto_format_on_insert_leave = 0
 let clang_format#command = '/usr/bin/clang-format-3.4'
 let g:clang_format#detect_style_file = 0 
 
@@ -168,7 +168,9 @@ let g:lldb_map_Lstep = "<leader>s"
 
 call vam#ActivateAddons(['github:szw/vim-tags'])
 " Create an empty tags dir in project root"
-let g:vim_tags_project_tags_command = "ctags -R --sort=foldcase --c++-kinds=+p --fields=+iaS --extra=+q  /home/dirvine/Devel/MaidSafe/src 2>/dev/null"
+let g:vim_tags_project_tags_command = "ctags -R --sort=foldcase --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe 2>/dev/null"
+let g:vim_tags_use_language_field = 1
+
 let g:vim_tags_auto_generate = 1
 let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore', 'build*']
 
@@ -224,7 +226,6 @@ let  g:rainbow_ctermfgs = [
 call vam#ActivateAddons(['github:wesleyche/SrcExpl'])
 
 " call vam#ActivateAddons(['github:wesleyche/Trinity'])
-let g:SrcExpl_updateTagsCmd = "ctags  --sort=foldcase -R --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src"
 let g:SrcExpl_pluginList = [  "__Tag_List__", "[BufExplorer]",  "Source_Explorer"," _NERD_tree_"  ]
 let g:SrcExpl_isUpdateTags = 0
 " // Set the height of Source Explorer window
@@ -348,7 +349,7 @@ map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F7> :setlocal spell! spelllang=en_gb<CR>
 nmap <F8> :Lhide backtrace<CR> :Lhide breakpoints<CR> :Lhide disassembly<CR> :Lhide locals<CR> :Lhide registers<CR> :Lhide threads<CR>
-nmap <F10> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src <CR>
+nmap <F10> :TagsGenerate <CR>
 
 " open quickfix after a grep
 autocmd QuickFixCmdPost *grep* cwindow

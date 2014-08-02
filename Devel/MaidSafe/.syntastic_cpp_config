@@ -10,3 +10,14 @@
 -Isrc/vault/src/
 -Isrc/vault_manager/src/
 
+-Isrc/api/include/
+-Isrc/common/include/
+-Isrc/drive/include/
+-Isrc/encrypt/include/
+-Isrc/nfs/include/
+-Isrc/passport/include/
+-Isrc/routing/include/
+-Isrc/rudp/include/
+-Isrc/third_party_libs/cryptopp
+-Isrc/vault/include/
+-Isrc/vault_manager/include/
