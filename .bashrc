@@ -103,8 +103,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
     export GOROOT=$HOME/Devel/go
-    export
-    PATH=$PATH:$GOROOT/bin:/home/dirvine/node/bin/:/home/dirvine/sage
+    export PATH=$PATH:$GOROOT/bin:/home/dirvine/node/bin/:/home/dirvine/sage
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
@@ -124,4 +123,3 @@ export EDITOR=/usr/bin/vim
 gsettings set org.gnome.desktop.wm.preferences focus-mode 'mouse'
 gsettings set org.gnome.desktop.wm.preferences auto-raise-delay 500
 # temp fix for lldb 
-export PYTHONPATH=$PYTHONPATH:/usr/lib/llvm-3.5/lib/python2.7/site-packages/

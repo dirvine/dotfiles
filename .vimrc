@@ -160,6 +160,8 @@ au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 
 call vam#ActivateAddons(['github:garbas/vim-snipmate'])
+call vam#ActivateAddons(['github:vim-scripts/Conque-Shell'])
+let g:ConqueTerm_PyVersion = 3
 
 
 " call vam#ActivateAddons(['github:gilligan/vim-lldb'])
@@ -168,7 +170,7 @@ let g:lldb_map_Lstep = "<leader>s"
 
 call vam#ActivateAddons(['github:szw/vim-tags'])
 " Create an empty tags dir in project root"
-let g:vim_tags_project_tags_command = "ctags -R --sort=foldcase --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe 2>/dev/null"
+let g:vim_tags_project_tags_command = "ctags -R --sort=foldcase --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src 2>/dev/null"
 let g:vim_tags_use_language_field = 1
 
 let g:vim_tags_auto_generate = 1
@@ -344,7 +346,7 @@ nmap <F3> :cprev <cr>
 map <F4> :TlistToggle <cr>
 nmap <F5> :SrcExplToggle <cr>
 nmap <F6> :NERDTreeToggle ../src <CR>
-set tags=./tags,../tags;/home/dirvine/Devel/MaidSafe/tags;
+" set tags=./tags,../tags;/home/dirvine/Devel/MaidSafe/tags;
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F7> :setlocal spell! spelllang=en_gb<CR>
