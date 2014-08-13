@@ -206,7 +206,7 @@ syntax enable
 set t_Co=16
 set background=dark
 colorscheme solarized
-"call vam#ActivateAddons(['github:SirVer/ultisnips'])
+call vam#ActivateAddons(['github:SirVer/ultisnips'])
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 let g:rainbow_active = 1
 let g:rainbow_operators = 2
@@ -225,9 +225,9 @@ let  g:rainbow_ctermfgs = [
             \ 'red',
             \ ]
 
-call vam#ActivateAddons(['github:wesleyche/SrcExpl'])
+"call vam#ActivateAddons(['github:wesleyche/SrcExpl'])
 
-" call vam#ActivateAddons(['github:wesleyche/Trinity'])
+"call vam#ActivateAddons(['github:wesleyche/Trinity'])
 let g:SrcExpl_pluginList = [  "__Tag_List__", "[BufExplorer]",  "Source_Explorer"," _NERD_tree_"  ]
 let g:SrcExpl_isUpdateTags = 0
 " // Set the height of Source Explorer window
@@ -346,7 +346,7 @@ nmap <F3> :cprev <cr>
 map <F4> :TlistToggle <cr>
 nmap <F5> :SrcExplToggle <cr>
 nmap <F6> :NERDTreeToggle ../src <CR>
-" set tags=./tags,../tags;/home/dirvine/Devel/MaidSafe/tags;
+set tags=./tags,../tags;/home/dirvine/.vim/tags;
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F7> :setlocal spell! spelllang=en_gb<CR>
