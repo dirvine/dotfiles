@@ -19,16 +19,16 @@ VAMActivate matchit.zip vim-addon-commenting
 set runtimepath+=~/.vim/addons/vam
 
 call vam#ActivateAddons(['vimproc'])
-call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-let Tlist_WinWidth = 50
-let Tlist_Auto_Highlight_Tag = 1
-let Tlist_Auto_Update = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_File_Fold_Auto_Close = 1
-let Tlist_Highlight_Tag_On_BufEnter = 1
-let Tlist_Use_Right_Window = 0
-let Tlist_Use_SingleClick = 1
+" call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
+" let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+" let Tlist_WinWidth = 50
+" let Tlist_Auto_Highlight_Tag = 1
+" let Tlist_Auto_Update = 1
+" let Tlist_Exit_OnlyWindow = 1
+" let Tlist_File_Fold_Auto_Close = 1
+" let Tlist_Highlight_Tag_On_BufEnter = 1
+" let Tlist_Use_Right_Window = 0
+" let Tlist_Use_SingleClick = 1
 
 let g:ctags_statusline=1
 
@@ -163,6 +163,16 @@ call vam#ActivateAddons(['github:garbas/vim-snipmate'])
 call vam#ActivateAddons(['github:vim-scripts/Conque-Shell'])
 let g:ConqueTerm_PyVersion = 3
 
+call vam#ActivateAddons(['github:majutsushi/tagbar'])
+let g:tagbar_left = 1
+let g:tagbar_width = 30
+let g:tagbar_zoomwidth = 0
+let g:tagbar_autofocus = 1
+let g:tagbar_show_visibility = 1
+let g:tagbar_singleclick = 1
+" let g:tagbar_previewwin_pos = "aboveleft"
+" let g:tagbar_autopreview = 1
+
 
 call vam#ActivateAddons(['github:gilligan/vim-lldb'])
 let g:lldb_map_Lnext = "<leader>n"
@@ -225,7 +235,7 @@ let  g:rainbow_ctermfgs = [
             \ 'red',
             \ ]
 
-"call vam#ActivateAddons(['github:wesleyche/SrcExpl'])
+" call vam#ActivateAddons(['github:wesleyche/SrcExpl'])
 
 "call vam#ActivateAddons(['github:wesleyche/Trinity'])
 let g:SrcExpl_pluginList = [  "__Tag_List__", "[BufExplorer]",  "Source_Explorer"," _NERD_tree_"  ]
@@ -343,10 +353,10 @@ set foldlevel=2
 "######################### Function Key Mappings ####################
 nmap <F2> :cnext <cr>
 nmap <F3> :cprev <cr>
-map <F4> :TlistToggle <cr>
-nmap <F5> :SrcExplToggle <cr>
-nmap <F6> :NERDTreeToggle ../src <CR>
-set tags=./tags,../tags;/home/dirvine/.vim/tags;
+map <F4> :TagbarToggle <cr>
+nmap <F5> :NERDTreeToggle ../src <CR>
+nmap <F6> :SrcExplToggle <cr>
+set tags=tags;
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F7> :setlocal spell! spelllang=en_gb<CR>
