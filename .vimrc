@@ -47,7 +47,7 @@ call vam#ActivateAddons(['github:kana/vim-operator-user'])
 
 call vam#ActivateAddons(['github:rhysd/vim-clang-format'])
 let g:clang_format#auto_format = 0
-let g:clang_format#auto_format_on_insert_leave = 0
+let g:clang_format#auto_format_on_insert_leave = 1
 let clang_format#command = '/usr/bin/clang-format-3.4'
 let g:clang_format#detect_style_file = 0 
 
@@ -164,7 +164,7 @@ call vam#ActivateAddons(['github:vim-scripts/Conque-Shell'])
 let g:ConqueTerm_PyVersion = 3
 
 
-" call vam#ActivateAddons(['github:gilligan/vim-lldb'])
+call vam#ActivateAddons(['github:gilligan/vim-lldb'])
 let g:lldb_map_Lnext = "<leader>n"
 let g:lldb_map_Lstep = "<leader>s"
 
@@ -197,8 +197,8 @@ let NERDTreeShowBookmarks=1
 let NERDTreeHightlight=1
 "
 call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
-map <Leader> <Plug>(easyymotion-prefix)
-" let g:EasyMotion_leader_key = '<Leader> <Leader>'
+nmap <Space>w <Plug>(easymotion-w)
+
 call vam#ActivateAddons(['github:ervandew/supertab'])
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 let g:solarized_termcolors = 16
