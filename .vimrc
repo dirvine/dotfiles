@@ -18,6 +18,7 @@ VAMActivate matchit.zip vim-addon-commenting
 " use <c-x><c-p> to complete plugin names
 set runtimepath+=~/.vim/addons/vam
 
+call vam#ActivateAddons(['github:peterhoeg/vim-qml'])
 call vam#ActivateAddons(['vimproc'])
 " call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
 " let Tlist_Ctags_Cmd = "/usr/bin/ctags"
@@ -174,9 +175,9 @@ let g:tagbar_singleclick = 1
 " let g:tagbar_autopreview = 1
 
 
-call vam#ActivateAddons(['github:gilligan/vim-lldb'])
-let g:lldb_map_Lnext = "<leader>n"
-let g:lldb_map_Lstep = "<leader>s"
+" call vam#ActivateAddons(['github:gilligan/vim-lldb'])
+" let g:lldb_map_Lnext = "<leader>n"
+" let g:lldb_map_Lstep = "<leader>s"
 
 call vam#ActivateAddons(['github:szw/vim-tags'])
 " Create an empty tags dir in project root"
