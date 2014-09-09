@@ -65,6 +65,7 @@ file = "thunar"
 movie = "/home/dirvine/popcorn/Popcorn-Time"
 pcb = "/home/dirvine/fritzing/Fritzing"
 mumble = "mumble"
+hipchat = "hipchat"
 ThreeDPrint = "cura"
 skype = "skype"
 screen_setting = "arandr"
@@ -130,6 +131,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "File manager", file },
                                     { "Play sounds", sound },
                                     { "Mumble ", mumble },
+                                    { "hipchat ", hipchat },
                                     { "Watch movies", movie },
                                     { "Skype", skype },
                                     { "Screen Settings", screen_setting },
