@@ -14,9 +14,7 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-addon-commenting
-" use <c-x><c-p> to complete plugin names
-set runtimepath+=~/.vim/addons/vam
+
 
 call vam#ActivateAddons(['github:peterhoeg/vim-qml'])
 call vam#ActivateAddons(['vimproc'])
@@ -47,9 +45,9 @@ let g:signify_disable_by_default = 0
 call vam#ActivateAddons(['github:kana/vim-operator-user'])
 
 call vam#ActivateAddons(['github:rhysd/vim-clang-format'])
-let g:clang_format#auto_format = 0
+let g:clang_format#auto_format = 1
 let g:clang_format#auto_format_on_insert_leave = 1
-let clang_format#command = '/usr/bin/clang-format-3.4'
+let clang_format#command = '/usr/bin/clang-format-3.6'
 let g:clang_format#detect_style_file = 0 
 
 " map to <Leader>cf in C++ code
@@ -93,8 +91,8 @@ let g:clang_format#style_options = {
 \"IndentWidth":     2,
 \"UseTab":          "false",
 \"BreakBeforeBraces": "Attach",
-\"IndentFunctionDeclarationAfterType": "true"}
-" \"Language": "Cpp"}
+\"IndentFunctionDeclarationAfterType": "true",
+\"Language": "Cpp"}
 
 call vam#ActivateAddons(['github:mattn/webapi-vim']) " for gist
 
@@ -181,7 +179,7 @@ let g:tagbar_singleclick = 1
 
 call vam#ActivateAddons(['github:szw/vim-tags'])
 " Create an empty tags dir in project root"
-let g:vim_tags_project_tags_command = "ctags -R --sort=foldcase --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe/src 2>/dev/null"
+let g:vim_tags_project_tags_command = "ctags -R --sort=foldcase --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe-dirvine/src 2>/dev/null"
 let g:vim_tags_use_language_field = 1
 
 let g:vim_tags_auto_generate = 1
@@ -356,7 +354,7 @@ nmap <F2> :cnext <cr>
 nmap <F3> :cprev <cr>
 map <F4> :TagbarToggle <cr>
 nmap <F5> :NERDTreeToggle ../src <CR>
-nmap <F6> :SrcExplToggle <cr>
+nmap <F6> zi <cr>
 set tags=tags;
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
@@ -365,18 +363,18 @@ nmap <F8> :Lhide backtrace<CR> :Lhide breakpoints<CR> :Lhide disassembly<CR> :Lh
 nmap <F10> :TagsGenerate <CR>
 
 " open quickfix after a grep
-autocmd QuickFixCmdPost *grep* cwindow
-" Add and delete spaces in increments of `shiftwidth' for tabs
-" Delete trailing whitespace and tabs at the end of each line
-command! DeleteTrailingWs :%s/\s\+$//
-" Convert all tab characters to two spaces
-command! Untab :%s/\t/  /g
-
-set switchbuf+=usetab,newtab
-map <C-t><up> :tabr<cr>
-map <C-t><down> :tabl<cr>
-map <C-t><left> :tabp<cr>
-map <C-t><right> :tabn<cr>
+" autocmd QuickFixCmdPost *grep* cwindow
+" " Add and delete spaces in increments of `shiftwidth' for tabs
+" " Delete trailing whitespace and tabs at the end of each line
+" command! DeleteTrailingWs :%s/\s\+$//
+" " Convert all tab characters to two spaces
+" command! Untab :%s/\t/  /g
+"
+" set switchbuf=useopen,usetab,newtab
+" map <C-t><up> :tabr<cr>
+" map <C-t><down> :tabl<cr>
+" map <C-t><left> :tabp<cr>
+" map <C-t><right> :tabn<cr>
 "################### Miscellaneous ##########################################
 
 " Tell vim to remember certain things when we exit
