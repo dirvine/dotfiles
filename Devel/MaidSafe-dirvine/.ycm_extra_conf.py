@@ -12,7 +12,7 @@ import ycm_core
 #
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.
-compilation_database_folder='/home/dirvine/Devel/MaidSafe/buildclang'
+compilation_database_folder='/home/dirvine/Devel/MaidSafe-dirvine/buildclang'
 
 if compilation_database_folder:
   database = ycm_core.CompilationDatabase( compilation_database_folder )

@@ -31,8 +31,7 @@ call vam#ActivateAddons(['vimproc'])
 
 let g:ctags_statusline=1
 
-call vam#ActivateAddons(['github:plasticboy/vim-markdown'])
-let g:vim_markdown_folding_disabled=1
+call vam#ActivateAddons(['github:jtratner/vim-flavored-markdown'])
 set spelllang=en_gb
 autocmd Filetype markdown setlocal wrap spell
 
