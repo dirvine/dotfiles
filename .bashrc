@@ -107,8 +107,16 @@ fi
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
+function ahead_behind {
+  curr_branch=$(git rev-parse --abbrev-ref HEAD);
+  curr_remote=$(git config branch.$curr_branch.remote);
+  curr_merge_branch=$(git config branch.$curr_branch.merge | cut -d / -f 3);
+  git rev-list --left-right --count $curr_branch...$curr_remote/$curr_merge_branch | tr -s '\t' '|';
+}
 
-PS1='\[\033[01;37m\]\w\[\033[00;35m\]$(parse_git_branch)\[\033[00m\] \$ '
+source ~/git-prompt.sh
+
+PS1='\[\033[01;37m\]\w\[\033[00;35m\] $(git_prompt)\[\033[00m\] \$ '
 #export CXX=/usr/bin/clang++
 #export CC=/usr/bin/clang
 #export CXXFLAGS="-stdlib=libc++ -std=c++11 -pthread"
