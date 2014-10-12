@@ -40,12 +40,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+  # We have color support; assume it's compliant with Ecma-48
+  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+  # a case would tend to support setf rather than setaf.)
+  color_prompt=yes
     else
-	color_prompt=
+  color_prompt=
     fi
 fi
 
@@ -107,16 +107,8 @@ fi
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
-function ahead_behind {
-  curr_branch=$(git rev-parse --abbrev-ref HEAD);
-  curr_remote=$(git config branch.$curr_branch.remote);
-  curr_merge_branch=$(git config branch.$curr_branch.merge | cut -d / -f 3);
-  git rev-list --left-right --count $curr_branch...$curr_remote/$curr_merge_branch | tr -s '\t' '|';
-}
 
-source ~/git-prompt.sh
-
-PS1='\[\033[01;37m\]\w\[\033[00;35m\] $(git_prompt)\[\033[00m\] \$ '
+PS1='\[\033[01;37m\]\w\[\033[00;35m\]$(parse_git_branch)\[\033[00m\] \$ '
 #export CXX=/usr/bin/clang++
 #export CC=/usr/bin/clang
 #export CXXFLAGS="-stdlib=libc++ -std=c++11 -pthread"
@@ -130,4 +122,4 @@ export BROWSER=/usr/bin/chromium-browser
 export EDITOR=/usr/bin/vim
 gsettings set org.gnome.desktop.wm.preferences focus-mode 'mouse'
 gsettings set org.gnome.desktop.wm.preferences auto-raise-delay 500
-# temp fix for lldb 
+#
