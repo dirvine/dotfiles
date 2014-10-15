@@ -46,7 +46,7 @@ call vam#ActivateAddons(['github:kana/vim-operator-user'])
 call vam#ActivateAddons(['github:rhysd/vim-clang-format'])
 let g:clang_format#auto_format = 1
 let g:clang_format#auto_format_on_insert_leave = 1
-let clang_format#command = '/usr/bin/clang-format-3.6'
+let clang_format#command = '/usr/bin/clang-format-3.5'
 let g:clang_format#detect_style_file = 0 
 
 " map to <Leader>cf in C++ code
