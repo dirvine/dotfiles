@@ -157,9 +157,21 @@ call vam#ActivateAddons(['delimitMate'])
 au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 
-call vam#ActivateAddons(['github:garbas/vim-snipmate'])
-call vam#ActivateAddons(['github:vim-scripts/Conque-Shell'])
-let g:ConqueTerm_PyVersion = 3
+call vam#ActivateAddons(['github:ervandew/supertab'])
+call vam#ActivateAddons(['github:SirVer/ultisnips'])
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+call vam#ActivateAddons(['github:honza/vim-snippets'])
+" call vam#ActivateAddons(['github:vim-scripts/Conque-Shell'])
+" let g:ConqueTerm_PyVersion = 3
 
 call vam#ActivateAddons(['github:majutsushi/tagbar'])
 let g:tagbar_left = 1
@@ -207,14 +219,12 @@ let NERDTreeHightlight=1
 call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
 nmap <Space>w <Plug>(easymotion-w)
 
-call vam#ActivateAddons(['github:ervandew/supertab'])
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 let g:solarized_termcolors = 16
 syntax enable
 set t_Co=16
 set background=dark
 colorscheme solarized
-call vam#ActivateAddons(['github:SirVer/ultisnips'])
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 let g:rainbow_active = 1
 let g:rainbow_operators = 2
