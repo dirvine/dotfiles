@@ -16,10 +16,18 @@ snippet todo "TODO Message" b
 // ${2:TODO(`whoami`):} `!v strftime("%Y-%m-%d")` 
 endsnippet
 
+snippet ifndef "ifndefine block" b
+#ifndef ${1:SOME_DEFINE}
+#define $1
+$0
+#endif /* $1 */
+endsnippet
+
 snippet cl "class .. (class)"
 class ${1:`!p snip.rv = snip.basename or "name"`}
 {
 public:
+	${1/(\w+).*/$1/}();
 	${1/(\w+).*/$1/} (${2:arguments});
 	~${1/(\w+).*/$1/} ();
 

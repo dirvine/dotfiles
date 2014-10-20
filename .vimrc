@@ -108,6 +108,7 @@ let g:ctrlp_max_files = 100000
 let g:ctrlp_clear_cache_on_exit = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
 nnoremap <silent> <Leader>p :CtrlP ../src<CR>
+nmap ; :CtrlPBuffer<CR>
 
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 
@@ -370,20 +371,21 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F7> :setlocal spell! spelllang=en_gb<CR>
 nmap <F8> :Lhide backtrace<CR> :Lhide breakpoints<CR> :Lhide disassembly<CR> :Lhide locals<CR> :Lhide registers<CR> :Lhide threads<CR>
 nmap <F10> :TagsGenerate <CR>
-
+nnoremap j gj
+nnoremap k gk
 " open quickfix after a grep
-" autocmd QuickFixCmdPost *grep* cwindow
+autocmd QuickFixCmdPost *grep* cwindow
 " " Add and delete spaces in increments of `shiftwidth' for tabs
 " " Delete trailing whitespace and tabs at the end of each line
-" command! DeleteTrailingWs :%s/\s\+$//
+command! DeleteTrailingWs :%s/\s\+$//
 " " Convert all tab characters to two spaces
-" command! Untab :%s/\t/  /g
+command! Untab :%s/\t/  /g
 "
 " set switchbuf=useopen,usetab,newtab
-" map <C-t><up> :tabr<cr>
-" map <C-t><down> :tabl<cr>
-" map <C-t><left> :tabp<cr>
-" map <C-t><right> :tabn<cr>
+ map <C-t><up> :tabr<cr>
+ map <C-t><down> :tabl<cr>
+ map <C-t><left> :tabp<cr>
+ map <C-t><right> :tabn<cr>
 "################### Miscellaneous ##########################################
 
 " Tell vim to remember certain things when we exit
