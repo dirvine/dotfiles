@@ -29,35 +29,36 @@ struct ${1:name}
 \{
   $1() = default;
   $1($1 const &) = default;
-  $1($1 &&) noexcept = default;
+  $1($1 &&) = default MAIDSAFE_NOEXCEPT;
   ~$1() = default;
   $1 & operator=($1 const &) = default;
-  $1 & operator=($1 &&) noexcept = default;
+  $1 & operator=($1 &&) = default MAIDSAFE_NOEXCEPT;
 
-
-  bool operator==(const $1& other) const MAIDSAFE_NOEXCEPT {
-    return std::tie(XXXXXXXX) ==
-      std::tie(XXXXXXXXXX);
+  bool operator==(const $1& lhs, const $1& rhs) const MAIDSAFE_NOEXCEPT {
+    return std::tie(lhs.$3, lhs.$5, lhs.$7) ==
+      std::tie(rhs.$3, rhs.$5, rhs.$7);
   }
-  bool operator!=(const $1& other) const MAIDSAFE_NOEXCEPT { return !operator==(other); }
-
-  bool operator<(const $1& other) const MAIDSAFE_NOEXCEPT {
-    return std::tie(XXXXXX) <
-    std::tie(XXXXXXXXXX);
+  bool operator!=(const $1& lhs, const $1& rhs) const MAIDSAFE_NOEXCEPT { 
+    return !operator==(lhs, rhs); 
+  }
+  bool operator<(const $1& lhs, const $1& rhs) const MAIDSAFE_NOEXCEPT {
+    return std::tie(lhs.$3, lhs.$5, lhs.$7) <
+      std::tie(rhs.$3, rhs.$5, rhs.$7);
   }  
   bool operator>(const $1& lhs, const $1& rhs) {
     return operator<(rhs, lhs);
   }
-
   bool operator<=(const $1& lhs, const $1& rhs) {
     return !operator>(lhs, rhs);
   }
-
   bool operator>=(const $1& lhs, const $1& rhs) {
     return !operator<(lhs, rhs);
   }   
 
-	${0:/* data */}
+	${2:type1}  ${3:name1};
+	${4:type2}  ${5:name2};
+	${6:type3}  ${7:name3};
+  $0
 \};
 endsnippet
 snippet cl "class .. (class)"
@@ -66,36 +67,39 @@ class ${1:name}
  public:
   $1() = default;
   $1($1 const &) = default;
-  $1($1 &&) noexcept = default;
+  $1($1 &&) = default MAIDSAFE_NOEXCEPT;
   ~$1() = default;
   $1 & operator=($1 const &) = default;
-  $1 & operator=($1 &&) noexcept = default;
+  $1 & operator=($1 &&) = default MAIDSAFE_NOEXCEPT;
 
 
-  friend bool operator==(const $1& other) const MAIDSAFE_NOEXCEPT {
-    return std::tie(XXXXXXX) ==
-      std::tie(XXXXXXXXXX);
+  friend bool operator==(const $1& lhs, const $1& rhs) const MAIDSAFE_NOEXCEPT {
+    return std::tie(lhs.$3, lhs.$5, lhs.$7) ==
+      std::tie(rhs.$3, rhs.$5, rhs.$7);
   }
-  friend bool operator!=(const $1& other) const MAIDSAFE_NOEXCEPT { return !operator==(other); }
-
-  friend bool operator<(const $1& other) const MAIDSAFE_NOEXCEPT {
-    return std::tie(contents, sender, receiver, cacheable) <
-    std::tie(other.contents, other.sender, other.receiver, other.cacheable);
+  friend bool operator!=(const $1& lhs, const $1& rhs) const MAIDSAFE_NOEXCEPT { 
+    return !operator==(lhs, rhs); 
+  }
+  friend bool operator<(const $1& lhs, const $1& rhs) const MAIDSAFE_NOEXCEPT {
+    return std::tie(lhs.$3, lhs.$5, lhs.$7) <
+      std::tie(rhs.$3, rhs.$5, rhs.$7);
   }  
   friend bool operator>(const $1& lhs, const $1& rhs) {
     return operator<(rhs, lhs);
   }
-
   friend bool operator<=(const $1& lhs, const $1& rhs) {
     return !operator>(lhs, rhs);
   }
-
   friend bool operator>=(const $1& lhs, const $1& rhs) {
     return !operator<(lhs, rhs);
   }   
 
  private:
-	${0:/* data */}
+
+	${2:type1}  ${3:name1};
+	${4:type2}  ${5:name2};
+	${6:type3}  ${7:name3};
+  $0
 \};
 endsnippet
 
