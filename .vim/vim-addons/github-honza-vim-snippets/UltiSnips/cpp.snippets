@@ -20,20 +20,83 @@ snippet ifndef "ifndefine block" b
 #ifndef ${1:SOME_DEFINE}
 #define $1
 $0
-#endif /* $1 */
+#endif  // $1
+ 
 endsnippet
 
-snippet cl "class .. (class)"
-class ${1:`!p snip.rv = snip.basename or "name"`}
-{
-public:
-	${1/(\w+).*/$1/}();
-	${1/(\w+).*/$1/} (${2:arguments});
-	~${1/(\w+).*/$1/} ();
+snippet st "struct .. (struct)"
+struct ${1:name} 
+\{
+  $1() = default;
+  $1($1 const &) = default;
+  $1($1 &&) noexcept = default;
+  ~$1() = default;
+  $1 & operator=($1 const &) = default;
+  $1 & operator=($1 &&) noexcept = default;
 
-private:
+
+  bool operator==(const $1& other) const MAIDSAFE_NOEXCEPT {
+    return std::tie(XXXXXXXX) ==
+      std::tie(XXXXXXXXXX);
+  }
+  bool operator!=(const $1& other) const MAIDSAFE_NOEXCEPT { return !operator==(other); }
+
+  bool operator<(const $1& other) const MAIDSAFE_NOEXCEPT {
+    return std::tie(XXXXXX) <
+    std::tie(XXXXXXXXXX);
+  }  
+  bool operator>(const $1& lhs, const $1& rhs) {
+    return operator<(rhs, lhs);
+  }
+
+  bool operator<=(const $1& lhs, const $1& rhs) {
+    return !operator>(lhs, rhs);
+  }
+
+  bool operator>=(const $1& lhs, const $1& rhs) {
+    return !operator<(lhs, rhs);
+  }   
+
 	${0:/* data */}
-};
+\};
+endsnippet
+snippet cl "class .. (class)"
+class ${1:name} 
+\{
+ public:
+  $1() = default;
+  $1($1 const &) = default;
+  $1($1 &&) noexcept = default;
+  ~$1() = default;
+  $1 & operator=($1 const &) = default;
+  $1 & operator=($1 &&) noexcept = default;
+
+
+  friend bool operator==(const $1& other) const MAIDSAFE_NOEXCEPT {
+    return std::tie(XXXXXXX) ==
+      std::tie(XXXXXXXXXX);
+  }
+  friend bool operator!=(const $1& other) const MAIDSAFE_NOEXCEPT { return !operator==(other); }
+
+  friend bool operator<(const $1& other) const MAIDSAFE_NOEXCEPT {
+    return std::tie(contents, sender, receiver, cacheable) <
+    std::tie(other.contents, other.sender, other.receiver, other.cacheable);
+  }  
+  friend bool operator>(const $1& lhs, const $1& rhs) {
+    return operator<(rhs, lhs);
+  }
+
+  friend bool operator<=(const $1& lhs, const $1& rhs) {
+    return !operator>(lhs, rhs);
+  }
+
+  friend bool operator>=(const $1& lhs, const $1& rhs) {
+    return !operator<(lhs, rhs);
+  }   
+
+ private:
+	${0:/* data */}
+\};
 endsnippet
 
 snippet ns "namespace .. (namespace)"
@@ -83,8 +146,6 @@ snippet lic "License block"
 
     See the Licences for the specific language governing permissions and limitations relating to
     use of the MaidSafe Software.                                                                 */
-
-
 endsnippet
 
 # vim:ft=snippets:
