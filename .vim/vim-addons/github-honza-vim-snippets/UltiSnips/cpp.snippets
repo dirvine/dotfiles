@@ -24,6 +24,13 @@ $0
  
 endsnippet
 
+snippet name "namespace .. (namespace)" b
+namespace ${1:NAMESPACE} \{
+$0
+\}  // namespace $1
+
+endsnippet
+
 snippet st "struct .. (struct)" b
 struct ${1:name} 
 \{
@@ -102,12 +109,6 @@ class ${1:name}
 \};
 endsnippet
 
-snippet ns "namespace .. (namespace)"
-namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
-{
-	${VISUAL}${0}
-}${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
-endsnippet
 
 snippet readfile "read file (readF)"
 std::vector<char> v;
