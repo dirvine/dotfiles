@@ -28,7 +28,7 @@ def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
   if not working_directory:
     return list( flags )
   new_flags = [ '-std=c++11' ]
-  new_flags.append('/usr/lib/c++/v1')
+  new_flags.append('/usr/include/c++/4.9')
   make_next_absolute = False
   remove_next = False
   remove_this = False
@@ -98,13 +98,13 @@ def FlagsForFile( filename ):
   final_flags.append('-x')
   final_flags.append('c++')
   final_flags.append('-std=c++11')
-  final_flags.append('-stdlib=libc++')
+  #final_flags.append('-stdlib=libc++')
   #final_flags.append('-lc++abi')
   
   # On macs, I need this in order to find the system libraries.
   # See: https://github.com/Valloric/YouCompleteMe/issues/303
   final_flags.append('-isystem')
-  final_flags.append('/usr/lib/c++/v1')
+  final_flags.append('/usr/include/c++/4.9')
 
   return {
     'flags': final_flags,

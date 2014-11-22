@@ -16,6 +16,7 @@ endfun
 call SetupVAM()
 
 
+call vam#ActivateAddons(['github:tpope/vim-surround'])
 call vam#ActivateAddons(['github:peterhoeg/vim-qml'])
 call vam#ActivateAddons(['vimproc'])
 " call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
@@ -399,7 +400,11 @@ command! Untab :%s/\t/  /g
 "  %    :  saves and restores the buffer list
 "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
+au BufWinLeave *.* mkview
+au BufWinEnter *.* silent loadview
 
+au BufWinLeave *.* mksession ~/session.vim
+noremap <C-s> :source ~/session.vim
 
 "#### EASY NAVIGATION IN INSERT MODE  ################################
 noremap <A-j> <Left>

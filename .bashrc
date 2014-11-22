@@ -117,9 +117,10 @@ alias g='vim --remote-silent'
 stty -ixon
 alias cla="clang++ -std=c++11 -stdlib=libc++ -lc++abi -ldl"
 alias f='/usr/bin/ranger'
+export PYTHONPATH=$PYTHONPATH:/usr/lib/llvm-3.6/lib/python2.7/site-packages/
 ulimit -c unlimited
 export BROWSER=/usr/bin/chromium-browser
 export EDITOR=/usr/bin/vim
 gsettings set org.gnome.desktop.wm.preferences focus-mode 'mouse'
 gsettings set org.gnome.desktop.wm.preferences auto-raise-delay 500
-#
+

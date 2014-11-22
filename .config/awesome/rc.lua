@@ -58,7 +58,7 @@ beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 terminal = "terminator"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
-browser = "chromium-browser"
+browser = "google-chrome"
 develop = "qtcreator"
 sound = "gmpc"
 file = "thunar"
