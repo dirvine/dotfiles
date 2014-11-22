@@ -112,8 +112,8 @@ nmap ; :CtrlPBuffer<CR>
 
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 
-call vam#ActivateAddons(['github:jlanzarotta/bufexplorer'])
-nnoremap <leader>z :BufExplorerHorizontalSplit<CR>
+" call vam#ActivateAddons(['github:jlanzarotta/bufexplorer'])
+" nnoremap <leader>z :BufExplorerHorizontalSplit<CR>
 
 call vam#ActivateAddons(['github:oblitum/YouCompleteMe'])
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -131,7 +131,7 @@ let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_confirm_extra_conf = 0
 
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
-let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_check_header = 0
 let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
 let g:syntastic_cpp_remove_include_errors = 1
 let g:syntastic_cpp_compiler = 'clang++'
@@ -186,16 +186,20 @@ let g:tagbar_singleclick = 1
 
 
 " call vam#ActivateAddons(['github:gilligan/vim-lldb'])
-" let g:lldb_map_Lnext = "<leader>n"
-" let g:lldb_map_Lstep = "<leader>s"
+let g:lldb_map_Lnext = "<leader>n"
+let g:lldb_map_Lstep = "<leader>s"
 
 call vam#ActivateAddons(['github:szw/vim-tags'])
 " Create an empty tags dir in project root"
-let g:vim_tags_project_tags_command = "ctags -R --sort=foldcase --c++-kinds=+p --fields=+iaS --extra=+q /home/dirvine/Devel/MaidSafe-dirvine/src 2>/dev/null"
+let g:vim_tags_project_tags_command = "/usr/bin/ctags -R --sort=foldcase --c++-kinds=+p --fields=+IaS --extra=+q /home/dirvine/Devel/MaidSafe-dirvine/src 2>/dev/null"
 let g:vim_tags_use_language_field = 1
 
 let g:vim_tags_auto_generate = 1
 let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore', 'build*']
+let g:vim_tags_main_file = 'tags'
+
+nmap <A-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nmap <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 
@@ -268,6 +272,7 @@ au FileType c,cpp,objc,objcpp call rainbow#activate()
 autocmd BufRead *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
 autocmd BufRead *.lyx syntax sync fromstart
 
+"set makeprg=clang++\ -std=c++11\ -o\ %<\ %
 function! Make()
   let curr_dir = expand('%:h')
   if curr_dir == ''
@@ -275,11 +280,11 @@ function! Make()
   endif
   echo curr_dir
   execute 'lcd ' . curr_dir
-  execute 'make %:r'
+  execute 'clang++ -std=c++11 %:r.o'
   execute 'lcd -'
 endfunction
 
-" nnoremap <F9> :update<CR>:make<CR>
+nnoremap <F9> :update<CR>:make<CR>
 " Optional
 " C/C++ programming helpers
 "
@@ -290,7 +295,6 @@ augroup csrc
   au BufNewFile,BufRead *.cpp,*.cc.,*.h,*.hpp set syntax=cpp11
 augroup END
 
-"set makeprg=clang++\ -std=c++11\ -stdlib=libc++\ -lc++abi\ -ldl\ -o\ %<\ %
 set errorformat^=%-GIn\ file\ included\ %.%#
 set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,../src/,/usr/include/
 
@@ -395,18 +399,6 @@ command! Untab :%s/\t/  /g
 "  %    :  saves and restores the buffer list
 "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
-
-function! ResCur()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
-endfunction
-
-augroup resCur
-  autocmd!
-  autocmd BufWinEnter * call ResCur()
-augroup END
 
 
 "#### EASY NAVIGATION IN INSERT MODE  ################################
