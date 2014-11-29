@@ -109,6 +109,7 @@ let g:ctrlp_max_files = 100000
 let g:ctrlp_clear_cache_on_exit = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
 nnoremap <silent> <Leader>p :CtrlP ../src<CR>
+nmap <Space>p <Plug>(CtrlP ../src)
 nmap ; :CtrlPBuffer<CR>
 
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
@@ -400,10 +401,10 @@ command! Untab :%s/\t/  /g
 "  %    :  saves and restores the buffer list
 "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
-au BufWinLeave *.* mkview
+au BufWinLeave *.* mkview!
 au BufWinEnter *.* silent loadview
 
-au BufWinLeave *.* mksession ~/session.vim
+au BufWritePost *.* mksession! ~/session.vim
 noremap <C-s> :source ~/session.vim
 
 "#### EASY NAVIGATION IN INSERT MODE  ################################

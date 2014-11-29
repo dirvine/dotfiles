@@ -22,24 +22,28 @@ $0
 
 endsnippet
 
-snippet st "struct .. (struct)" b
+snippet struct "struct .. (struct)" b
 struct ${1:name} 
 \{
   $1() = default;
   $1($1 const &) = default;
-  $1($1 &&) = default MAIDSAFE_NOEXCEPT;
+  $1($1 &&) MAIDSAFE_NOEXCEPT
+  : $3(std::move(rhs.$3)), $5(std::move(rhs.$5)), $7(std::move(rhs.$7)) \{\}
   ~$1() = default;
   $1 & operator=($1 const &) = default;
-  $1 & operator=($1 &&) = default MAIDSAFE_NOEXCEPT;
+  $1 & operator=($1 &&rhs) MAIDSAFE_NOEXCEPT \{
+    $3 = std::move(rhs.$3), 
+    $5 = std::move(rhs.$5), 
+    $7 = std::move(rhs.$7) \}
 
-  bool operator==(const $1& other) const MAIDSAFE_NOEXCEPT \{
+  bool operator==(const $1& other) const \{
     return std::tie($3, $5, $7) ==
       std::tie(other.$3, other.$5, other.$7);
   \}
-  bool operator!=(const $1& other) const MAIDSAFE_NOEXCEPT \{ 
+  bool operator!=(const $1& other) const \{ 
     return !operator==(*this, other); 
   \}
-  bool operator<(const $1& other) const MAIDSAFE_NOEXCEPT \{
+  bool operator<(const $1& other) const \{
     return std::tie($3, $5, $7) <
       std::tie(other.$3, other.$5, other.$7);
   \}  
@@ -53,32 +57,36 @@ struct ${1:name}
     return !operator<(*this, other);
   \}   
 
-	${2:type1}  ${3:name1};
-	${4:type2}  ${5:name2};
-	${6:type3}  ${7:name3};
+	${2:type1}  ${3:name1}\{\};
+	${4:type2}  ${5:name2}\{\};
+	${6:type3}  ${7:name3}\{\};
   $0
 \};
 endsnippet
 
-snippet cl "class .. (class)" b
+snippet class "class .. (class)" b
 class ${1:name} 
 \{
  public:
   $1() = default;
   $1($1 const &) = default;
-  $1($1 &&) = default MAIDSAFE_NOEXCEPT;
+  $1($1 &&) MAIDSAFE_NOEXCEPT
+  : $3(std::move(rhs.$3)), $5(std::move(rhs.$5)), $7(std::move(rhs.$7)) \{\}
   ~$1() = default;
   $1 & operator=($1 const &) = default;
-  $1 & operator=($1 &&) = default MAIDSAFE_NOEXCEPT;
+  $1 & operator=($1 &&rhs) MAIDSAFE_NOEXCEPT \{
+    $3 = std::move(rhs.$3), 
+    $5 = std::move(rhs.$5), 
+    $7 = std::move(rhs.$7) \}
 
-  friend bool operator==(const $1& other) const MAIDSAFE_NOEXCEPT \{
+  friend bool operator==(const $1& other) const \{
     return std::tie($3, $5, $7) ==
       std::tie(other.$3, other.$5, other.$7);
   \}
-  friend bool operator!=(const $1& other) const MAIDSAFE_NOEXCEPT \{ 
+  friend bool operator!=(const $1& other) const \{ 
     return !operator==(*this, other); 
   \}
-  friend bool operator<(const $1& other) const MAIDSAFE_NOEXCEPT \{
+  friend bool operator<(const $1& other) const \{
     return std::tie($3, $5, $7) <
       std::tie(other.$3, other.$5, other.$7);
   \}  
