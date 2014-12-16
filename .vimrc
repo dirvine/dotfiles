@@ -16,7 +16,7 @@ endfun
 call SetupVAM()
 
 
-call vam#ActivateAddons(['github:tpope/vim-surround'])
+" call vam#ActivateAddons(['github:tpope/vim-surround'])
 call vam#ActivateAddons(['github:peterhoeg/vim-qml'])
 call vam#ActivateAddons(['vimproc'])
 " call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
@@ -117,7 +117,7 @@ call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 " call vam#ActivateAddons(['github:jlanzarotta/bufexplorer'])
 " nnoremap <leader>z :BufExplorerHorizontalSplit<CR>
 
-call vam#ActivateAddons(['github:oblitum/YouCompleteMe'])
+call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>h :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>c :YcmCompleter GoToDefinition<CR>
@@ -274,7 +274,7 @@ au FileType c,cpp,objc,objcpp call rainbow#activate()
 autocmd BufRead *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
 autocmd BufRead *.lyx syntax sync fromstart
 
-"set makeprg=clang++\ -std=c++11\ -o\ %<\ %
+" set makeprg=clang++\ -std=c++11\ -o\ %<\ %
 function! Make()
   let curr_dir = expand('%:h')
   if curr_dir == ''
@@ -282,14 +282,20 @@ function! Make()
   endif
   echo curr_dir
   execute 'lcd ' . curr_dir
-  execute 'clang++ -std=c++11 %:r.o'
+  execute '!clang++ -std=c++11 %:r.o'
   execute 'lcd -'
 endfunction
 
-nnoremap <F9> :update<CR>:make<CR>
-" Optional
-" C/C++ programming helpers
-"
+" Qml support
+call vam#ActivateAddons(['github:peterhoeg/vim-qml'])
+
+call vam#ActivateAddons(['github:xuhdev/SingleCompile'])
+nmap <F9> :SCCompile<cr> 
+nmap <F10> :SCCompileRun<cr>
+call SingleCompile#ChooseCompiler('cpp', 'clang')
+autocmd Filetype cpp nmap <buffer> <F9> :SCCompileAF -std=c++11 <CR>
+autocmd Filetype cpp nmap <buffer> <F10> :SCCompileRunAF -std=c++11 <CR>
+
 augroup csrc
   au!
   autocmd FileType * set nocindent smartindent
@@ -376,7 +382,7 @@ map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F7> :setlocal spell! spelllang=en_gb<CR>
 nmap <F8> :Lhide backtrace<CR> :Lhide breakpoints<CR> :Lhide disassembly<CR> :Lhide locals<CR> :Lhide registers<CR> :Lhide threads<CR>
-nmap <F10> :TagsGenerate <CR>
+nmap <F11> :TagsGenerate <CR>
 nnoremap j gj
 nnoremap k gk
 " open quickfix after a grep
