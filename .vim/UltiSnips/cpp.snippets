@@ -1,3 +1,8 @@
+snippet for "for loop" b
+for (size_t i(0); i < $1; ++i) {
+  $0
+  }
+endsnippet
 
 snippet todo "todo reminder" i 
 // TODO(dirvine) $1  :${2:`date +%d/%m/%Y`}
@@ -26,11 +31,11 @@ snippet struct "struct .. (struct)" b
 struct ${1:name} 
 \{
   $1() = default;
-  $1($1 const &) = default;
+  $1(const $1&) = default;
   $1($1 &&) MAIDSAFE_NOEXCEPT
   : $3(std::move(rhs.$3)), $5(std::move(rhs.$5)), $7(std::move(rhs.$7)) \{\}
   ~$1() = default;
-  $1 & operator=($1 const &) = default;
+  $1 & operator=(const $1&) = default;
   $1 & operator=($1 &&rhs) MAIDSAFE_NOEXCEPT \{
     $3 = std::move(rhs.$3), 
     $5 = std::move(rhs.$5), 
@@ -69,11 +74,11 @@ class ${1:name}
 \{
  public:
   $1() = default;
-  $1($1 const &) = default;
+  $1(const $1&) = default;
   $1($1 &&) MAIDSAFE_NOEXCEPT
   : $3(std::move(rhs.$3)), $5(std::move(rhs.$5)), $7(std::move(rhs.$7)) \{\}
   ~$1() = default;
-  $1 & operator=($1 const &) = default;
+  $1 & operator=(const $1&) = default;
   $1 & operator=($1 &&rhs) MAIDSAFE_NOEXCEPT \{
     $3 = std::move(rhs.$3), 
     $5 = std::move(rhs.$5), 
