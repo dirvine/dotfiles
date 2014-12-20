@@ -275,19 +275,7 @@ autocmd BufRead *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
 autocmd BufRead *.lyx syntax sync fromstart
 
 " set makeprg=clang++\ -std=c++11\ -o\ %<\ %
-function! Make()
-  let curr_dir = expand('%:h')
-  if curr_dir == ''
-    let curr_dir = '.'
-  endif
-  echo curr_dir
-  execute 'lcd ' . curr_dir
-  execute '!clang++ -std=c++11 %:r.o'
-  execute 'lcd -'
-endfunction
 
-" Qml support
-call vam#ActivateAddons(['github:peterhoeg/vim-qml'])
 
 call vam#ActivateAddons(['github:xuhdev/SingleCompile'])
 nmap <F9> :SCCompile<cr> 
@@ -370,7 +358,7 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 " set fdm=syntax 
 set foldlevel=2
-
+au BufRead * normal zi
 "######################### Function Key Mappings ####################
 nmap <F2> :cnext <cr>
 nmap <F3> :cprev <cr>
