@@ -249,6 +249,7 @@ let  g:rainbow_ctermfgs = [
             \ 'darkred',
             \ 'red',
             \ ]
+call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 
 " call vam#ActivateAddons(['github:wesleyche/SrcExpl'])
 
@@ -264,11 +265,11 @@ let g:SrcExpl_refreshTime = 100
 "################### C++ ##########################################
 au FileType cpp,objcpp set syntax=cpp11
 au BufNewFile,BufRead *
-      \ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
-      \   if &ft != 'cpp'                                                                           |
-      \     set ft=cpp                                                                              |
-      \   endif                                                                                     |
-      \ endif                                                                                       |
+\ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
+\   if &ft != 'cpp'                                                                           |
+\     set ft=cpp                                                                              |
+\   endif                                                                                     |
+\ endif                                                                                       |
 
 au FileType c,cpp,objc,objcpp call rainbow#activate()
 autocmd BufRead *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
@@ -387,6 +388,15 @@ command! Untab :%s/\t/  /g
  map <C-t><left> :tabp<cr>
  map <C-t><right> :tabn<cr>
 "################### Miscellaneous ##########################################
+if &term =~ "xterm\\|rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;yellow\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;red\x7"
+  " silent !echo -ne "\033]12;red\007"
+   " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+endif
 
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files
