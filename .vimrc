@@ -16,7 +16,19 @@ endfun
 call SetupVAM()
 
 
-" call vam#ActivateAddons(['github:tpope/vim-surround'])
+call vam#ActivateAddons(['github:tpope/vim-surround'])
+call vam#ActivateAddons(['github:tpope/vim-dispatch'])
+call vam#ActivateAddons(['github:tpope/vim-abolish'])
+call vam#ActivateAddons(['github:tpope/vim-repeat'])
+call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
+" slow multiple_cursors &amp; YCM
+function! Multiple_cursors_before()
+  let g:ycm_auto_trigger = 0
+  endfunction
+
+function! Multiple_cursors_after()
+  let g:ycm_auto_trigger = 1
+  endfunction
 call vam#ActivateAddons(['github:peterhoeg/vim-qml'])
 call vam#ActivateAddons(['vimproc'])
 " call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
