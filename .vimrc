@@ -121,8 +121,8 @@ let g:ctrlp_max_files = 100000
 let g:ctrlp_clear_cache_on_exit = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
 nnoremap <silent> <Leader>p :CtrlP ../src<CR>
-nmap <Space>p <Plug>(CtrlP ../src)
 nmap ; :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>n :set nonumber!<CR>
 
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 
@@ -291,8 +291,8 @@ autocmd BufRead *.lyx syntax sync fromstart
 
 
 call vam#ActivateAddons(['github:xuhdev/SingleCompile'])
-nmap <F9> :SCCompile<cr> 
-nmap <F10> :SCCompileRun<cr>
+" nmap <F9> :SCCompile<cr> 
+" nmap <F10> :SCCompileRun<cr>
 call SingleCompile#ChooseCompiler('cpp', 'clang')
 autocmd Filetype cpp nmap <buffer> <F9> :SCCompileAF -std=c++11 <CR>
 autocmd Filetype cpp nmap <buffer> <F10> :SCCompileRunAF -std=c++11 <CR>
