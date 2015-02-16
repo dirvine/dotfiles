@@ -23,3 +23,5 @@
 	warndetachedcommit = true
 [github]
 	user = dirvine
+[init]
+	templatedir = ~/.git_template

@@ -395,10 +395,10 @@ command! DeleteTrailingWs :%s/\s\+$//
 command! Untab :%s/\t/  /g
 "
 " set switchbuf=useopen,usetab,newtab
- map <C-t><up> :tabr<cr>
- map <C-t><down> :tabl<cr>
- map <C-t><left> :tabp<cr>
- map <C-t><right> :tabn<cr>
+"  map <C-t><up> :tabr<cr>
+"  map <C-t><down> :tabl<cr>
+"  map <C-t><left> :tabp<cr>
+"  map <C-t><right> :tabn<cr>
 "################### Miscellaneous ##########################################
 if &term =~ "xterm\\|rxvt"
   " use an orange cursor in insert mode

@@ -37,29 +37,30 @@ struct ${1:name}
   ~$1() = default;
   $1 & operator=(const $1&) = default;
   $1 & operator=($1 &&rhs) MAIDSAFE_NOEXCEPT \{
-    $3 = std::move(rhs.$3), 
-    $5 = std::move(rhs.$5), 
-    $7 = std::move(rhs.$7) \}
+    $3 = std::move(rhs.$3); 
+    $5 = std::move(rhs.$5); 
+    $7 = std::move(rhs.$7);
+    return *this; \}
 
   bool operator==(const $1& other) const \{
     return std::tie($3, $5, $7) ==
       std::tie(other.$3, other.$5, other.$7);
   \}
   bool operator!=(const $1& other) const \{ 
-    return !operator==(*this, other); 
+    return !operator==(other); 
   \}
   bool operator<(const $1& other) const \{
     return std::tie($3, $5, $7) <
       std::tie(other.$3, other.$5, other.$7);
   \}  
   bool operator>(const $1& other) \{
-    return operator<(other, *this);
+    return operator<(other);
   \}
   bool operator<=(const $1& other) \{
-    return !operator>(*this, other);
+    return !operator>(other);
   \}
   bool operator>=(const $1& other) \{
-    return !operator<(*this, other);
+    return !operator<(other);
   \}   
 
 	${2:type1}  ${3:name1}\{\};
@@ -80,29 +81,30 @@ class ${1:name}
   ~$1() = default;
   $1 & operator=(const $1&) = default;
   $1 & operator=($1 &&rhs) MAIDSAFE_NOEXCEPT \{
-    $3 = std::move(rhs.$3), 
-    $5 = std::move(rhs.$5), 
-    $7 = std::move(rhs.$7) \}
+    $3 = std::move(rhs.$3); 
+    $5 = std::move(rhs.$5); 
+    $7 = std::move(rhs.$7);
+    return *this;  \}
 
   friend bool operator==(const $1& other) const \{
     return std::tie($3, $5, $7) ==
       std::tie(other.$3, other.$5, other.$7);
   \}
   friend bool operator!=(const $1& other) const \{ 
-    return !operator==(*this, other); 
+    return !operator==(other); 
   \}
   friend bool operator<(const $1& other) const \{
     return std::tie($3, $5, $7) <
       std::tie(other.$3, other.$5, other.$7);
   \}  
   friend bool operator>(const $1& other) \{
-    return operator<(other, *this);
+    return operator<(other);
   \}
   friend bool operator<=(const $1& other) \{
-    return !operator>(*this, other);
+    return !operator>(other);
   \}
   friend bool operator>=(const $1& other) \{
-    return !operator<(*this, other);
+    return !operator<(other);
   \}   
 
  private:
@@ -114,7 +116,7 @@ class ${1:name}
 \};
 endsnippet
 
-snippet lic "License block"
+snippet lic "MaidSafe License block" i
 /*  Copyright 2014 MaidSafe.net limited
 
     This MaidSafe Software is licensed to you under (1) the MaidSafe.net Commercial License,
@@ -132,4 +134,23 @@ snippet lic "License block"
 
     See the Licences for the specific language governing permissions and limitations relating to
     use of the MaidSafe Software.                                                                 */
+endsnippet
+
+snippet gpl "Gpl License block" i
+/* Copyright 2015 David Irvine <david.irvine@maidsafe.net>
+    This file is part of ${1:program_name}
+
+    $1 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    $1 is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with $1 (file called COPYING in project root directory). 
+    If not, see <http://www.gnu.org/licenses/>. */
 endsnippet
