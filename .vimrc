@@ -21,6 +21,25 @@ call vam#ActivateAddons(['github:tpope/vim-dispatch'])
 call vam#ActivateAddons(['github:tpope/vim-abolish'])
 call vam#ActivateAddons(['github:tpope/vim-repeat'])
 call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
+" ###################  RUST  #########################
+call vam#ActivateAddons(['github:phildawes/racer'])
+let g:racer_cmd = "/home/dirvine/racer/target/release/racer"
+ let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src"
+call vam#ActivateAddons(['github:rust-lang/rust.vim'])
+" ###################### nim ############################
+call vam#ActivateAddons(['github:zah/nimrod.vim'])
+
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+call GotoDefinition_{&filetype}()
+  else
+  exe "norm! \<C-]>"
+  endif
+  endf
+" ########################################################
+  " Jump to tag
+  nn <M-g> :call JumpToDef()<cr>
+  ino <M-g> <esc>:call JumpToDef()<cr>i
 " slow multiple_cursors &amp; YCM
 function! Multiple_cursors_before()
   let g:ycm_auto_trigger = 0
@@ -120,7 +139,7 @@ let g:ctrlp_use_caching = 1
 let g:ctrlp_max_files = 100000
 let g:ctrlp_clear_cache_on_exit = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
-nnoremap <silent> <Leader>p :CtrlP ../src<CR>
+nnoremap <silent> <Leader>p :CtrlP <CR>
 nmap ; :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>n :set nonumber!<CR>
 
@@ -376,7 +395,7 @@ au BufRead * normal zi
 nmap <F2> :cnext <cr>
 nmap <F3> :cprev <cr>
 map <F4> :TagbarToggle <cr>
-nmap <F5> :NERDTreeToggle ../src <CR>
+nmap <F5> :NERDTreeToggle  <CR>
 nmap <F6> zi <cr>
 set tags=tags;
 map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
