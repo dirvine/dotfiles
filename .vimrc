@@ -26,6 +26,8 @@ call vam#ActivateAddons(['github:phildawes/racer'])
 let g:racer_cmd = "/home/dirvine/racer/target/release/racer"
  let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src"
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
+nnoremap <silent> <Leader>b :!cargo build <CR>
+nnoremap <silent> <Leader>t :!cargo test <CR>
 " ###################### nim ############################
 call vam#ActivateAddons(['github:zah/nimrod.vim'])
 
@@ -67,7 +69,7 @@ call vam#ActivateAddons(['github:jtratner/vim-flavored-markdown'])
 set spelllang=en_gb
 autocmd Filetype markdown setlocal wrap spell
 
-call vam#ActivateAddons(['TaskList'])
+" call vam#ActivateAddons(['TaskList'])
 call vam#ActivateAddons(['vim-signify'])
 let g:signify_vcs_list = [ 'git', 'hg' ]
 let g:signify_disable_by_default = 0
