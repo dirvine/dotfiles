@@ -103,7 +103,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
     export GOROOT=$HOME/Devel/go
-    export PATH=$PATH:$GOROOT/bin:/home/dirvine/node/bin/:/home/dirvine/sage
+    export PATH=$PATH:$GOROOT/bin:/usr/local/nim/bin:/home/dirvine/node/bin/:/home/dirvine/sage
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
@@ -117,7 +117,6 @@ alias g='vim --remote-silent'
 stty -ixon
 alias cla="clang++ -std=c++11 -stdlib=libc++ -lc++abi -ldl"
 alias f='/usr/bin/ranger'
-export PYTHONPATH=$PYTHONPATH:/usr/lib/llvm-3.6/lib/python2.7/site-packages/
 ulimit -c unlimited
 export BROWSER=/usr/bin/chromium-browser
 export EDITOR=/usr/bin/vim
