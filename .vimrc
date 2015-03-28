@@ -23,8 +23,7 @@ call vam#ActivateAddons(['github:tpope/vim-repeat'])
 call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 " ###################  RUST  #########################
 call vam#ActivateAddons(['github:phildawes/racer'])
-let g:racer_cmd = "/home/dirvine/racer/target/release/racer"
- let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src"
+let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src"
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 nnoremap <silent> <Leader>b :!cargo build <CR>
 nnoremap <silent> <Leader>t :!cargo test <CR>

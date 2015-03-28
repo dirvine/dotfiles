@@ -62,3 +62,4 @@ build*
 *.vcxproj
 *install_me*
 
+*rc.lua

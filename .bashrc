@@ -120,6 +120,7 @@ alias f='/usr/bin/ranger'
 ulimit -c unlimited
 export BROWSER=/usr/bin/chromium-browser
 export EDITOR=/usr/bin/vim
+export RUST_BACKTRACE=1
 gsettings set org.gnome.desktop.wm.preferences focus-mode 'mouse'
 gsettings set org.gnome.desktop.wm.preferences auto-raise-delay 500
 
