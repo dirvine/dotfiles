@@ -357,8 +357,8 @@ set smarttab            " smart tab handling for indenting
 set magic               " change the way backslashes are used in search patterns
 set bs=indent,eol,start " Allow backspacing over everything in insert mode
 
-set tabstop=2           " number of spaces a tab counts for
-set shiftwidth=2        " spaces for autoindents
+set tabstop=4           " number of spaces a tab counts for
+set shiftwidth=4        " spaces for autoindents
 set expandtab           " turn a tabs into spaces
 
 set fileformat=unix     " file mode is unix
