@@ -103,7 +103,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
     export GOROOT=$HOME/Devel/go
-    export PATH=$PATH:$GOROOT/bin:/usr/local/nim/bin:/home/dirvine/node/bin/:/home/dirvine/sage
+    export PATH=$PATH:/usr/sbin/:$GOROOT/bin:/usr/local/nim/bin:/home/dirvine/node/bin/:/home/dirvine/sage
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
@@ -123,4 +123,4 @@ export EDITOR=/usr/bin/vim
 export RUST_BACKTRACE=1
 gsettings set org.gnome.desktop.wm.preferences focus-mode 'mouse'
 gsettings set org.gnome.desktop.wm.preferences auto-raise-delay 500
-
+setxkbmap -option ctrl:nocaps

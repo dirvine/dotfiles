@@ -9,7 +9,7 @@
 	editor = vim
 	excludesfile = /home/dirvine/.gitignore
 [push]
-	default = tracking
+	default = current
 [color]
 	ui = auto
   Diff = auto

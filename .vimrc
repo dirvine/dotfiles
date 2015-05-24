@@ -192,6 +192,9 @@ call vam#ActivateAddons(['delimitMate'])
 au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 
+call vam#ActivateAddons(['github:christoomey/vim-tmux-navigator'])
+let g:tmux_navigator_save_on_switch = 1
+call vam#ActivateAddons(['github:vim-scripts/ZoomWin'])
 call vam#ActivateAddons(['github:ervandew/supertab'])
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -256,7 +259,8 @@ let NERDTreeShowBookmarks=1
 let NERDTreeHightlight=1
 "
 call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
-nmap <Space>w <Plug>(easymotion-w)
+nmap z <Plug>(easymotion-w)
+nmap s <Plug>(easymotion-s)
 
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 let g:solarized_termcolors = 16
