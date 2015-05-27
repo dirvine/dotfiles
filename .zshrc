@@ -1,11 +1,23 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/home/dirvine/.oh-my-zsh
+source ~/.antigen.zsh
+# Load various lib files
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="muse"
+
+antigen use oh-my-zsh
+antigen theme muse 
+
+#
+# Antigen Bundles
+#
+
+antigen bundle git
+antigen bundle tmuxinator
+antigen bundle tmux
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle rupa/z
+
+# For SSH, starting ssh-agent is annoying
+antigen bundle ssh-agent
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -41,11 +53,6 @@ HIST_STAMPS="mm/dd/yyyy"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git, tmux, tmuxinator, vi-mode, torrent, terminator, sudo, ssh-agent, jira, github)
 
 # User configuration
 autoload -U compinit
@@ -108,3 +115,6 @@ function apt-list-packages {
 
 
 setxkbmap -option ctrl:nocaps
+# Antigen Theme
+#
+antigen theme muse 

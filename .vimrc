@@ -15,6 +15,7 @@ endfun
 
 call SetupVAM()
 
+
 call vam#ActivateAddons(['github:tpope/vim-surround'])
 call vam#ActivateAddons(['github:tpope/vim-obsession'])
 call vam#ActivateAddons(['github:tpope/vim-dispatch'])
@@ -24,11 +25,13 @@ call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 " ###################  RUST  #########################
 call vam#ActivateAddons(['github:phildawes/racer'])
 let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src"
-call vam#ActivateAddons(['github:rust-lang/rust.vim'])
+call vam#ActivateAddons(['github:wting/rust.vim'])
 nnoremap <silent> <Leader>b :!cargo build <CR>
 nnoremap <silent> <Leader>t :!cargo test <CR>
 " ###################### nim ############################
 call vam#ActivateAddons(['github:zah/nimrod.vim'])
+filetype on
+au BufNewFile,BufRead *.rs set filetype=rust
 
 fun! JumpToDef()
   if exists("*GotoDefinition_" . &filetype)
@@ -186,7 +189,7 @@ let g:solarized_termcolors = 16
 syntax enable
 set t_Co=16
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 let g:rainbow_active = 1
 let g:rainbow_operators = 2
