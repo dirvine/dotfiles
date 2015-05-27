@@ -3,16 +3,15 @@ source ~/.antigen.zsh
 
 
 antigen use oh-my-zsh
-antigen theme muse 
 
 #
 # Antigen Bundles
 #
 
+antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle git
 antigen bundle tmuxinator
 antigen bundle tmux
-antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
 
 # For SSH, starting ssh-agent is annoying
