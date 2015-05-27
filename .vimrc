@@ -15,8 +15,8 @@ endfun
 
 call SetupVAM()
 
-
 call vam#ActivateAddons(['github:tpope/vim-surround'])
+call vam#ActivateAddons(['github:tpope/vim-obsession'])
 call vam#ActivateAddons(['github:tpope/vim-dispatch'])
 call vam#ActivateAddons(['github:tpope/vim-abolish'])
 call vam#ActivateAddons(['github:tpope/vim-repeat'])
@@ -76,56 +76,6 @@ let g:signify_disable_by_default = 0
 
 call vam#ActivateAddons(['github:kana/vim-operator-user'])
 
-call vam#ActivateAddons(['github:rhysd/vim-clang-format'])
-let g:clang_format#auto_format = 1
-let g:clang_format#auto_format_on_insert_leave = 1
-let clang_format#command = '/usr/bin/clang-format-3.5'
-let g:clang_format#detect_style_file = 0 
-
-" map to <Leader>cf in C++ code
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
-let g:clang_format#style_options = {
-\"AccessModifierOffset": -1,
-\"ConstructorInitializerIndentWidth": 4,
-\"AlignEscapedNewlinesLeft": "true",
-\"AlignTrailingComments": "true",
-\"AllowAllParametersOfDeclarationOnNextLine": "true",
-\"AllowShortIfStatementsOnASingleLine": "false",
-\"AllowShortLoopsOnASingleLine": "false",
-\"AlwaysBreakTemplateDeclarations": "true",
-\"AlwaysBreakBeforeMultilineStrings": "true",
-\"BreakBeforeBinaryOperators": "false",
-\"BreakConstructorInitializersBeforeComma": "false",
-\"BinPackParameters": "true",
-\"ColumnLimit":     100,
-\"ConstructorInitializerAllOnOneLineOrOnePerLine": "true",
-\"Cpp11BracedListStyle": "true",
-\"DerivePointerBinding": "false",
-\"ExperimentalAutoDetectBinPacking": "false",
-\"IndentCaseLabels": "true",
-\"MaxEmptyLinesToKeep": 3,
-\"NamespaceIndentation": "None",
-\"ObjCSpaceBeforeProtocolList": "false",
-\"PenaltyBreakComment": 60,
-\"PenaltyBreakString": 1000,
-\"PenaltyBreakFirstLessLess": 120,
-\"PenaltyExcessCharacter": 1000000,
-\"PenaltyReturnTypeOnItsOwnLine": 200,
-\"PointerBindsToType": "true",
-\"SpacesBeforeTrailingComments": 2,
-\"SpacesInParentheses": "false",
-\"SpacesInAngles": "false",
-\"SpaceInEmptyParentheses": "false",
-\"SpacesInCStyleCastParentheses": "false",
-\"SpaceAfterControlStatementKeyword": "true",
-\"Standard":        "Cpp11",
-\"IndentWidth":     2,
-\"UseTab":          "false",
-\"BreakBeforeBraces": "Attach",
-\"IndentFunctionDeclarationAfterType": "true",
-\"Language": "Cpp"}
-
 call vam#ActivateAddons(['github:mattn/webapi-vim']) " for gist
 
 call vam#ActivateAddons(['github:mattn/gist-vim'])
@@ -145,9 +95,6 @@ nmap ; :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>n :set nonumber!<CR>
 
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
-
-" call vam#ActivateAddons(['github:jlanzarotta/bufexplorer'])
-" nnoremap <leader>z :BufExplorerHorizontalSplit<CR>
 
 call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
 nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -208,35 +155,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 call vam#ActivateAddons(['github:honza/vim-snippets'])
-" call vam#ActivateAddons(['github:vim-scripts/Conque-Shell'])
-" let g:ConqueTerm_PyVersion = 3
 
-call vam#ActivateAddons(['github:majutsushi/tagbar'])
-let g:tagbar_left = 1
-let g:tagbar_width = 30
-let g:tagbar_zoomwidth = 0
-let g:tagbar_autofocus = 1
-let g:tagbar_show_visibility = 1
-let g:tagbar_singleclick = 1
-" let g:tagbar_previewwin_pos = "aboveleft"
-" let g:tagbar_autopreview = 1
-
-
-" call vam#ActivateAddons(['github:gilligan/vim-lldb'])
-let g:lldb_map_Lnext = "<leader>n"
-let g:lldb_map_Lstep = "<leader>s"
-
-call vam#ActivateAddons(['github:szw/vim-tags'])
-" Create an empty tags dir in project root"
-let g:vim_tags_project_tags_command = "/usr/bin/ctags -R --sort=foldcase --c++-kinds=+p --fields=+IaS --extra=+q /home/dirvine/Devel/MaidSafe-dirvine/src 2>/dev/null"
-let g:vim_tags_use_language_field = 1
-
-let g:vim_tags_auto_generate = 1
-let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore', 'build*']
-let g:vim_tags_main_file = 'tags'
-
-nmap <A-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-nmap <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 
@@ -287,50 +206,6 @@ let  g:rainbow_ctermfgs = [
             \ ]
 call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 
-" call vam#ActivateAddons(['github:wesleyche/SrcExpl'])
-
-"call vam#ActivateAddons(['github:wesleyche/Trinity'])
-let g:SrcExpl_pluginList = [  "__Tag_List__", "[BufExplorer]",  "Source_Explorer"," _NERD_tree_"  ]
-let g:SrcExpl_isUpdateTags = 0
-" // Set the height of Source Explorer window
-let g:SrcExpl_winHeight = 8
-
-" // Set 100 ms for refreshing the Source Explorer
-let g:SrcExpl_refreshTime = 100
-"
-"################### C++ ##########################################
-au FileType cpp,objcpp set syntax=cpp11
-au BufNewFile,BufRead *
-\ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
-\   if &ft != 'cpp'                                                                           |
-\     set ft=cpp                                                                              |
-\   endif                                                                                     |
-\ endif                                                                                       |
-
-au FileType c,cpp,objc,objcpp call rainbow#activate()
-autocmd BufRead *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
-autocmd BufRead *.lyx syntax sync fromstart
-
-" set makeprg=clang++\ -std=c++11\ -o\ %<\ %
-
-
-call vam#ActivateAddons(['github:xuhdev/SingleCompile'])
-" nmap <F9> :SCCompile<cr> 
-" nmap <F10> :SCCompileRun<cr>
-call SingleCompile#ChooseCompiler('cpp', 'clang')
-autocmd Filetype cpp nmap <buffer> <F9> :SCCompileAF -std=c++11 <CR>
-autocmd Filetype cpp nmap <buffer> <F10> :SCCompileRunAF -std=c++11 <CR>
-
-augroup csrc
-  au!
-  autocmd FileType * set nocindent smartindent
-  autocmd FileType c,cpp,cc  set cindent
-  au BufNewFile,BufRead *.cpp,*.cc.,*.h,*.hpp set syntax=cpp11
-augroup END
-
-set errorformat^=%-GIn\ file\ included\ %.%#
-set path=../src/*/include,../src/*/src/,../src/,../src/third_party_libs/boost/,../src/,/usr/include/
-
 "###################### display settings ##########################
 set textwidth=0
 set wrapmargin=1
@@ -366,7 +241,7 @@ set shiftwidth=4        " spaces for autoindents
 set expandtab           " turn a tabs into spaces
 
 set fileformat=unix     " file mode is unix
-set cc=100              " set colourcolum at 100
+set cc=0              " set colourcolum at 100
 "set fileformats=unix,dos    # only detect unix file format, displays that ^M with dos files
 set noautochdir
 " system settings
@@ -386,28 +261,13 @@ syntax on          " enable colors
 set hlsearch       " highlight search (very useful!)
 set incsearch       "search incremently (search while typing)
 
-" ################### FOLDING #############################################
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=syntax
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
-" set fdm=syntax 
-set foldlevel=2
-au BufRead * normal zi
 "######################### Function Key Mappings ####################
 nmap <F2> :cnext <cr>
 nmap <F3> :cprev <cr>
 map <F4> :TagbarToggle <cr>
 nmap <F5> :NERDTreeToggle  <CR>
 nmap <F6> zi <cr>
-set tags=tags;
-map <C-> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F7> :setlocal spell! spelllang=en_gb<CR>
-nmap <F8> :Lhide backtrace<CR> :Lhide breakpoints<CR> :Lhide disassembly<CR> :Lhide locals<CR> :Lhide registers<CR> :Lhide threads<CR>
-nmap <F11> :TagsGenerate <CR>
 nnoremap j gj
 nnoremap k gk
 " open quickfix after a grep

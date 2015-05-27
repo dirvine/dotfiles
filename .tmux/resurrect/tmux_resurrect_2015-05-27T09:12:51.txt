@@ -1,0 +1,16 @@
+pane	0	0	:vim	1	:*	0	:/home/dirvine/Devel/Rust/wwww	1	vim	:vim src/main.rs
+pane	0	0	:vim	1	:*	1	:/home/dirvine/Devel/Rust/wwww	0	bash	:
+pane	0	1	:bash	0	:-	0	:/home/dirvine/Devel/Rust/conrod	1	bash	:
+pane	0	2	:bash	0	: 	0	:/home/dirvine	1	bash	:
+pane	1	0	:vim	1	:*	0	:/home/dirvine/Devel/Rust/wwww	1	vim	:vim src/main.rs
+pane	1	0	:vim	1	:*	1	:/home/dirvine	0	bash	:
+pane	1	0	:vim	1	:*	2	:/home/dirvine	0	htop	:htop
+pane	2	0	:[tmux]	1	:*	0	:/home/dirvine	1	bash	:
+pane	4	0	:vim	1	:*	0	:/home/dirvine	1	vim	:vim .vimrc
+window	0	0	1	:*	c0a5,298x140,0,0[298x128,0,0,1,298x11,0,129,2]
+window	0	1	0	:-	8da0,298x140,0,0,3
+window	0	2	0	: 	8da1,298x140,0,0,4
+window	1	0	1	:*	5693,298x140,0,0[298x79,0,0,5,298x60,0,80{149x60,0,80,6,148x60,150,80,7}]
+window	2	0	1	:*	8da5,298x140,0,0,8
+window	4	0	1	:*	46ff,298x140,0,0,10
+state	4	

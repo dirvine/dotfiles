@@ -1,0 +1,20 @@
+pane	0	0	:vim	1	:*	0	:/home/dirvine/Devel/Rust/wwww	1	vim	:vim src/main.rs
+pane	0	0	:vim	1	:*	1	:/home/dirvine/Devel/Rust/wwww	0	bash	:
+pane	0	1	:bash	0	:-	0	:/home/dirvine/Devel/Rust/conrod	1	bash	:
+pane	0	2	:bash	0	: 	0	:/home/dirvine	1	bash	:
+pane	1	0	:vim	1	:*	0	:/home/dirvine/Devel/Rust/wwww	1	vim	:vim src/main.rs
+pane	1	0	:vim	1	:*	1	:/home/dirvine	0	bash	:
+pane	1	0	:vim	1	:*	2	:/home/dirvine	0	htop	:htop
+pane	2	0	:[tmux]	1	:*	0	:/home/dirvine	1	bash	:
+pane	5	0	:bash	1	:*	0	:/home/dirvine	1	bash	:
+pane	6	0	:vim	1	:*	0	:/home/dirvine	1	vim	:vim .zshrc
+pane	6	0	:vim	1	:*	1	:/home/dirvine	0	bash	:
+pane	6	0	:vim	1	:*	2	:/home/dirvine	0	htop	:htop
+window	0	0	1	:*	f4a4,298x141,0,0[298x129,0,0,1,298x11,0,130,2]
+window	0	1	0	:-	91a0,298x141,0,0,3
+window	0	2	0	: 	91a1,298x141,0,0,4
+window	1	0	1	:*	5f3b,298x141,0,0[298x79,0,0,5,298x61,0,80{149x61,0,80,6,148x61,150,80,7}]
+window	2	0	1	:*	91a5,298x141,0,0,8
+window	5	0	1	:*	683f,222x87,0,0,10
+window	6	0	1	:*	69b8,259x87,0,0[259x67,0,0,11,259x19,0,68{129x19,0,68,12,129x19,130,68,14}]
+state	6	
