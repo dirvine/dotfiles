@@ -1,8 +1,8 @@
 source ~/.antigen.zsh
 # Load various lib files
 
-
 antigen use oh-my-zsh
+antigen-use prezto
 
 #
 # Antigen Bundles
@@ -16,7 +16,6 @@ antigen bundle rupa/z
 
 # For SSH, starting ssh-agent is annoying
 antigen bundle ssh-agent
-
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,7 +51,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-
+ export TERM=xterm-256color
 # User configuration
 autoload -U compinit
 compinit
@@ -66,7 +65,7 @@ fi
 
 
 alias ll='ls -l'
-alias la='ls -a'
+alias la='ls -a'Ú
 
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
@@ -81,7 +80,6 @@ export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/g
 # export MANPATH="/usr/local/man:$MANPATH"
 alias -s rs=vim 
 alias -s html=google-chrome
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

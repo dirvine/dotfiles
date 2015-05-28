@@ -185,12 +185,6 @@ call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
 nmap z <Plug>(easymotion-w)
 nmap s <Plug>(easymotion-s)
 
-call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
-let g:solarized_termcolors = 16
-syntax enable
-set t_Co=16
-set background=dark
-colorscheme solarized
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 let g:rainbow_active = 1
 let g:rainbow_operators = 2
@@ -346,3 +340,10 @@ set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
 set statusline+=\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=\ col:%03c\                            "Colnr
 set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+
+call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
+let g:solarized_termcolors = 16
+syntax enable
+set t_Co=16
+colorscheme solarized
+set background=dark
