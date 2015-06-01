@@ -65,8 +65,8 @@ fi
 
 
 alias ll='ls -l'
-alias la='ls -a'Ú
-
+alias la='ls -a'
+alias f=ranger
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
 setopt sharehistory
