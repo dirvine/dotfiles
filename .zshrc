@@ -51,7 +51,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
- export TERM=xterm-256color
+ export TERM=screen-256color
 # User configuration
 autoload -U compinit
 compinit
