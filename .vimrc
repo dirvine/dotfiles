@@ -30,7 +30,7 @@ call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 call vam#ActivateAddons(['github:phildawes/racer'])
 let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src"
 let g:racer_cmd = "/home/dirvine/.vim/vim-addons/github-phildawes-racer/target/release/racer"
-call vam#ActivateAddons(['github:wting/rust.vim'])
+call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 nnoremap <silent> <Leader>b :!cargo build <CR>
 nnoremap <silent> <Leader>t :!cargo test <CR>
 " ###################### nim ############################
