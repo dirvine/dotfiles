@@ -17,9 +17,7 @@ call SetupVAM()
 
 filetype on
 au BufNewFile,BufRead *.rs set filetype=rust
-
-
-
+" cs<from><to> to change delimeters ds<delimiter> to delee delimiters
 call vam#ActivateAddons(['github:tpope/vim-surround'])
 call vam#ActivateAddons(['github:tpope/vim-obsession'])
 call vam#ActivateAddons(['github:tpope/vim-dispatch'])
@@ -32,6 +30,18 @@ let g:airline_right_sep=''
 let g:airline_detect_paste=1
 let g:airline#extensions#hunks#enabled = 1
 let g:airline_powerline_fonts = 0
+" After you've marked all your locations with Ctrl-n, you can change the visual selection with normal Vim motion commands in Visual mode. You could go to Normal mode
+" by pressing v and wield your motion commands there. Single key command to switch to Insert mode such as c or s from Visual mode or i, a, I, A in Normal mode should
+" work without any issues.
+"
+" At any time, you can press <Esc> to exit back to regular Vim.
+"
+" Two additional keys are also mapped:
+"
+" Ctrl-p in Visual mode will remove the current virtual cursor and go back to the previous virtual cursor location. This is useful if you are trigger happy with Ctrl-n
+" and accidentally went too far.
+" Ctrl-x in Visual mode will remove the current virtual cursor and skip to the next virtual cursor location. This is useful if you don't want the current selection to
+" be a candidate to operate on later.
 call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 " ###################  RUST  #########################
 call vam#ActivateAddons(['github:phildawes/racer'])
@@ -211,7 +221,6 @@ let  g:rainbow_ctermfgs = [
             \ 'darkred',
             \ 'red',
             \ ]
-call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 
 "###################### display settings ##########################
 set textwidth=0
@@ -324,8 +333,6 @@ inoremap <A-k> <Down>
 inoremap <A-l> <Up>
 inoremap <A-m> <Right>
 
-"## ctr R for search and replace in visual mode
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>"
 "################### save on lost focus ###########################
 au FocusLost * :wa
 " save on lost focus/make etc.
@@ -337,18 +344,6 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 "forgot to sudo before editing a file that requires root privileges
 cmap w!! w !sudo tee % >/dev/null
-"####################### Status Line ##############################
-set statusline=
-set statusline+=%{fugitive#statusline()}
-set statusline+=[%n]                                  "buffernr
-set statusline+=%<%F\                                "File+path
-set statusline+=\ %y\                                  "FileType
-set statusline+=\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
-set statusline+=\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
-set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
-set statusline+=\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
-set statusline+=\ col:%03c\                            "Colnr
-set statusline+=\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
 
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 let g:solarized_termcolors = 16
