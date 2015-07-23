@@ -1,0 +1,61 @@
+[global_config]
+  enabled_plugins = InactivityWatch, ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
+  dbus = True
+  focus = mouse
+  geometry_hinting = False
+  title_transmit_bg_color = "#d30102"
+  always_split_with_profile = True
+  inactive_color_offset = 1.0
+[keybindings]
+[profiles]
+  [[default]]
+    background_image = None
+    font = Ubuntu Mono 11
+    scrollbar_position = hidden
+    foreground_color = "#839496"
+    scroll_on_output = False
+    icon_bell = False
+    show_titlebar = False
+    copy_on_selection = True
+    background_color = "#002b36"
+    allow_bold = False
+    scrollback_infinite = True
+  [[solarized-dark]]
+    scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    font = Ubuntu Mono 11
+    cursor_shape = underline
+    background_image = None
+    cursor_color = "#eee8d5"
+    foreground_color = "#839496"
+    scroll_on_output = False
+    icon_bell = False
+    show_titlebar = False
+    copy_on_selection = True
+    background_color = "#002b36"
+    allow_bold = False
+    scrollback_infinite = True
+  [[solarized-light]]
+    scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_image = None
+    cursor_shape = underline
+    use_system_font = False
+    cursor_color = "#002b36"
+    foreground_color = "#002b36"
+    scroll_on_output = False
+    show_titlebar = False
+    font = Ubuntu Mono 11
+    background_color = "#eee8d5"
+    allow_bold = False
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = solarized-dark
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
