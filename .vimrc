@@ -25,6 +25,13 @@ call vam#ActivateAddons(['github:tpope/vim-obsession'])
 call vam#ActivateAddons(['github:tpope/vim-dispatch'])
 call vam#ActivateAddons(['github:tpope/vim-abolish'])
 call vam#ActivateAddons(['github:tpope/vim-repeat'])
+call vam#ActivateAddons(['github:bling/vim-airline'])
+let g:airline_theme='solarized'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_detect_paste=1
+let g:airline#extensions#hunks#enabled = 1
+let g:airline_powerline_fonts = 0
 call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 " ###################  RUST  #########################
 call vam#ActivateAddons(['github:phildawes/racer'])
@@ -32,7 +39,7 @@ let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src"
 let g:racer_cmd = "/home/dirvine/.vim/vim-addons/github-phildawes-racer/target/release/racer"
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 nnoremap <silent> <Leader>b :!cargo build <CR>
-nnoremap <silent> <Leader>t :!cargo test <CR>
+nnoremap <silent> <Leader>t :!cargo test -- --nocapture <CR>
 " ###################### nim ############################
 call vam#ActivateAddons(['github:zah/nimrod.vim'])
 fun! JumpToDef()
@@ -94,6 +101,7 @@ call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 let g:ctrlp_use_caching = 1
 let g:ctrlp_max_files = 100000
 let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_switch_buffer = 0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
 nnoremap <silent> <Leader>p :CtrlP <CR>
 nmap ; :CtrlPBuffer<CR>
@@ -101,20 +109,20 @@ nnoremap <silent> <Leader>n :set nonumber!<CR>
 
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 
-call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
-nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>h :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>c :YcmCompleter GoToDefinition<CR>
-set ttimeoutlen=50 " for faster InsertLeave triggering
-let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_key_invoke_completion = '<C-Space>'
-let g:ycm_confirm_extra_conf = 0
+" call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
+" nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" nnoremap <leader>h :YcmCompleter GoToDeclaration<CR>
+" nnoremap <leader>c :YcmCompleter GoToDefinition<CR>
+" set ttimeoutlen=50 " for faster InsertLeave triggering
+" let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
+" let g:ycm_complete_in_comments = 1
+" let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_seed_identifiers_with_syntax = 1
+" let g:ycm_add_preview_to_completeopt = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_key_invoke_completion = '<C-Space>'
+" let g:ycm_confirm_extra_conf = 0
 
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
 let g:syntastic_cpp_check_header = 0
@@ -183,8 +191,8 @@ let NERDTreeShowBookmarks=1
 let NERDTreeHightlight=1
 "
 call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
-nmap z <Plug>(easymotion-w)
-nmap s <Plug>(easymotion-s)
+nmap <space>w <Plug>(easymotion-w)
+nmap <space>s <Plug>(easymotion-s)
 
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 let g:rainbow_active = 1
@@ -240,7 +248,7 @@ set shiftwidth=4        " spaces for autoindents
 set expandtab           " turn a tabs into spaces
 
 set fileformat=unix     " file mode is unix
-set cc=0              " set colourcolum at 100
+set cc=100              " set colourcolum at 100
 "set fileformats=unix,dos    # only detect unix file format, displays that ^M with dos files
 set noautochdir
 " system settings
