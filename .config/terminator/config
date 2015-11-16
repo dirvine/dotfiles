@@ -1,5 +1,5 @@
 [global_config]
-  enabled_plugins = InactivityWatch, ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
+  enabled_plugins = InactivityWatch, ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, Logger, MavenPluginURLHandler, LaunchpadBugURLHandler
   dbus = True
   focus = mouse
   geometry_hinting = False
@@ -11,10 +11,12 @@
   [[default]]
     background_image = None
     font = Ubuntu Mono 11
+    login_shell = True
     scrollbar_position = hidden
     foreground_color = "#839496"
     scroll_on_output = False
     icon_bell = False
+    use_theme_colors = True
     show_titlebar = False
     copy_on_selection = True
     background_color = "#002b36"
@@ -24,7 +26,6 @@
     scrollbar_position = hidden
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     font = Ubuntu Mono 11
-    cursor_shape = underline
     background_image = None
     cursor_color = "#eee8d5"
     foreground_color = "#839496"
