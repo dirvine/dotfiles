@@ -17,6 +17,10 @@ call SetupVAM()
 
 filetype on
 au BufNewFile,BufRead *.rs set filetype=rust
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=syntax
+    au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 " cs<from><to> to change delimeters ds<delimiter> to delee delimiters
 call vam#ActivateAddons(['github:tpope/vim-surround'])
 call vam#ActivateAddons(['github:tpope/vim-obsession'])
@@ -251,7 +255,6 @@ set smartindent         " smart auto indenting
 set smarttab            " smart tab handling for indenting
 set magic               " change the way backslashes are used in search patterns
 set bs=indent,eol,start " Allow backspacing over everything in insert mode
-
 set tabstop=4           " number of spaces a tab counts for
 set shiftwidth=4        " spaces for autoindents
 set expandtab           " turn a tabs into spaces
