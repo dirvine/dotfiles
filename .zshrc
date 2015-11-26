@@ -76,7 +76,7 @@ REPORTTIME=10
 
 
 
-export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin/:/usr/local/games:/usr/games:/usr/sbin/:/home/dirvine/Devel/go/bin:/usr/local/nim/bin:/home/dirvine/node/bin/:/home/dirvine/sage:/usr/bin"
+export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin/:/usr/local/games:/usr/games:/usr/sbin/:/home/dirvine/Devel/go/bin:/usr/local/nim/bin:/home/dirvine/node/bin/:/home/dirvine/sage:/usr/bin:/home/dirvine/.multirust/toolchains/beta/cargo/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 alias -s rs=vim 
 alias -s html=google-chrome
