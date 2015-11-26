@@ -48,9 +48,9 @@ let g:airline_powerline_fonts = 0
 " be a candidate to operate on later.
 call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 " ###################  RUST  #########################
-call vam#ActivateAddons(['github:phildawes/racer'])
+set hidden
+call vam#ActivateAddons(['github:racer-rust/vim-racer'])
 let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src"
-let g:racer_cmd = "/home/dirvine/.vim/vim-addons/github-phildawes-racer/target/release/racer"
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 nnoremap <silent> <Leader>b :!cargo build <CR>
 nnoremap <silent> <Leader>t :!cargo test -- --nocapture <CR>
@@ -173,7 +173,7 @@ call vam#ActivateAddons(['github:ervandew/supertab'])
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:SuperTabDefaultCompletionType = '<C-n>'
 
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -258,7 +258,7 @@ set bs=indent,eol,start " Allow backspacing over everything in insert mode
 set tabstop=4           " number of spaces a tab counts for
 set shiftwidth=4        " spaces for autoindents
 set expandtab           " turn a tabs into spaces
-
+set foldlevel=1
 set fileformat=unix     " file mode is unix
 set cc=100              " set colourcolum at 100
 "set fileformats=unix,dos    # only detect unix file format, displays that ^M with dos files
