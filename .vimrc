@@ -21,6 +21,8 @@ augroup vimrc
   au BufReadPre * setlocal foldmethod=syntax
     au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
+" remove all whitespace on every write
+autocmd BufWritePre * :%s/\s\+$//e
 " cs<from><to> to change delimeters ds<delimiter> to delee delimiters
 call vam#ActivateAddons(['github:tpope/vim-surround'])
 call vam#ActivateAddons(['github:tpope/vim-obsession'])
@@ -258,6 +260,9 @@ set bs=indent,eol,start " Allow backspacing over everything in insert mode
 set tabstop=4           " number of spaces a tab counts for
 set shiftwidth=4        " spaces for autoindents
 set expandtab           " turn a tabs into spaces
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
 set foldlevel=1
 set fileformat=unix     " file mode is unix
 set cc=100              " set colourcolum at 100
