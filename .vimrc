@@ -51,8 +51,8 @@ let g:airline_powerline_fonts = 0
 call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 " ###################  RUST  #########################
 set hidden
+let RUST_SRC_PATH=$RUST_SRC_PATH
 call vam#ActivateAddons(['github:racer-rust/vim-racer'])
-let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src"
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 nnoremap <silent> <Leader>b :!cargo build <CR>
 nnoremap <silent> <Leader>t :!RUST_TEST_THREADS=1 cargo test -- --nocapture <CR>
@@ -260,7 +260,7 @@ set bs=indent,eol,start " Allow backspacing over everything in insert mode
 set tabstop=4           " number of spaces a tab counts for
 set shiftwidth=4        " spaces for autoindents
 set expandtab           " turn a tabs into spaces
-set foldmethod=indent   
+set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=1
