@@ -76,9 +76,9 @@ REPORTTIME=10
 
 
 
-export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin/:/usr/local/games:/usr/games:/usr/sbin/:/home/dirvine/Devel/go/bin:/usr/local/nim/bin:/home/dirvine/node/bin/:/home/dirvine/sage:/usr/bin:/home/dirvine/.multirust/toolchains/beta/cargo/bin"
+export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin/:/usr/local/games:/usr/games:/usr/sbin/:/home/dirvine/Devel/go/bin:/usr/local/nim/bin:/home/dirvine/node/bin/:/home/dirvine/sage:/usr/bin:/home/dirvine/.multirust/toolchains/beta/cargo/bin:/home/dirvine/.multirust/toolchains/nightly/cargo/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-alias -s rs=vim 
+alias -s rs=vim
 alias -s html=google-chrome
 
 # You may need to manually set your language environment
@@ -115,4 +115,5 @@ function apt-list-packages {
 setxkbmap -option ctrl:nocaps
 # Antigen Theme
 #
-antigen theme muse 
+antigen theme muse
+export RUST_SRC_PATH=/home/dirvine/Devel/rust/src
