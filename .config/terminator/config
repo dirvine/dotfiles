@@ -1,5 +1,5 @@
 [global_config]
-  enabled_plugins = InactivityWatch, ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
+  enabled_plugins = InactivityWatch, ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, Logger, MavenPluginURLHandler, LaunchpadBugURLHandler
   dbus = True
   focus = mouse
   geometry_hinting = False
@@ -16,6 +16,7 @@
     foreground_color = "#839496"
     scroll_on_output = False
     icon_bell = False
+    use_theme_colors = True
     show_titlebar = False
     copy_on_selection = True
     background_color = "#002b36"

@@ -117,3 +117,4 @@ setxkbmap -option ctrl:nocaps
 #
 antigen theme muse
 export RUST_SRC_PATH=/home/dirvine/Devel/rust/src
+

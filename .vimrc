@@ -51,12 +51,12 @@ let g:airline_powerline_fonts = 0
 call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 " ###################  RUST  #########################
 set hidden
+let RUST_SRC_PATH=$RUST_SRC_PATH
 call vam#ActivateAddons(['github:racer-rust/vim-racer'])
-let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src"
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 nnoremap <silent> <Leader>b :!cargo build <CR>
 nnoremap <silent> <Leader>c :!cargo clippy --lib -- -Dclippy -Wclippy_pedantic --verbose <CR>
-nnoremap <silent> <Leader>t :!cargo test -- --nocapture <CR>
+nnoremap <silent> <Leader>t :!RUST_TEST_THREADS=1 cargo test -- --nocapture <CR>
 " ###################### nim ############################
 call vam#ActivateAddons(['github:zah/nimrod.vim'])
 fun! JumpToDef()
