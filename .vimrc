@@ -277,9 +277,8 @@ set bs=indent,eol,start " Allow backspacing over everything in insert mode
 set tabstop=4           " number of spaces a tab counts for
 set shiftwidth=4        " spaces for autoindents
 set expandtab           " turn a tabs into spaces
-set foldmethod=indent
+set foldmethod=syntax
 set foldnestmax=10
-set nofoldenable
 set foldlevel=1
 set fileformat=unix     " file mode is unix
 set cc=100              " set colourcolum at 100
