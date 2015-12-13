@@ -15,6 +15,30 @@ endfun
 
 call SetupVAM()
 
+call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
+let g:neocomplete#enable_at_startup = 1
+
+" ###################  RUST  #########################
+set hidden
+let RUST_SRC_PATH=$RUST_SRC_PATH
+call vam#ActivateAddons(['github:racer-rust/vim-racer'])
+call vam#ActivateAddons(['github:rust-lang/rust.vim'])
+inoremap <C-@> <C-x><C-o>
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+nnoremap <silent> <Leader>b :!cargo build <CR>
+nnoremap <silent> <Leader>c :!cargo clippy --lib -- -Dclippy -Wclippy_pedantic --verbose <CR>
+nnoremap <silent> <Leader>t :!RUST_TEST_THREADS=1 cargo test -- --nocapture <CR>
+let g:rustfmt_autosave = 1
+" if patter matches, local omnifunc will be called
+if !exists('g:neocomplete#sources#omni#input_patterns')
+      let g:neocomplete#sources#omni#input_patterns = {}
+endif
+      let g:neocomplete#sources#omni#input_patterns.rust =
+          \ '[^.[:digit:] *\t]\%(\.\|\::\)\%(\h\w*\)\?'
+
 filetype on
 au BufNewFile,BufRead *.rs set filetype=rust
 augroup vimrc
@@ -49,14 +73,6 @@ let g:airline_powerline_fonts = 0
 " Ctrl-x in Visual mode will remove the current virtual cursor and skip to the next virtual cursor location. This is useful if you don't want the current selection to
 " be a candidate to operate on later.
 call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
-" ###################  RUST  #########################
-set hidden
-let RUST_SRC_PATH=$RUST_SRC_PATH
-call vam#ActivateAddons(['github:racer-rust/vim-racer'])
-call vam#ActivateAddons(['github:rust-lang/rust.vim'])
-nnoremap <silent> <Leader>b :!cargo build <CR>
-nnoremap <silent> <Leader>c :!cargo clippy --lib -- -Dclippy -Wclippy_pedantic --verbose <CR>
-nnoremap <silent> <Leader>t :!RUST_TEST_THREADS=1 cargo test -- --nocapture <CR>
 " ###################### nim ############################
 call vam#ActivateAddons(['github:zah/nimrod.vim'])
 fun! JumpToDef()
