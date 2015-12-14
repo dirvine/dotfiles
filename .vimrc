@@ -17,7 +17,27 @@ call SetupVAM()
 
 call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
 let g:neocomplete#enable_at_startup = 1
+call vam#ActivateAddons(['neosnippet', 'neosnippet-snippets'])
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
 
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+      set conceallevel=2 concealcursor=niv
+endif
 " ###################  RUST  #########################
 set hidden
 let RUST_SRC_PATH=$RUST_SRC_PATH
@@ -101,26 +121,10 @@ call GotoDefinition_{&filetype}()
   " Jump to tag
   nn <M-g> :call JumpToDef()<cr>
   ino <M-g> <esc>:call JumpToDef()<cr>i
-" slow multiple_cursors &amp; YCM
-function! Multiple_cursors_before()
-  let g:ycm_auto_trigger = 0
-  endfunction
 
-function! Multiple_cursors_after()
-  let g:ycm_auto_trigger = 1
-  endfunction
 call vam#ActivateAddons(['github:peterhoeg/vim-qml'])
 call vam#ActivateAddons(['vimproc'])
-" call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
-" let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-" let Tlist_WinWidth = 50
-" let Tlist_Auto_Highlight_Tag = 1
-" let Tlist_Auto_Update = 1
-" let Tlist_Exit_OnlyWindow = 1
-" let Tlist_File_Fold_Auto_Close = 1
-" let Tlist_Highlight_Tag_On_BufEnter = 1
-" let Tlist_Use_Right_Window = 0
-" let Tlist_Use_SingleClick = 1
+
 
 let g:ctags_statusline=1
 
@@ -157,21 +161,6 @@ nnoremap <silent> <Leader>n :set nonumber!<CR>
 
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 
-" call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
-" nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" nnoremap <leader>h :YcmCompleter GoToDeclaration<CR>
-" nnoremap <leader>c :YcmCompleter GoToDefinition<CR>
-" set ttimeoutlen=50 " for faster InsertLeave triggering
-" let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
-" let g:ycm_complete_in_comments = 1
-" let g:ycm_collect_identifiers_from_tags_files = 1
-" let g:ycm_seed_identifiers_with_syntax = 1
-" let g:ycm_add_preview_to_completeopt = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_key_invoke_completion = '<C-Space>'
-" let g:ycm_confirm_extra_conf = 0
-
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
 let g:syntastic_cpp_check_header = 0
 let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
@@ -203,27 +192,10 @@ au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 call vam#ActivateAddons(['github:christoomey/vim-tmux-navigator'])
 let g:tmux_navigator_save_on_switch = 1
 call vam#ActivateAddons(['github:vim-scripts/ZoomWin'])
-call vam#ActivateAddons(['github:ervandew/supertab'])
-call vam#ActivateAddons(['github:SirVer/ultisnips'])
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:SuperTabDefaultCompletionType = '<C-n>'
 
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 call vam#ActivateAddons(['github:honza/vim-snippets'])
 
-
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
-
-" call vam#ActivateAddons(['github:xolox/vim-session'])
-" let g:session_autosave = 'yes'
-" let g:session_autoload = 'no'
-
  call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
