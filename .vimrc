@@ -295,6 +295,7 @@ set expandtab           " turn a tabs into spaces
 set foldmethod=syntax
 set foldnestmax=10
 set foldlevel=1
+set nofoldenable
 set fileformat=unix     " file mode is unix
 set cc=100              " set colourcolum at 100
 "set fileformats=unix,dos    # only detect unix file format, displays that ^M with dos files
