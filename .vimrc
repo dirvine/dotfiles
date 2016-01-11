@@ -326,7 +326,7 @@ set incsearch       "search incremently (search while typing)
 "######################### Function Key Mappings ####################
 nmap <F2> :cnext <cr>
 nmap <F3> :cprev <cr>
-map <F4> :TagbarToggle <cr>
+map <F4> :cclose <cr> :lclose <cr>
 nmap <F5> :NERDTreeToggle  <CR>
 nmap <F6> zi <cr>
 nmap <F7> :setlocal spell! spelllang=en_gb<CR>
