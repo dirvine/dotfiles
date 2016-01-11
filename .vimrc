@@ -15,49 +15,31 @@ endfun
 
 call SetupVAM()
 
-call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
-let g:neocomplete#enable_at_startup = 1
-call vam#ActivateAddons(['neosnippet', 'neosnippet-snippets'])
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
 
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 
-" For conceal markers.
-if has('conceal')
-      set conceallevel=2 concealcursor=niv
-endif
+" call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
+" let g:neocomplete#enable_at_startup = 1
+
 " ###################  RUST  #########################
 set hidden
 let RUST_SRC_PATH=$RUST_SRC_PATH
-call vam#ActivateAddons(['github:racer-rust/vim-racer'])
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
-inoremap <C-@> <C-x><C-o>
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" inoremap <C-@> <C-x><C-o>
+" set completeopt=longest,menuone
+" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 nnoremap <silent> <Leader>b :!cargo build <CR>
 nnoremap <silent> <Leader>c :!cargo clippy --lib -- -Dclippy -Wclippy_pedantic --verbose <CR>
 nnoremap <silent> <Leader>t :!RUST_TEST_THREADS=1 cargo test -- --nocapture <CR>
 let g:rustfmt_autosave = 1
 " if patter matches, local omnifunc will be called
-if !exists('g:neocomplete#sources#omni#input_patterns')
-      let g:neocomplete#sources#omni#input_patterns = {}
-endif
-      let g:neocomplete#sources#omni#input_patterns.rust =
-          \ '[^.[:digit:] *\t]\%(\.\|\::\)\%(\h\w*\)\?'
+" if !exists('g:neocomplete#sources#omni#input_patterns')
+"       let g:neocomplete#sources#omni#input_patterns = {}
+" endif
+"       let g:neocomplete#sources#omni#input_patterns.rust =
+"           \ '[^.[:digit:] *\t]\%(\.\|\::\)\%(\h\w*\)\?'
 
 filetype on
 au BufNewFile,BufRead *.rs set filetype=rust
@@ -65,6 +47,8 @@ augroup vimrc
   au BufReadPre * setlocal foldmethod=syntax
     au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
+setlocal tags=rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+autocmd BufWrite *.rs :silent !rusty-tags vi
 nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
 nnoremap <silent> <leader>zk :call NextClosedFold('k')<cr>
 function! NextClosedFold(dir)
@@ -107,7 +91,7 @@ let g:airline_powerline_fonts = 0
 " and accidentally went too far.
 " Ctrl-x in Visual mode will remove the current virtual cursor and skip to the next virtual cursor location. This is useful if you don't want the current selection to
 " be a candidate to operate on later.
-call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
+" call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 " ###################### nim ############################
 call vam#ActivateAddons(['github:zah/nimrod.vim'])
 fun! JumpToDef()
@@ -124,8 +108,17 @@ call GotoDefinition_{&filetype}()
 
 call vam#ActivateAddons(['github:peterhoeg/vim-qml'])
 call vam#ActivateAddons(['vimproc'])
-
-
+" call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
+" " let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+" let Tlist_WinWidth = 50
+" let Tlist_Auto_Highlight_Tag = 1
+" let Tlist_Auto_Update = 1
+" let Tlist_Exit_OnlyWindow = 1
+" let Tlist_File_Fold_Auto_Close = 1
+" let Tlist_Highlight_Tag_On_BufEnter = 1
+" let Tlist_Use_Right_Window = 0
+" let Tlist_Use_SingleClick = 1
+"
 let g:ctags_statusline=1
 
 call vam#ActivateAddons(['github:jtratner/vim-flavored-markdown'])
@@ -157,13 +150,30 @@ let g:ctrlp_switch_buffer = 0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
 nnoremap <silent> <Leader>p :CtrlP <CR>
 nmap ; :CtrlPBuffer<CR>
+nmap <leader>a :CtrlPTag<CR>
 nnoremap <silent> <Leader>n :set nonumber!<CR>
 
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
 
+call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
+nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>h :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>c :YcmCompleter GoToDefinition<CR>
+set ttimeoutlen=50 " for faster InsertLeave triggering
+let g:ycm_rust_src_path = '/home/dirvine/Devel/rust/src'
+let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_confirm_extra_conf = 0
+
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
 let g:syntastic_cpp_check_header = 0
-let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
+" let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
 let g:syntastic_cpp_remove_include_errors = 1
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_check_on_open = 1
@@ -192,10 +202,27 @@ au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 call vam#ActivateAddons(['github:christoomey/vim-tmux-navigator'])
 let g:tmux_navigator_save_on_switch = 1
 call vam#ActivateAddons(['github:vim-scripts/ZoomWin'])
+" call vam#ActivateAddons(['github:ervandew/supertab'])
+call vam#ActivateAddons(['github:SirVer/ultisnips'])
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
+
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+call vam#ActivateAddons(['github:honza/vim-snippets'])
 
 call vam#ActivateAddons(['github:honza/vim-snippets'])
 
-call vam#ActivateAddons(['github:tpope/vim-fugitive'])
+
+" call vam#ActivateAddons(['github:xolox/vim-session'])
+" let g:session_autosave = 'yes'
+" let g:session_autoload = 'no'
+
  call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 
 call vam#ActivateAddons(['github:scrooloose/nerdtree'])
@@ -281,6 +308,7 @@ set hidden              " remember undo after quitting
 set history=100          " keep 100 lines of command history
 set mouse=a             " use mouse in visual, normal,insert,command,help mode (shift key disables)
 set undodir=~/.vim/undodir
+set autochdir
 set undofile
 set undolevels=10000 "maximum number of changes that can be undone
 set undoreload=100000 "maximum number lines to save for undo on a buffer reload
