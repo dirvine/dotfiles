@@ -23,6 +23,8 @@ call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 
 " ###################  RUST  #########################
 set hidden
+filetype on
+au BufNewFile,BufRead *.rs set filetype=rust
 let RUST_SRC_PATH=$RUST_SRC_PATH
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 " inoremap <C-@> <C-x><C-o>
@@ -31,24 +33,25 @@ call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 " inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 " inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 nnoremap <silent> <Leader>b :!cargo build <CR>
-nnoremap <silent> <Leader>c :!cargo clippy --lib -- -Dclippy -Wclippy_pedantic --verbose <CR>
+nnoremap <silent> <Leader>l :!multirust run nightly cargo test --no-run --features clippy <CR>
 nnoremap <silent> <Leader>t :!RUST_TEST_THREADS=1 cargo test -- --nocapture <CR>
 let g:rustfmt_autosave = 1
-" if patter matches, local omnifunc will be called
-" if !exists('g:neocomplete#sources#omni#input_patterns')
-"       let g:neocomplete#sources#omni#input_patterns = {}
-" endif
-"       let g:neocomplete#sources#omni#input_patterns.rust =
-"           \ '[^.[:digit:] *\t]\%(\.\|\::\)\%(\h\w*\)\?'
+let g:rust_bang_comment_leader = 1
+let g:rust_playpen_url = 'https://play.rust-lang.org/'
+let g:rustmft_options = 'overwrite'
+let g:ftplugin_rust_source_path = $HOME.'/Devel/rust'
+let g:rust_conceal_mod_path = 1
+let g:rust_shortener_url = 'https://is.gd/'
+let g:rust_conceal = 1
+let g:rustc_makeprg_no_percent = 1
 
-filetype on
-au BufNewFile,BufRead *.rs set filetype=rust
+
 augroup vimrc
   au BufReadPre * setlocal foldmethod=syntax
     au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
-setlocal tags=rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
-autocmd BufWrite *.rs :silent !rusty-tags vi
+" setlocal tags=rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+" autocmd BufWrite *.rs :silent !rusty-tags vi
 nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
 nnoremap <silent> <leader>zk :call NextClosedFold('k')<cr>
 function! NextClosedFold(dir)
@@ -72,6 +75,7 @@ call vam#ActivateAddons(['github:tpope/vim-obsession'])
 call vam#ActivateAddons(['github:tpope/vim-dispatch'])
 call vam#ActivateAddons(['github:tpope/vim-abolish'])
 call vam#ActivateAddons(['github:tpope/vim-repeat'])
+call vam#ActivateAddons(['github:vim-airline/vim-airline-themes'])
 call vam#ActivateAddons(['github:bling/vim-airline'])
 let g:airline_theme='solarized'
 let g:airline_left_sep=''
@@ -267,6 +271,7 @@ set linebreak
 set nolist
 set fo+=l
 set scrolloff=2         " 2 lines above/below cursor when scrolling
+set relativenumber
 set number              " show line numbers
 set showmatch           " show matching bracket (briefly jump)
 set showmode            " show mode in status bar (insert/replace/...)
