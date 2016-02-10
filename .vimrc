@@ -25,6 +25,9 @@ call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 set hidden
 filetype on
 au BufNewFile,BufRead *.rs set filetype=rust
+autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%f:%l:%m
+
+
 let RUST_SRC_PATH=$RUST_SRC_PATH
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 " inoremap <C-@> <C-x><C-o>
@@ -32,9 +35,10 @@ call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 " inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-nnoremap <silent> <Leader>b :!cargo build <CR>
-nnoremap <silent> <Leader>l :!multirust run nightly cargo test --no-run --features clippy <CR>
-nnoremap <silent> <Leader>t :!RUST_TEST_THREADS=1 cargo test -- --nocapture <CR>
+nnoremap <silent> <Leader>b :make build <CR> <bar> :copen <CR>
+nnoremap <silent> <Leader>l :!multirust override nightly <CR> <bar> :make test --no-run --features clippy <CR> <bar> :copen <CR> <bar> :!multirust override stable <CR>
+nnoremap <silent> <leader><Leader>l :make test --no-run --features clippy <CR> <bar> :copen <CR>
+nnoremap <silent> <Leader>t :make test -- --nocapture <CR>
 let g:rustfmt_autosave = 1
 let g:rust_bang_comment_leader = 1
 let g:rust_playpen_url = 'https://play.rust-lang.org/'
@@ -313,7 +317,6 @@ set hidden              " remember undo after quitting
 set history=100          " keep 100 lines of command history
 set mouse=a             " use mouse in visual, normal,insert,command,help mode (shift key disables)
 set undodir=~/.vim/undodir
-set autochdir
 set undofile
 set undolevels=10000 "maximum number of changes that can be undone
 set undoreload=100000 "maximum number lines to save for undo on a buffer reload
