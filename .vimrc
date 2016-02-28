@@ -18,7 +18,7 @@ call SetupVAM()
 
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 
-" call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
+"  call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
 " let g:neocomplete#enable_at_startup = 1
 
 " ###################  RUST  #########################
@@ -26,15 +26,27 @@ set hidden
 filetype on
 au BufNewFile,BufRead *.rs set filetype=rust
 autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%f:%l:%m
+call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
+nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>h :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>c :YcmCompleter GoToDefinition<CR>
+set ttimeoutlen=50 " for faster InsertLeave triggering
+" let g:ycm_min_num_of_chars_for_completion =t submodule update --init --recursive 1
+" let g:ycm_rust_src_path = '/home/dirvine/Devel/rust/src'
+" let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
+" let g:ycm_complete_in_comments = 0
+" let g:ycm_collect_identifiers_from_tags_files = 0
+" let g:ycm_seed_identifiers_with_syntax = 1
+" let g:ycm_add_preview_to_completeopt = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_key_invoke_completion = '<C-Space>'
+" let g:ycm_confirm_extra_conf = 0
+
 
 
 let RUST_SRC_PATH=$RUST_SRC_PATH
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
-" inoremap <C-@> <C-x><C-o>
-" set completeopt=longest,menuone
-" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-" inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 nnoremap <silent> <Leader>b :make build <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>l :!multirust override nightly <CR> <bar> :make test --no-run --features clippy <CR> <bar> :copen <CR> <bar> :!multirust override stable <CR>
 nnoremap <silent> <leader><Leader>l :make test --no-run --features clippy <CR> <bar> :copen <CR>
@@ -73,12 +85,6 @@ function! NextClosedFold(dir)
 endfunction
 " remove all whitespace on every write
 autocmd BufWritePre * :%s/\s\+$//e
-" cs<from><to> to change delimeters ds<delimiter> to delee delimiters
-call vam#ActivateAddons(['github:tpope/vim-surround'])
-call vam#ActivateAddons(['github:tpope/vim-obsession'])
-call vam#ActivateAddons(['github:tpope/vim-dispatch'])
-call vam#ActivateAddons(['github:tpope/vim-abolish'])
-call vam#ActivateAddons(['github:tpope/vim-repeat'])
 call vam#ActivateAddons(['github:vim-airline/vim-airline-themes'])
 call vam#ActivateAddons(['github:bling/vim-airline'])
 let g:airline_theme='solarized'
@@ -114,19 +120,7 @@ call GotoDefinition_{&filetype}()
   nn <M-g> :call JumpToDef()<cr>
   ino <M-g> <esc>:call JumpToDef()<cr>i
 
-call vam#ActivateAddons(['github:peterhoeg/vim-qml'])
 call vam#ActivateAddons(['vimproc'])
-" call vam#ActivateAddons(['github:vim-scripts/taglist.vim'])
-" " let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-" let Tlist_WinWidth = 50
-" let Tlist_Auto_Highlight_Tag = 1
-" let Tlist_Auto_Update = 1
-" let Tlist_Exit_OnlyWindow = 1
-" let Tlist_File_Fold_Auto_Close = 1
-" let Tlist_Highlight_Tag_On_BufEnter = 1
-" let Tlist_Use_Right_Window = 0
-" let Tlist_Use_SingleClick = 1
-"
 let g:ctags_statusline=1
 
 call vam#ActivateAddons(['github:jtratner/vim-flavored-markdown'])
@@ -144,9 +138,6 @@ call vam#ActivateAddons(['github:kana/vim-operator-user'])
 call vam#ActivateAddons(['github:mattn/webapi-vim']) " for gist
 
 call vam#ActivateAddons(['github:mattn/gist-vim'])
-"requires git config --global github.user Username
-
-" call vam#ActivateAddons(['github:vimoutliner/vimoutliner'])
 
 call vam#ActivateAddons(['github:int3/vim-extradite'])
 
@@ -162,22 +153,6 @@ nmap <leader>a :CtrlPTag<CR>
 nnoremap <silent> <Leader>n :set nonumber!<CR>
 
 call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
-
-call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
-nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>h :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>c :YcmCompleter GoToDefinition<CR>
-set ttimeoutlen=50 " for faster InsertLeave triggering
-let g:ycm_rust_src_path = '/home/dirvine/Devel/rust/src'
-let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_key_invoke_completion = '<C-Space>'
-let g:ycm_confirm_extra_conf = 0
 
 call vam#ActivateAddons(['github:scrooloose/syntastic'])
 let g:syntastic_cpp_check_header = 0
@@ -210,11 +185,7 @@ au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 call vam#ActivateAddons(['github:christoomey/vim-tmux-navigator'])
 let g:tmux_navigator_save_on_switch = 1
 call vam#ActivateAddons(['github:vim-scripts/ZoomWin'])
-" call vam#ActivateAddons(['github:ervandew/supertab'])
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:SuperTabDefaultCompletionType = '<C-n>'
 
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -244,10 +215,6 @@ let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_
 let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeHightlight=1
-"
-call vam#ActivateAddons(['github:Lokaltog/vim-easymotion'])
-nmap <space>w <Plug>(easymotion-w)
-nmap <space>s <Plug>(easymotion-s)
 
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 let g:rainbow_active = 1
@@ -288,6 +255,7 @@ set laststatus=2        " use 2 lines for the status bar
 set matchtime=2         " show matching bracket for 0.2 seconds
 set matchpairs+=<:>     " specially for html
 set showtabline=0       " do not want to see how many files are open
+set switchbuf=usetab       " switch to another window, possibly in another tab, if the buffer is currently displayed in another window
 
 " editor settings
 set esckeys             " map missed escape sequences (enables keypad keys)

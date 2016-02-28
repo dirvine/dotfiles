@@ -25,3 +25,5 @@
 	user = dirvine
 [init]
 	templatedir = ~/.git_template
+[diff]
+	tool = meld
