@@ -17,7 +17,8 @@ call SetupVAM()
 
 
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
-
+autocmd bufwritepost *.js silent !standard-format -w %
+set autoread
 "  call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
 " let g:neocomplete#enable_at_startup = 1
 
@@ -163,6 +164,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1 " Put errors on left side
 let g:syntastic_auto_loc_list = 0 " Only show errors when I ask
 let g:syntastic_disabled_filetypes = ['html', 'js']
+let g:syntastic_javascript_checkers = ['standard']
 hi SpellBad ctermfg=007 ctermbg=000
 hi SpellCap ctermfg=007 ctermbg=000
 if has('unix')
@@ -186,10 +188,13 @@ call vam#ActivateAddons(['github:christoomey/vim-tmux-navigator'])
 let g:tmux_navigator_save_on_switch = 1
 call vam#ActivateAddons(['github:vim-scripts/ZoomWin'])
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
+call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
+call vam#ActivateAddons(['github:moll/vim-node'])
+call vam#ActivateAddons(['github:sidorares/node-vim-debugger'])
 
 let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
