@@ -33,18 +33,20 @@ nnoremap <leader>h :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>c :YcmCompleter GoToDefinition<CR>
 set ttimeoutlen=50 " for faster InsertLeave triggering
 " let g:ycm_min_num_of_chars_for_completion =t submodule update --init --recursive 1
-" let g:ycm_rust_src_path = '/home/dirvine/Devel/rust/src'
-" let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
-" let g:ycm_complete_in_comments = 0
-" let g:ycm_collect_identifiers_from_tags_files = 0
-" let g:ycm_seed_identifiers_with_syntax = 1
-" let g:ycm_add_preview_to_completeopt = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_key_invoke_completion = '<C-Space>'
-" let g:ycm_confirm_extra_conf = 0
+let g:ycm_rust_src_path = '/home/dirvine/Devel/rust/src'
+let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
+let g:ycm_complete_in_comments = 0
+let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_key_list_previous_completion=['<Up>']
+let g:ycm_confirm_extra_conf = 0
 
 
+call vam#ActivateAddons(['github:kiteco/plugins/'])
 
 let RUST_SRC_PATH=$RUST_SRC_PATH
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
@@ -191,16 +193,16 @@ call vam#ActivateAddons(['github:SirVer/ultisnips'])
 " call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
 call vam#ActivateAddons(['github:moll/vim-node'])
 call vam#ActivateAddons(['github:sidorares/node-vim-debugger'])
+" call vam#ActivateAddons(['github:honza/vim-snippets'])
 
-let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsExpandTrigger = "<c-j>"
+" let g:UltiSnipsListSnippets="<c-s-tab>"
 " let g:UltiSnipsJumpForwardTrigger = "<tab>"
 " let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-call vam#ActivateAddons(['github:honza/vim-snippets'])
 
-call vam#ActivateAddons(['github:honza/vim-snippets'])
 
 
 " call vam#ActivateAddons(['github:xolox/vim-session'])
