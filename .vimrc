@@ -309,6 +309,8 @@ nmap <F6> zi <cr>
 nmap <F7> :setlocal spell! spelllang=en_gb<CR>
 nnoremap j gj
 nnoremap k gk
+noremap gr :diffget //3<cr>
+noremap gl :diffget //2<cr>
 " open quickfix after a grep
 autocmd QuickFixCmdPost *grep* cwindow
 " " Add and delete spaces in increments of `shiftwidth' for tabs

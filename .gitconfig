@@ -13,8 +13,6 @@
 [color]
 	ui = auto
   Diff = auto
-[merge]
-  tool = vimdiff
 
 
 [web]
@@ -25,5 +23,7 @@
 	user = dirvine
 [init]
 	templatedir = ~/.git_template
-[diff]
-	tool = meld
+[merge]
+tool = vimdiff
+#conflictstyle = diff3
+
