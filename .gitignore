@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Compiled source #
 ###################
 *.com
@@ -63,3 +64,21 @@ build*
 *install_me*
 
 *rc.lua
+=======
+*.exe
+*.lock
+*.swp
+*.rsproj
+tags*
+build/
+build-tests/
+target/
+/.idea
+/.project
+*.sublime-*
+*.bootstrap.cache
+/bin/
+.cargo/
+packages/
+.DS_Store
+>>>>>>> c005d087057f0a92908d9a4156b88edb4414b8d4

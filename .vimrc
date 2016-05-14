@@ -17,7 +17,8 @@ call SetupVAM()
 
 
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
-
+autocmd bufwritepost *.js silent !standard-format -w %
+set autoread
 "  call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
 " let g:neocomplete#enable_at_startup = 1
 
@@ -32,18 +33,20 @@ nnoremap <leader>h :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>c :YcmCompleter GoToDefinition<CR>
 set ttimeoutlen=50 " for faster InsertLeave triggering
 " let g:ycm_min_num_of_chars_for_completion =t submodule update --init --recursive 1
-" let g:ycm_rust_src_path = '/home/dirvine/Devel/rust/src'
-" let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
-" let g:ycm_complete_in_comments = 0
-" let g:ycm_collect_identifiers_from_tags_files = 0
-" let g:ycm_seed_identifiers_with_syntax = 1
-" let g:ycm_add_preview_to_completeopt = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_key_invoke_completion = '<C-Space>'
-" let g:ycm_confirm_extra_conf = 0
+let g:ycm_rust_src_path = '/home/dirvine/Devel/rust/src'
+let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
+let g:ycm_complete_in_comments = 0
+let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_key_list_previous_completion=['<Up>']
+let g:ycm_confirm_extra_conf = 0
 
 
+call vam#ActivateAddons(['github:kiteco/plugins/'])
 
 let RUST_SRC_PATH=$RUST_SRC_PATH
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
@@ -163,6 +166,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1 " Put errors on left side
 let g:syntastic_auto_loc_list = 0 " Only show errors when I ask
 let g:syntastic_disabled_filetypes = ['html', 'js']
+let g:syntastic_javascript_checkers = ['standard']
 hi SpellBad ctermfg=007 ctermbg=000
 hi SpellCap ctermfg=007 ctermbg=000
 if has('unix')
@@ -186,16 +190,19 @@ call vam#ActivateAddons(['github:christoomey/vim-tmux-navigator'])
 let g:tmux_navigator_save_on_switch = 1
 call vam#ActivateAddons(['github:vim-scripts/ZoomWin'])
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
+" call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
+call vam#ActivateAddons(['github:moll/vim-node'])
+call vam#ActivateAddons(['github:sidorares/node-vim-debugger'])
+" call vam#ActivateAddons(['github:honza/vim-snippets'])
 
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger = "<c-j>"
+" let g:UltiSnipsListSnippets="<c-s-tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-call vam#ActivateAddons(['github:honza/vim-snippets'])
 
-call vam#ActivateAddons(['github:honza/vim-snippets'])
 
 
 " call vam#ActivateAddons(['github:xolox/vim-session'])
@@ -302,6 +309,8 @@ nmap <F6> zi <cr>
 nmap <F7> :setlocal spell! spelllang=en_gb<CR>
 nnoremap j gj
 nnoremap k gk
+noremap gr :diffget //3<cr>
+noremap gl :diffget //2<cr>
 " open quickfix after a grep
 autocmd QuickFixCmdPost *grep* cwindow
 " " Add and delete spaces in increments of `shiftwidth' for tabs
