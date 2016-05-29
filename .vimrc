@@ -217,9 +217,9 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 
-" call vam#ActivateAddons(['github:xolox/vim-session'])
-" let g:session_autosave = 'yes'
-" let g:session_autoload = 'no'
+call vam#ActivateAddons(['github:xolox/vim-session'])
+let g:session_autosave = 'yes'
+let g:session_autoload = 'no'
 
  call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 
