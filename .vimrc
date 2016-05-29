@@ -51,10 +51,10 @@ call vam#ActivateAddons(['github:kiteco/plugins/'])
 let RUST_SRC_PATH=$RUST_SRC_PATH
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 nnoremap <silent> <Leader>b :make build <CR> <bar> :copen <CR>
-nnoremap <silent> <Leader>l :!multirust override nightly <CR> <bar> :make test --no-run --features clippy <CR> <bar> :copen <CR> <bar> :!multirust override stable <CR>
+nnoremap <silent> <Leader>l :!rustup run nightly <CR> <bar> :make test --no-run --features clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <leader><Leader>l :make test --no-run --features clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>t :make test -- --nocapture <CR>
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
 let g:rust_bang_comment_leader = 1
 let g:rust_playpen_url = 'https://play.rust-lang.org/'
 let g:rustmft_options = 'overwrite'
@@ -64,6 +64,15 @@ let g:rust_shortener_url = 'https://is.gd/'
 let g:rust_conceal = 1
 let g:rustc_makeprg_no_percent = 1
 
+" ################ Python ################
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 augroup vimrc
   au BufReadPre * setlocal foldmethod=syntax
@@ -165,7 +174,7 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1 " Put errors on left side
 let g:syntastic_auto_loc_list = 0 " Only show errors when I ask
-let g:syntastic_disabled_filetypes = ['html', 'js']
+" let g:syntastic_disabled_filetypes = ['html', 'js']
 let g:syntastic_javascript_checkers = ['standard']
 hi SpellBad ctermfg=007 ctermbg=000
 hi SpellCap ctermfg=007 ctermbg=000
@@ -190,7 +199,10 @@ call vam#ActivateAddons(['github:christoomey/vim-tmux-navigator'])
 let g:tmux_navigator_save_on_switch = 1
 call vam#ActivateAddons(['github:vim-scripts/ZoomWin'])
 call vam#ActivateAddons(['github:SirVer/ultisnips'])
-" call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
+call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
+call vam#ActivateAddons(['github:helino/vim-json'])
+call vam#ActivateAddons(['github:pangloss/vim-javascript'])
+call vam#ActivateAddons(['github:rking/ag.vim'])
 call vam#ActivateAddons(['github:moll/vim-node'])
 call vam#ActivateAddons(['github:sidorares/node-vim-debugger'])
 " call vam#ActivateAddons(['github:honza/vim-snippets'])
@@ -291,6 +303,7 @@ set viminfo='20,\"500   " remember copy registers after quitting in the .viminfo
 set hidden              " remember undo after quitting
 set history=100          " keep 100 lines of command history
 set mouse=a             " use mouse in visual, normal,insert,command,help mode (shift key disables)
+set ttymouse=xterm2
 set undodir=~/.vim/undodir
 set undofile
 set undolevels=10000 "maximum number of changes that can be undone
