@@ -312,6 +312,8 @@ set incsearch
 syntax on          " enable colors
 set hlsearch       " highlight search (very useful!)
 set incsearch       "search incremently (search while typing)
+set splitright
+set splitbelow
 
 "######################### Function Key Mappings ####################
 nmap <F2> :cnext <cr>
