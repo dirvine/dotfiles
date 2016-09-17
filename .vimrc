@@ -4,7 +4,7 @@ fun! SetupVAM()
   let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
   " most used options you may want to use:
   " let c.log_to_buf = 1
-  " let c.auto_install = 0
+  let c.auto_install = 1
   let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
   if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
     execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
@@ -23,7 +23,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 autocmd bufwritepost *.js silent !standard-format -w %
-set autoread
 "#########Autocompletion###########
 call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
 let g:neocomplete#enable_at_startup = 1
@@ -71,7 +70,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_select = 1
 
 " Shell like behavior(not recommended).
 "set completeopt+=longest
@@ -100,7 +99,6 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " ###################  RUST  #########################
-set hidden
 filetype on
 au BufNewFile,BufRead *.rs set filetype=rust
 autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%f:%l:%m
@@ -108,10 +106,10 @@ autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makep
 let RUST_SRC_PATH=$RUST_SRC_PATH
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 nnoremap <silent> <Leader>b :make build <CR> <bar> :copen <CR>
-nnoremap <silent> <Leader>l :!multirust override nightly <CR> <bar> :make test --no-run --features clippy <CR> <bar> :copen <CR> <bar> :!multirust override stable <CR>
+nnoremap <silent> <Leader>l :!rustup run nightly <CR> <bar> :make test --no-run --features clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <leader><Leader>l :make test --no-run --features clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>t :make test -- --nocapture <CR>
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
 let g:rust_bang_comment_leader = 1
 let g:rust_playpen_url = 'https://play.rust-lang.org/'
 let g:rustmft_options = 'overwrite'
@@ -121,6 +119,7 @@ let g:rust_shortener_url = 'https://is.gd/'
 let g:rust_conceal = 1
 let g:rustc_makeprg_no_percent = 1
 
+" ################ Python ################
 
 nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
 nnoremap <silent> <leader>zk :call NextClosedFold('k')<cr>
@@ -216,7 +215,7 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1 " Put errors on left side
 let g:syntastic_auto_loc_list = 0 " Only show errors when I ask
-let g:syntastic_disabled_filetypes = ['html', 'js']
+" let g:syntastic_disabled_filetypes = ['html', 'js']
 let g:syntastic_javascript_checkers = ['standard']
 hi SpellBad ctermfg=007 ctermbg=000
 hi SpellCap ctermfg=007 ctermbg=000
@@ -240,9 +239,13 @@ au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 call vam#ActivateAddons(['github:christoomey/vim-tmux-navigator'])
 let g:tmux_navigator_save_on_switch = 1
 call vam#ActivateAddons(['github:vim-scripts/ZoomWin'])
-" call vam#ActivateAddons(['github:SirVer/ultisnips'])
 call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
 call vam#ActivateAddons(['github:1995eaton/vim-better-javascript-completion'])
+call vam#ActivateAddons(['github:SirVer/ultisnips'])
+call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
+call vam#ActivateAddons(['github:helino/vim-json'])
+call vam#ActivateAddons(['github:pangloss/vim-javascript'])
+call vam#ActivateAddons(['github:rking/ag.vim'])
 call vam#ActivateAddons(['github:moll/vim-node'])
 call vam#ActivateAddons(['github:sidorares/node-vim-debugger'])
 " call vam#ActivateAddons(['github:honza/vim-snippets'])
@@ -257,9 +260,9 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 
-" call vam#ActivateAddons(['github:xolox/vim-session'])
-" let g:session_autosave = 'yes'
-" let g:session_autoload = 'no'
+call vam#ActivateAddons(['github:xolox/vim-session'])
+let g:session_autosave = 'yes'
+let g:session_autoload = 'no'
 
  call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
 
@@ -327,7 +330,6 @@ set bs=indent,eol,start " Allow backspacing over everything in insert mode
 set tabstop=4           " number of spaces a tab counts for
 set shiftwidth=4        " spaces for autoindents
 set expandtab           " turn a tabs into spaces
-set foldmethod=syntax
 set foldnestmax=10
 set foldlevel=1
 set nofoldenable
@@ -343,6 +345,7 @@ set viminfo='20,\"500   " remember copy registers after quitting in the .viminfo
 set hidden              " remember undo after quitting
 set history=100          " keep 100 lines of command history
 set mouse=a             " use mouse in visual, normal,insert,command,help mode (shift key disables)
+set ttymouse=xterm2
 set undodir=~/.vim/undodir
 set undofile
 set undolevels=10000 "maximum number of changes that can be undone
@@ -351,6 +354,8 @@ set incsearch
 syntax on          " enable colors
 set hlsearch       " highlight search (very useful!)
 set incsearch       "search incremently (search while typing)
+set splitright
+set splitbelow
 
 "######################### Function Key Mappings ####################
 nmap <F2> :cnext <cr>

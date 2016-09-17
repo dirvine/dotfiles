@@ -77,7 +77,7 @@ REPORTTIME=10
 
 
 export
-PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin/:/usr/local/games:/usr/games:/usr/sbin/:/home/dirvine/Devel/go/bin:/usr/local/nim/bin:/home/dirvine/node/bin/:/home/dirvine/sage:/usr/bin:/home/dirvine/.multirust/toolchains/stable/cargo/bin:/home/dirvine/.multirust/toolchains/nightly/cargo/bin:/home/dirvine/Devel/Rust/cargo-clippy/target/release:/home/dirvine/bin"
+PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin/:/usr/local/games:/usr/games:/usr/sbin/:/home/dirvine/Devel/go/bin:/usr/local/nim/bin:/home/dirvine/node/bin/:/home/dirvine/sage:/usr/bin:/home/dirvine/.multirust/toolchains/stable/cargo/bin:/home/dirvine/.multirust/toolchains/nightly/cargo/bin:/home/dirvine/Devel/Rust/cargo-clippy/target/release:/home/dirvine/bin:~/.nvm"
 # export MANPATH="/usr/local/man:$MANPATH"
 alias -s rs=vim
 alias -s html=google-chrome
@@ -122,3 +122,6 @@ export RUST_SRC_PATH=/home/dirvine/Devel/rust/src
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export EDITOR="vim"
+
+export NVM_DIR="/home/dirvine/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
