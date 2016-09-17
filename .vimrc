@@ -15,38 +15,95 @@ endfun
 
 call SetupVAM()
 
+set hidden
+let g:racer_cmd ="/home/dirvine/.cargo/bin/racer"
+let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src/"
+call vam#ActivateAddons(['github:racer-rust/vim-racer'])
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 call vam#ActivateAddons(['github:tpope/vim-fugitive'])
 autocmd bufwritepost *.js silent !standard-format -w %
 set autoread
-"  call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
-" let g:neocomplete#enable_at_startup = 1
+"#########Autocompletion###########
+call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
+let g:neocomplete#enable_at_startup = 1
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 1
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.rust = '[^.[:digit:] *\t]\%(\.\|\::\)\%(\h\w*\)\?'
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " ###################  RUST  #########################
 set hidden
 filetype on
 au BufNewFile,BufRead *.rs set filetype=rust
 autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%f:%l:%m
-call vam#ActivateAddons(['github:Valloric/YouCompleteMe'])
-nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>h :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>c :YcmCompleter GoToDefinition<CR>
-set ttimeoutlen=50 " for faster InsertLeave triggering
-" let g:ycm_min_num_of_chars_for_completion =t submodule update --init --recursive 1
-let g:ycm_rust_src_path = '/home/dirvine/Devel/rust/src'
-let g:ycm_extra_spacing = 0  " Controls spaces around function parameters
-let g:ycm_complete_in_comments = 0
-let g:ycm_collect_identifiers_from_tags_files = 0
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_key_invoke_completion = '<C-Space>'
-let g:ycm_key_list_previous_completion=['<Up>']
-let g:ycm_confirm_extra_conf = 0
-
-
-call vam#ActivateAddons(['github:kiteco/plugins/'])
 
 let RUST_SRC_PATH=$RUST_SRC_PATH
 call vam#ActivateAddons(['github:rust-lang/rust.vim'])
@@ -65,12 +122,6 @@ let g:rust_conceal = 1
 let g:rustc_makeprg_no_percent = 1
 
 
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=syntax
-    au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
-" setlocal tags=rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
-" autocmd BufWrite *.rs :silent !rusty-tags vi
 nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
 nnoremap <silent> <leader>zk :call NextClosedFold('k')<cr>
 function! NextClosedFold(dir)
@@ -189,8 +240,9 @@ au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 call vam#ActivateAddons(['github:christoomey/vim-tmux-navigator'])
 let g:tmux_navigator_save_on_switch = 1
 call vam#ActivateAddons(['github:vim-scripts/ZoomWin'])
-call vam#ActivateAddons(['github:SirVer/ultisnips'])
-" call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
+" call vam#ActivateAddons(['github:SirVer/ultisnips'])
+call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
+call vam#ActivateAddons(['github:1995eaton/vim-better-javascript-completion'])
 call vam#ActivateAddons(['github:moll/vim-node'])
 call vam#ActivateAddons(['github:sidorares/node-vim-debugger'])
 " call vam#ActivateAddons(['github:honza/vim-snippets'])
@@ -226,7 +278,7 @@ let NERDTreeHightlight=1
 call vam#ActivateAddons(['github:oblitum/rainbow'])
 let g:rainbow_active = 1
 let g:rainbow_operators = 2
-let  g:rainbow_ctermfgs = [
+let g:rainbow_ctermfgs = [
             \ 'brown',
             \ 'Darkblue',
             \ 'darkgreen',
@@ -372,7 +424,6 @@ cmap w!! w !sudo tee % >/dev/null
 
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 let g:solarized_termcolors = 16
-syntax enable
 set t_Co=16
 colorscheme solarized
 set background=dark
