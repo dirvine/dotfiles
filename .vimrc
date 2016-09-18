@@ -3,8 +3,9 @@ fun! SetupVAM()
   let g:vim_addon_manager = c
   let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
   " most used options you may want to use:
-  " let c.log_to_buf = 1
+  let c.log_to_buf = 1
   let c.auto_install = 1
+  let c.shell_commands_run_method = 'system'
   let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
   if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
     execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
@@ -15,16 +16,62 @@ endfun
 
 call SetupVAM()
 
+filetype on
 set hidden
 let g:racer_cmd ="/home/dirvine/.cargo/bin/racer"
 let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src/"
-call vam#ActivateAddons(['github:racer-rust/vim-racer'])
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+call vam#ActivateAddons([
+\'github:racer-rust/vim-racer',
+\'github:tpope/vim-fugitive',
+\'github:Shougo/neocomplete.vim',
+\'github:kana/vim-operator-user',
+\'github:mattn/gist-vim',
+\'github:int3/vim-extradite',
+\'github:kien/ctrlp.vim',
+\'github:rust-lang/rust.vim',
+\'github:vim-airline/vim-airline-themes',
+\'github:bling/vim-airline',
+\'github:zah/nimrod.vim',
+\'github:terryma/vim-multiple-cursors',
+\'github:jtratner/vim-flavored-markdown',
+\'vim-signify',
+\'github:proyvind/Cpp11-Syntax-Support',
+\'delimitMate',
+\'github:scrooloose/syntastic',
+\'github:christoomey/vim-tmux-navigator',
+\'github:vim-scripts/ZoomWin',
+\'github:ternjs/tern_for_vim',
+\'github:1995eaton/vim-better-javascript-completion',
+\'github:SirVer/ultisnips',
+\'github:ternjs/tern_for_vim',
+\'github:helino/vim-json',
+\'github:pangloss/vim-javascript',
+\'github:rking/ag.vim',
+\'github:moll/vim-node',
+\'github:sidorares/node-vim-debugger',
+\'github:honza/vim-snippets',
+\'github:xolox/vim-session',
+\'github:tomtom/tcomment_vim',
+\'github:scrooloose/nerdtree',
+\'github:oblitum/rainbow',
+\'github:altercation/vim-colors-solarized'])
 
-call vam#ActivateAddons(['github:tpope/vim-fugitive'])
+
+au BufNewFile,BufRead *.rs set filetype=rust
+autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%f:%l:%m
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd QuickFixCmdPost *grep* cwindow "open quickfix after a grep
 autocmd bufwritepost *.js silent !standard-format -w %
+autocmd Filetype markdown setlocal wrap spell
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+
 "#########Autocompletion###########
-call vam#ActivateAddons(['github:Shougo/neocomplete.vim'])
 let g:neocomplete#enable_at_startup = 1
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 1
@@ -72,19 +119,6 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " AutoComplPop like behavior.
 let g:neocomplete#enable_auto_select = 1
 
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
@@ -99,12 +133,8 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " ###################  RUST  #########################
-filetype on
-au BufNewFile,BufRead *.rs set filetype=rust
-autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%f:%l:%m
 
 let RUST_SRC_PATH=$RUST_SRC_PATH
-call vam#ActivateAddons(['github:rust-lang/rust.vim'])
 nnoremap <silent> <Leader>b :make build <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>l :!rustup run nightly <CR> <bar> :make test --no-run --features clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <leader><Leader>l :make test --no-run --features clippy <CR> <bar> :copen <CR>
@@ -138,8 +168,6 @@ function! NextClosedFold(dir)
 endfunction
 " remove all whitespace on every write
 autocmd BufWritePre * :%s/\s\+$//e
-call vam#ActivateAddons(['github:vim-airline/vim-airline-themes'])
-call vam#ActivateAddons(['github:bling/vim-airline'])
 let g:airline_theme='solarized'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -158,9 +186,7 @@ let g:airline_powerline_fonts = 0
 " and accidentally went too far.
 " Ctrl-x in Visual mode will remove the current virtual cursor and skip to the next virtual cursor location. This is useful if you don't want the current selection to
 " be a candidate to operate on later.
-" call vam#ActivateAddons(['github:terryma/vim-multiple-cursors'])
 " ###################### nim ############################
-call vam#ActivateAddons(['github:zah/nimrod.vim'])
 fun! JumpToDef()
   if exists("*GotoDefinition_" . &filetype)
 call GotoDefinition_{&filetype}()
@@ -173,28 +199,16 @@ call GotoDefinition_{&filetype}()
   nn <M-g> :call JumpToDef()<cr>
   ino <M-g> <esc>:call JumpToDef()<cr>i
 
-call vam#ActivateAddons(['vimproc'])
 let g:ctags_statusline=1
 
-call vam#ActivateAddons(['github:jtratner/vim-flavored-markdown'])
 set spelllang=en_gb
-autocmd Filetype markdown setlocal wrap spell
 
-" call vam#ActivateAddons(['TaskList'])
-call vam#ActivateAddons(['vim-signify'])
+
 let g:signify_vcs_list = [ 'git', 'hg' ]
 let g:signify_disable_by_default = 0
 
 
-call vam#ActivateAddons(['github:kana/vim-operator-user'])
 
-call vam#ActivateAddons(['github:mattn/webapi-vim']) " for gist
-
-call vam#ActivateAddons(['github:mattn/gist-vim'])
-
-call vam#ActivateAddons(['github:int3/vim-extradite'])
-
-call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 let g:ctrlp_use_caching = 1
 let g:ctrlp_max_files = 100000
 let g:ctrlp_clear_cache_on_exit = 1
@@ -205,9 +219,6 @@ nmap ; :CtrlPBuffer<CR>
 nmap <leader>a :CtrlPTag<CR>
 nnoremap <silent> <Leader>n :set nonumber!<CR>
 
-call vam#ActivateAddons(['github:proyvind/Cpp11-Syntax-Support'])
-
-call vam#ActivateAddons(['github:scrooloose/syntastic'])
 let g:syntastic_cpp_check_header = 0
 " let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
 let g:syntastic_cpp_remove_include_errors = 1
@@ -231,24 +242,11 @@ else
   let g:syntastic_style_warning_symbol='>'
 endif
 
-call vam#ActivateAddons(['delimitMate'])
 " au FileType c,cpp,perl let b:delimitMate_eol_marker = ";"
 au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 
-call vam#ActivateAddons(['github:christoomey/vim-tmux-navigator'])
 let g:tmux_navigator_save_on_switch = 1
-call vam#ActivateAddons(['github:vim-scripts/ZoomWin'])
-call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
-call vam#ActivateAddons(['github:1995eaton/vim-better-javascript-completion'])
-call vam#ActivateAddons(['github:SirVer/ultisnips'])
-call vam#ActivateAddons(['github:ternjs/tern_for_vim'])
-call vam#ActivateAddons(['github:helino/vim-json'])
-call vam#ActivateAddons(['github:pangloss/vim-javascript'])
-call vam#ActivateAddons(['github:rking/ag.vim'])
-call vam#ActivateAddons(['github:moll/vim-node'])
-call vam#ActivateAddons(['github:sidorares/node-vim-debugger'])
-" call vam#ActivateAddons(['github:honza/vim-snippets'])
 
 let g:UltiSnipsExpandTrigger = "<c-j>"
 " let g:UltiSnipsListSnippets="<c-s-tab>"
@@ -260,13 +258,9 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 
-call vam#ActivateAddons(['github:xolox/vim-session'])
 let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
 
- call vam#ActivateAddons(['github:tomtom/tcomment_vim'])
-
-call vam#ActivateAddons(['github:scrooloose/nerdtree'])
 " Prevent :bd inside NERDTree buffer
 au FileType nerdtree cnoreabbrev <buffer> bd <nop>
 au FileType nerdtree cnoreabbrev <buffer> BD <nop>
@@ -278,7 +272,6 @@ let NERDTreeSortOrder=['^__>py$', '\/$', '*', '>swp$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeHightlight=1
 
-call vam#ActivateAddons(['github:oblitum/rainbow'])
 let g:rainbow_active = 1
 let g:rainbow_operators = 2
 let g:rainbow_ctermfgs = [
@@ -368,8 +361,6 @@ nnoremap j gj
 nnoremap k gk
 noremap gr :diffget //3<cr>
 noremap gl :diffget //2<cr>
-" open quickfix after a grep
-autocmd QuickFixCmdPost *grep* cwindow
 " " Add and delete spaces in increments of `shiftwidth' for tabs
 " " Delete trailing whitespace and tabs at the end of each line
 command! DeleteTrailingWs :%s/\s\+$//
@@ -427,7 +418,6 @@ map <C-l> <C-w>l
 "forgot to sudo before editing a file that requires root privileges
 cmap w!! w !sudo tee % >/dev/null
 
-call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 let g:solarized_termcolors = 16
 set t_Co=16
 colorscheme solarized
