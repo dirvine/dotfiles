@@ -55,6 +55,9 @@ HIST_STAMPS="mm/dd/yyyy"
 # User configuration
 autoload -U compinit
 compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' menu select=20
+setopt menu_complete
 
 if [[ -x "`whence -p dircolors`" ]]; then
   eval `dircolors`
@@ -67,6 +70,7 @@ fi
 alias ll='ls -l'
 alias la='ls -a'
 alias f=ranger
+alias q=qalc
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
 setopt sharehistory
