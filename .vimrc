@@ -37,6 +37,7 @@ call vam#ActivateAddons([
 \'vim-signify',
 \'github:proyvind/Cpp11-Syntax-Support',
 \'delimitMate',
+\'github:lambdatoast/elm.vim',
 \'github:scrooloose/syntastic',
 \'github:christoomey/vim-tmux-navigator',
 \'github:vim-scripts/ZoomWin',
@@ -72,15 +73,11 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
 "#########Autocompletion###########
-let g:neocomplete#enable_at_startup = 1
-" Disable AutoComplPop.
 let g:acp_enableAtStartup = 1
-" Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
@@ -114,10 +111,10 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
-inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " AutoComplPop like behavior.
-let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_select = 0
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
@@ -320,8 +317,8 @@ set smartindent         " smart auto indenting
 set smarttab            " smart tab handling for indenting
 set magic               " change the way backslashes are used in search patterns
 set bs=indent,eol,start " Allow backspacing over everything in insert mode
-set tabstop=4           " number of spaces a tab counts for
-set shiftwidth=4        " spaces for autoindents
+set tabstop=2           " number of spaces a tab counts for
+set shiftwidth=2       " spaces for autoindents
 set expandtab           " turn a tabs into spaces
 set foldnestmax=10
 set foldlevel=1
