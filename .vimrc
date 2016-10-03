@@ -37,7 +37,7 @@ call vam#ActivateAddons([
 \'vim-signify',
 \'github:proyvind/Cpp11-Syntax-Support',
 \'delimitMate',
-\'github:lambdatoast/elm.vim',
+\'github:elmcast/elm-vim',
 \'github:scrooloose/syntastic',
 \'github:christoomey/vim-tmux-navigator',
 \'github:vim-scripts/ZoomWin',
@@ -59,14 +59,17 @@ call vam#ActivateAddons([
 
 
 au BufNewFile,BufRead *.rs set filetype=rust
-autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%f:%l:%m
+au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.elm set filetype=elm
+let g:elm_format_autosave = 1
+autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%Eerror%m,%Z\ %#-->\ %f:%l:%c
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd QuickFixCmdPost *grep* cwindow "open quickfix after a grep
 autocmd bufwritepost *.js silent !standard-format -w %
-autocmd Filetype markdown setlocal wrap spell
+autocmd Filetype markdown set  wrap | set spell spelllang=en_gb | set tw=100
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -261,7 +264,6 @@ let g:session_autoload = 'no'
 " Prevent :bd inside NERDTree buffer
 au FileType nerdtree cnoreabbrev <buffer> bd <nop>
 au FileType nerdtree cnoreabbrev <buffer> BD <nop>
-au BufRead,BufNewFile *.md set filetype=markdown
 " NERDTree settings
 let NERDTreeChDirMode=0
 let NERDTreeIgnore=['\env','>vim$', '\~$', '>pyc$', '>swp$', '>egg-info$', '>DS_Store$', '^dist$', '^build$']
