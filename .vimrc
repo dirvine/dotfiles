@@ -1,3 +1,4 @@
+filetype off
 fun! SetupVAM()
   let c = get(g:, 'vim_addon_manager', {})
   let g:vim_addon_manager = c
@@ -16,8 +17,6 @@ endfun
 
 call SetupVAM()
 
-filetype on
-set hidden
 let g:racer_cmd ="/home/dirvine/.cargo/bin/racer"
 let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src/"
 call vam#ActivateAddons([
@@ -57,12 +56,15 @@ call vam#ActivateAddons([
 \'github:oblitum/rainbow',
 \'github:altercation/vim-colors-solarized'])
 
+filetype plugin indent on
+set hidden
 
 au BufNewFile,BufRead *.rs set filetype=rust
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.elm set filetype=elm
 let g:elm_format_autosave = 1
 autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%Eerror%m,%Z\ %#-->\ %f:%l:%c
+" autocmd BufWritePost *.rs | :!rustfmt %
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd QuickFixCmdPost *grep* cwindow "open quickfix after a grep
 autocmd bufwritepost *.js silent !standard-format -w %
@@ -104,9 +106,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
+  return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -135,11 +137,11 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " ###################  RUST  #########################
 
 let RUST_SRC_PATH=$RUST_SRC_PATH
-nnoremap <silent> <Leader>b :make build <CR> <bar> :copen <CR>
+nnoremap <silent> <Leader>b :make rustc build  <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>l :!rustup run nightly <CR> <bar> :make test --no-run --features clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <leader><Leader>l :make test --no-run --features clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>t :make test -- --nocapture <CR>
-let g:rustfmt_autosave = 0
+let g:rustfmt_autosave = 1
 let g:rust_bang_comment_leader = 1
 let g:rust_playpen_url = 'https://play.rust-lang.org/'
 let g:rustmft_options = 'overwrite'
@@ -323,7 +325,7 @@ set tabstop=2           " number of spaces a tab counts for
 set shiftwidth=2       " spaces for autoindents
 set expandtab           " turn a tabs into spaces
 set foldnestmax=10
-set foldlevel=1
+set foldlevel=99
 set nofoldenable
 set fileformat=unix     " file mode is unix
 set cc=100              " set colourcolum at 100
