@@ -18,7 +18,7 @@ endfun
 call SetupVAM()
 
 let g:racer_cmd ="/home/dirvine/.cargo/bin/racer"
-let $RUST_SRC_PATH="/home/dirvine/Devel/rust/src/"
+let $RUST_SRC_PATH="/home/dirvine/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 call vam#ActivateAddons([
 \'github:racer-rust/vim-racer',
 \'github:tpope/vim-fugitive',
@@ -138,7 +138,8 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " ###################  RUST  #########################
 
 let RUST_SRC_PATH=$RUST_SRC_PATH
-nnoremap <silent> <Leader>b :make rustc build  <CR> <bar> :copen <CR>
+nnoremap <silent> <Leader>b :make build  <CR> <bar> :copen <CR>
+nnoremap <silent> <Leader>r :make run  <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>l :!rustup run nightly <CR> <bar> :make test --no-run --features clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <leader><Leader>l :make test --no-run --features clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>t :make test -- --nocapture <CR>
@@ -328,7 +329,7 @@ set shiftwidth=2       " spaces for autoindents
 set expandtab           " turn a tabs into spaces
 set foldnestmax=10
 set foldlevel=99
-set foldenable
+set nofoldenable
 set fileformat=unix     " file mode is unix
 set cc=100              " set colourcolum at 100
 "set fileformats=unix,dos    # only detect unix file format, displays that ^M with dos files
