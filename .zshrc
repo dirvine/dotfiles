@@ -122,8 +122,6 @@ setxkbmap -option ctrl:nocaps
 # Antigen Theme
 #
 antigen theme muse
-export RUST_SRC_PATH=/home/dirvine/Devel/rust/src
-
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export EDITOR="vim"
