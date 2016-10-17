@@ -65,7 +65,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.elm set filetype=elm
 let g:elm_format_autosave = 1
 autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%Eerror%m,%Z\ %#-->\ %f:%l:%c
-autocmd BufWritePost Cargo.toml,Cargo.lock,*.rs | :RustFmt
+autocmd BufWritePost *.rs | :RustFmt
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd QuickFixCmdPost *grep* cwindow "open quickfix after a grep
 autocmd bufwritepost *.js silent !standard-format -w %
