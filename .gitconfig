@@ -21,8 +21,6 @@
 	warndetachedcommit = true
 [github]
 	user = dirvine
-[init]
-	templatedir = ~/.git_template
 [merge]
 tool = vimdiff
 #conflictstyle = diff3
