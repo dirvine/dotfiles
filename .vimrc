@@ -43,7 +43,6 @@ call vam#ActivateAddons([
 \'github:vim-scripts/ZoomWin',
 \'github:ternjs/tern_for_vim',
 \'github:1995eaton/vim-better-javascript-completion',
-\'github:SirVer/ultisnips',
 \'github:ternjs/tern_for_vim',
 \'github:helino/vim-json',
 \'github:pangloss/vim-javascript',
@@ -253,15 +252,6 @@ au FileType c,cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 
 let g:tmux_navigator_save_on_switch = 1
-
-let g:UltiSnipsExpandTrigger = "<c-j>"
-" let g:UltiSnipsListSnippets="<c-s-tab>"
-" let g:UltiSnipsJumpForwardTrigger = "<tab>"
-" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
 
 
 let g:session_autosave = 'yes'
