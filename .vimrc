@@ -54,7 +54,7 @@ call vam#ActivateAddons([
 \'github:tomtom/tcomment_vim',
 \'github:scrooloose/nerdtree',
 \'github:oblitum/rainbow',
-\'github:altercation/vim-colors-solarized'])
+\'github:lifepillar/vim-solarized8'])
 
 filetype plugin indent on
 set hidden
@@ -139,8 +139,7 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 let RUST_SRC_PATH=$RUST_SRC_PATH
 nnoremap <silent> <Leader>b :make build  <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>r :make run  <CR> <bar> :copen <CR>
-nnoremap <silent> <Leader>l :!rustup run nightly <CR> <bar> :make test --no-run --features clippy <CR> <bar> :copen <CR>
-nnoremap <silent> <leader><Leader>l :make test --no-run --features clippy <CR> <bar> :copen <CR>
+nnoremap <silent> <Leader>l :!rustup run nightly cargo test --no-run --features clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>t :make test -- --nocapture <CR>
 let g:rustfmt_autosave = 0
 let g:rustfmt_fail_silently = 1
@@ -413,7 +412,6 @@ map <C-l> <C-w>l
 "forgot to sudo before editing a file that requires root privileges
 cmap w!! w !sudo tee % >/dev/null
 
-let g:solarized_termcolors = 16
-set t_Co=16
-colorscheme solarized
-set background=dark
+syntax enable
+colorscheme solarized8_dark
+set termguicolors
