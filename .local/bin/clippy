@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+rustup run nightly cargo test --no-run --features clippy
