@@ -54,6 +54,7 @@ call vam#ActivateAddons([
 \'github:tomtom/tcomment_vim',
 \'github:scrooloose/nerdtree',
 \'github:oblitum/rainbow',
+\'github:neomake/neomake',
 \'github:lifepillar/vim-solarized8'])
 
 filetype plugin indent on
@@ -63,8 +64,9 @@ au BufNewFile,BufRead *.rs set filetype=rust
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.elm set filetype=elm
 let g:elm_format_autosave = 1
-autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%Eerror%m,%Z\ %#-->\ %f:%l:%c
+autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo\ rustc\ -Zno-trans ""| set errorformat=%Eerror%m,%Z\ %#-->\ %f:%l:%c
 autocmd BufWritePost *.rs | :RustFmt
+autocmd BufWritePost *.rs | :Neomake!
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd QuickFixCmdPost *grep* cwindow "open quickfix after a grep
 autocmd bufwritepost *.js silent !standard-format -w %
