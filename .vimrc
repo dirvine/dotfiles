@@ -64,9 +64,9 @@ au BufNewFile,BufRead *.rs set filetype=rust
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.elm set filetype=elm
 let g:elm_format_autosave = 1
-autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo\ rustc\ -Zno-trans ""| set errorformat=%Eerror%m,%Z\ %#-->\ %f:%l:%c
+autocmd BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | set makeprg=cargo | set errorformat=%Eerror%m,%Z\ %#-->\ %f:%l:%c
 autocmd BufWritePost *.rs | :RustFmt
-autocmd BufWritePost *.rs | :Neomake!
+autocmd BufWritePost *.rs | :make +nightly check
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd QuickFixCmdPost *grep* cwindow "open quickfix after a grep
 autocmd bufwritepost *.js silent !standard-format -w %
@@ -141,11 +141,11 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 let RUST_SRC_PATH=$RUST_SRC_PATH
 nnoremap <silent> <Leader>b :make build  <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>r :make run  <CR> <bar> :copen <CR>
-nnoremap <silent> <Leader>l :!rustup run nightly cargo test --no-run --features clippy <CR> <bar> :copen <CR>
+nnoremap <silent> <Leader>l :make +nightly test --no-run clippy <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>t :make test -- --nocapture <CR>
 let g:rustfmt_autosave = 0
 let g:rustfmt_fail_silently = 1
-let g:rust_fold = 0
+let g:rust_fold = 1
 let g:rust_bang_comment_leader = 1
 let g:rust_playpen_url = 'https://play.rust-lang.org/'
 let g:rustmft_options = 'overwrite'
@@ -320,8 +320,9 @@ set tabstop=2           " number of spaces a tab counts for
 set shiftwidth=2       " spaces for autoindents
 set expandtab           " turn a tabs into spaces
 set foldnestmax=10
-set foldlevel=99
-set nofoldenable
+set foldlevel=1
+set foldenable
+set foldmethod=syntax
 set fileformat=unix     " file mode is unix
 set cc=100              " set colourcolum at 100
 "set fileformats=unix,dos    # only detect unix file format, displays that ^M with dos files
