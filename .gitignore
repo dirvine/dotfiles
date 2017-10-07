@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+#everything
+*
 # Compiled source #
 ###################
 *.com
@@ -81,4 +82,3 @@ target/
 .cargo/
 packages/
 .DS_Store
->>>>>>> c005d087057f0a92908d9a4156b88edb4414b8d4

@@ -105,6 +105,7 @@ export RUST_BACKTRACE=1
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/dsa_id"
+export GPGKEY=4C6E6834
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -126,8 +127,13 @@ setxkbmap -option ctrl:nocaps
 #
 antigen theme muse
 
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:/home/dirvine/Devel/emsdk-portable:/home/dirvine/Devel/emsdk-portable/clang/fastcomp/build_incoming_64/bin:/home/dirvine/Devel/emsdk-portable/emscripten/incoming:$PATH"
 export EDITOR="vim"
 
 export NVM_DIR="/home/dirvine/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+alias gitl="git log --decorate --oneline --all --graph"
+alias gits="git status"
+alias cargol="CARGO_HOME=~/Devel/.cargo cargo"
+alias cargo=cargol

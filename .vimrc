@@ -18,9 +18,9 @@ endfun
 call SetupVAM()
 
 let g:racer_cmd ="/home/dirvine/.cargo/bin/racer"
-let $RUST_SRC_PATH="/home/dirvine/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+let $RUST_SRC_PATH="/home/dirvine/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/"
 call vam#ActivateAddons([
-\'github:racer-rust/vim-racer',
+\'github:Valloric/YouCompleteMe',
 \'github:tpope/vim-fugitive',
 \'github:Shougo/neocomplete.vim',
 \'github:kana/vim-operator-user',
@@ -45,8 +45,9 @@ call vam#ActivateAddons([
 \'github:tomtom/tcomment_vim',
 \'github:scrooloose/nerdtree',
 \'github:oblitum/rainbow',
-\'github:neomake/neomake',
 \'github:lifepillar/vim-solarized8'])
+
+" "\'github:neomake/neomake',
 
 filetype plugin indent on
 set hidden
@@ -71,65 +72,66 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
 "#########Autocompletion###########
-let g:acp_enableAtStartup = 1
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 2
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" let g:acp_enableAtStartup = 1
+" let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_smart_case = 1
+" " Set minimum syntax keyword length.
+" let g:neocomplete#sources#syntax#min_keyword_length = 2
+" let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
+" let g:neocomplete#sources#dictionary#dictionaries = {
+"     \ 'default' : '',
+"     \ 'vimshell' : $HOME.'/.vimshell_hist',
+"     \ 'scheme' : $HOME.'/.gosh_completions'
+"         \ }
+"
 " Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" AutoComplPop like behavior.
-let g:neocomplete#enable_auto_select = 0
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.rust = '[^.[:digit:] *\t]\%(\.\|\::\)\%(\h\w*\)\?'
-let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
+" if !exists('g:neocomplete#keyword_patterns')
+"     let g:neocomplete#keyword_patterns = {}
+" endif
+" let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+"
+" " Plugin key-mappings.
+" inoremap <expr><C-g>     neocomplete#undo_completion()
+" inoremap <expr><C-l>     neocomplete#complete_common_string()
+"
+" " Recommended key-mappings.
+" " <CR>: close popup and save indent.
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function()
+"   " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+"   " For no inserting <CR> key.
+"   return pumvisible() ? "\<C-y>" : "\<CR>"
+" endfunction
+" " <TAB>: completion.
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" " <C-h>, <BS>: close popup and delete backword char.
+" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" " Close popup by <Space>.
+" "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+"
+" " AutoComplPop like behavior.
+" let g:neocomplete#enable_auto_select = 0
+"
+" " Enable heavy omni completion.
+" if !exists('g:neocomplete#sources#omni#input_patterns')
+"   let g:neocomplete#sources#omni#input_patterns = {}
+" endif
+" let g:neocomplete#sources#omni#input_patterns.rust = '[^.[:digit:] *\t]\%(\.\|\::\)\%(\h\w*\)\?'
+" let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+" let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+" let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+"
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+" let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " ###################  RUST  #########################
 
 let RUST_SRC_PATH=$RUST_SRC_PATH
+let g:ycm_rust_src_path = $RUST_SRC_PATH
 nnoremap <silent> <Leader>b :make build  <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>r :make run  <CR> <bar> :copen <CR>
 nnoremap <silent> <Leader>l :make +nightly test --no-run clippy <CR> <bar> :copen <CR>
@@ -210,7 +212,7 @@ let g:ctrlp_use_caching = 1
 let g:ctrlp_max_files = 100000
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_switch_buffer = 0
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build*/,*/target
 nnoremap <silent> <Leader>p :CtrlP <CR>
 nmap ; :CtrlPBuffer<CR>
 nmap <leader>a :CtrlPTag<CR>
